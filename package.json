@@ -1,0 +1,39 @@
+{
+  "name": "@modelbcompany/dmng-0008p",
+  "version": "1.0.0",
+  "description": "DMNG-0008P (Woodmont Landing Page)",
+  "keywords": [
+    "javascript",
+    "php",
+    "react",
+    "wordpress"
+  ],
+  "homepage": "http://woodmontdev.wpengine.com/",
+  "bugs": {
+    "url": "https://github.com/modelbcompany/DMNG-0008P/issues",
+    "email": "web@modelb.com"
+  },
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Lexus Drumgold",
+    "email": "lexus.drumgold@modelb.com",
+    "url": "https://modelb.com"
+  },
+  "main": "",
+  "repository": "git://github.com/modelbcompany/DMNG-0008P.git",
+  "scripts": {
+    "lint": "",
+    "test": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jest": "^23.9.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
+  }
+}

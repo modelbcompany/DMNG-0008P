@@ -1,0 +1,62 @@
+# Git Configuration
+# See: http://michaelwales.com/articles/make-gitconfig-work-for-you/
+
+# General Aliases
+[alias]
+  # Git Add & Commit - All in one step
+  ac = "!f() { git add .; git cm \"$@\"; }; f"
+
+  # Git Add, Commit, & Push - All in one step
+  acp = "!f() { git ac \"$@\"; git push; }; f"
+
+  # Add new git remote
+  ar = "!f() { git remote add \"$0\" \"$1\"; }; f"
+
+  # Checkout and push new branch to origin
+  b = "!f() { git checkout -b \"$@\"; git push -u origin \"$@\"; }; f"
+
+  # Delete a branch locally and remotely
+  bdel= "!f() { git branch -D \"$@\"; git push origin --delete \"$@\"; }; f"
+  
+  # Git Commit with message
+  cm = "!f() { git commit -m \"$@\"; }; f"
+
+  # Install development dependency
+  dd = "!f() { npm i -D \"$@\"; }; f"
+
+  # Install production dependency
+  ds = "!f() { npm i \"$@\"; }; f"
+
+  # Start a new local repository and perform initial commit
+  local = "!f() { git init; git add -A; git new \"Initial repository files\"; }; f"
+
+  # Use npm-run-all to run lint and test script in parallel, then push
+  # See: https://github.com/mysticatea/npm-run-all
+  ltp = "!f() { run-p lint test; git push; }; f"
+
+  # Recursively delete files matching a pattern
+  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
+
+  # Remove local .git directory
+  restart = "!f() { rm -rf .git; echo \"Removed .git directory.\"; }; f"
+
+# Emoji Log Aliases
+# See: https://github.com/ahmadawais/Emoji-Log/
+[alias]
+  # NEW: Use when you add something entirely new
+  new = "!f() { git ac \"📦 NEW: $@\"; }; f"
+
+  # TEST: Use when changes are related to testing or mock data
+  test = "!f() { git ac \"✅ TEST: $@\"; }; f"
+
+  # IMPROVE: Use when you improve/enhance a piece of code (ex: refactoring)
+  imp = "!f() { git ac \"👌🏾 IMPROVE: $@\"; }; f"
+
+  # FIX: Use when you fix a bug
+  fix = "!f() { git ac \"🐛 FIX: $@\"; }; f"
+
+  # DOC: Use when you add/update documentation (ex: README, inline docs)
+  doc = "!f() { git ac \"📖 DOC: $@\"; }; f"
+  
+  # RELEASE: Use when changes are related to a release
+  rlz = "!f() { git ac \"🚀 RELEASE: $@\"; }; f"
