@@ -21,33 +21,23 @@
   # Git Commit with message
   cm = "!f() { git commit -m \"$@\"; }; f"
 
-  # Install development dependency
-  dd = "!f() { npm i -D \"$@\"; }; f"
+  # Checkout branch
+  ch = "!f() { git checkout \"$@\"; }; f"
 
-  # Push to development remote
-  dev = "!f() { git push dev \"$@:=master\"; }; f"
+  # Checkout branch and pull latest version
+  chp = "!f() { git ch \"$@\"; git pull; }; f"
 
-  # Install production dependency
-  ds = "!f() { npm i \"$@\"; }; f"
+  # Create new local repo, perform initial commit, and push to Github
+  launch = "!f() { git local; git rao $@; git push -u origin master; }; f"
 
   # Start a new local repository and perform initial commit
   local = "!f() { git init; git add -A; git new \"Initial repository files\"; }; f"
 
-  # Use npm-run-all to run lint and test script in parallel, then push
-  # See: https://github.com/mysticatea/npm-run-all
-  ltp = "!f() { run-p lint test; git push; }; f"
-
-  # Recursively delete files matching a pattern
-  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
-
-  # Push to production remote
-  prod = "!f() { git push production \"$@:=master\"; }; f"
+  # Add new remote origin
+  rao = "!f() { git remote add origin \"$@\"; }; f"
 
   # Remove local .git directory
   restart = "!f() { rm -rf .git; echo \"Removed .git directory.\"; }; f"
-
-  # Push to staging remote
-  staging = "!f() { git push staging \"$@:=master\"; }; f"
 
 # Emoji Log Aliases
 # See: https://github.com/ahmadawais/Emoji-Log/
@@ -69,3 +59,22 @@
   
   # RELEASE: Use when changes are related to a release
   rlz = "!f() { git ac \"🚀 RELEASE: $@\"; }; f"
+
+# Remote Aliases
+[alias]
+  # Push to development remote
+  dev = "!f() { git push dev; }; f"
+
+  # Push to production remote
+  prod = "!f() { git push production; }; f"
+
+  # Push to staging remote
+  staging = "!f() { git push staging; }; f"
+
+# Helper Aliases
+[alias]
+  # Recursively delete files matching a pattern
+  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
+
+  # Generate a SSH key
+  keygen = "!f() { ssh-keygen -t rsa -b 4096 -C \"$@\"; }; f"
