@@ -1,0 +1,38 @@
+.gform_wrapper div.validation_error {
+    color: #FFF;
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-top: 2px solid #FFF;
+    border-bottom: 2px solid #FFF;
+    padding: 16px 0;
+    clear: both;
+    width: 100%;
+    text-align: center;
+}
+
+
+.gform_wrapper .gfield_error .gfield_label {
+    color: #FFF;
+}
+
+.gform_wrapper .validation_message {
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+ 
+.gform_wrapper .gfield_required {
+    color: #fff;
+    margin-left: 4px;
+}
+.gform_wrapper li.gfield_error div.ginput_complex.ginput_container label, .gform_wrapper li.gfield_error ul.gfield_checkbox, .gform_wrapper li.gfield_error ul.gfield_radio {
+    color: #fff;
+}
+
+div#gform_confirmation_message_1 {
+    color: #fff;
+    font-weight: 900;
+    text-align: center;
+}

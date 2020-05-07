@@ -1,0 +1,80 @@
+# Git Configuration
+# See: http://michaelwales.com/articles/make-gitconfig-work-for-you/
+
+# General Aliases
+[alias]
+  # Git Add & Commit - All in one step
+  ac = "!f() { git add .; git cm \"$@\"; }; f"
+
+  # Git Add, Commit, & Push - All in one step
+  acp = "!f() { git ac \"$@\"; git push; }; f"
+
+  # Add new git remote
+  ar = "!f() { git remote add \"$0\" \"$1\"; }; f"
+
+  # Checkout and push new branch to origin
+  b = "!f() { git checkout -b \"$@\"; git push -u origin \"$@\"; }; f"
+
+  # Delete a branch locally and remotely
+  bdel= "!f() { git branch -D \"$@\"; git push origin --delete \"$@\"; }; f"
+  
+  # Git Commit with message
+  cm = "!f() { git commit -m \"$@\"; }; f"
+
+  # Checkout branch
+  ch = "!f() { git checkout \"$@\"; }; f"
+
+  # Checkout branch and pull latest version
+  chp = "!f() { git ch \"$@\"; git pull; }; f"
+
+  # Create new local repo, perform initial commit, and push to Github
+  launch = "!f() { git local; git rao $@; git push -u origin master; }; f"
+
+  # Start a new local repository and perform initial commit
+  local = "!f() { git init; git add -A; git new \"Initial repository files\"; }; f"
+
+  # Add new remote origin
+  rao = "!f() { git remote add origin \"$@\"; }; f"
+
+  # Remove local .git directory
+  restart = "!f() { rm -rf .git; echo \"Removed .git directory.\"; }; f"
+
+# Emoji Log Aliases
+# See: https://github.com/ahmadawais/Emoji-Log/
+[alias]
+  # NEW: Use when you add something entirely new
+  new = "!f() { git ac \"📦 NEW: $@\"; }; f"
+
+  # TEST: Use when changes are related to testing or mock data
+  test = "!f() { git ac \"✅ TEST: $@\"; }; f"
+
+  # IMPROVE: Use when you improve/enhance a piece of code (ex: refactoring)
+  imp = "!f() { git ac \"👌🏾 IMPROVE: $@\"; }; f"
+
+  # FIX: Use when you fix a bug
+  fix = "!f() { git ac \"🐛 FIX: $@\"; }; f"
+
+  # DOC: Use when you add/update documentation (ex: README, inline docs)
+  doc = "!f() { git ac \"📖 DOC: $@\"; }; f"
+  
+  # RELEASE: Use when changes are related to a release
+  rlz = "!f() { git ac \"🚀 RELEASE: $@\"; }; f"
+
+# Remote Aliases
+[alias]
+  # Push to development remote
+  dev = "!f() { git push dev; }; f"
+
+  # Push to production remote
+  prod = "!f() { git push production; }; f"
+
+  # Push to staging remote
+  staging = "!f() { git push staging; }; f"
+
+# Helper Aliases
+[alias]
+  # Recursively delete files matching a pattern
+  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
+
+  # Generate a SSH key
+  keygen = "!f() { ssh-keygen -t rsa -b 4096 -C \"$@\"; }; f"

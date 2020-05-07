@@ -1,0 +1,18 @@
+@media only screen and (max-width: 768px) {
+	
+	/* STRUCTURE */
+	.three-quarter-height 							{ height:100vh !important}
+	.quarter-height 								{ height:auto !important}
+ 	.swap 											{ flex-direction:column-reverse}	
+	.vc_row.vc_column-gap-35>.vc_column_container 	{ padding: 15px 10px;}
+
+ 
+
+	
+	/* TYPOGRAPHY */	
+	#hero h1										{ font-size: 3.25rem !important; line-height: 3.25rem !important;  margin: 0 0 20px 0; padding: 0 }
+	h1 												{ font-size: 1.75rem !important; line-height: 2rem !important;  margin: 0 0 20px 0; padding: 0 0 30px;}
+	h2, .banner h2									{ font-size: 1.5rem !important; line-height:1.75rem !important; margin: 0 0 20px 0; padding: 0 0 30px;}
+	h3												{ font-size: 1.25rem !important; line-height:1.5rem !important}
+	p												{ font-size: 1rem !important; line-height:1.25rem !important}
+}
