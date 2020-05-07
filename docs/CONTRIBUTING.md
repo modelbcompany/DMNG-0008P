@@ -50,6 +50,9 @@ Reference: [Make .gitconfig Work for You][2]
   # Install development dependency
   dd = "!f() { npm i -D \"$@\"; }; f"
 
+  # Push to development remote
+  dev = "!f() { git push dev \"$@:=master\"; }; f"
+
   # Install production dependency
   ds = "!f() { npm i \"$@\"; }; f"
 
@@ -63,8 +66,14 @@ Reference: [Make .gitconfig Work for You][2]
   # Recursively delete files matching a pattern
   pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
 
+  # Push to production remote
+  prod = "!f() { git push production \"$@:=master\"; }; f"
+
   # Remove local .git directory
   restart = "!f() { rm -rf .git; echo \"Removed .git directory.\"; }; f"
+
+  # Push to staging remote
+  staging = "!f() { git push staging \"$@:=master\"; }; f"
 
 # Emoji Log Aliases
 # See: https://github.com/ahmadawais/Emoji-Log/
