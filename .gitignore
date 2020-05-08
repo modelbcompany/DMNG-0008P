@@ -14,7 +14,10 @@ jspm_packages/
 Thumbs.db
 
 # wordpress specific
-app/public/wp-config.php
+
+# Needed for seamless local dev 
+# app/public/wp-config.php
+
 app/public/wp-content/uploads/
 app/public/wp-content/blogs.dir/
 app/public/wp-content/upgrade/*
