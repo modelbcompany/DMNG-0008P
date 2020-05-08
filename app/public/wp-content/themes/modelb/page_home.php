@@ -3,8 +3,11 @@
 Template Name: Home
 */
 
-get_header(); ?>
 	
+get_header(); ?>
+
+<style>#logo{visibility:hidden; display:none;}</style>
+
 	<div id="content" class="homepage">
 	
 		<div class="row">

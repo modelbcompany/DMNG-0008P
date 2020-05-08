@@ -8,90 +8,171 @@
 /**************************/
 
 
-/* HEADER OPTIONS */
-body,html 										{ overflow-x:hidden}
-#header											{  z-index:500; position:fixed; top:0; left:0; width:100%; border-bottom:4px solid #143A58; background:#fff; height:100px}
-#content										{ z-index:400; }
-#footer											{ position:relative; width:100%;  }
-#logo  											{ max-width:300px; z-index:600; left:0;  position:relative; top:20px}
+/* GLOBAL OPTIONS */
+body,html 															{ overflow-x:hidden}
+#header 															{ z-index: 500; position: absolute; top: 0; left: 0; width: 100%; border-bottom: 0; background-image:url(/wp-content/uploads/2020/04/header-bg.jpg); background-size:cover; height: 200px;}
+#content															{ z-index:400; }
+#footer																{ position:relative; width:100%; background-image:url(/wp-content/uploads/2020/04/footer-gradient-bg.jpg); background-size:cover }
+#logo 																{ max-width: 215px;   z-index: 600;  left: 0; position: absolute;   top: 40px;  right: 0;  margin: auto;}
+#property-info														{ position:absolute; right:40px; top:37px}
+#force-height														{ min-height:980px}
+.shorten-box 														{ max-width:570px;}
+.textbox-placement 													{ padding-top:15%}
+.textbox-top														{ margin-top:-150px}
 
-/* REUSABLE */
-.vc-content 									{ padding: 0 15px;}
-.shorten-row 									{ max-width:768px; margin:auto}
-.swap 											{ display:flex;}
-.container 										{ margin-top:50px; margin-bottom:50px}
+/*HOMEPAGE CUSTOM*/
 
-/* TYPOGRAPHY */
-h1												{ background:url(/wp-content/uploads/2019/10/icon-blue-rule.svg) bottom center no-repeat; margin:0 0 50px 0; padding:0 0 50px 0; text-align:center }
-h2												{ background:url(/wp-content/uploads/2019/10/icon-blue-rule.svg) bottom left no-repeat; margin:0 0 50px 0; padding:0 0 50px 0; text-align:left }
-#hero h1										{ background:none; text-align:left; margin:0 0 20px 0; padding:0}
-::selection 									{ background: #24ABE3; color: #fff; }
+#row1 {
+    
+    background-image: url(/wp-content/uploads/2020/04/woodmont-pattern-bg.png);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 50% 80%;
  
-/* BUTTONS */
-.button, button 								{ font-size:16px !important; font-weight:400 !important }
+}
 
-/* HERO */
-#hero 											{ padding-top: 75px !important; padding-bottom: 0 !important;}
-#hero .text-box 								{    max-width: 1240px; padding:40px;   margin: auto;}
-.date-banner 									{ position:absolute; bottom:0; width:100%; left:0;}
-.half-height 									{ min-height:50vh !important}
-.three-quarter-height 							{ min-height:70vh !important}
-.quarter-height 								{ min-height:30vh !important}
+#row2 {
+    background-image: url(/wp-content/uploads/2020/04/woodmont-light-grey-bg.jpg);
+    background-color: rgba(0, 0, 0, 0);
+    background-repeat: repeat;
+    background-size: auto;
+    background-position: 50% 80%;
+ 
+}
 
-/* BUCKETS */
-.bucket h3										{  margin:0 0 30px 0}
 
-/* PAGE IMAGE */
-#page-image 									{ background-image:url(''); height:250px; width: 100%; background-size: cover; margin-top: 100px; display: flex;  align-items: center; justify-content: center;}
-#page-image h1									{ color:#fff; background:none; margin:0; padding:0}
 
-/* DIVIDER */
-.divider 										{ min-height:400px !important; padding:35px}
-.divider p										{ }
+/* STRUCTURE */
+.full-height-col 													{min-height:100vh}
+.shorten-col 														{ position:absolute; right:0; top:100px; padding:0px 40px 40px 40px; max-width:600px;}
 
-/* FOOTER */
-#footer p 										{ margin:0}
-.top-footer 									{ padding:30px}
-.bottom-footer p 								{ color:#fff; font-size:12px}
+/*TYPOGRAPHY*/
+h1  																{ font-size:3.5em;line-height:1.25em;font-family: 'IBM Plex Mono', monospace; font-weight: 400;margin: 0;color: #3d312e;text-transform: uppercase;letter-spacing: .07rem;}
+h2																	{ font-size: 3rem;  line-height: 2.75rem;font-style: normal;  font-weight: 500; color: #6f767b; font-family: 'IBM Plex Mono', monospace; text-transform: uppercase;}
+h3																	{ font-size: 1.75rem; line-height: 2.00rem; font-weight: 700;  font-family: 'IBM Plex Mono', monospace; text-transform:uppercase; color:#fff}
+h4  																{ font-size:1.25em;line-height:2em;font-family: 'IBM Plex Mono', monospace; font-weight: 900;margin: 0;color: #3d312e;text-transform: uppercase;letter-spacing: .08rem;}
+p 																	{ font-size: 1.1em;  line-height: 1.45em; font-weight: 100; font-style: normal;color:#3d312e; font-family: "Swiss_721 W01 light"; margin: 0 0 20px 0;}
+u  																	{ color: #041e42;}
+a 																	{ text-decoration:underline; color:#041e42}
+a:hover 															{ color:#6f767b!important}
+strong 																{ font-family: "Swiss_721 W01 Bold"}
+
+ /*BUTTONS*/
+.vc_btn3.vc_btn3-style-custom 										{ font-size: 1.25rem !important;font-family: "Swiss_721 W01 Bold"; background-image: none !important;  }
+.bottom-align-left 													{ position: absolute;bottom: 80px; z-index:99999999999999}
+.bottom-align-right 												{ position: absolute;bottom: 80px; right:80px; z-index:99999999999999}
+.vc_btn3.vc_btn3-style-custom:focus, .vc_btn3.vc_btn3-style-custom:hover		{ background-color: #bd8a49 !important;background:#bd8a49 !important; color:#fff !important;}
+
+
+.vc_btn3-container.vc_btn3-center .vc_btn3-block.vc_btn3-size-lg:hover	{background:#3d312e !important; background-color:#3d312e !important; }
+
+
+
+/*HEADER*/
+#property-info P													{ font-size:.9rem; color:#fff; font-family: "Swiss_721 W01 Bold";}
+
+/*COMMUNITY*/
+.community ul														{ margin: 20px 0;  list-style: none;}
+.community li::before 												{ content: "• ";color: white; padding: 0 10px 0 0;}
+.community li 														{ font-family: "Swiss_721 W01 light";  padding-left: 1em; text-indent: -1.5em;margin-bottom:20px;     font-size: 1.1rem; line-height: 1.4rem; color: #3d312e;}  
+.community 															{ min-height: 750px !important; margin:20px 80px 20px 20px !important;  padding-top:40px !important;}
+
+/*RESIDENCES*/
+.residences ul														{ margin: 0 0 20px 0;  list-style: none;}
+.residences li::before 												{ content: "• ";color:#3d312e; padding: 0 10px 0 0;}
+.residences li 														{ color:#fff; font-family: "Swiss_721 W01 light";  padding-left: 1em; text-indent: -1.5em;margin-bottom:20px; font-size:1.1rem; line-height:1.4rem}  
+.residences p														{ margin:0}
+ 
+/*RESIDENCES*/
+.contact a 															{ font-family: "Swiss_721 W01 Bold"; background: #fff; color: #3d312e; text-decoration: none; padding: 0 10px; text-transform: uppercase; transition: 0.4s; margin: 0 15px 15px 0;  display: inline-block;}
+.contact a:hover													{ background:#3d312e; color: #fff !important; font-weight: 700;}
+.contact 															{ margin: 25px 50px 175px 10px !important;}
 
 /* NAVIAGATION */
-#nav-menu 										{ z-index:600; position:absolute; right:0; top: 40px;}
-#nav-menu ul 									{ text-align: left; display: inline; margin: auto;  list-style: none; width: auto; }
-#nav-menu ul li 								{ display: inline-block; margin-right:0; margin-bottom: 0; position: relative; padding: 0 30px 0 0px;  background: none; cursor: pointer;}
-#nav-menu ul li a 								{ color:#15315a; font-weight:500 }
-#nav-menu ul li a:hover 						{ color:#ec4c30 }
-#nav-menu ul li ul 								{ padding: 44px 0 0 0; position: absolute; right: 20px; width: 250px; display: none; opacity: 0; visibility: hidden;  }
-#nav-menu ul li ul li 							{ background: #6E6E6E; display: block;text-align: right; padding: 20px; }
-#nav-menu ul li ul li:hover 					{ background:#0a4159;}
-#nav-menu ul li ul li a:hover 					{ color: white !important;}
-#nav-menu ul li ul li:last-child 				{ border-bottom: 0; }
-#nav-menu ul li ul li a 						{ color: #ffffff; display: block }
-#nav-menu ul li ul li a:hover 					{ color: #c52031; }
-#nav-menu ul li:hover ul 						{ display: block; opacity: 1; visibility: visible; }
-#nav-menu .active>a 							{ background: none; }
-#nav-menu ul li:hover ul 						{ display: block; opacity: 1; visibility: visible; }
-.menu>li>a 										{ padding: 0;}
-.sfm-navicon-button 							{ visibility:hidden; display:none}
+#nav-menu 															{ z-index:600; position:absolute; right:40px; top: 55px;}
+#nav-menu ul 														{ text-align: left; display: inline; margin: auto;  list-style: none; width: auto; }
+#nav-menu li 														{ display: inline-block; margin-bottom: 0; padding: 0 8px 0 0px; cursor: pointer; border-right: 1px solid black;}
+#nav-menu li:last-child 											{ padding:0px; border-right: 0;}
+#nav-menu li a 														{ color: #3d312e; font-size: .9rem; font-family: "Swiss_721 W01 Bold"; text-transform:uppercase}
+.menu .button, .menu a 												{ padding: 0;}
+#nav-menu ul li a:hover 											{ color:#ec4c30 }
+#nav-menu li a {
+ 
+}
+/* HERO */
+#hero 																{ height:100vh; display:flex}
+#hero-logo 															{ margin-bottom: 10%;}
+#hero h1 															{ font-weight:500; margin-bottom:100px}
+#hero h2 															{ font-size:1rem;line-height:1.5rem;font-style:normal;color:#fff;    font-family: "Swiss_721 W01 Bold";  }
+
+/*POPUP*/
+
+.sgpb-main-html-content-wrapper p 									{ margin:0 !important;  margin: 0 !important; color: #fff; font-size: 1.25rem; line-height: 1.5rem;}
+.sgpb-main-html-content-wrapper h2 									{ font-size: 3rem; font-weight:500; color: #cbc3bc; margin: 0 0 50px 0;}
+.disclaimer p														{ font-size:12px; line-height:14px}
+button.vc_general.vc_btn3.vc_btn3-size-md.vc_btn3-shape-square.vc_btn3-style-custom.vc_btn3-block {   font-size: 22px;}
+
+
+/* GALLERY */
+#gallery 															{ background: url(/wp-content/uploads/2020/04/gallery-pattern.jpg) bottom repeat-x;}
+
+/* FLOORPLAN */
+.unit-info p {  font-family: 'IBM Plex Mono', monospace !important; font-size: 16px; text-transform: uppercase; margin: 0; font-weight: 400;}
+.unit-price p {  font-size: 15px; line-height: 22px;}
+
+
+
+/* PAGE IMAGE */
+#page-image 														{ height:750px; width: 100%; background-size: cover; background-position:center; margin-top: 200px;}
+#page-title h1														{ color:#cbc3bc; background:none; margin:0; padding:0; }
+#page-title 														{ background: #6f767b; text-align: center; position: relative; padding:30px}
+
+/* DIVIDER */
+.divider p 															{ font-size: 2rem; line-height: 2.7rem; font-weight: 300;  color: #6f767b; font-family: 'IBM Plex Mono', monospace;}
+.divider 															{padding-bottom:55px !important}
+.divider h2 														{ margin:0 !important} 
+
+/* CALL-OUT */
+.call-out															{ min-height:300px;}
+.call-out h2 														{ font-size: 1.5rem; line-height: 2.00rem; font-weight: 500;  font-family: 'IBM Plex Mono', monospace; text-transform:uppercase}
+.call-out p 														{ font-size: 1.25rem; line-height: 1.65rem; font-weight: 100;  color: #fff;}
+
+/* SUBPAGE */
+.subpage h2															{ font-size: 2rem; line-height: 2rem; font-weight: 900;  color: #6f767b; letter-spacing: .08rem; margin:0 0 25px 0}
+
+/* FOOTER */
+#footer p 															{ font-size:.9rem; margin:0; color:#fff; text-transform:uppercase}
+#footer a 															{ color:#fff; }
+#footer-address p 													{font-family: "Swiss_721 W01 Bold";}
+#footer-logo img													{ max-width:155px !important}
+.developer-logos													{float:right}
 
 /* SOCIAL MENU */
-span.menu-image-title-above.menu-image-title 	{ visibility:hidden; display:none;}
-a.menu-image-title-above.menu-image-not-hovered { width: 40px; margin: 0 0 0 5px;}
+#menu-social-1 li, #menu-social li 	 								{ margin: 0 10px;}
+#menu-social-1,#menu-social  										{ margin: 30px auto; left: 0; right: 0; display: inline-flex;}
+.menu-social-container	 											{ text-align: center;}
 
 /* VISUAL COMPOSER */
 #header p										{ margin:0}
 
-
 /* GRAVITY FORMS */
-.gform_wrapper select option 					{ padding: 2px; display: block; background: #ccc !important;}
+.gform_wrapper select option 					{ padding: 2px; display: block; background: #cbc3bc !important;}
 .gform_wrapper form.gf_simple_horizontal 		{ text-align: center; margin: auto; width: max-content;}
 .gform_wrapper li.hidden_label input 			{ margin-top: 15px;}
-::-webkit-input-placeholder 					{ /* Chrome/Opera/Safari */  color: #fff;	padding:3px 10px;}
-::-moz-placeholder 								{ /* Firefox 19+ */  color: #fff;padding:3px 10px;}
-:-ms-input-placeholder 							{ /* IE 10+ */  color: #fff;padding:3px 10px;}
-:-moz-placeholder 								{ /* Firefox 18- */  color: #fff;padding:3px 10px;}
-input 											{ background: none !important;}
+::-webkit-input-placeholder 					{ /* Chrome/Opera/Safari */  color: #3d312e;	padding:3px 10px; font-weight: 700; font-size: 14px;}
+::-moz-placeholder 								{ /* Firefox 19+ */  color: #3d312e;padding:3px 10px; font-weight: 700; font-size: 14px;}
+:-ms-input-placeholder 							{ /* IE 10+ */  color: #3d312e;padding:3px 10px; font-weight: 700; font-size: 14px;}
+:-moz-placeholder 								{ /* Firefox 18- */  color: #3d312e;padding:3px 10px; font-weight: 700; font-size: 14px;}
+input 											{ background: #cbc3bc !important;  margin-bottom: 6px !important;}
 select 											{  background: none !important; color: #fff; padding: 0 0 0 3px !important; margin: 7px 0 0 0;}
 select:focus 									{ color: #000;}
+label 											{ color: #fff; font-size: 14px !important;}
 .gform_wrapper select option 					{ padding: 2px; display: block; background: #ccc !important;}
-.button 										{ background: #ec4c30 !important; padding: 15px 30px; color: #fff; border-radius: 5px;display: inline-block !important;}
-.gform_wrapper .gform_footer 					{  text-align: center;}
+.button 										{ background: #3d312e !important;  padding: 15px 50px; color: #fff; text-transform: uppercase; display: inline-block !important; font-weight: 700;}
+.gform_wrapper .gform_footer 					{  text-align: left; margin-top: 0;}
+
+[type=color], [type=date], [type=datetime-local], [type=datetime], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], textarea {
+	border: 1px solid #cbc3bc;
+}
+

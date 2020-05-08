@@ -11,12 +11,18 @@ get_header(); ?>
 	<?php if( get_field('disable_page_header') == false): ?>
 		<div id="page-header">
 			<div class="inner-content grid-x">
-				<div id="page-image" style="background-image:url('<?php the_field('page_image');?>')"><h1></h1></div>
+				<div id="page-image" style="background-image:url('<?php the_field('page_image');?>')"</div>
 			</div>
 		</div> 
 	<?php endif; ?> <!-- end Page Header -->
+	<div id="page-title"><h1><?php the_title() ?></h1></div>
+<div id="content" class="subpage">
+	
 
-<div id="content">
+	
+	
+
+	
 
 		<div class="row">
 			

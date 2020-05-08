@@ -1,38 +1,246 @@
-.gform_wrapper div.validation_error {
-    color: #FFF;
-    font-size: 1em;
-    font-weight: 700;
-    margin-bottom: 25px;
-    border-top: 2px solid #FFF;
-    border-bottom: 2px solid #FFF;
-    padding: 16px 0;
-    clear: both;
-    width: 100%;
-    text-align: center;
-}
+.vc_btn3.vc_btn3-style-custom:focus, .vc_btn3.vc_btn3-style-custom:hover		{ background-color: #3d312e !important;background: #3d312e !important;}
 
-
-.gform_wrapper .gfield_error .gfield_label {
-    color: #FFF;
-}
-
-.gform_wrapper .validation_message {
-    color: #fff;
-    font-weight: 700;
-    letter-spacing: normal;
-}
-
- 
-.gform_wrapper .gfield_required {
-    color: #fff;
-    margin-left: 4px;
-}
-.gform_wrapper li.gfield_error div.ginput_complex.ginput_container label, .gform_wrapper li.gfield_error ul.gfield_checkbox, .gform_wrapper li.gfield_error ul.gfield_radio {
-    color: #fff;
-}
-
-div#gform_confirmation_message_1 {
-    color: #fff;
+.wpb-js-composer .vc_tta-color-grey.vc_tta-style-flat .vc_tta-tab>a {
+    background-color: #cbc3bc !important;
+    color: #fff !important;
     font-weight: 900;
-    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    letter-spacing: .08rem;
+    padding: 10px 40px !important;
 }
+
+.wpb-js-composer .vc_tta-color-grey.vc_tta-style-flat .vc_tta-tab.vc_active>a {
+    background-color: #6f767b !important;
+    color: #fff !important;
+}
+
+.wpb-js-composer .vc_tta.vc_general .vc_tta-tab>a:focus, .wpb-js-composer .vc_tta.vc_general .vc_tta-tab>a:hover {    background-color: #6f767b !important;
+    color: #fff !important;}
+
+/* Contact */
+.button:hover {
+    background: #c1904b !important;
+}
+.gform_wrapper ul.gfield_checkbox, .gform_wrapper ul.gfield_radio {
+    margin: 0 0 -25px 0;
+    padding: 0;
+}
+div#gform_wrapper_3 {
+padding:0px 40px;
+    margin: auto;
+}
+li#field_3_7 p {
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+	font-size: 1.1rem;
+}
+
+body .gform_wrapper ul li.gfield {
+    margin-top: 0px;
+}
+.gform_wrapper ul.gfield_checkbox li input[type=checkbox], .gform_wrapper ul.gfield_radio li input[type=radio] {
+    width: 20px !important;
+    height: 20px !important;
+}
+.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
+    padding-right: 5px !important;
+}
+
+div#gform_wrapper_4 {
+padding:40px;
+    margin: auto;
+    display: block;
+}
+
+/*Map*/
+
+.mpfy-container * {
+    width: 100%;
+    float: right;
+    z-index: 0;
+    margin: 0 40px 0 0;
+}
+
+.mpfy-container * {
+    width: 100%;
+    float: right;
+    z-index: 0;
+    margin: 0 30px 0 0;
+}
+#map .wpb_button, .wpb_content_element, ul.wpb_thumbnails-fluid>li {
+    margin-bottom: 0px !important;
+}
+
+.walk-score {
+    display: block;
+    background: url(https://woodmontstage.wpengine.com/wp-content/uploads/2020/04/scores.png);
+    width: 298px;
+    height: 140px;
+    position: absolute;
+    z-index: 99999999999999999;
+    left: 60px;
+    top: 710px;
+}
+
+a.mpfy-tl-item										{ text-transform:uppercase;}
+.mpfy-tags-list {
+    padding: 0;
+    background: none;
+    position: absolute;
+    width: 26% !Important;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+}
+.mpfy-tags-list {margin-top:-8px !important}
+div#mpfy-canvas-0 {
+    margin-top: 45px!important;
+    float: left;
+    margin-left: 480px;
+    margin-bottom: 20px;
+    margin-top: 45px !important;
+}
+
+
+
+
+a.mpfy-tl-item {
+    margin: 10px !important;
+}
+
+.mpfy-tags-list {
+    background: url(/wp-content/uploads/2020/04/woodmont-marble-bg.jpg) no-repeat !important;
+    padding: 80px 50px 200px 50px !important;
+    height: 1080px !important;
+    width: 400px !important;
+}
+
+.leaflet-container .leaflet-overlay-pane svg, .leaflet-container .leaflet-marker-pane img, .leaflet-container .leaflet-shadow-pane img, .leaflet-container .leaflet-tile-pane img, .leaflet-container img.leaflet-image-layer {
+    width: auto !important;
+}
+
+
+
+.leaflet-control-attribution.leaflet-control {
+    display: none;
+    visibility: hidden;
+}
+.mpfy-tags-list a.mpfy-tl-item .mpfy-tl-i-icon		{ visibility:hidden;display:none;}
+.mpfy-tags-list a.mpfy-tl-item:hover				{ background: rgb(187,136,72);
+background: linear-gradient(90deg, rgba(187,136,72,1) 0%, rgba(215,172,86,1) 100%);}
+.mpfy-tags-list a.mpfy-tl-item						{ box-sizing:border-box;position:relative;display:inline-block;float:left;padding:10px;margin:0 10px;height:auto;line-height:27px;color:#000000;text-decoration:none;border:1px solid black;font-size:14px;width:12%;}
+.mpfy-tags-list a.mpfy-tl-item						{box-sizing:border-box;position:relative;display:inline-block;float:left;padding:10px;margin:0 10px;height:auto;line-height:27px;color:#000000;text-decoration:none;border:1px solid black;font-size:14px;width:12.85%;text-align:center;font-weight:900; width: 100%;}
+span.vc_tta-title-text								{ text-transform:uppercase;font-weight:600;font-family: 'IBM Plex Mono', monospace;font-size:16px;letter-spacing:.08em;}
+.wpb-js-composer .vc_tta-color-black.vc_tta-style-outline.vc_tta-tabs .vc_tta-panels, .wpb-js-composer .vc_tta-color-black.vc_tta-style-outline.vc_tta-tabs .vc_tta-panels::after, .wpb-js-composer .vc_tta-color-black.vc_tta-style-outline.vc_tta-tabs .vc_tta-panels::before{border-color:0;border:0 !important;}
+.wpb-js-composer .vc_tta-color-black.vc_tta-style-outline .vc_tta-tab>a		{ border-color:#50555b;background-color:transparent;color:#50555b;}
+li.vc_grid-filter-item														{ margin:0 10px !important;padding:10px !important;}
+.vc_grid-filter.vc_grid-filter-bordered > .vc_grid-filter-item, .vc_grid-filter.vc_grid-filter-bordered-rounded > .vc_grid-filter-item, .vc_grid-filter.vc_grid-filter-bordered-rounded-less > .vc_grid-filter-item{margin:0;border:1px solid #50555b;color:#50555b;text-transform:uppercase;font-weight:700;padding:5px 20px !important;}
+
+
+
+.mpfy-tags-list {
+    background: url(/wp-content/uploads/2020/04/woodmont-marble-bg.jpg) no-repeat !important;
+    padding: 40px 50px 200px 50px !important;
+    height: 1080px !important;
+    width: 400px !important;
+}
+.mpfy-container * {
+    width: 100%;
+    float: right;
+    z-index: 0;
+}
+.mpfy-tags-list a.mpfy-tl-item .mpfy-tl-i-icon {
+    display: none !Important;
+    visibility: hidden !Important;
+}
+.mpfy-tags-list a.mpfy-tl-item {
+    height: 50px !important;
+    background: #9b9191 !important;
+    font-weight: 700 !important;
+    font-size: 22px !important;
+	transition: .2s ease-out;
+ 
+}
+.mpfy-tl-item {
+    border: 0 !important;
+}
+
+.mpfy-tags-list a.mpfy-tl-item em  {
+		border:0 !important;
+    color: #fff !important;
+	    margin-left: 15px !important;
+    color: #fff !important;
+    font-family: 'IBM Plex Mono', monospace !important;
+    font-weight: 100 !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    letter-spacing: .08rem;
+    text-align: left;
+}
+.mpfy-tags-list a.mpfy-tl-item:focus {
+    background: #C4924D !important;
+}
+
+
+/*SUPERFLY*/
+
+
+
+p.mobile-address{text-align: center; color:#bd8a49;font-family: "Swiss_721 W01 bold";    margin: 50px 0; }
+
+ul.sfm-menu-level-0.sfm-menu {
+    margin: 50px 0 !important;
+}
+
+#sfm-sidebar .sfm-menu li a, #sfm-sidebar .sfm-menu .sfm-chapter, #sfm-sidebar .sfm-back-parent {
+ 
+	  
+    font-weight: 500 !important;
+ 
+    text-align: center;
+ 
+ 
+    letter-spacing: .09rem !important;
+	
+    text-transform: uppercase !important;
+ 
+    font-size: 20px !important;
+ 
+    font-family: 'IBM Plex Mono', monospace !important;
+}
+
+
+#text-us, #text-us:link, #text-us:visited {
+
+box-shadow:-2px -1px 2px rgba(255,255,255,0)!important;
+    background-color: #3d312e !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+   font: "Swiss_721 W01 Light" !important;
+   font-family:"Swiss_721 W01 Light" !important;
+}
+
+/*NIVO*/
+.nivo-caption {    font-family: 'IBM Plex Mono', monospace !important;
+	padding: 10px !important;
+	width: 70% !important;
+	position:absolute;
+	left: 30px !important;
+	bottom: 30px !important;
+	background: #3d312e !important;
+	color:#fff;
+	width:100%;
+	z-index:8;
+	padding: 5px 10px;
+	opacity: 1  !important;
+	overflow: hidden;
+	display: none;
+	-moz-opacity: 1.0  !important;
+	filter:alpha(opacity=1)  !important;
+ 
+}
+
+
+

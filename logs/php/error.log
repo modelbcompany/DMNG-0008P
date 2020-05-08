@@ -1,0 +1,432 @@
+[07-May-2020 23:48:17 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:48:17 UTC] PHP Stack trace:
+[07-May-2020 23:48:17 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:48:17 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:48:17 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:48:17 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:48:17 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:48:17 UTC] PHP Stack trace:
+[07-May-2020 23:48:17 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:48:17 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:48:17 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:48:17 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:48:17 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:48:17 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:48:17 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:48:17 UTC] PHP Stack trace:
+[07-May-2020 23:48:17 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:48:17 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:48:17 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:48:17 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:48:17 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:48:17 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:48:17 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:26 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:51:26 UTC] PHP Stack trace:
+[07-May-2020 23:51:26 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:26 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:26 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:51:26 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:51:26 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:51:27 UTC] PHP Stack trace:
+[07-May-2020 23:51:27 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:27 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:27 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:51:27 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:27 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:27 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:27 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:51:27 UTC] PHP Stack trace:
+[07-May-2020 23:51:27 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:27 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:66
+[07-May-2020 23:51:27 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[07-May-2020 23:51:27 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:51:27 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:51:27 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:27 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:27 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:27 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:27 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:49 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:51:49 UTC] PHP Stack trace:
+[07-May-2020 23:51:49 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:49 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:49 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:51:49 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:51:49 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:51:49 UTC] PHP Stack trace:
+[07-May-2020 23:51:49 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:49 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:49 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:51:49 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:49 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:49 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:50 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:51:50 UTC] PHP Stack trace:
+[07-May-2020 23:51:50 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:51:50 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:51:50 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:50 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:50 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:50 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:50 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:51 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:51:51 UTC] PHP Stack trace:
+[07-May-2020 23:51:51 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:51 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:51 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:51:51 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:51:51 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:51:51 UTC] PHP Stack trace:
+[07-May-2020 23:51:51 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:51 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:51 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:51:51 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:51 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:51 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:51 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:51:51 UTC] PHP Stack trace:
+[07-May-2020 23:51:51 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:51:51 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:51:51 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:51 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:51 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:51 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:51 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:54 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:51:54 UTC] PHP Stack trace:
+[07-May-2020 23:51:54 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:54 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:54 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:51:54 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:51:54 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:51:54 UTC] PHP Stack trace:
+[07-May-2020 23:51:54 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:51:54 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:51:54 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:51:54 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:54 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:54 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:54 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:51:54 UTC] PHP Stack trace:
+[07-May-2020 23:51:54 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:51:54 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:51:54 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:51:54 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:51:54 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:51:54 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:51:54 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:52:40 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:52:40 UTC] PHP Stack trace:
+[07-May-2020 23:52:40 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:52:40 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:52:40 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:52:40 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:52:40 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:52:40 UTC] PHP Stack trace:
+[07-May-2020 23:52:40 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:52:40 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:52:40 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:52:40 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:52:40 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:52:40 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:52:40 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:52:40 UTC] PHP Stack trace:
+[07-May-2020 23:52:40 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:52:40 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:311
+[07-May-2020 23:52:40 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[07-May-2020 23:52:40 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:52:40 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:52:40 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:52:40 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:52:40 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:52:40 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:52:40 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:54:48 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[07-May-2020 23:54:48 UTC] PHP Stack trace:
+[07-May-2020 23:54:48 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:54:48 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:54:48 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[07-May-2020 23:54:48 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[07-May-2020 23:54:48 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[07-May-2020 23:54:48 UTC] PHP Stack trace:
+[07-May-2020 23:54:48 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:54:48 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[07-May-2020 23:54:48 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[07-May-2020 23:54:48 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:54:48 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:54:48 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:54:48 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[07-May-2020 23:54:48 UTC] PHP Stack trace:
+[07-May-2020 23:54:48 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[07-May-2020 23:54:48 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:311
+[07-May-2020 23:54:48 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[07-May-2020 23:54:48 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[07-May-2020 23:54:48 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[07-May-2020 23:54:48 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[07-May-2020 23:54:48 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[07-May-2020 23:54:48 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[07-May-2020 23:54:48 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[07-May-2020 23:54:48 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:28 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:06:28 UTC] PHP Stack trace:
+[08-May-2020 00:06:28 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:28 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:28 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:06:28 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:06:28 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:06:28 UTC] PHP Stack trace:
+[08-May-2020 00:06:28 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:28 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:28 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:06:28 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:28 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:28 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:29 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:06:29 UTC] PHP Stack trace:
+[08-May-2020 00:06:29 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:06:29 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:06:29 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:29 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:29 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:29 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:29 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:31 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:06:31 UTC] PHP Stack trace:
+[08-May-2020 00:06:31 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:31 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:31 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:06:31 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:06:31 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:06:31 UTC] PHP Stack trace:
+[08-May-2020 00:06:31 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:31 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:31 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:06:31 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:31 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:31 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:31 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:06:31 UTC] PHP Stack trace:
+[08-May-2020 00:06:31 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:06:31 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:06:31 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:31 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:31 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:31 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:31 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:36 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:06:36 UTC] PHP Stack trace:
+[08-May-2020 00:06:36 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:36 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:36 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:06:36 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:06:36 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:06:36 UTC] PHP Stack trace:
+[08-May-2020 00:06:36 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:06:36 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:06:36 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:06:36 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:36 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:36 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:36 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:06:36 UTC] PHP Stack trace:
+[08-May-2020 00:06:36 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:06:36 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:06:36 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:06:36 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:06:36 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:06:36 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:06:36 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:16:19 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:16:19 UTC] PHP Stack trace:
+[08-May-2020 00:16:19 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:16:19 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:16:19 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:16:19 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:16:19 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:16:19 UTC] PHP Stack trace:
+[08-May-2020 00:16:19 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:16:19 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:16:19 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:16:19 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:16:19 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:16:19 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:16:19 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:16:19 UTC] PHP Stack trace:
+[08-May-2020 00:16:19 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:16:19 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:16:19 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:16:19 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:16:19 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:16:19 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:16:19 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:21:10 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:21:10 UTC] PHP Stack trace:
+[08-May-2020 00:21:10 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:21:10 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:21:10 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:21:10 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:21:10 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:21:10 UTC] PHP Stack trace:
+[08-May-2020 00:21:10 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:21:10 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:21:10 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:21:10 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:21:10 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:21:10 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:21:10 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:21:10 UTC] PHP Stack trace:
+[08-May-2020 00:21:10 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:21:10 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:66
+[08-May-2020 00:21:10 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[08-May-2020 00:21:10 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:21:10 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:21:10 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:21:10 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:21:10 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:21:10 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:21:10 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:14 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:27:14 UTC] PHP Stack trace:
+[08-May-2020 00:27:14 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:14 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:14 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:27:14 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:27:14 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:27:14 UTC] PHP Stack trace:
+[08-May-2020 00:27:14 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:14 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:14 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:27:14 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:14 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:14 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:14 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:27:14 UTC] PHP Stack trace:
+[08-May-2020 00:27:14 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:14 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:66
+[08-May-2020 00:27:14 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[08-May-2020 00:27:14 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:27:14 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:27:14 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:14 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:14 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:14 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:14 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:57 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:27:57 UTC] PHP Stack trace:
+[08-May-2020 00:27:57 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:57 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:57 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:27:57 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:27:57 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:27:57 UTC] PHP Stack trace:
+[08-May-2020 00:27:57 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:57 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:57 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:27:57 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:57 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:57 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:57 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:27:57 UTC] PHP Stack trace:
+[08-May-2020 00:27:57 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:27:57 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:27:57 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:57 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:57 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:57 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:57 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:58 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:27:58 UTC] PHP Stack trace:
+[08-May-2020 00:27:58 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:58 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:58 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:27:58 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:27:58 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:27:58 UTC] PHP Stack trace:
+[08-May-2020 00:27:58 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:27:58 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:27:58 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:27:58 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:58 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:58 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:58 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:27:58 UTC] PHP Stack trace:
+[08-May-2020 00:27:58 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:27:58 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:27:58 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:27:58 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:27:58 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:27:58 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:27:58 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:28:00 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:28:00 UTC] PHP Stack trace:
+[08-May-2020 00:28:00 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:28:00 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:28:00 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:28:00 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:28:00 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:28:00 UTC] PHP Stack trace:
+[08-May-2020 00:28:00 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:28:00 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:28:00 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:28:00 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:28:00 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:28:00 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:28:00 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:28:00 UTC] PHP Stack trace:
+[08-May-2020 00:28:00 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:28:00 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:28:00 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:28:00 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:28:00 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:28:00 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:28:00 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:28:33 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:28:33 UTC] PHP Stack trace:
+[08-May-2020 00:28:33 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:28:33 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:28:33 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:28:33 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:28:33 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:28:33 UTC] PHP Stack trace:
+[08-May-2020 00:28:33 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:28:33 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:28:33 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:28:33 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:28:33 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:28:33 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:28:33 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:28:33 UTC] PHP Stack trace:
+[08-May-2020 00:28:33 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:28:33 UTC] PHP   2. wp_die() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:66
+[08-May-2020 00:28:33 UTC] PHP   3. _default_wp_die_handler() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:3348
+[08-May-2020 00:28:33 UTC] PHP   4. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:28:33 UTC] PHP   5. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:28:33 UTC] PHP   6. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:28:33 UTC] PHP   7. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:28:33 UTC] PHP   8. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:28:33 UTC] PHP   9. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:28:33 UTC] PHP  10. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:46:52 UTC] PHP Warning:  Use of undefined constant WPE_CLUSTER_ID - assumed 'WPE_CLUSTER_ID' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 14
+[08-May-2020 00:46:52 UTC] PHP Stack trace:
+[08-May-2020 00:46:52 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:46:52 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:46:52 UTC] PHP   3. include_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:302
+[08-May-2020 00:46:52 UTC] PHP   4. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/mu-plugin.php:19
+[08-May-2020 00:46:52 UTC] PHP Warning:  Use of undefined constant PWP_NAME - assumed 'PWP_NAME' (this will throw an Error in a future version of PHP) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/wpe-sec.php on line 63
+[08-May-2020 00:46:52 UTC] PHP Stack trace:
+[08-May-2020 00:46:52 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:0
+[08-May-2020 00:46:52 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-admin/setup-config.php:33
+[08-May-2020 00:46:52 UTC] PHP   3. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-settings.php:540
+[08-May-2020 00:46:52 UTC] PHP   4. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:46:52 UTC] PHP   5. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:46:52 UTC] PHP   6. wpesec_encourage_tls() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:46:52 UTC] PHP Warning:  Invalid argument supplied for foreach() in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/mu-plugins/wpengine-common/plugin.php on line 1070
+[08-May-2020 00:46:52 UTC] PHP Stack trace:
+[08-May-2020 00:46:52 UTC] PHP   1. shutdown_action_hook() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:0
+[08-May-2020 00:46:52 UTC] PHP   2. do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/load.php:960
+[08-May-2020 00:46:52 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:478
+[08-May-2020 00:46:52 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[08-May-2020 00:46:52 UTC] PHP   5. wp_ob_end_flush_all() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[08-May-2020 00:46:52 UTC] PHP   6. ob_end_flush() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609
+[08-May-2020 00:46:52 UTC] PHP   7. WpeCommon->filter_html_output() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/functions.php:4609

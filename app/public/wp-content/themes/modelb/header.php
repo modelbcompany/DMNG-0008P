@@ -32,7 +32,11 @@
 
 		
 		<?php wp_head(); ?>
-		<link rel="stylesheet" href="https://use.typekit.net/qiq7rtp.css">
+
+	<!-- Typekit-->
+		<script type="text/javascript" src="//fast.fonts.net/jsapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.js"></script>
+		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css"/>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
 		<?php get_template_part( 'style'); ?>
  
 		
@@ -50,8 +54,19 @@
 	
 		    <div class="main small-12 large-12 medium-12 cell" role="main">
 					
-		
-		 <?php the_field('header_layout', 'option');?>
+<script src="https://textus.rentcafe.com/js/TextUsWidget.js" id="myScript" DNIS="XXXXXXXXXX" ></script>
+			<a href="https://woodmontstage.wpengine.com/"><img src="/wp-content/uploads/2020/04/8001-woodmont-logo.png" id="logo" /></a>
+				<div id="property-info"><p>8001 WOODMONT AVENUE | BETHESDA, MD 20814 | 240.333.7649</p></div>
+			<div id="nav-menu"><div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-464"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/onlineleasing/1221-van/oleapplication.aspx?stepname=RentalOptions&amp;myOlePropertyId=568854&amp;FloorPlanID=2275959&amp;UnitID=10944781&amp;header=1">APPLY NOW</a></li>
+<li id="menu-item-465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-465"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/residentservices/1221-van/userlogin.aspx">RESIDENT LOGIN</a></li>
+<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 "><?php echo do_shortcode(' [sg_popup id="638" event="click"]Schedule a Tour[/sg_popup]'); ?> </li>
+
+
+
+</ul></div></div>
+			</div>
+			
+				
 	 	
-			</div>	</div>	</div>		</div> 
+			</div>	</div>	</div>		
 					

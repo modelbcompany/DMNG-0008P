@@ -1,18 +1,123 @@
-@media only screen and (max-width: 768px) {
-	
-	/* STRUCTURE */
-	.three-quarter-height 							{ height:100vh !important}
-	.quarter-height 								{ height:auto !important}
- 	.swap 											{ flex-direction:column-reverse}	
-	.vc_row.vc_column-gap-35>.vc_column_container 	{ padding: 15px 10px;}
+@media only screen and (max-width: 1200px) {
+	#property-info, #nav-menu {visibility:hidden; display:none}
+}
 
+
+@media only screen and (max-width: 1280px) {
+
+
+#footer 					{ text-align: center; padding-bottom:40px}
+#footer .vc_col-sm-4 		{ width: 100%;}
+#footer .vc_col-sm-8 		{ width: 100%;}
+#footer .vc_col-sm-6 		{ width: 100%;}
+#footer .developer-logos 	{ float: none; display: block; margin:20px auto 0 auto}
+#footer .wpb_single_image.vc_align_left {  text-align: center;}
+#footer .wpb_single_image.vc_align_right {text-align: center; margin:  auto}
+#footer-logo {  margin: 0 auto 20px auto !important;}
+}
+
+@media only screen and (max-width: 980px) {
+	#footer p {font-size:12px !important}
+	.image-container {height:400px}
+	
+	#force-height {min-height:auto}
+	.shorten-box {
+    max-width: 100%;
+}
+		.community {
+    min-height: 750px !important;
+    margin: 0px 20px 20px 20px !important;
+    padding-top: 0px !important;
+}
+ 	.vc_col-sm-6,.vc_col-sm-4, .vc_col-sm-8 {
+    width: 100% !important;
+}
+.shorten-col 														{ position:relative; padding:0 40px 40px 40px !important; top:0;}
+
+}
  
 
+
+@media only screen and (max-width: 800px) {
 	
-	/* TYPOGRAPHY */	
-	#hero h1										{ font-size: 3.25rem !important; line-height: 3.25rem !important;  margin: 0 0 20px 0; padding: 0 }
+#logo {
+    max-width: 70px;
+    
+    top: 20px;
+ 
+}
+
+
+.sfm-navicon-button {
+    left: 10px !important;
+   top: 25px  !important;
+}
+
+#header {    height: 75px; position:fixed}
+
+
+#page-image {
+    height: 450px;
+    margin-top: 75px;
+}
+	
+
+
+	
+	#hero h1										{font-size: 2.25rem !important;
+    line-height: 2.25rem !important;
+    margin: 0 0 20px 0;
+    padding: 10px;}
+	#hero h2										{font-size: 1.25rem !important;
+    line-height: 1.25rem !important;
+  
+    padding: 10px;}
+	
 	h1 												{ font-size: 1.75rem !important; line-height: 2rem !important;  margin: 0 0 20px 0; padding: 0 0 30px;}
 	h2, .banner h2									{ font-size: 1.5rem !important; line-height:1.75rem !important; margin: 0 0 20px 0; padding: 0 0 30px;}
 	h3												{ font-size: 1.25rem !important; line-height:1.5rem !important}
 	p												{ font-size: 1rem !important; line-height:1.25rem !important}
+	.subpage h2 {margin:0}
+	h2 {font-size: 2rem !important;line-height: 2.2rem !important;}
+ 	.textbox-placement {   padding-top: 10%;}
+	.textbox-top {
+    margin-top: 0;
 }
+	.bottom-align-left 													{ position: relative;bottom:0; left:0;}
+.bottom-align-right 												{ position: relative; bottom:0; left:0;}
+
+}
+
+/*MAP MOBILE*/
+ 
+@media (max-width: 1024px){
+	.walk-score {
+
+    width: 150PX;
+    height: 70PX;
+top:auto !important;
+    left: 30px !important;
+    bottom: 800px !important;
+    BACKGROUND-SIZE: contain;
+}
+.mpfy-tags-list {
+    background: url(/wp-content/uploads/2020/04/woodmont-marble-bg.jpg) repeat !important;
+    padding: 40px 50px 200px 50px !important;
+    height: 1080px !important;
+    width: 400px !important;
+    position: relative !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 40px 50px 40px 25px !important;
+}
+
+
+.mpfy-container * {
+
+    margin: 0 !important;
+}
+
+div#mpfy-canvas-0 {
+    margin: 0 !important;
+}
+	}

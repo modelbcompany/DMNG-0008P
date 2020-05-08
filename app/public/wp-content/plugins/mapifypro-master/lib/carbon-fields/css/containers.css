@@ -1,0 +1,78 @@
+body.no-js .mpfy-carbon-container { display: none; }
+
+#poststuff .mpfy-carbon-postbox .inside { padding: 0; margin: 0; }
+#poststuff .mpfy-carbon-separator h2 { margin: 0; }
+
+.mpfy-carbon-container { width: 100%; border-spacing: 0; }
+.mpfy-carbon-container td { padding: 10px; margin: 0; }
+.mpfy-carbon-container td label { font-weight: bold;  }
+
+.Mpfy_Carbon_Container_ThemeOptions th label,
+.Mpfy_Carbon_Container_CustomFields td label { display: block; }
+
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields td,
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields th { padding: 10px; border-bottom: 1px solid #e8e8e8; }
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields td.mceIframeContainer,
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields td.mceStatusbar { padding: 0; }
+
+.mpfy-carbon-container .mpfy-carbon-subcontainer, 
+.mpfy-carbon-container .mpfy-carbon-subcontainer table { width: 100%; border-spacing: 0; }
+
+.mpfy-carbon-container .mpfy-carbon-subcontainer { margin-top: 10px; border: 1px solid #E8E8E8; background: #FCFCFC; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer td { padding: 0; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer table th { width: 20%; text-align: left; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer table th,
+.mpfy-carbon-container .mpfy-carbon-subcontainer table td { padding: 10px; vertical-align: top; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer table > tr > td { border-bottom: 1px solid #E0E0E0; border-top: none; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer table.layout-list td { width: auto; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer p.alignright { margin-right: 20px; }
+
+.mpfy-carbon-container .mpfy-carbon-subcontainer .mpfy-carbon-actions td { padding: 15px 20px; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer .mpfy-carbon-actions select { width: auto; }
+
+.mpfy-carbon-container .mpfy-carbon-subcontainer .wp-editor-container table { width: auto; }
+.mpfy-carbon-container .mpfy-carbon-subcontainer .wp-editor-container td { width: auto; padding: 0; }
+
+.Mpfy_Carbon_Container_ThemeOptions { padding-right:0; width:auto; }
+
+.mpfy-carbon-container .wp-editor-tools { padding-left:0; }
+
+.mpfy-carbon-container .mpfy-carbon-field textarea { width:100%; }
+
+.mpfy-help-text { display: block; padding: 2px 0; color: #666; }
+
+.mpfy-carbon-container input.button { border-radius:3px;}
+.mpfy-carbon-container a.button { padding-left:8px; padding-right:8px; border-radius:3px;}
+
+.mpfy-carbon-container .mpfy-carbon-set-list input{ margin-right:5px;}
+.mpfy-carbon-container .mpfy-carbon-set-list p{ margin:0 0 3px 0;}
+
+.mpfy-carbon-Complex,
+.mpfy-carbon-Rich_Text { margin-bottom:2px;}
+
+
+.mpfy-carbon-container tr.mpfy-carbon-separator {}
+.mpfy-carbon-container tr.mpfy-carbon-separator td { padding:0; }
+.mpfy-carbon-container tr.mpfy-carbon-separator th { padding: 20px 0 0; }
+.mpfy-carbon-container tr.mpfy-carbon-separator h3 { font-weight: 400; font-size: 1.4em; }
+.mpfy-carbon-container tr.mpfy-carbon-separator .mpfy-help-text { padding:5px 10px;}
+
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields tr.mpfy-carbon-separator td { border:0; }
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields tr.mpfy-carbon-separator h3 { border: none; }
+.mpfy-carbon-container.Mpfy_Carbon_Container_CustomFields tr.mpfy-carbon-separator .mpfy-help-text { padding:5px 10px;}
+
+.mpfy-carbon-highlight { background: #ffebe8 !important; border: #cc0000 solid 1px !important; }
+
+.mpfy-carbon-widget-field-wrapper.mpfy-carbon-highlight { margin: 0 -10px; padding: 0 10px; }
+
+.mpfy-carbon-button, 
+.mpfy-carbon-button a { position: relative }
+.mpfy-carbon-button ul { position: absolute; display: none; top: 26px; left: 0; padding: 5px 0; margin: 0; background: white; border: 1px solid #aaa; box-shadow: 3px 3px 5px rgba(60, 60, 60, .3); z-index: 1; -webkit-border-bottom-right-radius: 3px; -webkit-border-bottom-left-radius: 3px; -moz-border-radius-bottomright: 3px; -moz-border-radius-bottomleft: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; }
+.mpfy-carbon-button ul li { position: relative; margin: 0; }
+.mpfy-carbon-button ul li a { display: block; padding: 5px 15px; line-height: 1.1em; text-decoration: none }
+.mpfy-carbon-button ul li a:hover { background-color: #eaeff5; color: #333; }
+
+.cl { font-size: 0; line-height: 0; text-indent: -4000px; clear: both; }
+
+.mpfy-carbon-group-row.minimized td.mpfy-carbon-drag-handle + td tr { display: none; }
+.mpfy-carbon-group-row.minimized td.mpfy-carbon-drag-handle + td tr:first-child { display: table-row; }
