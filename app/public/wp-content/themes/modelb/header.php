@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the header
  *
@@ -9,64 +10,100 @@
 
 <!doctype html>
 
-  <html class="no-js"  <?php language_attributes(); ?>>
+<html class="no-js" <?php language_attributes(); ?>>
 
-	<head>
-		<meta charset="utf-8">
-		
-		<!-- Force IE to use the latest rendering engine available -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<head>
+  <meta charset="utf-8">
 
-		<!-- Mobile Meta -->
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta class="foundation-mq">
-		
-		<!-- If Site Icon isn't set in customizer -->
-		<?php if ( ! function_exists( 'has_site_icon' ) || ! has_site_icon() ) { ?>
-			<!-- Icons & Favicons -->
-			<link rel="icon" href="<?php the_field('favicon', 'option');?>">
-			<link href="<?php the_field('favicon', 'option');?>" rel="apple-touch-icon" />	
-	    <?php } ?>
+  <!-- Force IE to use the latest rendering engine available -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+  <!-- Mobile Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta class="foundation-mq">
 
-		
-		<?php wp_head(); ?>
+  <!-- If Site Icon isn't set in customizer -->
+  <?php if (!function_exists('has_site_icon') || !has_site_icon()) { ?>
+    <!-- Icons & Favicons -->
+    <link rel="icon" href="<?php the_field('favicon', 'option'); ?>">
+    <link href="<?php the_field('favicon', 'option'); ?>" rel="apple-touch-icon" />
+  <?php } ?>
 
-	<!-- Typekit-->
-		<script type="text/javascript" src="//fast.fonts.net/jsapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.js"></script>
-		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css"/>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
-		<?php get_template_part( 'style'); ?>
- 
-		
-	  </head>
-			
-	<body <?php body_class(); ?>>
-
- 		<div id="header">		
-				
-		
-				 
-		<div class="row">
-			
-		<div class="inner-content grid-x grid-margin-x grid-padding-x">
-	
-		    <div class="main small-12 large-12 medium-12 cell" role="main">
-					
-<script src="https://textus.rentcafe.com/js/TextUsWidget.js" id="myScript" DNIS="XXXXXXXXXX" ></script>
-			<a href="https://woodmontstage.wpengine.com/"><img src="/wp-content/uploads/2020/04/8001-woodmont-logo.png" id="logo" /></a>
-				<div id="property-info"><p>8001 WOODMONT AVENUE | BETHESDA, MD 20814 | 240.333.7649</p></div>
-			<div id="nav-menu"><div class="menu-main-container"><ul id="menu-main" class="menu"><li id="menu-item-464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-464"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/onlineleasing/1221-van/oleapplication.aspx?stepname=RentalOptions&amp;myOlePropertyId=568854&amp;FloorPlanID=2275959&amp;UnitID=10944781&amp;header=1">APPLY NOW</a></li>
-<li id="menu-item-465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-465"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/residentservices/1221-van/userlogin.aspx">RESIDENT LOGIN</a></li>
-<li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 "><?php echo do_shortcode(' [sg_popup id="638" event="click"]Schedule a Tour[/sg_popup]'); ?> </li>
+  <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 
+  <?php wp_head(); ?>
 
-</ul></div></div>
-			</div>
-			
-				
-	 	
-			</div>	</div>	</div>		
-					
+  <!-- Typekit-->
+  <script type="text/javascript" src="//fast.fonts.net/jsapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.js"></script>
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+  <?php get_template_part('style'); ?>
+
+
+  <!-- START WOODMONTJS LIBRARY DEPENDENCIES  -->
+
+  <!-- Normalize -->
+  <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
+
+  <!-- Material Icons (Outlined Theme) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+
+  <!-- Font Awesome Free -->
+  <script src="https://kit.fontawesome.com/51f4b7d93a.js" crossorigin="anonymous"></script>
+
+  <!-- IBM Plex Mono -->
+  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" />
+
+  <!-- Swiss 721 -->
+  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" />
+
+  <!-- React -->
+  <script crossorigin src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
+
+  <!-- Babel -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+  <!-- WoodmontJS Library -->
+  <script src="/wp-content/themes/modelb/assets/js/lib/woodmont.js">
+  </script>
+
+  <!-- END WOODMONTJS LIBRARY DEPENDENCIES  -->
+</head>
+
+<body <?php body_class(); ?>>
+
+  <div id="header">
+
+
+
+    <div class="row">
+
+      <div class="inner-content grid-x grid-margin-x grid-padding-x">
+
+        <div class="main small-12 large-12 medium-12 cell" role="main">
+
+          <script src="https://textus.rentcafe.com/js/TextUsWidget.js" id="myScript" DNIS="XXXXXXXXXX"></script>
+          <a href="https://woodmontstage.wpengine.com/"><img src="/wp-content/uploads/2020/04/8001-woodmont-logo.png" id="logo" /></a>
+          <div id="property-info">
+            <p>8001 WOODMONT AVENUE | BETHESDA, MD 20814 | 240.333.7649</p>
+          </div>
+          <div id="nav-menu">
+            <div class="menu-main-container">
+              <ul id="menu-main" class="menu">
+                <li id="menu-item-464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-464"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/onlineleasing/1221-van/oleapplication.aspx?stepname=RentalOptions&amp;myOlePropertyId=568854&amp;FloorPlanID=2275959&amp;UnitID=10944781&amp;header=1">APPLY NOW</a></li>
+                <li id="menu-item-465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-465"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/residentservices/1221-van/userlogin.aspx">RESIDENT LOGIN</a></li>
+                <li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 "><?php echo do_shortcode(' [sg_popup id="638" event="click"]Schedule a Tour[/sg_popup]'); ?> </li>
+
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>

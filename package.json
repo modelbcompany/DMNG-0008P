@@ -22,7 +22,10 @@
   "main": "",
   "repository": "git://github.com/modelbcompany/DMNG-0008P.git",
   "scripts": {
-    "lint": "",
+    "preinstall": "rm -rf node_modules/",
+    "predev": "npm unlink --no-save @modelbcompany/woodmontjs",
+    "dev": "npm link @modelbcompany/woodmontjs",
+    "lint": "eslint ./app/public/wp-content/themes/modelb/assets/js/* --fix --no-ignore",
     "test": ""
   },
   "dependencies": {},
