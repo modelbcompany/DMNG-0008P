@@ -144,13 +144,16 @@ p {
 u {
   color: #041e42;
 }
+
 a {
   text-decoration: underline;
   color: #041e42;
 }
-a:hover {
+
+a:not(.floorplan-link):hover {
   color: #6f767b !important;
 }
+
 strong {
   font-family: 'Swiss_721 W01 Bold';
 }
