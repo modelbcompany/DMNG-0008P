@@ -4,7 +4,6 @@
  * The template for displaying the header
  *
  * This is the template that displays all of the <head> section
- *
  */
 ?>
 
@@ -31,17 +30,17 @@
 
   <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
+  <!-- BEGIN WORDPRESS HEAD -->
 
   <?php wp_head(); ?>
 
-  <!-- Typekit-->
-  <script type="text/javascript" src="//fast.fonts.net/jsapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.js"></script>
-  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+  <!-- END WORDPRESS HEAD -->
+
+  <!-- BEGIN TEMPLATE STYLES -->
+
   <?php get_template_part('style'); ?>
 
-
-  <!-- START WOODMONTJS LIBRARY DEPENDENCIES  -->
+  <!-- END TEMPLATE STYLES -->
 
   <!-- Normalize -->
   <link href="https://unpkg.com/@csstools/normalize.css" rel="stylesheet" />
@@ -52,31 +51,27 @@
   <!-- Font Awesome Free -->
   <script src="https://kit.fontawesome.com/51f4b7d93a.js" crossorigin="anonymous"></script>
 
-  <!-- IBM Plex Mono -->
-  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap" />
-
   <!-- Swiss 721 -->
   <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" />
 
+  <!-- IBM Plex Mono -->
+  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap" />
+
+  <!-- WoodmontJS -->
+  <script src="https://woodmontjs.modelb.now.sh/scripts/woodmont.min.js">
+  </script>
+
   <!-- React -->
-  <script crossorigin src="https://unpkg.com/react@16.13.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js">
+  </script>
 
   <!-- Babel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
-
-  <!-- WoodmontJS Library -->
-  <script src="/wp-content/themes/modelb/assets/js/lib/woodmont.js">
-  </script>
-
-  <!-- END WOODMONTJS LIBRARY DEPENDENCIES  -->
 </head>
 
 <body <?php body_class(); ?>>
 
-  <div id="header">
-
-
-
+  <header id="header">
     <div class="row">
 
       <div class="inner-content grid-x grid-margin-x grid-padding-x">
@@ -106,4 +101,4 @@
 
       </div>
     </div>
-  </div>
+  </header>

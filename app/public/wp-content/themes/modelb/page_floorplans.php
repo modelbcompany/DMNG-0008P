@@ -2,6 +2,17 @@
 
 /** Template Name: Floorplans */
 
+// RENTCafé API Credentials
+$RENT_CAFE_AUTH = json_encode((object) array(
+  'apiToken' => get_field('apiToken'),
+  'companyCode' => get_field('companyCode'),
+  'marketingAPIKey' => get_field('marketingAPIKey'),
+  'propertyId' => get_field('propertyId')
+));
+
+// <FloorplansTemplate /> container ID
+$FLOORPLANS_TEMPLATE_CONTAINER_ID = 'adt-floorplans';
+
 get_header();
 ?>
 
@@ -13,15 +24,6 @@ get_header();
   </header>
 <?php endif; ?>
 
-<script>
-  window.env = {
-    apiToken: '<?= the_field('apiToken') ?>',
-    companyCode: '<?= the_field('companyCode') ?>',
-    marketingAPIKey: '<?= the_field('marketingAPIKey') ?>',
-    propertyId: '<?= the_field('propertyId') ?>'
-  }
-</script>
-
 <!-- Page Title -->
 <div id="page-title">
   <h1><?php the_title() ?></h1>
@@ -29,7 +31,6 @@ get_header();
 
 <!-- Page Content -->
 <div id="content" class="subpage">
-
   <div class="row">
     <div class="inner-content grid-x grid-margin-x grid-padding-x">
       <main class="main small-12 large-12 medium-12 cell" role="main">
@@ -47,18 +48,16 @@ get_header();
   </div>
 </div>
 
-
 <!-- REACT -->
-<?php $comp_root = 'adt-floorplans' ?>
-<div id="<?= $comp_root ?>"></div>
+<div id="<?= $FLOORPLANS_TEMPLATE_CONTAINER_ID ?>"></div>
 
 <script type='text/babel'>
-  const {  
-    WoodmontComponents: { FloorplansTemplate }, ReactDOM 
-  } = WoodmontJS
+  const { WoodmontComponents: { FloorplansTemplate }, ReactDOM } = WoodmontJS
 
-  const template_container = document.getElementById('<?= $comp_root ?>')
-  ReactDOM.render(<FloorplansTemplate />, template_container)
+  ReactDOM.render(
+    <FloorplansTemplate auth={JSON.parse('<?= $RENT_CAFE_AUTH ?>')} />, 
+    document.getElementById('<?= $FLOORPLANS_TEMPLATE_CONTAINER_ID ?>')
+  )
 </script>
 <!-- END REACT -->
 
@@ -76,5 +75,6 @@ get_header();
     </div>
   <?php endif; ?>
 </div>
+
 <!-- Footer -->
 <?php get_footer(); ?>

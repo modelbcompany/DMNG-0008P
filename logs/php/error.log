@@ -63,3 +63,183 @@
 [08-May-2020 11:25:49 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Atomic Blocks - Gutenberg Blocks Collection","slug":"atomic-blocks/atomicblocks.php","ver":"2.8.1","sig":"v1:c2476be620b19a75c3d41da1d61d59568463ebce95cf25412738551039d989ed"}
 [08-May-2020 11:25:49 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"MapifyLite","slug":"mapifylite-master/mapify_lite.php","ver":"2.0.4","sig":"v1:aa6f5f28eaa0946a1e27a2dd0f85c9dc078624cf8b436ff894174963fed8b22d"}
 [08-May-2020 11:25:50 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Smart Slider 3 Pro","slug":"nextend-smart-slider3-pro/nextend-smart-slider3-pro.php","ver":"3.4.1","sig":"v1:bd526851cbfb930490f44e6d89321b2029520954958b9b367e228085b24d89af"}
+[09-May-2020 04:17:22 UTC] PHP Warning:  An unexpected error occurred. Something may be wrong with WordPress.org or this server&#8217;s configuration. If you continue to have problems, please try the <a href="https://wordpress.org/support/forums/">support forums</a>. (WordPress could not establish a secure connection to WordPress.org. Please contact your server administrator.) in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/update.php on line 162
+[09-May-2020 04:17:22 UTC] PHP Stack trace:
+[09-May-2020 04:17:22 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-cron.php:0
+[09-May-2020 04:17:22 UTC] PHP   2. do_action_ref_array() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-cron.php:138
+[09-May-2020 04:17:22 UTC] PHP   3. WP_Hook->do_action() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/plugin.php:544
+[09-May-2020 04:17:22 UTC] PHP   4. WP_Hook->apply_filters() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:311
+[09-May-2020 04:17:22 UTC] PHP   5. wp_version_check() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/class-wp-hook.php:287
+[09-May-2020 04:17:22 UTC] PHP   6. trigger_error() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/update.php:162
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-includes","slug":"wp-includes","ver":"5.4.1","sig":"v1:0c120654ab47967f8740004fc4fad85f3f059afb1db8b741fd8e12fc899e2cd1"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-admin","slug":"wp-admin","ver":"5.4.1","sig":"v1:ae10a150c52b79741104db5b1c6c6d957c340bf81e3d9a20f33ccd467e6c118d"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"theme","name":"Model B Template","slug":"modelb","ver":"3.5","sig":"v1:d8e854b5962f3fdab5105f5a61481fcdcd45982c609bb805d40034fc587bffdd"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"mu-plugin","name":"Local by Flywheel Live Link Helper","slug":"local-by-flywheel-live-link-helper.php","ver":"1.1","sig":"v1:4d649e96d9a75e6a80978d19266aabf6565c07e44416073cfd50a659b85b6e40"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"mu-plugin","name":"Force Strong Passwords - WPE Edition","slug":"slt-force-strong-passwords.php","ver":"1.6.4","sig":"v1:47cdb56f45d33c73a1a9ff15e35dd71ea72a79b728c1b5f608b7b84906bb9e70"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"mu-plugin","name":"WP Engine Seamless Login Plugin","slug":"wpe-wp-sign-on-plugin.php","ver":"1.5.4","sig":"v1:bdb3a6d246a1cb9265f2ec1785477ba84d8e7c4af6aa7af514c38829a38f5342"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"mu-plugin","name":"WP Engine Security Auditor","slug":"wpengine-security-auditor.php","ver":"1.0.8","sig":"v1:cd2e068d3967655c0e34da64c8789c7a4c0a94e931f328a00c4ccc857d3c3f28"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Advanced Custom Fields PRO","slug":"advanced-custom-fields-pro/acf.php","ver":"5.8.9","sig":"v1:cc125864b02c3822b17a63d77eb8bbdccff2aa75df26623f9d36d892bdb9dd2b"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Classic Editor","slug":"classic-editor/classic-editor.php","ver":"1.5","sig":"v1:8df1584d577e702b0751b47c394875a8ab9e40c1db5a56b22de2fd77f6a2e8f8"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Custom Post Type UI","slug":"custom-post-type-ui/custom-post-type-ui.php","ver":"1.7.4","sig":"v1:bb45d75100a2bb0b3b6db4c85b5c775ac6b8184c88a7853f42810893eaaca7b5"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Duplicate Page","slug":"duplicate-page/duplicatepage.php","ver":"4.2","sig":"v1:bd5bddd5f021b90b0208ca5d5cece53ec3ed916d850df5416040a2e710736861"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Easy Smooth Scroll Links","slug":"easy-smooth-scroll-links/index.php","ver":"2.2","sig":"v1:6529f5aa418d6e8eca5182fb7b3b7f35bc375db661659f84d5533d0b29f05d71"}
+[09-May-2020 17:16:56 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Easy Video Player","slug":"easy-video-player/easy-video-player.php","ver":"1.1.8","sig":"v1:f577083195d95e589e4713f071baaf3f22f37f47077612a117cd68fb2268ff18"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"WPBakery Page Builder","slug":"js_composer/js_composer.php","ver":"6.1","sig":"v1:362306c5dd5de6725dc0530da14b2139e0943429f4b4cb80ac81bde29e2a2049"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"MapifyPro","slug":"mapifypro-master/mapify_pro.php","ver":"3.2.6","sig":"v1:b27c8b65ccea4dfbe9605e8d09886c8ebce61e1e72da1a8163863ec4919b8635"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Menu Image","slug":"menu-image/menu-image.php","ver":"2.9.6","sig":"v1:b057891a95760ef69e2e71bf9cb8f1574d55f20d81832c235db48e18ee11192c"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"MetaSlider","slug":"ml-slider/ml-slider.php","ver":"3.16.4","sig":"v1:f99cbcd4842cb5008d8cd9fe1fa4324b3e71d1fe19fb702f4bb690d252ab685c"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Page Links To","slug":"page-links-to/page-links-to.php","ver":"3.3.3","sig":"v1:17890bf03848906bcd37ee360a1e82b30342d7ec8ef61e8cfece43732eb43b47"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Parallax Backgrounds for VC","slug":"parallax-backgrounds-for-vc/class-plugin.php","ver":"4.8","sig":"v1:2254d6b57bb06987b4d07bd8f4ff7f27f0b711418e228a1aa3be97fcd1994f58"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Popup Builder","slug":"popup-builder/popup-builder.php","ver":"3.66","sig":"v1:174b90d6111f02b3c21a9fc9d94053eff51143844eecf0be181b59c412952855"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Safe SVG","slug":"safe-svg/safe-svg.php","ver":"1.9.8","sig":"v1:daac0b2000be45d876dfa0206576d2ff4b00680ba239ab1748174f33fd8ac01b"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Visual Composer Background Sliders","slug":"sb-background-slider-vc-addon/sb-background-slider-vc-addon.php","ver":"1.6","sig":"v1:c0c02fa80ad516812945b0bb8d6ed8a7cbe5951c512e2d5430434fb6499015d6"}
+[09-May-2020 17:16:57 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Superfly Menu","slug":"superfly-menu/main.php","ver":"5.0.7","sig":"v1:bff3c27d15a1d575221e857ac36fe6a4754f7ac847ed4e572d675806a34b9834"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Theme Editor","slug":"theme-editor/theme_editor.php","ver":"2.3","sig":"v1:f14be548549e62ed8eec4395afe9ccea4aecf6edf7a0eba42b253f41c495849a"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"Yoast SEO","slug":"wordpress-seo/wp-seo.php","ver":"14.0.4","sig":"v1:9b49a94a4f89bc5ad6ec0c0e50174b2316132cf574df63921724f8e0695d186f"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"active-plugin","name":"WP ACF-VC Bridge","slug":"wp-acf-vc-bridge/wp-acf-vc-bridge.php","ver":"1.5.19","sig":"v1:71c632414bf46d40bec1d52ab90b24f1c48a2820b06a292a2773a81619e0ee64"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Akismet Anti-Spam","slug":"akismet/akismet.php","ver":"4.1.5","sig":"v1:3f2f60f54aa28ea16b3ab56b6b172cddd5bb941e44d0f2eaa3600a6a9a94f1bf"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Atomic Blocks - Gutenberg Blocks Collection","slug":"atomic-blocks/atomicblocks.php","ver":"2.8.1","sig":"v1:c2476be620b19a75c3d41da1d61d59568463ebce95cf25412738551039d989ed"}
+[09-May-2020 17:16:58 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"MapifyLite","slug":"mapifylite-master/mapify_lite.php","ver":"2.0.4","sig":"v1:aa6f5f28eaa0946a1e27a2dd0f85c9dc078624cf8b436ff894174963fed8b22d"}
+[09-May-2020 17:16:59 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Smart Slider 3 Pro","slug":"nextend-smart-slider3-pro/nextend-smart-slider3-pro.php","ver":"3.4.1","sig":"v1:bd526851cbfb930490f44e6d89321b2029520954958b9b367e228085b24d89af"}
+[09-May-2020 21:46:11 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-includes","slug":"wp-includes","ver":"5.4.1","sig":"v1:0c120654ab47967f8740004fc4fad85f3f059afb1db8b741fd8e12fc899e2cd1"}
+[09-May-2020 21:46:11 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-admin","slug":"wp-admin","ver":"5.4.1","sig":"v1:ae10a150c52b79741104db5b1c6c6d957c340bf81e3d9a20f33ccd467e6c118d"}
+[09-May-2020 23:30:14 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:30:14 UTC] PHP Stack trace:
+[09-May-2020 23:30:14 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:30:14 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:30:14 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:30:14 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:30:14 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:30:14 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:30:14 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:30:14 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:30:39 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:30:39 UTC] PHP Stack trace:
+[09-May-2020 23:30:39 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:30:39 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:30:39 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:30:39 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:30:39 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:30:39 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:30:39 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:30:39 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:30:54 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:30:54 UTC] PHP Stack trace:
+[09-May-2020 23:30:54 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:30:54 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:30:54 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:30:54 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:30:54 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:30:54 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:30:54 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:30:54 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:31:28 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:31:28 UTC] PHP Stack trace:
+[09-May-2020 23:31:28 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:31:28 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:31:28 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:31:28 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:31:28 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:31:28 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:31:28 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:31:28 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:32:09 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:32:09 UTC] PHP Stack trace:
+[09-May-2020 23:32:09 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:32:09 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:32:09 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:32:09 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:32:09 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:32:09 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:32:09 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:32:09 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:32:50 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:32:50 UTC] PHP Stack trace:
+[09-May-2020 23:32:50 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:32:50 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:32:50 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:32:50 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:32:50 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:32:50 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:32:50 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:32:50 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:33:27 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:33:27 UTC] PHP Stack trace:
+[09-May-2020 23:33:27 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:33:27 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:33:27 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:33:27 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:33:27 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:33:27 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:33:27 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:33:27 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:33:44 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 66
+[09-May-2020 23:33:44 UTC] PHP Stack trace:
+[09-May-2020 23:33:44 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:33:44 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:33:44 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:33:44 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:33:44 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:33:44 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:33:44 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:33:44 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:34:11 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 68
+[09-May-2020 23:34:11 UTC] PHP Stack trace:
+[09-May-2020 23:34:11 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:34:11 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:34:11 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:34:11 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:34:11 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:34:11 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:34:11 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:34:11 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:34:30 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 68
+[09-May-2020 23:34:30 UTC] PHP Stack trace:
+[09-May-2020 23:34:30 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:34:30 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:34:30 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:34:30 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:34:30 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:34:30 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:34:30 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:34:30 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:35:14 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/header.php on line 68
+[09-May-2020 23:35:14 UTC] PHP Stack trace:
+[09-May-2020 23:35:14 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:35:14 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:35:14 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:35:14 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:35:14 UTC] PHP   5. get_header() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php:5
+[09-May-2020 23:35:14 UTC] PHP   6. locate_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/general-template.php:41
+[09-May-2020 23:35:14 UTC] PHP   7. load_template() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:672
+[09-May-2020 23:35:14 UTC] PHP   8. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template.php:723
+[09-May-2020 23:37:41 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php on line 8
+[09-May-2020 23:37:41 UTC] PHP Stack trace:
+[09-May-2020 23:37:41 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:37:41 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:37:41 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:37:41 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:38:34 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php on line 8
+[09-May-2020 23:38:34 UTC] PHP Stack trace:
+[09-May-2020 23:38:34 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:38:34 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:38:34 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:38:34 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:38:36 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php on line 8
+[09-May-2020 23:38:36 UTC] PHP Stack trace:
+[09-May-2020 23:38:36 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:38:36 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:38:36 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:38:36 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:38:38 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php on line 8
+[09-May-2020 23:38:38 UTC] PHP Stack trace:
+[09-May-2020 23:38:38 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:38:38 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:38:38 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:38:38 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
+[09-May-2020 23:39:17 UTC] PHP Warning:  Creating default object from empty value in /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-content/themes/modelb/page_floorplans.php on line 48
+[09-May-2020 23:39:17 UTC] PHP Stack trace:
+[09-May-2020 23:39:17 UTC] PHP   1. {main}() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:0
+[09-May-2020 23:39:17 UTC] PHP   2. require() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/index.php:17
+[09-May-2020 23:39:17 UTC] PHP   3. require_once() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-blog-header.php:19
+[09-May-2020 23:39:17 UTC] PHP   4. include() /Users/lex/Projects/Model B/DMNG/DMNG-0008P/app/public/wp-includes/template-loader.php:106
