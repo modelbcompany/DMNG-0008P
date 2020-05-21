@@ -206,13 +206,35 @@ Reference: [Configuring ESLint][2]
 
 ## Making Changes
 
-**Attention: This section is under construction.**
+### WordPress Engine
 
-Copy the snippet below to get your development environment setup:
+Skip the steps below if you've already cloned the repository and connected to
+WordPress Engine.
 
-```bash
-git clone https://github.com/modelbcompany/DMNG-0008P.git
-```
+1. Copy the snippet below to get your development environment setup:
+
+  ```zsh
+  git clone https://github.com/modelbcompany/DMNG-0008P.git
+  ```
+
+1. Download [Local][1]
+
+  Once downloaded, log in with the Model B WPEngine credentials.
+
+  [1]: https://wpengine.com/local/
+
+1. Import the site
+
+  Under File, click "Import Site" and select the `DMNG-0008P` repository.
+
+1. Once imported, click "View Site."
+
+### Local Development
+
+1. With the site running, open the repository in the editor of your choice.
+
+2. Following the Git Workflow mentioned above, create a new branch and begin
+   making your changes.
 
 ## Creating a Pull Request
 
