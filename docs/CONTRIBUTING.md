@@ -20,11 +20,11 @@ own Git workflow, by updating your Global Git configuration (`~/.gitconfig`).
 
 Follow the steps below to begin setting up your development environment:
 
-1. Copy the [example Git configuration][1] below.
+1. Copy the [example Git configuration](./.gitconfig) below.
 
 2. Run `npm i -g npm-run-all`
 
-Reference: [Make .gitconfig Work for You][2]
+Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-gitconfig-work-for-you/)
 
 ```ini
 # General Aliases
@@ -108,14 +108,11 @@ Reference: [Make .gitconfig Work for You][2]
 
 ```
 
-[1]: ./.gitconfig
-[2]: http://michaelwales.com/articles/make-gitconfig-work-for-you/
-
 ## Styleguides
 
 ### Commit Messages
 
-This project follows [Emoji Log][1] standards when making commits.
+This project follows [Emoji Log](https://github.com/ahmadawais/Emoji-Log) standards when making commits.
 
 Commit messages should follow one of the following templates:
 
@@ -134,22 +131,17 @@ For example:
 
 This will produce the following commit: `📦 NEW: Add Gulp configuration`
 
-[1]: https://github.com/ahmadawais/Emoji-Log
-
 ### Workflow
 
 This project uses the Gitflow Workflow, a Git workflow design that was first
-published and made popular by [Vincent Driessen at nvie][1].
+published and made popular by [Vincent Driessen at nvie](https://nvie.com/posts/a-successful-git-branching-model/).
 
 Gitflow has several benefits:
 
 - Assigns specific roles to branches
 - Defines how branches should interact
 - Uses individual branches for preparing, maintaining, and recording releases
-- Leverages all benefits of [Feature Branch Workflow][2]
-
-[1]: https://nvie.com/posts/a-successful-git-branching-model/
-[2]: https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow
+- Leverages all benefits of [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 #### Branch Naming Convention
 
@@ -164,7 +156,7 @@ For example:
 
 will create a new branch titled `feature/ld/dev-env-setup`
 
-**Note**: The line above uses the `b` alias from [the example global Git configuration][1].
+**Note**: The line above uses the `b` alias from [the example global Git configuration](./.gitconfig).
 
 If using the `git flow` on the command line, the following should be added the
 following to your Global Git configuration as well:
@@ -180,8 +172,6 @@ following to your Global Git configuration as well:
 
 where `$INITIALS` are your own.
 
-[1]: ./.gitconfig
-
 ### JavaScript Style
 
 - **2 spaces** – for indentation
@@ -192,17 +182,14 @@ where `$INITIALS` are your own.
 - **Space after keywords** `if (condition) { ... }`
 - Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
 
-For a detailed overview of our JavaScript style, visit [StandardJS][1].
+For a detailed overview of our JavaScript style, visit [StandardJS](https://standardjs.com).
 You'll find not only an overview of Standard Style, but a list of editor plugins
 as well.
 
 To configure the linting options for this project, make changes to
 `.eslintrc.json` and `.eslintignore` in the project root.
 
-Reference: [Configuring ESLint][2]
-
-[1]: https://standardjs.com
-[2]: https://eslint.org/docs/user-guide/configuring
+Reference: [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
 
 ## Making Changes
 
@@ -245,9 +232,7 @@ pr as "bug" and "help wanted."
 
 ### Submit for Review
 
-- Use [**this template**][1]
+- Use [**this template**](./pull_request_template.md)
 - Label your pull request as `pull request` and `needs review`
 - Prefix your pull request title with `PR  -`
 - Assign the task to yourself and the appropriate reviewer
-
-[1]: ./pull_request_template.md
