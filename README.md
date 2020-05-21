@@ -7,32 +7,5 @@ DMNG-0008P (Woodmont Landing Page)
 
 ## Overview
 
-[Getting Started](#getting-started)  
-[Usage](#usage)  
 [Contributing](docs/CONTRIBUTING.md)  
 [Deployment](docs/DEPLOYMENT.md)  
-[Built With](#built-with)  
-
-## Getting Started
-
-**Attention: This section is under construction.**
-
-## Usage
-
-**Attention: This section is under construction.**
-
-### Development Environment
-
-**Attention: This section is under construction.**
-
-Copy the snippet below to get your development environment setup:
-
-```bash
-git clone https://github.com/modelbcompany/DMNG-0008P.git
-npm install
-npm run dev
-```
-
-## Built With
-
-**Attention: This section is under construction.**
