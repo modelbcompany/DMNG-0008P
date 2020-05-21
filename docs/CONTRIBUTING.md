@@ -195,34 +195,28 @@ Reference: [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
 
 ### WordPress Engine
 
-Skip the steps below if you've already cloned the repository and connected to
-WordPress Engine.
-
-1. Copy the snippet below to get your development environment setup:
-
-  ```zsh
-  git clone https://github.com/modelbcompany/DMNG-0008P.git
-  ```
-
-1. Retreive the `wp-config.php` file for this project and place it in the
-   `app/public` directory.
-
-2. Download [Local](https://wpengine.com/local/)
+1. Download [Local](https://wpengine.com/local/)
 
    Once downloaded, log in with the Model B WPEngine credentials.
 
-3. Import the site
-
-  Under File, click "Import Site" and select the `DMNG-0008P` repository.
+1. Clone the Woodmont Landing Page site from WPEngine.
 
 1. Once imported, click "View Site."
 
 ### Local Development
 
-1. With the site running, open the repository in the editor of your choice.
+1. Run the following command to connect your environment with the GitHub repository:
 
-2. Following the Git Workflow mentioned above, create a new branch and begin
-   making your changes.
+  ```zsh
+  git init
+  git remote add origin https://github.com/modelbcompany/DMNG-0008P.git
+  ```
+
+1. Following the standards mentioned above, create a new branch.
+
+1. Run the following command: `git push -u origin <BRANCH_NAME>`
+  
+1. With the site running, begin making your changes.
 
 ## Creating a Pull Request
 
