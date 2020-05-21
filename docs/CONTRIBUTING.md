@@ -217,6 +217,9 @@ WordPress Engine.
   git clone https://github.com/modelbcompany/DMNG-0008P.git
   ```
 
+1. Retreive the `wp-config.php` file for this project and place it in the
+   `app/public` directory.
+
 1. Download [Local][1]
 
   Once downloaded, log in with the Model B WPEngine credentials.
