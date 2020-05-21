@@ -220,13 +220,11 @@ WordPress Engine.
 1. Retreive the `wp-config.php` file for this project and place it in the
    `app/public` directory.
 
-1. Download [Local][1]
+2. Download [Local](https://wpengine.com/local/)
 
-  Once downloaded, log in with the Model B WPEngine credentials.
+   Once downloaded, log in with the Model B WPEngine credentials.
 
-  [1]: https://wpengine.com/local/
-
-1. Import the site
+3. Import the site
 
   Under File, click "Import Site" and select the `DMNG-0008P` repository.
 

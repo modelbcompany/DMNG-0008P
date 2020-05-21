@@ -9,12 +9,14 @@ Below you'll find instructions on how to deploy to WordPress Engine.
 
 ## Prerequisites
 
-**Attention: This section is under construction.**
-
 1. **Review the [Contributing Guide](CONTRIBUTING.md)**
 
 [1]: ./CONTRIBUTING.md
 
 ## WordPress Engine
 
-**Attention: This section is under construction.**
+1. Open the Local app.
+
+1. In the bottom right corner, find the "Push to WPEngine" button.
+
+1. Choose the environment you'd like to push to.
