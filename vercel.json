@@ -2,7 +2,7 @@
   "version": 2,
   "github": {
     "autoAlias": true,
-    "enabled": false,
+    "enabled": true,
     "silent": false
   },
   "scope": "modelb",
