@@ -12,6 +12,11 @@
       "source": "/repo",
       "destination": "https://github.com/modelbcompany/DMNG-0008P",
       "permanent": true
+    },
+    {
+      "source": "/usage",
+      "destination": "https://woodmontdev.wpengine.com/",
+      "permanent": true
     }
   ],
   "rewrites": [
