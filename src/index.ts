@@ -4,7 +4,7 @@ import * as Utilities from './utils'
 
 /**
  * @file Library Entry Point
- * @author Lexus Drumgold <lex@flexdevelopment.llc>
+ * @author Lexus Drumgold <lexus.drumgold@modelb.com>
  */
 
 export * from './declarations'
