@@ -1,8 +1,8 @@
-# 🚧 DMNG-0008P (Woodmont Landing Page)
+# 🚧 [DMNG-0008P] Woodmont
 
 [WordPress][8] site, [React][3] component library, and
 [Serverless API](https://vercel.com/docs/v2/serverless-functions/introduction)
-for the Woodmont Landing Page
+for the Woodmont Landing Page project
 
 [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/non-flat-round.svg)](https://github.com/ahmadawais/Emoji-Log/)
 [![TypeScript](https://badgen.net/badge/-/typescript?icon=typescript&label)](https://badgen.net/badge/-/typescript?icon=typescript&label)

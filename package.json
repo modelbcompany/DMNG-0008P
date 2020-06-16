@@ -1,18 +1,16 @@
 {
   "name": "@modelbcompany/woodmont",
-  "description": "WordPress site, React component, and Serverless API for the Woodmont Landing Page",
+  "description": "[DMNG-0008P] WordPress site, React component library, and Serverless API for the Woodmont Landing Page project.",
   "keywords": [
     "component library",
-    "lerna",
     "microbundle",
-    "monorepo",
-    "nextjs",
     "react",
     "sass",
+    "serverless functions",
     "storybook",
     "typescript",
     "vercel",
-    "web app",
+    "wordpress",
     "yarn"
   ],
   "homepage": "https://woodmontdev.wpengine.com",
