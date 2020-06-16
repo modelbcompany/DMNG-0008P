@@ -6,6 +6,7 @@ docs
 
 # WordPress directories
 app
+!app/public/assets
 conf
 logs
 
