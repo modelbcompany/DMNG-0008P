@@ -1,0 +1,129 @@
+/// ----------------------------------------------------------------------------
+/// Misc. app mixins
+/// @group mixins-base
+/// ----------------------------------------------------------------------------
+
+/// Wrapper for animation property
+/// @param {String} $name - animation-name
+/// @param {Number} $duration [1.25s] - animation-duration
+/// @param {String} $timing [ease] - animation-timing-function
+/// @param {Number} $delay [0s] - animation-delay
+@mixin animation($name, $duration: 1.25s, $timing: ease, $delay: 0s) {
+  animation: $name $duration $timing $delay;
+}
+
+/// Event wrapper for &:hover, &:active, &:focus
+/// @param {Bool} $self [false] - Whether or not to include current selector
+@mixin event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+
+      @content;
+    }
+  }
+}
+
+/// Turns an element into a circle shape
+/// @require {function} size
+/// @require {mixin} size
+/// @param {Number} $size [$one-dozen * 2] Circle size
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-circle($size: $one-dozen * 2, $important: false) {
+  $circle-size: size($size);
+
+  @include size($circle-size, $circle-size, $important, $important);
+
+  border-radius: 50%;
+  min-height: $circle-size;
+  min-width: $circle-size;
+}
+
+/// Remove the content from before or after an element
+/// @param {String} $pos [after] - Position to remove content
+@mixin no-content($pos: after) {
+  &::#{$pos} {
+    content: none;
+  }
+}
+
+/// Mixin for cross-browser opacity (IE 8).
+/// Clamps the value between 0 and 1.
+/// @require {function} clamp
+/// @param {Number} $opacity - Opacity level, between 0 and 1
+@mixin opacity($opacity) {
+  opacity: clamp($opacity, 0, 1);
+}
+
+/// Style the element placeholder
+@mixin placeholder {
+  &::placeholder {
+    @content;
+  }
+}
+
+/// Adds a separator to an element
+/// @require {function} size
+/// @require {mixin} color
+/// @require {variable} $grey-600
+/// @param {Color} $color [$grey-600] Separator color
+/// @param {String} $content ['|'] - Separator content
+/// @param {Number} $margin [size($padding-default-lg / 3)] - Separator margin-left
+@mixin separator(
+  $color: $grey-600,
+  $content: '|',
+  $margin: size($padding-default-lg / 3)
+) {
+  &:not(:first-of-type) {
+    margin-left: $margin;
+  }
+
+  &::after {
+    @include color;
+
+    content: $content;
+    margin: 0 $margin;
+  }
+
+  @content;
+}
+
+/// Background image helper
+/// @require {function} image
+/// @param {String} $filename - Filename (including extension)
+/// @param {List} $pos [center center] - background-position
+/// @param {String} $repeat [no-repeat] - background-repeat
+/// @param {String} $size [cover] - background-size
+@mixin set-bkg-img(
+  $filename,
+  $pos: center center,
+  $repeat: no-repeat,
+  $size: cover
+) {
+  background-image: image('#{$filename}');
+  background-position: $pos;
+  background-repeat: $repeat;
+  background-size: $size;
+
+  @content;
+}
+
+/// Wrapper for transition property
+/// @param {String} $property [all] - transition-property
+/// @param {Number} $duration [.25s] - transition-duration
+/// @param {String} $timing [ease] - transition-timing
+/// @param {Number} $delay [0s] - transition-delay
+@mixin transition($property: all, $duration: 0.5s, $timing: ease, $delay: 0s) {
+  transition: $property $duration $timing $delay;
+}

@@ -1,0 +1,14 @@
+# Prettier Ignore
+# https://prettier.io/docs/en/ignore.html
+
+!.storybook/
+
+.vercel/
+
+build/
+conf/
+dist/
+pkg/
+public/
+
+package-lock.json

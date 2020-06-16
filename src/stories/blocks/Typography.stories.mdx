@@ -1,0 +1,52 @@
+import { Meta, Typeset } from '@storybook/addon-docs/blocks'
+import { FontFamilies, FontSizes, FontWeights } from 'storybook/config'
+
+<Meta title='Blocks/Typography' />
+
+export const getTypset = family => {
+  return Object.values(FontWeights).map(weight => {
+    return (
+      <Typeset
+        fontFamily={family}
+        fontSizes={Object.values(FontSizes)}
+        fontWeight={weight}
+      />
+    )
+  })
+}
+
+# 🚧 Typography
+
+Families: **TBD**
+
+<br />
+
+## Usage
+
+<br />
+
+### 🚧 HTML
+
+```html
+<!-- TODO: Insert snippet -->
+```
+
+### 🚧 Sass
+
+```scss
+// TODO: Insert snippet
+```
+
+## Families
+
+### Primary Font Family
+
+<!--
+<div>{getTypset(FontFamilies.Primary)}</div>
+-->
+
+### Secondary Font Family
+
+<!--
+<div>{getTypset(FontFamilies.Primary)}</div>
+-->

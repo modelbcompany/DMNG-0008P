@@ -1,0 +1,44 @@
+/// ----------------------------------------------------------------------------
+/// Typography helper classes
+/// ----------------------------------------------------------------------------
+
+// Makes text black
+.has-black-text,
+.is-black-text {
+  @include is-black-text;
+}
+
+// Center align text
+.has-center-aligned-text,
+.is-center-aligned-text {
+  @include is-center-aligned-text;
+}
+
+// Makes text uppercase
+.is-uppercase,
+.uppercase {
+  @include is-uppercase;
+}
+
+// Makes text white
+.has-white-text,
+.is-white-text {
+  @include is-white-text;
+}
+
+// Makes text white
+.has-white-text,
+.is-white-text {
+  @include is-white-text;
+}
+
+// Prevents a text element from breaking onto the next line
+.no-breaking {
+  @include no-breaking;
+}
+
+// Capitalize text
+.capitalize,
+.is-capitalized {
+  @include is-capitalized;
+}

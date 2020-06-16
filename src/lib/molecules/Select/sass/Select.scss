@@ -1,0 +1,76 @@
+/// ----------------------------------------------------------------------------
+/// Select variables, functions, mixins, placeholders, and styles
+/// @group Select
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: Select
+/// @require {function} size
+/// @require {mixin} height
+/// @require {mixin} text-color
+/// @require {mixin} width
+/// @require {variable} $border-style
+/// @require {variable} $border-width
+/// @require {variable} $full-width
+/// @require {variable} $input-border-color
+/// @require {variable} $input-placeholder-color
+/// @require {variable} $select-border
+%Select {
+  @include height($select-height, unset, none);
+
+  @include width($full-width);
+
+  .__control {
+    @include event {
+      border-color: $input-border-color !important;
+      box-shadow: none !important;
+    }
+
+    border: size($border-width) $border-style $input-border-color;
+    border-radius: 0;
+    min-height: unset;
+  }
+
+  .__indicators {
+    @include text-color($input-placeholder-color, important);
+  }
+
+  .__dropdown-indicator {
+    padding-bottom: 0;
+    padding-top: 0;
+
+    svg {
+      @include size(size($font-size-lg + 2));
+    }
+  }
+
+  .__value-container {
+    @include no-padding;
+
+    > * {
+      @include width($full-width);
+    }
+  }
+}
+
+// Styles
+
+// Select
+.adm-select {
+  @extend %Select;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

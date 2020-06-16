@@ -1,0 +1,135 @@
+/// ----------------------------------------------------------------------------
+/// Flexbox Mixins
+/// @group mixins-layout-flexbox
+/// ----------------------------------------------------------------------------
+
+/// Defines the element as a flex container.
+/// It enables a flex context for all its direct children.
+/// @param {String} $display [flex] - display
+@mixin display-flex($display: flex) {
+  display: $display;
+
+  flex-wrap: wrap;
+
+  @content;
+}
+
+/// Flexbox properties
+/// @require {mixin} display-flex [flex]
+/// @require {mixin} flex-align [null]
+/// @require {mixin} flex-justify [null]
+@mixin flex($display: flex, $align: null, $justify: null) {
+  @include display-flex($display);
+
+  @if $align {
+    @include flex-align($align...);
+  }
+
+  @if $justify {
+    @include flex-justify($justify...);
+  }
+}
+
+/// Defines how flex items are laid out along the cross axis.
+/// @param {String} $alignment [stretch] - Flexbox alignment
+/// @param {Boolean} $self [false] - If true, use align-self
+/// @param {Boolean} $important [false], If true add !important
+@mixin flex-align($alignment: stretch, $self: false, $important: false) {
+  $align: if($important, $alignment !important, $alignment);
+
+  @if $self == false {
+    align-items: $align;
+  } @else {
+    align-self: $align;
+  }
+}
+
+/// This defines the direction flex items are placed in the flex container.
+/// Items will be layed out top to bottom, and centered on both axises.
+/// @require {mixin} display-flex
+@mixin flex-centered-columns {
+  @include display-flex;
+
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  @content;
+}
+
+/// This defines the direction flex items are placed in the flex container.
+/// Items will be layed out left to right, and centered on both axises.
+/// @require {mixin} display-flex
+@mixin flex-centered-rows {
+  @include display-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  @content;
+}
+
+/// This establishes the main-axis, thus defining the direction flex items are
+/// placed in the flex container.
+/// @param {String} $direction - flex-direction
+/// @param {Boolean} $important [false], If true add !important
+@mixin flex-direction($direction, $important: false) {
+  flex-direction: if($important, $direction !important, $direction);
+
+  @content;
+}
+
+/// Layout flexbox items top to bottom.
+/// @require {mixin} flex-direction
+/// @param {Boolean} $reverse [false] - If true, set direction to column-reverse
+/// @param {Boolean} $important [false], If true add !important
+@mixin flex-column($reverse: false, $important: false) {
+  $direction: if($reverse, column-reverse, column);
+
+  @include flex-direction($direction, $important);
+
+  @content;
+}
+
+/// Defines how flex items are laid out along the main axis.
+/// @param {String} $justify [stretch] - justify-content
+/// @param {Boolean} $important [false], If true add !important
+@mixin flex-justify($justify: stretch, $important: false) {
+  $justify: if($important, $justify !important, $justify);
+
+  justify-content: $justify;
+}
+
+/// Layout flexbox items left to right.
+/// @require {mixin} flex-direction
+/// @param {Boolean} $reverse [false] - If true, set direction to row-reverse
+/// @param {Boolean} $important [false], If true add !important
+@mixin flex-row($reverse: false, $important: false) {
+  $direction: if($reverse, row-reverse, row);
+
+  @include flex-direction($direction, $important);
+
+  @content;
+}
+
+/// Center flexbox items on main axis and distrbute space between elements.
+/// @require {mixin} flex-align
+/// @require {mixin} flex-justify
+@mixin flex-spread {
+  @include flex-align(center);
+
+  @include flex-justify(space-between);
+
+  @content;
+}
+
+/// Centers flexbox items on the main and cross axises.
+/// @require {mixin} flex-align
+/// @require {mixin} flex-justify
+@mixin is-flex-centered {
+  @include flex-align(center);
+
+  @include flex-justify(center);
+
+  @content;
+}

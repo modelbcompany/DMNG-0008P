@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "github": {
+    "autoAlias": true,
+    "enabled": false,
+    "silent": false
+  },
+  "scope": "modelb",
+  "public": true,
+  "redirects": [
+    {
+      "source": "/repo",
+      "destination": "https://github.com/modelbcompany/DMNG-0008P",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/build/$1"
+    },
+    {
+      "source": "/api",
+      "destination": "/api"
+    }
+  ]
+}

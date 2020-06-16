@@ -3,7 +3,7 @@
  * Plugin Name: WP Engine Seamless Login Plugin
  * Plugin URI:  https://www.wpengine.com
  * Description: WP Engine Seamless Login Plugin
- * Version:     1.5.4
+ * Version:     1.5.5
  * Author:      WP Engine
  *
  * @package wpengine\sign_on_plugin
@@ -18,11 +18,13 @@ require_once __DIR__ . '/wpe-wp-sign-on-plugin/inc/user-nonce-helper.php';
 require_once __DIR__ . '/wpe-wp-sign-on-plugin/inc/logger.php';
 require_once __DIR__ . '/wpe-wp-sign-on-plugin/inc/sign-on-user-provider.php';
 require_once __DIR__ . '/wpe-wp-sign-on-plugin/inc/custom-exceptions.php';
+require_once __DIR__ . '/wpe-wp-sign-on-plugin/inc/user-request-id-helper.php';
 
 use WP_Error;
 use wpengine\sign_on_plugin\UserNonceHelper;
 use wpengine\sign_on_plugin\Logger;
 use wpengine\sign_on_plugin\SignOnUserProvider;
+use wpengine\sign_on_plugin\UserRequestIdHelper;
 
 const BASE_URL = 'wpe_sign_on_plugin/v1';
 
@@ -37,23 +39,28 @@ class WPESignOnPlugin {
 	const WP_CLI_LAST_NAME_ARG    = 'last-name';
 	const WP_CLI_USER_ROLE_ARG    = 'user-role';
 	const REDIRECT_URL_ON_SUCCESS = '/wp-admin/';
+	const X_REQUEST_ID_ARG        = 'x_request_id';
 
 	public static $instance;
 
 	private $login_route  = '/index.php';
 	private $login_params = array( 'rest_route' => '/' . BASE_URL . '/login' );
 	private $sign_on_user_provider;
+	private $user_request_id_helper;
+
 	private $user_nonce_helper;
 
-	public function __construct( $sign_on_user_provider, $user_nonce_helper ) {
-		$this->sign_on_user_provider = $sign_on_user_provider;
-		$this->user_nonce_helper     = $user_nonce_helper;
+	public function __construct( $sign_on_user_provider, $user_nonce_helper, $user_request_id_helper ) {
+		$this->sign_on_user_provider  = $sign_on_user_provider;
+		$this->user_nonce_helper      = $user_nonce_helper;
+		$this->user_request_id_helper = $user_request_id_helper;
 	}
 
-	public static function initialize( $sign_on_user_provider = null, $user_nonce_helper = null ) {
-		$sign_on_user_provider = $sign_on_user_provider ?? new SignOnUserProvider();
-		$user_nonce_helper     = $user_nonce_helper ?? new UserNonceHelper();
-		self::$instance        = new self( $sign_on_user_provider, $user_nonce_helper );
+	public static function initialize( $sign_on_user_provider = null, $user_nonce_helper = null, $user_request_id_helper = null ) {
+		$user_request_id_helper = $user_request_id_helper ?? new UserRequestIdHelper();
+		$sign_on_user_provider  = $sign_on_user_provider ?? new SignOnUserProvider( $user_request_id_helper );
+		$user_nonce_helper      = $user_nonce_helper ?? new UserNonceHelper();
+		self::$instance         = new self( $sign_on_user_provider, $user_nonce_helper, $user_request_id_helper );
 
 		// <domain_name>/index.php?rest_route=/<BASE_URL>/<endpoint>
 		add_action(
@@ -77,6 +84,15 @@ class WPESignOnPlugin {
 						'permission_callback' => array( self::$instance, 'permission_check' ),
 					)
 				);
+				register_rest_route(
+					BASE_URL,
+					'/has_logged',
+					array(
+						'methods'             => 'POST',
+						'callback'            => array( self::$instance, 'has_logged' ),
+						'permission_callback' => array( self::$instance, 'permission_check' ),
+					)
+				);
 			}
 		);
 
@@ -95,6 +111,40 @@ class WPESignOnPlugin {
 		return true;
 	}
 
+	public function has_logged( $request ) {
+		list( $install_name, $user_email, $request_id ) = $this->get_params_from_has_logged_request( $request );
+		$response_body                                  = false;
+		try {
+			if ( $this->is_request_id_empty( $request_id ) ) {
+				$request_id_header = self::X_REQUEST_ID_ARG;
+				Logger::log( Logger::NO_REFERAL_ID_ERROR, "The $request_id_header http header is empty", $user_email, PWP_NAME );
+			}
+
+			if ( is_multisite() ) {
+				throw new MultisiteEnabledException();
+			}
+
+			if ( ! $this->validate_install_name( $install_name ) ) {
+				throw new InvalidInstallNameException( 'Expected: ' . PWP_NAME . ' ; Received: ' . $install_name );
+			}
+
+			$response_body = $this->user_request_id_helper->request_id_matches_logged_request_id_for_user( $user_email, $request_id );
+
+		} catch ( InvalidInstallNameException $e ) {
+			Logger::log( Logger::INSTALL_NAME_ERROR, $e->getMessage(), $user_email, PWP_NAME );
+		} catch ( NoRefererException $e ) {
+			Logger::log( Logger::NO_REFERER_ERROR, $e->getMessage(), $user_email, PWP_NAME );
+		} catch ( MultisiteEnabledException $e ) {
+			Logger::log( Logger::MULTISITE_ENABLED_ERROR, $e->getMessage() );
+		} catch ( \Exception $e ) {
+			Logger::log( Logger::GENERAL_EXCEPTION_ERROR, $e->getMessage(), isset( $user_email ) ? $user_email : null, PWP_NAME );
+		}
+
+		$response = new \WP_REST_Response( $response_body ? 'true' : 'false', 200 );
+
+		return $response;
+	}
+
 	public function login( $request ) {
 		$time_start = round( microtime( true ) * 1000 );
 
@@ -107,7 +157,12 @@ class WPESignOnPlugin {
 				return $this->generate_https_redirect( $request->get_query_params() );
 			}
 
-			list( $nonce, $user_email, $install_name ) = $this->get_params_from_login_request( $request );
+			list( $nonce, $user_email, $install_name, $request_id ) = $this->get_params_from_login_request( $request );
+
+			if ( $this->is_request_id_empty( $request_id ) ) {
+				$request_id_header = self::X_REQUEST_ID_ARG;
+				Logger::log( Logger::NO_REFERAL_ID_ERROR, "The $request_id_header http header is empty", $user_email, PWP_NAME );
+			}
 
 			if ( ! $this->validate_non_empty_string( $user_email ) ) {
 				throw new \Exception( " User email ({$user_email}) is blank " );
@@ -126,7 +181,7 @@ class WPESignOnPlugin {
 
 			$is_valid = $this->user_nonce_helper->validate_nonce( $user->ID, $nonce, $nonce_data, $install_name );
 			if ( $is_valid ) {
-				$this->sign_on_user_provider->login_user( $user, $time_start );
+				$this->sign_on_user_provider->login_user( $user, $time_start, $request_id );
 				$redirect_url = self::REDIRECT_URL_ON_SUCCESS;
 			}
 		} catch ( InvalidInstallNameException $e ) {
@@ -139,7 +194,7 @@ class WPESignOnPlugin {
 			Logger::log( Logger::MULTISITE_ENABLED_ERROR, $e->getMessage(), null, PWP_NAME );
 			$redirect_url = self::REDIRECT_URL_ON_ERROR;
 		} catch ( \Exception $e ) {
-			Logger::log( Logger::GENERAL_EXCEPTION_ERROR, $e->getMessage(), isset( $user_email ) ? $user_email : null, PWP_NAME );
+			Logger::log( Logger::GENERAL_EXCEPTION_ERROR, $e->getMessage() . $e->getTraceAsString(), isset( $user_email ) ? $user_email : null, PWP_NAME );
 			$redirect_url = self::REDIRECT_URL_ON_ERROR;
 		}
 
@@ -149,9 +204,14 @@ class WPESignOnPlugin {
 	}
 
 	public function is_user_logged_in( $request ) {
-		list( $install_id, $install_name, $user_email, $referer ) = $this->get_params_from_is_logged_in_request( $request );
+		list( $install_id, $install_name, $user_email, $referer, $request_id ) = $this->get_params_from_is_logged_in_request( $request );
 
 		try {
+			if ( $this->is_request_id_empty( $request_id ) ) {
+				$request_id_header = self::X_REQUEST_ID_ARG;
+				Logger::log( Logger::NO_REFERAL_ID_ERROR, "The $request_id_header http header is empty", $user_email, PWP_NAME );
+			}
+
 			if ( is_multisite() ) {
 				throw new MultisiteEnabledException();
 			}
@@ -165,14 +225,15 @@ class WPESignOnPlugin {
 			}
 
 			if ( $this->sign_on_user_provider->user_email_matches_current_user( $user_email ) ) {
-				Logger::log( Logger::USER_LOGGED_IN, 'User ' . $user_email . ' already logged in.', $user_email, PWP_NAME );
+				$this->user_request_id_helper->update_request_id_user_meta( $user_email, $request_id );
+				Logger::log( Logger::USER_LOGGED_IN, "User $user_email already logged in.", $user_email, PWP_NAME );
 				$redirect_url = self::REDIRECT_URL_ON_SUCCESS;
 			} else {
 				if ( null === $referer ) {
 					throw new NoRefererException( 'No referer provided for user logged in check' );
 				}
 				Logger::log( Logger::USER_NOT_LOGGED_IN, 'User ' . $user_email . ' not logged in. Beginning flow.', $user_email, PWP_NAME );
-				$redirect_url = $referer . '?' . http_build_query( $this->create_is_logged_in_response_params( $install_id ) );
+				$redirect_url = $referer . '?' . http_build_query( $this->create_is_logged_in_response_params( $install_id, $request_id ) );
 			}
 		} catch ( InvalidInstallNameException $e ) {
 			Logger::log( Logger::INSTALL_NAME_ERROR, $e->getMessage(), $user_email, PWP_NAME );
@@ -197,6 +258,11 @@ class WPESignOnPlugin {
 		echo wp_json_encode( $this->wpe_sso( $assoc_args ) );
 	}
 
+	private function is_request_id_empty( $request_id ) {
+		return ( ! isset( $request_id ) || trim( $request_id ) === '' );
+	}
+
+
 	private function validate_install_name( $install_name ) {
 		if ( PWP_NAME === $install_name ) {
 			return true;
@@ -209,8 +275,9 @@ class WPESignOnPlugin {
 		$nonce        = $request->get_param( 'nonce' );
 		$user_email   = $request->get_param( 'user_email' );
 		$install_name = $request->get_param( 'install_name' );
+		$request_id   = $request->get_param( self::X_REQUEST_ID_ARG );
 
-		return array( $nonce, $user_email, $install_name );
+		return array( $nonce, $user_email, $install_name, $request_id );
 	}
 
 	private function get_params_from_is_logged_in_request( $request ) {
@@ -218,8 +285,15 @@ class WPESignOnPlugin {
 		$install_name = $request->get_param( 'install_name' );
 		$user_email   = $request->get_param( 'user_email' );
 		$referer      = $request->get_param( 'redirect_url' );
+		$request_id   = $request->get_param( self::X_REQUEST_ID_ARG );
+		return array( $install_id, $install_name, $user_email, $referer, $request_id );
+	}
 
-		return array( $install_id, $install_name, $user_email, $referer );
+	private function get_params_from_has_logged_request( $request ) {
+		$install_name = $request->get_param( 'install_name' );
+		$user_email   = $request->get_param( 'user_email' );
+		$request_id   = $request->get_param( self::X_REQUEST_ID_ARG );
+		return array( $install_name, $user_email, $request_id );
 	}
 
 	private function wpe_sso( $assoc_args ) {
@@ -324,10 +398,11 @@ class WPESignOnPlugin {
 		return $response;
 	}
 
-	private function create_is_logged_in_response_params( $install_id ) {
+	private function create_is_logged_in_response_params( $install_id, $request_id ) {
 		$params = array(
-			'install_id' => $install_id,
-			'initiate'   => true,
+			'install_id'           => $install_id,
+			'initiate'             => true,
+			self::X_REQUEST_ID_ARG => $request_id,
 		);
 		return $params;
 	}

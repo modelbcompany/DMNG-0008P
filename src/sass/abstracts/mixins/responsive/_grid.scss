@@ -1,0 +1,124 @@
+/// ----------------------------------------------------------------------------
+/// Responsive CSS Grid Mixins
+/// @group mixins-responsive-grid
+/// ----------------------------------------------------------------------------
+
+/// Retreives grid settings based on device type.
+/// @require {function} grid-column-gap
+/// @require {function} grid-template-columns
+/// @require {mixin} grid-desktop
+/// @require {mixin} grid-mobile
+/// @require {mixin} grid-tablet
+/// @param {String} $device - Device type desktop | tablet | mobile
+/// @param {variable} $breakpoint - Device breakpoint
+@mixin grid-by-device($device, $breakpoint) {
+  @if $device == 'desktop' {
+    @include grid-desktop($breakpoint);
+  } @else if $device == 'tablet' {
+    @include grid-tablet($breakpoint);
+  } @else if $device == 'mobile' {
+    @include grid-mobile($breakpoint);
+  } @else {
+    @warn unquote("Invalid device type: #{$device}");
+  }
+}
+
+/// Retreives the grid settings for desktop devices.
+/// @require {function} grid-column-gap
+/// @require {function} grid-template-columns
+/// @require {mixin} display-grid
+/// @require {mixin} grid-column-gap
+/// @param {variable} $breakpoint - Desktop breakpoint
+@mixin grid-desktop($breakpoint) {
+  @include display-grid(grid);
+
+  @include grid-column-gap(grid-column-gap($breakpoint));
+
+  grid-template-columns: grid-template-columns('desktop');
+
+  @content;
+}
+
+/// Retreives the grid settings for mobile devices.
+/// @require {function} grid-column-gap
+/// @require {function} grid-template-columns
+/// @require {mixin} display-grid
+/// @require {mixin} grid-column-gap
+/// @param {variable} $breakpoint - Mobile breakpoint
+@mixin grid-mobile($breakpoint) {
+  @include display-grid(grid);
+
+  @include grid-column-gap(grid-column-gap($breakpoint));
+
+  grid-template-columns: grid-template-columns('mobile');
+
+  @content;
+}
+
+/// Retreives the grid settings for tablet devices.
+/// @require {function} grid-column-gap
+/// @require {function} grid-template-columns
+/// @require {mixin} display-grid
+/// @require {mixin} grid-column-gap
+/// @param {variable} $breakpoint - Tablet breakpoint
+@mixin grid-tablet($breakpoint) {
+  @include display-grid(grid);
+
+  @include grid-column-gap(grid-column-gap($breakpoint));
+
+  grid-template-columns: grid-template-columns('tablet');
+
+  @content;
+}
+
+/// Defines the element as a grid container and establishes a new grid
+/// formatting context for its contents. The grid will change the number of
+/// columns and the gutter width at trespond to the required breakpoints.
+/// @require {mixin} grid-desktop
+/// @require {mixin} grid-mobile
+/// @require {mixin} grid-tablet
+/// @require {mixin} respond-to
+/// @require {variable} $breakpoint-1920
+/// @require {variable} $breakpoint-1440
+/// @require {variable} $breakpoint-1366
+/// @require {variable} $breakpoint-1024
+/// @require {variable} $breakpoint-834
+/// @require {variable} $breakpoint-768
+/// @require {variable} $breakpoint-414
+/// @require {variable} $breakpoint-375
+/// @require {variable} $breakpoint-320
+@mixin responsive-grid {
+  @include grid-desktop($breakpoint-1920);
+
+  @include respond-to($breakpoint-1440) {
+    @include grid-desktop($breakpoint-1440);
+  }
+
+  @include respond-to($breakpoint-1366) {
+    @include grid-desktop($breakpoint-1366);
+  }
+
+  @include respond-to($breakpoint-1024) {
+    @include grid-tablet($breakpoint-1024);
+  }
+
+  @include respond-to($breakpoint-834) {
+    @include grid-tablet($breakpoint-834);
+  }
+
+  @include respond-to($breakpoint-768) {
+    @include grid-tablet($breakpoint-768);
+  }
+
+  @include respond-to($breakpoint-414) {
+    @include grid-mobile($breakpoint-414);
+  }
+
+  @include respond-to($breakpoint-375) {
+    @include grid-mobile($breakpoint-375);
+  }
+
+  @include respond-to($breakpoint-320) {
+    @include grid-mobile($breakpoint-320);
+  }
+}

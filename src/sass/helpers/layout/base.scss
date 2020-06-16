@@ -1,0 +1,53 @@
+/// ----------------------------------------------------------------------------
+/// Basic Layout Helper Classes
+/// ----------------------------------------------------------------------------
+
+// Center items in container using margin properties
+.is-centered {
+  @include is-centered;
+}
+
+// Removes the border from an element
+.is-borderless {
+  @include is-borderless;
+}
+
+// Hides an element without removing it from the document layout
+.is-collapsed {
+  @include is-hidden(collapse);
+}
+
+// Make an element as tall as its parent container
+.is-full-height {
+  @include is-full-height;
+}
+
+// Make an element as wide as its parent container
+.is-full-width {
+  @include is-full-width;
+}
+
+// Make an element full screen
+.is-fullscreen {
+  @include is-fullscreen;
+}
+
+// Hides an element by removing it from the document layout
+.is-hidden {
+  @include is-hidden;
+}
+
+// Make an element full width and height of parent
+.is-stretched {
+  @include is-stretched;
+}
+
+// Removes margin
+.no-margin {
+  @include no-margin;
+}
+
+// Removes padding
+.no-padding {
+  @include no-padding;
+}

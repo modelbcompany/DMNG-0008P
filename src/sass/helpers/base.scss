@@ -1,0 +1,13 @@
+/// ----------------------------------------------------------------------------
+/// Core helper classes
+/// ----------------------------------------------------------------------------
+
+// Turns an element into a circle shape
+.is-circle {
+  @include is-circle;
+}
+
+// Remove the content from before or after an element
+.no-content {
+  @include no-content;
+}

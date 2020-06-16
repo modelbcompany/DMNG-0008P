@@ -1,0 +1,105 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title='Blocks/Grid System' />
+
+# Grid System
+
+<br />
+
+## Devices
+
+File: `src/sass/abstracts/_variables.scss`
+
+```scss
+/// Grid configuration by device type
+/// @type Map
+$devices: (
+  'desktop': (
+    'columns': 12,
+    'max-width': 75%
+  ),
+  'tablet': (
+    'columns': 8,
+    'max-width': 85%
+  ),
+  'mobile': (
+    'columns': 4,
+    'max-width': 90%
+  )
+);
+```
+
+## Layout
+
+File: `src/sass/abstracts/_variables.scss`
+
+```scss
+/// Inner grid configuration by breakpoint
+/// @require {function} grid-template-columns
+/// @require {variable} $breakpoint-1920
+/// @require {variable} $breakpoint-1440
+/// @require {variable} $breakpoint-1366
+/// @require {variable} $breakpoint-1024
+/// @require {variable} $breakpoint-834
+/// @require {variable} $breakpoint-768
+/// @require {variable} $breakpoint-414
+/// @require {variable} $breakpoint-375
+/// @require {variable} $breakpoint-320
+/// @type Map
+$grid-layout: (
+  $breakpoint-1920: (
+    'column-width': 98,
+    'gutter-width': 24,
+    'margins': 240,
+    'type': 'desktop'
+  ),
+  $breakpoint-1440: (
+    'column-width': 78,
+    'gutter-width': 13,
+    'margins': 180,
+    'type': 'desktop'
+  ),
+  $breakpoint-1366: (
+    'column-width': 66,
+    'gutter-width': 21,
+    'margins': 171,
+    'type': 'desktop'
+  ),
+  $breakpoint-1024: (
+    'column-width': 92,
+    'gutter-width': 19,
+    'margins': 77,
+    'type': 'tablet'
+  ),
+  $breakpoint-834: (
+    'column-width': 78,
+    'gutter-width': 12,
+    'margins': 63,
+    'type': 'tablet'
+  ),
+  $breakpoint-768: (
+    'column-width': 64,
+    'gutter-width': 20,
+    'margins': 58,
+    'type': 'tablet'
+  ),
+  $breakpoint-414: (
+    'column-width': 87,
+    'gutter-width': 8,
+    'margins': 21,
+    'type': 'mobile'
+  ),
+  $breakpoint-375: (
+    'column-width': 78,
+    'gutter-width': 8,
+    'margins': 19,
+    'type': 'mobile'
+  ),
+  $breakpoint-320: (
+    'column-width': 66,
+    'gutter-width': 8,
+    'margins': 16,
+    'type': 'mobile'
+  )
+);
+```

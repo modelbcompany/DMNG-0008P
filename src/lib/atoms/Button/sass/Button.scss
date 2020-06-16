@@ -1,0 +1,122 @@
+/// ----------------------------------------------------------------------------
+/// Button variables, functions, mixins, placeholders, and styles
+/// @group Button
+/// @see {http://css-tricks.com/slightly-careful-sub-elements-clickable-things/}
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+/// Common transparent button properties
+/// @require {mixin} background-color
+/// @require {mixin} no-padding
+/// @require {variable} $transparent
+/// @param {Boolean} $bi [false] - If true, add !important to background-color
+/// @param {Boolean} $pi [false] - If true, add !important to no-padding
+@mixin is-transparent($bi: false, $pi: false) {
+  @include background-color($transparent, $bi);
+
+  @include no-padding($pi);
+}
+
+// Placeholders
+
+/// Button component styles
+/// @require {function} size
+/// @require {mixin} color
+/// @require {mixin} display-flex
+/// @require {mixin} font-size
+/// @require {mixin} is-disabled
+/// @require {mixin} is-borderless
+/// @require {mixin} is-flex-centered
+/// @require {mixin} is-icon-btn
+/// @require {mixin} is-transparent
+/// @require {mixin} is-white-text
+/// @require {mixin} no-breaking
+/// @require {mixin} no-padding
+/// @require {mixin} set-bkg-color-and-hover
+/// @require {mixin} transition
+/// @require {variable} $button-default-bkg
+/// @require {variable} $button-disabled-bkg
+/// @require {variable} $button-default-color
+/// @require {variable} $button-disabled-color
+/// @require {variable} $one-dozen * 2
+/// @require {variable} $button-padding
+/// @require {variable} $button-font-size
+/// @require {variable} $transparent
+%Button {
+  @include color($button-default-color, $button-default-bkg);
+
+  @include font-size($button-font-size);
+
+  @include flex(inline-flex, center, space-between);
+
+  @include is-borderless;
+
+  @include no-breaking;
+
+  @include transition(all, 0.25s, ease-in-out);
+
+  cursor: pointer;
+  outline: none;
+  padding: $button-padding;
+
+  > * {
+    pointer-events: none;
+  }
+
+  &[disabled] {
+    @include set-bkg-color-and-hover($button-disabled-bkg);
+  }
+
+  &.ghost {
+    @include background-color($transparent);
+
+    @include is-black-text;
+  }
+
+  &.outlined {
+    border: $border-width-thin solid $border-color;
+  }
+
+  &[data-icon],
+  &[name='completed'],
+  &.transparent {
+    @include is-transparent;
+  }
+}
+
+// Styles
+
+// Button
+.ada-button {
+  @extend %Button;
+}
+
+.adm-form .ada-button {
+  @include font-size($button-font-size - 2);
+}
+
+.sidebar .ada-button .icon[name='close'] {
+  margin-bottom: size($one-dozen * 2 * 2);
+}
+
+.dropdown-menu-item-btn {
+  @include font-size($bakers-dozen);
+
+  @include width(100%, unset, none);
+
+  font-family: $font-family-primary;
+  justify-content: flex-start;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

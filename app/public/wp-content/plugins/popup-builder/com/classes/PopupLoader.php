@@ -115,6 +115,9 @@ class PopupLoader
 			}
 			if (@$foundPopup->post_type == SG_POPUP_POST_TYPE) {
 				$popup = SGPopup::find($foundPopup);
+				if (empty($popup)) {
+					return;
+				}
 
 				$popup->setEvents($SGPB_DATA_CONFIG_ARRAY['events']['initialData'][0]);
 				$this->addLoadablePopup($popup);

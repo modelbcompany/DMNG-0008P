@@ -50,9 +50,19 @@ class Filters
 		add_filter('sgpbSystemInformation', array($this, 'systemInformation'), 10, 1);
 		add_filter('plugin_action_links', array($this, 'pluginActionLinks'), 10, 4);
 		add_filter('plugin_row_meta', array( $this, 'pluginRowMetas'), 10, 4);
+		add_filter( 'rank_math/sitemap/exclude_post_type', array($this, 'excludeRankMath'), 10, 2 );
 	}
 
-	public function pluginRowMetas($pluginMeta, $pluginFile, $pluginData, $status) 
+	public function excludeRankMath($exclude, $type)
+	{
+		if ($type == SG_POPUP_POST_TYPE) {
+			$exclude = true;
+		}
+
+		return $exclude;
+	}
+
+	public function pluginRowMetas($pluginMeta, $pluginFile, $pluginData, $status)
 	{
 		if (empty($pluginFile)) {
 			return $pluginMeta;
@@ -74,7 +84,7 @@ class Filters
 		return $pluginMeta;
 	}
 
-	public function pluginActionLinks($actions, $pluginFile, $pluginData, $context) 
+	public function pluginActionLinks($actions, $pluginFile, $pluginData, $context)
 	{
 		if (empty($pluginFile)) {
 			return $actions;
@@ -83,7 +93,7 @@ class Filters
 		$allExtensions = \SgpbDataConfig::allExtensionsKeys();
 		$allExtensions = wp_list_pluck($allExtensions, 'pluginKey');
 		$allExtensions[] = SG_POPUP_FILE_NAME;
-		
+
 		$settingPageUrl = admin_url().'edit.php?post_type='.SG_POPUP_POST_TYPE.'&page='.SG_POPUP_SETTINGS_PAGE;
 
 		$links = array(
@@ -98,8 +108,8 @@ class Filters
 					$links['upgrade'] = '<a style="color: #4364eb;" href="'.SG_POPUP_BUNDLE_URL.'" target="_blank">'.esc_html__('Upgrade', SG_POPUP_TEXT_DOMAIN).'</a>';
 				}
 			}
-			$actions = array_merge($links, $actions);	
-		} 
+			$actions = array_merge($links, $actions);
+		}
 
 		return $actions;
 	}

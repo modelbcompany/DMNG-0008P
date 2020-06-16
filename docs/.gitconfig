@@ -73,8 +73,8 @@
 
 # Helper Aliases
 [alias]
-  # Recursively delete files matching a pattern
-  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
-
   # Generate a SSH key
   keygen = "!f() { ssh-keygen -t rsa -b 4096 -C \"$@\"; }; f"
+
+  # Recursively delete files matching a pattern
+  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"

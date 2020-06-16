@@ -204,6 +204,22 @@ $defaultConditions = $defaultData['freeConditions'];
 	</div>
 	<div class="row form-group">
 		<div class="col-md-3">
+			<?php echo AdminHelper::createSelectBox($defaultConditions, 'browser-detection', array('class' => 'js-sg-select2')); ?>
+		</div>
+		<div class="col-md-3">
+			<?php echo AdminHelper::createSelectBox(array('is' => __('Is', SG_POPUP_TEXT_DOMAIN), 'is-not' => __('Is not', SG_POPUP_TEXT_DOMAIN)), 'is', array('class' => 'js-sg-select2')); ?>
+		</div>
+		<div class="col-md-3">
+			<input type="text" class="sgpb-full-width-events form-control" value="<?php _e('Select browser', SG_POPUP_TEXT_DOMAIN);?>">
+		</div>
+		<div class="col-md-3">
+			<a href="<?php echo SG_POPUP_ADVANCED_TARGETING_URL;?>" target="_blank" class="btn btn-warning btn-xs sgpb-advanced-targeting-pro-label">
+				<?php _e('UNLOCK OPTION', SG_POPUP_TEXT_DOMAIN);?>
+			</a>
+		</div>
+	</div>
+	<div class="row form-group">
+		<div class="col-md-3">
 			<?php echo AdminHelper::createSelectBox($defaultConditions, 'after-x', array('class' => 'js-sg-select2')); ?>
 		</div>
 		<div class="col-md-3">

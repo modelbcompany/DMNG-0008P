@@ -16,6 +16,7 @@ class Logger {
 	const IMPERSONATED_USER_ERROR          = 'error_on_user_impersonation';
 	const NO_REFERER_ERROR                 = 'error_user_login_check_no_referer_given';
 	const WP_JSON_REFERER_ERROR            = 'error_wp_json_referer';
+	const NO_REFERAL_ID_ERROR              = 'error_empty_request_id';
 
 	const USER_LOGGED_IN     = 'info_user_logged_in';
 	const USER_NOT_LOGGED_IN = 'info_user_not_logged_in';

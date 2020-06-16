@@ -9,24 +9,62 @@ on making a pull request.
 [Getting Started](#getting-started)  
 [Styleguides](#styleguides)  
 [Making Changes](#making-changes)  
-[Making a Pull Request](#making-a-pull-request)  
+[Testing](#testing)  
+[Documentation](#documentation)  
+[Making a Pull Request](#making-a-pull-request)
 
 ## Getting Started
 
+1. [Install and configure Yarn](https://classic.yarnpkg.com/en/docs/install)
+
+1. Instead of cloning the repository,
+   [download it instead](https://github.com/modelbcompany/DMNG-0008P/archive/master.zip)
+
+### WordPress Development
+
+This project uses [Local](https://wpengine.com/local/) for local WordPress
+development.
+
+#### Import Site
+
+1. Download [Local](https://wpengine.com/local/)
+
+1. [Connect Local to WP Engine](https://wpengine.com/support/local/#Connect_Local_to_WP_Engine)
+
+1. Import `DMNG-0008P-master.zip` into Local
+
+   - Set `Local site domain` to `woodmont.local`
+
+1. Open the project in your terminal.
+   - From the project root, run
+     `git remote add origin https://github.com/modelbcompany/DMNG-0008P`
+
+### Component & API Development
+
+Copy the snippet below to get your development environment setup:
+
+```zsh
+yarn install
+yarn dev
+```
+
+- The Storybook app will be available at <http://localhost:3000>
+- The API development server will be available at <http://localhost:9000/api>
+
 ### Git Configuration
 
-You can **easily** keep inline with our coding guidelines, as well as extend your
-own Git workflow, by updating your Global Git configuration (`~/.gitconfig`).
+You can **easily** keep inline with our coding guidelines, as well as extend
+your own Git workflow, by updating your Global Git configuration
+(`~/.gitconfig`).
 
 Follow the steps below to begin setting up your development environment:
 
-1. Copy the [example Git configuration](./.gitconfig) below.
-
-2. Run `npm i -g npm-run-all`
-
-Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-gitconfig-work-for-you/)
+1. Copy the [example Git configuration](.gitconfig) below.
 
 ```ini
+# Git Configuration
+# See: http://michaelwales.com/articles/make-gitconfig-work-for-you/
+
 # General Aliases
 [alias]
   # Git Add & Commit - All in one step
@@ -43,7 +81,7 @@ Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-
 
   # Delete a branch locally and remotely
   bdel= "!f() { git branch -D \"$@\"; git push origin --delete \"$@\"; }; f"
-  
+
   # Git Commit with message
   cm = "!f() { git commit -m \"$@\"; }; f"
 
@@ -82,10 +120,9 @@ Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-
 
   # DOC: Use when you add/update documentation (ex: README, inline docs)
   doc = "!f() { git ac \"📖 DOC: $@\"; }; f"
-  
+
   # RELEASE: Use when changes are related to a release
   rlz = "!f() { git ac \"🚀 RELEASE: $@\"; }; f"
-
 
 # Remote Aliases
 [alias]
@@ -100,11 +137,11 @@ Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-
 
 # Helper Aliases
 [alias]
-  # Recursively delete files matching a pattern
-  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
-
   # Generate a SSH key
   keygen = "!f() { ssh-keygen -t rsa -b 4096 -C \"$@\"; }; f"
+
+  # Recursively delete files matching a pattern
+  pdel = "!f() { find . -type f -name \"$@\" -delete; }; f"
 
 ```
 
@@ -112,51 +149,61 @@ Reference: [Make .gitconfig Work for You](http://michaelwales.com/articles/make-
 
 ### Commit Messages
 
-This project follows [Emoji Log](https://github.com/ahmadawais/Emoji-Log) standards when making commits.
+This project follows [Emoji Log][1] standards when making commits.
 
 Commit messages should follow one of the following templates:
 
 1. **`📦 NEW: MESSAGE_GOES_HERE`** - Use when you add something entirely new
-2. **`✅ TEST: MESSAGE_GOES_HERE`** - Use when changes are related to testing or mock data
-3. **`👌🏾 IMPROVE: MESSAGE_GOES_HERE`** - Use when you improve/enhance a piece of code (ex: refactoring)
+2. **`✅ TEST: MESSAGE_GOES_HERE`** - Use when changes are related to testing or
+   mock data
+3. **`👌🏾 IMPROVE: MESSAGE_GOES_HERE`** - Use when you improve/enhance a piece of
+   code (ex: refactoring)
 4. **`🐛 FIX: MESSAGE_GOES_HERE`** - Use when you fix a bug
-5. **`📖 DOC: MESSAGE_GOES_HERE`** - Use when you add/update documentation (ex: README, inline docs)
-6. **`🚀 RELEASE: MESSAGE_GOES_HERE`** - Use when changes are related to a release
+5. **`📖 DOC: MESSAGE_GOES_HERE`** - Use when you add/update documentation (ex:
+   README, inline docs)
+6. **`🚀 RELEASE: MESSAGE_GOES_HERE`** - Use when changes are related to a
+   release
 
 For example:
 
 ```bash
-  git new "Add Gulp configuration"
+  git new "Storybook configuration"
 ```
 
-This will produce the following commit: `📦 NEW: Add Gulp configuration`
+This will produce the following commit: `📦 NEW: Storybook configuration`
+
+[1]: https://github.com/ahmadawais/Emoji-Log
 
 ### Workflow
 
 This project uses the Gitflow Workflow, a Git workflow design that was first
-published and made popular by [Vincent Driessen at nvie](https://nvie.com/posts/a-successful-git-branching-model/).
+published and made popular by
+[Vincent Driessen at nvie](https://nvie.com/posts/a-successful-git-branching-model/).
 
 Gitflow has several benefits:
 
 - Assigns specific roles to branches
 - Defines how branches should interact
 - Uses individual branches for preparing, maintaining, and recording releases
-- Leverages all benefits of [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
+- Leverages all benefits of
+  [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/feature-branch-workflow)
 
 #### Branch Naming Convention
 
 When creating a new branch, the name should match the following format:
-**`feature/`**, **`hotfix/`**, **`release/`**, or **`support/`** followed by **`<your_initials>/<branch_name>`**
+**`feature/`**, **`hotfix/`**, **`release/`**, or **`support/`** followed by
+**`<your_initials>/<branch_name>`**
 
 For example:
 
 ```bash
-  git b "feature/ld/dev-env-setup"
+  git b "feature/ld/app-header"
 ```
 
-will create a new branch titled `feature/ld/dev-env-setup`
+will create a new branch titled `feature/ld/app-header`
 
-**Note**: The line above uses the `b` alias from [the example global Git configuration](./.gitconfig).
+**Note**: The line above uses the `b` alias from
+[the example global Git configuration](./.gitconfig).
 
 If using the `git flow` on the command line, the following should be added the
 following to your Global Git configuration as well:
@@ -172,51 +219,67 @@ following to your Global Git configuration as well:
 
 where `$INITIALS` are your own.
 
-### JavaScript Style
-
-- **2 spaces** – for indentation
-- **No unused variables** – this one catches tons of bugs!
-- **No semicolons** – It's fine. Really!
-- Never start a line with `(` , `[` , or `````
-  - This is the only gotcha with omitting semicolons – automatically checked for you!
-- **Space after keywords** `if (condition) { ... }`
-- Always use `===` instead of `==` – but `obj == null` is allowed to check `null || undefined`.
-
-For a detailed overview of our JavaScript style, visit [StandardJS](https://standardjs.com).
-You'll find not only an overview of Standard Style, but a list of editor plugins
-as well.
-
-To configure the linting options for this project, make changes to
-`.eslintrc.json` and `.eslintignore` in the project root.
-
-Reference: [Configuring ESLint](https://eslint.org/docs/user-guide/configuring)
-
 ## Making Changes
 
-### WordPress Engine
+### 🚧 Serverless Functions
 
-1. Download [Local](https://wpengine.com/local/)
+Directory: `api/`
 
-   Once downloaded, log in with the Model B WPEngine credentials.
+TODO: Update documentation.
 
-1. Clone the Woodmont Landing Page site from WPEngine.
+### Component Development
 
-1. Once imported, click "View Site."
+Directory: `src/lib`
 
-### Local Development
+This project uses Storybook, a user interface development environment and
+documentation tool for UI components. Storybook allows developers to create
+components independently, as well as showcase them interactively in an isolated
+development environment.
 
-1. Run the following command to connect your environment with the GitHub repository:
+Following the
+[Atomic Design Methodology](https://atomicdesign.bradfrost.com/chapter-2/), this
+project has a heavy focus on organization and documentation. The goal is to
+build a well organized, appropriately documented component library that makes
+implementing, testing, documenting, and maintaining production-grade UI
+components more efficient.
 
-  ```zsh
-  git init
-  git remote add origin https://github.com/modelbcompany/DMNG-0008P.git
-  ```
+#### Styling Components
 
-1. Following the standards mentioned above, create a new branch.
+Directory: `src/sass`
 
-1. Run the following command: `git push -u origin <BRANCH_NAME>`
-  
-1. With the site running, begin making your changes.
+Stylesheets are written in [Sass](https://sass-lang.com/), and follow the
+[Sass Guidelines](https://sass-guidelin.es/) styleguide. Sass is a CSS
+preprocessor used to add variables, functions, placeholders, mixins, and more to
+CSS development.
+
+This project currently supports the `.scss` syntax.
+
+### WordPress
+
+Directory: `app/public`
+
+1. Once you've imported the site into Local, click `START SITE` in the top right
+   corner of the application.
+
+1. Click `VIEW SITE`.
+
+## Testing
+
+This project uses [Jest](https://jestjs.io/) as its test runner.
+
+To run the tests in this project, run `npm test`.
+
+For more information about testing components, visit
+[Running Tests](https://create-react-app.dev/docs/running-tests) from the Create
+React App docs.
+
+## Documentation
+
+Documentation should follow [TypeDoc](https://typedoc.org/guides/doccomments/)
+or [JSDoc](https://jsdoc.app) standards.
+
+Before making a pull request, be sure your code is well documented, as it will
+be part of your code review.
 
 ## Creating a Pull Request
 
@@ -224,9 +287,13 @@ If you need help, make note of any issues in their respective files. If
 applicable, create a unit test to reproduce the error. Make sure to label your
 pr as "bug" and "help wanted."
 
+If you're ready to have your changes reviewed, make sure your code is well
+documented and run `yarn formatlint` to check your files for formatting and
+linting errors.
+
 ### Submit for Review
 
 - Use [**this template**](./pull_request_template.md)
 - Label your pull request as `pull request` and `needs review`
-- Prefix your pull request title with `PR  -`
+- Prefix your pull request title with `PR -`
 - Assign the task to yourself and the appropriate reviewer

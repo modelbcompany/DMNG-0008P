@@ -1,0 +1,33 @@
+/// ----------------------------------------------------------------------------
+/// Section variables, functions, mixins, placeholders, and styles
+/// @group Section
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Section component styles
+/// @require {mixin} is-full-width
+%Section {
+  @include is-full-width;
+}
+
+// Styles
+
+// Section
+.ado-section {
+  @extend %Section;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

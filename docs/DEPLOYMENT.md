@@ -5,7 +5,7 @@ Below you'll find instructions on how to deploy to WordPress Engine.
 ## Overview
 
 [Prerequisites](#prerequisites)  
-[WordPress Engine](#wordpress-engine)  
+[WordPress Engine](#wordpress-engine)
 
 ## Prerequisites
 

@@ -1,0 +1,46 @@
+/// ----------------------------------------------------------------------------
+/// TextArea variables, functions, mixins, placeholders, and styles
+/// @group TextArea
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: TextArea
+/// @require {mixin} height
+/// @require {mixin} input-base-styles
+/// @require {mixin} width
+/// @require {variable} $textarea-height
+/// @require {variable} $textarea-width
+%TextArea {
+  @include height(auto, size($textarea-height));
+
+  @include input-base-styles;
+
+  @include width($textarea-width, $textarea-width);
+
+  padding: size($textarea-padding-v) size($form-control-padding-h);
+}
+
+// Styles
+
+.ada-textarea {
+  @extend %TextArea;
+}
+
+.labeled-form-element.textarea .ada-textarea {
+  margin: size($spacing-xs) 0 size($spacing-sm);
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

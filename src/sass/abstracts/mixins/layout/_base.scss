@@ -1,0 +1,149 @@
+/// ----------------------------------------------------------------------------
+/// Basic Layout Mixins
+/// @group mixins-layout-base
+/// ----------------------------------------------------------------------------
+
+/// Set an element's width and max-width to the same value
+/// @param {Number} $value - Element width/max-width or height/max-height
+/// @param {String} $dimension [width] - Dimension to constrain
+/// @throw If @see @param $value is null
+@mixin constrain($value, $dimension: width) {
+  @if $value == null {
+    @error "$value parameter is required";
+  }
+
+  @if $dimension == width {
+    max-width: $value;
+    width: $value;
+  } @else {
+    height: $value;
+    max-height: $value;
+  }
+}
+
+/// Cross browser compatibility for fill-available
+/// @param {String} $dimension [width] - Dimension to apply fill-available
+@mixin fill-available($dimension: 'width') {
+  @if ($dimension == 'width') {
+    width: stretch;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  } @else {
+    height: stretch;
+    height: -webkit-fill-available;
+    height: -moz-available;
+  }
+
+  @content;
+}
+
+/// Sets the height and min-height of an element
+/// @param {Number | String} $height - height
+/// @param {Number | String} $min-height [unset] - min-height
+/// @param {Number | String} $max-height [none] - max-height
+@mixin height($height, $min-height: unset, $max-height: none) {
+  height: $height;
+  max-height: $max-height;
+  min-height: $min-height;
+}
+
+/// Removes the border from an element
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-borderless($important: false) {
+  @if $important {
+    border: none !important;
+  } @else {
+    border: none;
+  }
+}
+
+/// Center items in container using margin properties
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-centered($important: false) {
+  $margin: 0 auto;
+
+  margin: if($important, $margin !important, $margin);
+}
+
+/// Make an element as tall as its parent container
+/// @require {mixin} height
+@mixin is-full-height {
+  @include height(100%, unset, none);
+}
+
+/// Make an element as wide as its parent container
+/// @require {mixin} width
+@mixin is-full-width {
+  @include width(100%, unset, none);
+}
+
+/// Make an element full screen
+/// The support block does not work in IE
+/// @require {mixin} constrain
+@mixin is-fullscreen {
+  @include constrain(100vw);
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    @include constrain(stretch, height);
+
+    min-height: -webkit-fill-available;
+  }
+
+  @supports not (-webkit-overflow-scrolling: touch) {
+    @include constrain(100vh, height);
+
+    min-height: 100vh;
+  }
+}
+
+/// Hides an element
+/// @param {Boolean} $collapse [false] - If true, use visibility:collapse
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-hidden($collapse: false, $important: false) {
+  @if $collapse {
+    visibility: if($important, collapse !important, collapse);
+  } @else {
+    display: if($important, none !important, none);
+  }
+}
+
+/// Make an element full width and height of parent
+/// @require {mixin} is-full-height
+/// @require {mixin} is-full-width
+@mixin is-stretched {
+  @include is-full-height;
+
+  @include is-full-width;
+}
+
+/// Removes margin
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin no-margin($important: false) {
+  margin: if($important, 0 !important, 0);
+}
+
+/// Removes padding
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin no-padding($important: false) {
+  padding: if($important, 0 !important, 0);
+}
+
+/// Set an element's height and width
+/// @param {Number} $width - Element width
+/// @param {Number} $height [$width] - Element height
+/// @param {Boolean} $w-important [false] - If true, add !important to width
+/// @param {Boolean} $h-important [false] - If true, add !important to height
+@mixin size($width, $height: $width, $w-important: false, $h-important: false) {
+  height: if($h-important, $height !important, $height);
+  width: if($w-important, $width !important, $width);
+}
+
+/// Sets the width and min-width of an element
+/// @param {Number | String} $width - width
+/// @param {Number | String} $min-width [unset] - min-width
+/// @param {Number | String} $max-width [none] - max-width
+@mixin width($width, $min-width: unset, $max-width: none) {
+  max-width: $max-width;
+  min-width: $min-width;
+  width: $width;
+}

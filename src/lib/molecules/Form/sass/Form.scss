@@ -1,0 +1,33 @@
+/// ----------------------------------------------------------------------------
+/// Form variables, functions, mixins, placeholders, and styles
+/// @group Form
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Form component styles
+/// @require {mixin} width
+%Form {
+  @include width(100%);
+}
+
+// Styles
+
+// Form
+.adm-form {
+  @extend %Form;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

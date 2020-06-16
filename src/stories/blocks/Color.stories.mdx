@@ -1,0 +1,41 @@
+import { ColorPalette, ColorItem, Meta } from '@storybook/addon-docs/blocks'
+import { Colors, getColorItem } from 'storybook/config'
+
+<Meta title='Blocks/Colors' />
+
+# 🚧 Color Palettes
+
+<br />
+
+## Themes
+
+<br />
+
+### 🚧 Default
+
+<ColorPalette>{/* TODO: Add theme palette */}</ColorPalette>
+
+## React
+
+<ColorPalette>
+  <ColorItem {...getColorItem('react.$color-react-blue')} />
+  <ColorItem {...getColorItem('react.$color-react-gray')} />
+</ColorPalette>
+
+## Material Colors
+
+https://material-ui.com/customization/color/#color-palette
+
+<br />
+
+<ColorPalette>
+  <ColorItem {...getColorItem('material.$black')} />
+  <ColorItem
+    title='Grey'
+    subtitle='$grey-SHADE'
+    colors={Object.values(Colors.material)
+      .filter(color => color.name.includes('Grey'))
+      .map(color => color.value)}
+  />
+  <ColorItem {...getColorItem('material.$white')} />
+</ColorPalette>

@@ -226,19 +226,19 @@ class SubscriptionPopup extends SGPopup
 			$submitStyles['height'] = AdminHelper::getCSSSafeSize($submitHeight);
 		}
 		if ($this->getFieldValue('sgpb-subs-btn-bg-color')) {
-			$submitStyles['background-color'] = $this->getFieldValue('sgpb-subs-btn-bg-color');
+			$submitStyles['background-color'] = $this->getFieldValue('sgpb-subs-btn-bg-color').' !important';
 		}
 		if ($this->getFieldValue('sgpb-subs-btn-text-color')) {
 			$submitStyles['color'] = $this->getFieldValue('sgpb-subs-btn-text-color');
 		}
 		if ($this->getFieldValue('sgpb-subs-btn-border-radius')) {
-			$submitStyles['border-radius'] = AdminHelper::getCSSSafeSize($this->getFieldValue('sgpb-subs-btn-border-radius'));
+			$submitStyles['border-radius'] = AdminHelper::getCSSSafeSize($this->getFieldValue('sgpb-subs-btn-border-radius')).' !important';
 		}
 		if ($this->getFieldValue('sgpb-subs-btn-border-width')) {
-			$submitStyles['border-width'] = AdminHelper::getCSSSafeSize($this->getFieldValue('sgpb-subs-btn-border-width'));
+			$submitStyles['border-width'] = AdminHelper::getCSSSafeSize($this->getFieldValue('sgpb-subs-btn-border-width')).' !important';
 		}
 		if ($this->getFieldValue('sgpb-subs-btn-border-color')) {
-			$submitStyles['border-color'] = $this->getFieldValue('sgpb-subs-btn-border-color');
+			$submitStyles['border-color'] = $this->getFieldValue('sgpb-subs-btn-border-color').' !important';
 		}
 		$submitStyles['text-transform'] = 'none !important';
 		$submitStyles['border-style'] = 'solid';

@@ -10,6 +10,8 @@ require_once __DIR__ . '/logger.php';
 
 class SignOnUserProvider {
 
+	private $user_request_id_helper;
+
 	const WPE_USER_CREATED_TIME = 'WPE_USER_CREATED_TIME';
 	const WPE_LAST_LOGIN_TIME   = 'WPE_LAST_LOGIN_TIME';
 	const DEFAULT_USER_ROLE     = 'administrator';
@@ -21,6 +23,10 @@ class SignOnUserProvider {
 		$user = $user ? $user : new \WP_User();
 
 		return $user;
+	}
+
+	public function __construct( $user_request_id_helper ) {
+		$this->user_request_id_helper = $user_request_id_helper;
 	}
 
 	public function get_or_create_wp_user( $user_email, $first_name, $last_name, $role ) {
@@ -36,7 +42,7 @@ class SignOnUserProvider {
 		return $user;
 	}
 
-	public function login_user( $user, $start_time ) {
+	public function login_user( $user, $start_time, $request_id ) {
 		wp_clear_auth_cookie();
 		wp_set_auth_cookie( $user->ID, true );
 		wp_set_current_user( $user->ID );
@@ -44,6 +50,7 @@ class SignOnUserProvider {
 		do_action( 'wp_login', $user->user_login, $user );
 
 		$this->update_last_login_time_to_meta_data( $user );
+		$this->user_request_id_helper->update_request_id_user_meta( $user->user_email, $request_id );
 
 		$email        = $user->user_email;
 		$roles        = implode( ',', $user->roles );

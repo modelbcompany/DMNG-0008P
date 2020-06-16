@@ -1,0 +1,53 @@
+/// ----------------------------------------------------------------------------
+/// TableData variables, functions, mixins, placeholders, and styles
+/// @group TableData
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: TableData
+/// @require {mixin} font-size
+/// @require {mixin} text-color
+/// @require {variable} $link-color
+/// @require {variable} $font-size
+%TableData {
+  @include font-size($font-size);
+
+  @include font-weight(500);
+
+  @include text-color($text-color);
+
+  &[role='link'] {
+    @include color($link-color);
+
+    @include event {
+      text-decoration: underline;
+    }
+
+    @include font-size($font-size);
+
+    @include font-weight(600);
+
+    font-family: $font-family-primary;
+  }
+}
+
+// Styles
+
+.ada-td {
+  @extend %TableData;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

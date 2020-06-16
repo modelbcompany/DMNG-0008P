@@ -1,0 +1,43 @@
+/// ----------------------------------------------------------------------------
+/// Functions for importing assets -- fonts, icons, images
+/// @group functions-media
+/// ----------------------------------------------------------------------------
+
+/// Native `url(..)` function wrapper
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+/// @return {Url}
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Returns URL to a font based on its path
+/// @require {function} asset
+/// @require {variable} $base-url
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$base-url] - Base asset url
+/// @return {Url}
+@function font($filename, $ext, $base: $base-url) {
+  @return asset($base, 'fonts/', $filename);
+}
+
+/// Returns URL to an icon based on its path
+/// @require {function} asset
+/// @require {variable} $base-url
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$base-url] - Base asset url
+/// @return {Url}
+@function icon($filename, $base: $base-url) {
+  @return asset($base, 'icons/', $filename);
+}
+
+/// Returns URL to an image based on its path
+/// @require {function} asset
+/// @require {variable} $base-url
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$base-url] - Base asset url
+/// @return {Url}
+@function image($path, $base: $base-url) {
+  @return asset($base, 'images/', $path);
+}

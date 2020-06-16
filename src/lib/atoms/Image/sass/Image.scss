@@ -1,0 +1,31 @@
+/// ----------------------------------------------------------------------------
+/// Image variables, functions, mixins, placeholders, and styles
+/// @group Image
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+// Styles
+
+// Image
+.ada-image {
+  &.react-logo-spin {
+    @include constrain(50%);
+
+    pointer-events: none;
+  }
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

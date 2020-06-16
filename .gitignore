@@ -71,3 +71,8 @@ app/public/*.asx
 app/public/*.asf
 app/public/*.wmv
 app/public/*.avi
+
+build/
+dist/
+
+.vercel

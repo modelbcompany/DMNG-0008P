@@ -1,0 +1,46 @@
+/// ----------------------------------------------------------------------------
+/// Link variables, functions, mixins, placeholders, and styles
+/// @group Link
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Link component styles
+/// @require {mixin} flex
+/// @require {mixin} font-size
+/// @require {mixin} text-color
+/// @require {variable} $link-color
+/// @require {variable} $font-family-secondary
+/// @require {variable} $link-font-size
+%Link {
+  @include font-size($link-font-size);
+
+  @include text-color($link-color);
+
+  font-family: $font-family-secondary;
+
+  &[data-icon] {
+    @include flex(inline-flex, center, space-between);
+  }
+}
+
+// Styles
+
+// Link
+.ada-link {
+  @extend %Link;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

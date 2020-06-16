@@ -295,7 +295,6 @@ class Ajax
 		check_ajax_referer(SG_AJAX_NONCE, 'nonce');
 		$formId = (int)sanitize_text_field($_POST['popupSubscriptionList']);
 		$fileURL = sanitize_text_field($_POST['importListURL']);
-
 		ob_start();
 		require_once SG_POPUP_VIEWS_PATH.'importConfigView.php';
 		$content = ob_get_contents();

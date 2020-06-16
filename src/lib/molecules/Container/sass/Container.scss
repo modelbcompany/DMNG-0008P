@@ -1,0 +1,137 @@
+/// ----------------------------------------------------------------------------
+/// Container variables, functions, mixins, placeholders, and styles
+/// @group Container
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+/// Specifies the size of the grid lines.
+/// Think of it like setting the width of the gutters between the columns.
+/// @require {variable} $grid-layout
+/// @param {variable} $breakpoint - Breakpoint to set grid-column-gap
+/// @return Function
+@function grid-column-margin($breakpoint) {
+  $grid-config: map-get($grid-layout, $breakpoint);
+
+  $grid-column-width: map-get($grid-config, 'column-width');
+  $grid-gutter-width: map-get($grid-config, 'gutter-width');
+
+  @return size($grid-column-width + $grid-gutter-width);
+}
+
+// Mixins
+
+/// Styles for Columns containing images
+/// @require {mixin} is-flex-centered
+@mixin has-image {
+  @include is-flex-centered;
+
+  position: relative;
+}
+
+// Placeholders
+
+/// Container component styles
+/// @require <Container>Container element</Container>
+/// @require {function} map2-get
+/// @require {mixin} constrain
+/// @require {mixin} is-centered
+/// @require {mixin} no-margin
+/// @require {variable} $breakpoint-1024
+/// @require {variable} $breakpoint-414
+/// @require {variable} $devices
+%Container {
+  @include constrain(map2-get($devices, 'desktop', 'max-width'));
+
+  @include is-centered;
+
+  @include respond-to($breakpoint-1024) {
+    @include constrain(map2-get($devices, 'tablet', 'max-width'));
+  }
+
+  @include respond-to($breakpoint-414) {
+    @include constrain(map2-get($devices, 'mobile', 'max-width'));
+  }
+
+  &.is-full-width {
+    @include no-margin;
+  }
+}
+
+/// Column component styles
+/// @require {mixin} display-flex
+/// @require {mixin} flex-column
+/// @require {mixin} has-image
+%Column {
+  @include display-flex;
+
+  @include flex-column;
+
+  &.has-image {
+    @include has-image;
+  }
+}
+
+/// Row component styles
+/// @require {function} size
+/// @require {mixin} display-flex
+/// @require {variable} $one-dozen / 2
+%Row {
+  @include display-flex;
+
+  > * {
+    flex-grow: 1;
+
+    &:not(:last-of-type) {
+      padding-right: size($one-dozen / 2) !important;
+    }
+  }
+}
+
+// Styles
+
+// Container
+.adm-container {
+  @extend %Container;
+}
+
+.display-flex,
+.flex-column,
+.flex-spread {
+  > .adm-container {
+    @include display-flex;
+  }
+}
+
+.fieldset-container {
+  @include is-full-width;
+}
+
+.layout-container {
+  @include is-stretched;
+}
+
+.form-field .fieldset-container {
+  @include display-flex;
+}
+
+// Column
+
+.column {
+  @extend %Column;
+}
+
+// Row
+.row {
+  @extend %Row;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

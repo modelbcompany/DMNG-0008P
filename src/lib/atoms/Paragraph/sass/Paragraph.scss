@@ -1,0 +1,44 @@
+/// ----------------------------------------------------------------------------
+/// Paragraph variables, functions, mixins, placeholders, and styles
+/// @group Paragraph
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: Paragragh
+/// @require {mixin} color
+/// @require {mixin} font-size
+/// @require {variable} $font-size
+/// @require {variable} $text-color
+%Paragraph {
+  @include color($text-color) @include font-size($font-size);
+}
+
+// Styles
+
+// Paragraph
+.ada-paragraph {
+  @extend %Paragraph;
+}
+
+.ada-td > .ada-paragraph {
+  @include font-weight(500);
+
+  @include font-size($font-size);
+
+  @include text-color($text-color);
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

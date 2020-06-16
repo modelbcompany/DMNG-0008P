@@ -511,7 +511,8 @@ class ConfigDataHelper
 			'countries' => __('Countries', SG_POPUP_TEXT_DOMAIN),
 			'detect-by-url' => __('Detect by URL', SG_POPUP_TEXT_DOMAIN),
 			'cookie-detection' => __('Cookie Detection', SG_POPUP_TEXT_DOMAIN),
-			'operation-system' => __('Operating System', SG_POPUP_TEXT_DOMAIN)
+			'operation-system' => __('Operating System', SG_POPUP_TEXT_DOMAIN),
+			'browser-detection' => __('Web Browser', SG_POPUP_TEXT_DOMAIN)
 		);
 
 		$data['closeButtonPositions'] = array(

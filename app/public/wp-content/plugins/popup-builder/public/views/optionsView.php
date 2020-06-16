@@ -324,19 +324,9 @@ if (!empty($removedOptions['content-copy-to-clipboard'])) {
 			<?php endif; ?>
 			<?php if ($autoClose && empty($removedOptions['sgpb-auto-close-time'])): ?>
 				<div class="sg-full-width">
-					<div class="row form-group">
-						<label class="col-md-5 sgpb-static-padding-top sgpb-sub-option">
-							<?php _e('Auto close after', SG_POPUP_TEXT_DOMAIN); ?>:
-						</label>
-						<div class="col-md-6">
-							<input type="number" min="0" class="form-control sgpb-full-width-events" name="sgpb-auto-close-time" value="<?php echo $popupTypeObj->getOptionValue('sgpb-auto-close-time'); ?>">
-						</div>
-						<div class="col-md-1">
-							<span class="sgpb-restriction-unit">
-								<?php _e('Second(s)', SG_POPUP_TEXT_DOMAIN) ?>
-							</span>
-						</div>
-					</div>
+					<?php 
+						do_action('autoCloseOptions', $popupTypeObj); 
+					?>
 				</div>
 			<?php endif; ?>
 			<?php if (empty($removedOptions['sgpb-close-after-page-scroll'])): ?>

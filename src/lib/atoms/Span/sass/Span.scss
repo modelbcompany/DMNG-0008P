@@ -1,0 +1,200 @@
+/// ----------------------------------------------------------------------------
+/// Span variables, functions, mixins, placeholders, and styles
+/// @group Span
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: Span
+/// @require {mixin} absolute
+/// @require {mixin} display-flex
+/// @require {mixin} font-size
+/// @require {mixin} is-flex-centered
+/// @require {mixin} text-color
+/// @require {variable} $font-size-sm
+/// @require {variable} $input-padding-h
+/// @require {variable} $input-placeholder-color
+%Span {
+  display: inline-block;
+
+  &[data-icon] {
+    @include display-flex(inline-flex);
+
+    @include is-flex-centered;
+  }
+
+  &.placeholder {
+    @include absolute(25%, null, null, size($input-padding-h));
+
+    @include font-size($font-size-sm);
+
+    @include text-color($input-placeholder-color);
+  }
+}
+
+/// Icon component styles
+/// @require {function} size
+%Icon {
+  $spacing: size($padding-default-lg * 0.375);
+
+  @include width(auto, unset, none);
+
+  font-family: 'Material Icons Outlined' !important;
+
+  &[data-position] {
+    margin-right: $spacing;
+  }
+
+  &[data-position='right'] {
+    margin-left: $spacing;
+    margin-right: 0;
+  }
+}
+
+// Styles
+
+// Span
+.ada-span {
+  @extend %Span;
+}
+
+.adm-label > .ada-span:first-of-type {
+  @include font-weight(600);
+
+  margin-bottom: size($spacing-md);
+}
+
+.labeled-form-element.important {
+  > .ada-span:first-of-type:not(.labeled-form-element-description),
+  > .ada-span:first-of-type:not(.placeholder) {
+    @include text-color($color-status-danger);
+  }
+}
+
+.labeled-form-element-description {
+  @include text-color($labeled-form-element-description-color);
+}
+
+.adm-fieldset.flex-column .adm-label.flex-row {
+  .ada-span {
+    margin-right: size($font-size-sm);
+  }
+}
+
+.wrapper {
+  @include display-flex(inline-flex);
+}
+
+.input-wrapper[data-icon='true'] {
+  @include relative;
+
+  .icon {
+    @include absolute(null, null, null, 0);
+
+    @include color($grey-600, $grey-300);
+
+    @include font-size($one-dozen + 6);
+
+    @include height(100%, unset, none);
+
+    @include width(size(30));
+  }
+}
+
+.dropdown-item .wrapper {
+  @include flex-spread;
+}
+
+.menu-item[data-separator='true'][aria-controls]:not(:last-of-type) > .wrapper {
+  @include separator;
+}
+
+.badge {
+  @include color($grey-500, $grey-200);
+
+  @include display-flex(inline-flex);
+
+  @include font-size(11);
+
+  @include font-weight(500);
+
+  @include height(size($one-dozen * 2));
+
+  @include is-flex-centered;
+
+  @include no-breaking;
+
+  @include width(size($one-dozen * 2 * 3));
+
+  font-family: $font-family-primary;
+  padding: 0 size($one-dozen * 2);
+}
+
+.badge.is-circle {
+  @include color($text-color-inverse, $grey-400);
+
+  @include font-size($font-size-sm - 2);
+
+  @include is-circle($one-dozen * 2 * 1.25, important);
+
+  @include no-padding(important);
+}
+
+.dimmer {
+  @include absolute(0, null, null, null);
+
+  @include background-color(rgba($black, 0.1875));
+
+  @include is-stretched;
+
+  z-index: $one-dozen * 2 * 1.5;
+}
+
+.sidebar-dimmer {
+  @include event {
+    cursor: pointer;
+  }
+
+  @include is-stretched;
+
+  display: none;
+
+  &[data-visible='true'] {
+    display: block;
+    z-index: $one-dozen * 2 * 1.5;
+  }
+}
+
+// Icon
+.icon {
+  @extend %Icon;
+}
+
+*[data-icon='true'] > .icon {
+  $spacing: size($one-dozen / 2);
+
+  margin-right: $spacing;
+
+  &[data-position='right'] {
+    margin-left: $spacing;
+    margin-right: 0;
+  }
+}
+
+.ada-th .icon {
+  @include font-size($font-size-lg);
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

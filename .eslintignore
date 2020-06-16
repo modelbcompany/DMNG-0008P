@@ -1,3 +1,7 @@
-# ESLint Ignore - https://eslint.org/docs/user-guide/configuring#eslintignore
+# ESLint Ignore
 
-node_modules/
+app/
+build/
+dist/
+
+jest.setup.js

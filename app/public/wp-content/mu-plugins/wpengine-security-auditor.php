@@ -4,7 +4,7 @@
  * Description: WP Engine-specific security auditing and logging
  * Author:      wpengine
  * Author URI:  https://wpengine.com
- * Version:     1.0.8
+ * Version:     1.0.9
  *
  * @package wpengine-security-auditor
  */
@@ -346,32 +346,7 @@ class WPEngineSecurityAuditor_Scans {
 	 * @return string Hash
 	 */
 	public static function sig_tree( $path ) {
-		$hc    = hash_init( 'sha256' );
-		$queue = [ [ $path, '.', 0 ] ];
-		$n     = 0;
-
-		while ( $queue ) {
-			list($path, $name, $parent) = array_pop( $queue );
-			if ( is_link( $path ) ) {
-				$content = readlink( $path );
-			} elseif ( is_file( $path ) ) {
-				$content = "sha256\0" . hash_file( 'sha256', $path );
-			} elseif ( is_dir( $path ) ) {
-				$me      = $n++;
-				$content = "\0 0";
-				foreach ( scandir( $path ) as $name ) {
-					if ( '.' === $name || '..' === $name ) {
-						continue;
-					}
-					$queue[] = [ "$path/$name", $name, $me ];
-				}
-			} else {
-				$content = "\0 1"; // wtf
-			}
-			hash_update( $hc, "$name\0$parent\0$content\0" );
-		}
-		hash_update( $hc, $n );
-		return 'v1:' . hash_final( $hc );
+		return 'v1:nohash';
 	}
 
 	/**

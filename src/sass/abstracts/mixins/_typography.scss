@@ -1,0 +1,116 @@
+/// ----------------------------------------------------------------------------
+/// Typography mixins
+/// @group mixins-typography
+/// ----------------------------------------------------------------------------
+
+/// Adds an after effect to text.
+/// @require {function} size
+/// @require {function} absolute
+/// @require {variable} $pp-sustainability
+/// @param {Color} $color - Background color of ::after element
+/// @param {Number} $height - Height of ::after element
+/// @param {Number} $padding - Bottom padding of main element
+/// @param {Number} $padding - Bottom margin of main element
+/// @param {Number} $width - Width of ::after element
+@mixin after-effects($color, $height, $padding, $margin, $width) {
+  margin-bottom: $margin;
+  padding-bottom: $padding;
+  position: relative;
+
+  &::after {
+    @include absolute(null, null, 0, 0);
+
+    background-color: $color;
+    content: ' ';
+    display: inline-block;
+    height: $height;
+    width: $width;
+
+    @content;
+  }
+}
+
+/// Text alignment helper
+/// @param {String} $alignment - Text alignment
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin align-text($alignment, $important: false) {
+  text-align: if($important, $alignment !important, $alignment);
+}
+
+/// Converts @see @param $size into to em or rem units
+/// After converting, the font-size will be set
+/// @require {function} size
+/// @param {Number} $size [$padding-default-lg] - Value to convert in pixels
+/// @param {Boolean} $important [false] - If true, add !important
+/// @param {String} $unit [rem] - Unit to convert to
+@mixin font-size($size: $padding-default-lg, $important: false, $unit: rem) {
+  font-size: if($important, size($size, $unit) !important, size($size, $unit));
+}
+
+/// font-style helper
+/// @param {String} $style - font-style
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin font-style($style, $important: false) {
+  font-style: if($important, $style !important, $style);
+}
+
+/// font-weight helper
+/// @param {String} $weight [400] - font-weight
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin font-weight($weight: 400, $important: false) {
+  font-weight: if($important, $weight !important, $weight);
+}
+
+/// text-transform helper
+/// @param {String} $transform - text-transform
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin text-transform($transform, $important: false) {
+  text-transform: if($important, $transform !important, $transform);
+}
+
+/// white-space helper
+/// @param {String} $space - white-space
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin white-space($space, $important: false) {
+  white-space: if($important, $space !important, $space);
+}
+
+/// Makes text black
+/// @require {mixin} text-color
+/// @require {variable} $black
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-black-text($important: false) {
+  @include text-color($black, $important);
+}
+
+/// Center align text
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-center-aligned-text($important: false) {
+  @include align-text(center, $important);
+}
+
+/// Capitalize text
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-capitalized($important: false) {
+  @include text-transform(capitalize, $important);
+}
+
+/// Makes text uppercase
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-uppercase($important: false) {
+  @include text-transform(uppercase, $important);
+}
+
+/// Makes text white
+/// @require {mixin} text-color
+/// @require {variable} $white
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin is-white-text($important: false) {
+  @include text-color($white, $important);
+}
+
+/// Prevents a text element from breaking onto the next line
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin no-breaking($important: false) {
+  @include white-space(nowrap, $important);
+}

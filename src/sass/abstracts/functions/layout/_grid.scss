@@ -1,0 +1,27 @@
+/// ----------------------------------------------------------------------------
+/// CSS Grid Functions
+/// @group functions-layout-grid
+/// ----------------------------------------------------------------------------
+
+/// Specifies the size of the grid lines.
+/// Think of it like setting the width of the gutters between the columns.
+/// @require {variable} $grid-layout
+/// @param {variable} $breakpoint - Breakpoint to set grid-column-gap
+/// @return {Function}
+@function grid-column-gap($breakpoint) {
+  $grid-config: map-get($grid-layout, $breakpoint);
+  $grid-column-gap: map-get($grid-config, 'gutter-width');
+
+  @return size($grid-column-gap);
+}
+
+/// Retreives the number of grid columns based on device type.
+/// @require {variable} $devices
+/// @param {string} $device_type - desktop | tablet | mobile
+/// @return {Number}
+@function grid-template-columns($device_type) {
+  $track-config: map-get($devices, $device_type);
+  $track-size: map-get($track-config, 'columns');
+
+  @return #{repeat($track-size, 1fr)};
+}
