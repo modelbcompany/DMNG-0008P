@@ -1,6 +1,6 @@
+import { VoidElementTagProps } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, ImgHTMLAttributes } from 'react'
-import { VoidElementTagProps } from 'definitions'
 
 /**
  * @module Components/Atoms/Image

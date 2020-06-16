@@ -2,7 +2,7 @@ import {
   FormSubmissionEvent,
   FormSubmissionEventHandler,
   InitialState
-} from 'definitions'
+} from 'declarations'
 import React from 'react'
 import useObject from './useObject'
 

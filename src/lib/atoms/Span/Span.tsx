@@ -1,5 +1,5 @@
 import * as MaterialIcon from '@material-ui/core/Icon'
-import { Props } from 'definitions'
+import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import { merge, omit } from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'

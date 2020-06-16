@@ -1,6 +1,6 @@
-import { Input, Placeholder } from 'lib'
-import { PropsWithOpts } from 'definitions'
+import { PropsWithOpts } from 'declarations'
 import { useMutatedProps, useOptions } from 'hooks'
+import { Input, Placeholder } from 'lib'
 import React, { FC } from 'react'
 import ReactSelect, { Props as ReactSelectProps } from 'react-select'
 import './sass/Select.scss'

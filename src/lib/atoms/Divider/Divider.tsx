@@ -1,4 +1,4 @@
-import { VoidElementTagProps } from 'definitions'
+import { VoidElementTagProps } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'

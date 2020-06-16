@@ -1,5 +1,5 @@
+import { OptionProps } from 'declarations'
 import { Option } from 'lib'
-import { OptionProps } from 'definitions'
 import React, { ReactElement } from 'react'
 
 /**

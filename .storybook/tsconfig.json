@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
-    "rootDir": "../"
+    "noEmit": true
   },
-  "exclude": ["api"],
-  "extends": "../tsconfig.json",
+  "extends": "../tsconfig.prod.json",
   "include": ["../src/**/*"]
 }

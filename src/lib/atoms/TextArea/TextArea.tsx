@@ -1,4 +1,4 @@
-import { FormElementProps, VoidElementTagProps } from 'definitions'
+import { FormElementProps, VoidElementTagProps } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, TextareaHTMLAttributes } from 'react'
 import './sass/TextArea.scss'

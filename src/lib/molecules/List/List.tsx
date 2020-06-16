@@ -1,6 +1,6 @@
-import { Item, ItemProps, ItemTypes, MenuItem } from 'lib'
-import { Props } from 'definitions'
+import { Props } from 'declarations'
 import { MenuConfiguration, useMenuItems, useMutatedProps } from 'hooks'
+import { Item, ItemProps, ItemTypes, MenuItem } from 'lib'
 import React, { FC, HTMLAttributes, OlHTMLAttributes } from 'react'
 import './sass/List.scss'
 

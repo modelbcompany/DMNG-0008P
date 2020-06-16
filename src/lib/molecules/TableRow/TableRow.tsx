@@ -1,3 +1,5 @@
+import { PropsWithContainer } from 'declarations'
+import { useMutatedProps } from 'hooks'
 import {
   Container,
   TableData,
@@ -5,8 +7,6 @@ import {
   TableHeader,
   TableHeaderProps
 } from 'lib'
-import { PropsWithContainer } from 'definitions'
-import { useMutatedProps } from 'hooks'
 import _ from 'lodash'
 import React, { FC } from 'react'
 import './sass/TableRow.scss'

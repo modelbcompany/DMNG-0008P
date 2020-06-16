@@ -1,21 +1,10 @@
 {
   "compilerOptions": {
-    "baseUrl": "./src",
-    "declaration": false,
-    "declarationMap": false,
-    "noEmit": true,
-    "outDir": "./dist",
-    "paths": {
-      "definitions/*": ["definitions/*"],
-      "hooks/*": ["hooks/*"],
-      "lib/*": ["lib/*"],
-      "logger": ["logger.ts"],
-      "utils/*": ["utils/*"]
-    },
     "rootDir": "./src"
   },
   "exclude": [
     "__tests__",
+    "api",
     "app",
     "build",
     "dist",
@@ -23,5 +12,6 @@
     "src/stories",
     "jest.config.js",
     "jest.setup.js"
-  ]
+  ],
+  "extends": "./tsconfig.json"
 }

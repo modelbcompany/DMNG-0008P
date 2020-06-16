@@ -70,7 +70,7 @@ module.exports = {
    */
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = merge({}, config.resolve.alias, {
-      definitions: path.join(__dirname, '../src/definitions'),
+      declarations: path.join(__dirname, '../src/lib/declarations'),
       hooks: path.join(__dirname, '../src/hooks'),
       lib: path.join(__dirname, '../src/lib'),
       logger: path.join(__dirname, '../src/logger'),

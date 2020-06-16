@@ -1,4 +1,4 @@
-import { Props } from 'definitions'
+import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, HTMLAttributes } from 'react'
 import './sass/TableBody.scss'

@@ -1,5 +1,5 @@
+import { Children, Props } from 'declarations'
 import { Icon, IconProps } from 'lib'
-import { Children, Props } from 'definitions'
 import React, { useEffect } from 'react'
 import { isArray } from 'utils'
 import useArray from './useArray'
@@ -37,10 +37,10 @@ export const useIcon = ({
 }: UseIconParameters): UseIconState => {
   kids = isArray(kids) || [kids]
 
-  const { array: children, setArray: setChildren } = useArray(kids)
+  const { array: children, setArray: setChildren } = useArray(kids as [])
   const { empty, object: iconProps, setObject: setIconProps } = useObject(props)
   const { boolean: exists } = useBoolean(
-    props === undefined || props === null ? undefined : !!props
+    props === undefined || props === null ? false : !!props
   )
 
   useEffect(() => {

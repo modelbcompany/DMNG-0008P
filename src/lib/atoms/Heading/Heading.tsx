@@ -1,6 +1,6 @@
+import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, HTMLAttributes } from 'react'
-import { Props } from 'definitions'
 
 /**
  * @module Components/Atoms/Heading

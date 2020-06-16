@@ -1,4 +1,4 @@
-import { OptionProps, Primitive } from 'definitions'
+import { AnyObject, OptionProps, Primitive } from 'declarations'
 import { useEffect } from 'react'
 import { isPrimitive } from 'util'
 import useArray from './useArray'
@@ -44,8 +44,10 @@ export type UseOptionsState = {
 export const useOptions = (
   initialOptions: Primitive[] | Record<string, any>[] = []
 ): UseOptionsState => {
-  const { array, setArray } = useArray(initialOptions)
-  const { object, setObject } = useObject(array.find(option => option.selected))
+  const { array, setArray } = useArray<any>(initialOptions)
+  const { object, setObject } = useObject(
+    array.find((option: AnyObject) => option.selected)
+  )
 
   useEffect(() => {
     setArray(

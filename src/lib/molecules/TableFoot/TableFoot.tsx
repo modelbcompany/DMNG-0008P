@@ -1,6 +1,6 @@
-import { TableRow, TableRowProps } from 'lib'
-import { Props } from 'definitions'
+import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
+import { TableRow, TableRowProps } from 'lib'
 import React, { FC, HTMLAttributes } from 'react'
 import './sass/TableFoot.scss'
 

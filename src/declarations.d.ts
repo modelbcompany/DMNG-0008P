@@ -10,25 +10,17 @@ import {
   ReactNode,
   SelectHTMLAttributes
 } from 'react'
-import { GlobalEventHandlers } from '../html'
-import { Obj, Primitive } from './global'
 
 /**
- * @file Type Definitions - Components (Global)
- * @todo Update documentation
+ * Type capturing an object with strings for key, and where values can be any
+ * type.
  */
+export type AnyObject = Record<string, any>
 
 /**
  * Component children.
  */
 export type Children = ReactChildren | ReactChildren[] | ReactNode | ReactNode[]
-
-/**
- * Event target type.
- */
-export type Target = EventTarget & {
-  dataset: Record<string, any>
-}
 
 /* eslint-disable prettier/prettier */
 
@@ -87,11 +79,6 @@ export interface FormElementProps {
   value?: null | boolean | boolean[] | string | string[] | number | number[]
 }
 
-export type FormSubmissionEventHandler = (
-  form: InitialState,
-  event: FormSubmissionEvent
-) => any
-
 /* eslint-disable prettier/prettier */
 
 export type FormSubmissionEvent = ChangeEvent<FormElement> &
@@ -103,7 +90,21 @@ export type FormSubmissionEvent = ChangeEvent<FormElement> &
 
 /* eslint-enable prettier/prettier */
 
+export type FormSubmissionEventHandler = (
+  form: InitialState,
+  event: FormSubmissionEvent
+) => any
+
+export type HTMLElementEvent<T extends HTMLElement> = Event & {
+  target: T & Target
+}
+
 export type InitialState = Record<string, any>
+
+/**
+ * Type capturing null, undefined, and empty strings.
+ */
+export type NonExistent = '' | null | undefined
 
 /**
  * {@link Option} component properties.
@@ -151,9 +152,14 @@ export interface OptionProps extends Props {
 /* eslint-disable prettier/prettier */
 
 /**
+ * Type capturing primitive value types.
+ */
+export type Primitive = boolean | number | string
+
+/**
  * Data that can be passed to all components.
  */
-export type Props<T = Obj> = T & {
+export type Props<T = AnyObject> = T & {
   /**
    * Inner content.
    */
@@ -182,26 +188,15 @@ export type Props<T = Obj> = T & {
    * Icon to render beside the element text.
    */
   icon?: Record<string, any>
-} & AriaAttributes &
-  DOMAttributes<T> &
-  GlobalEventHandlers
+} & Partial<AriaAttributes & DOMAttributes<T> & GlobalEventHandlers>
 
 /* eslint-enable prettier/prettier */
-
-export type VoidElementTagProps<T = Obj> = Omit<
-  Props<T>,
-  'children' | 'dangerouslySetInnerHTML'
->
-
-export type PropsWithReqChildren<T = Obj> = Omit<Props<T>, 'children'> & {
-  children: Children
-}
 
 /**
  * Data that can be passed to components that render {@link Container}
  * components as wrappers around their children.
  */
-export type PropsWithContainer<T = Obj> = Props<T> & {
+export type PropsWithContainer<T = AnyObject> = Props<T> & {
   container?: boolean
 }
 
@@ -209,20 +204,20 @@ export type PropsWithContainer<T = Obj> = Props<T> & {
  * Data that can be passed to components that handle list items, such as
  * {@link List} or {@link Menu}.
  */
-export type PropsWithItems<T = Obj> = Omit<Props<T>, 'children'> & {
+export type PropsWithItems<T = AnyObject> = Omit<Props<T>, 'children'> & {
   /**
    * Initial items data.
    *
    * @default []
    */
-  initialItems?: OptionProps[] | string[] | number[] | Obj[]
+  initialItems?: OptionProps[] | string[] | number[] | AnyObject[]
 }
 
 /**
  * Data that can be passed to components that handle user options, such as
  * {@link OptGroup} or {@link Select}.
  */
-export type PropsWithOpts<T = Obj> = Omit<Props<T>, 'children'> & {
+export type PropsWithOpts<T = AnyObject> = Omit<Props<T>, 'children'> & {
   /**
    * If true, treat `initialOptions` as an array of {@link OptGroup} data.
    *
@@ -237,3 +232,19 @@ export type PropsWithOpts<T = Obj> = Omit<Props<T>, 'children'> & {
    */
   initialOptions?: OptionProps[] | Primitive[]
 }
+
+export type PropsWithReqChildren<T = AnyObject> = Omit<Props<T>, 'children'> & {
+  children: Children
+}
+
+/**
+ * Event target type.
+ */
+export type Target = EventTarget & {
+  dataset: Record<string, any>
+}
+
+export type VoidElementTagProps<T = AnyObject> = Omit<
+  Props<T>,
+  'children' | 'dangerouslySetInnerHTML'
+>

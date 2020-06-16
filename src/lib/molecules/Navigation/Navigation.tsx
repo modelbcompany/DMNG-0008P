@@ -1,6 +1,6 @@
-import { Container } from 'lib'
-import { PropsWithContainer } from 'definitions'
+import { PropsWithContainer } from 'declarations'
 import { useMutatedProps } from 'hooks'
+import { Container } from 'lib'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'
 import './sass/Navigation.scss'

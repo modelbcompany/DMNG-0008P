@@ -1,6 +1,6 @@
-import { Option } from 'lib'
-import { PropsWithOpts } from 'definitions'
+import { PropsWithOpts } from 'declarations'
 import { useMutatedProps, useOptions } from 'hooks'
+import { Option } from 'lib'
 import React, { FC, OptgroupHTMLAttributes } from 'react'
 /**
  * @module Components/Molecules/OptGroup

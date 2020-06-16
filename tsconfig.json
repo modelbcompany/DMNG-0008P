@@ -1,9 +1,9 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
-    "allowJs": false,
+    "allowJs": true,
     "allowSyntheticDefaultImports": true,
-    "checkJs": false,
+    "checkJs": true,
     "baseUrl": "./src",
     "declaration": true,
     "declarationMap": false,
@@ -17,27 +17,26 @@
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noLib": false,
     "noEmit": false,
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "noLib": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "outDir": "./dist",
     "paths": {
-      "definitions/*": ["definitions/*"],
+      "declarations/*": ["lib/declarations.d.ts"],
       "hooks/*": ["hooks/*"],
       "lib/*": ["lib/*"],
       "logger": ["logger.ts"],
-      "storybook/*": [".storybook/*"],
       "utils/*": ["utils/*"]
     },
     "preserveConstEnums": true,
     "removeComments": false,
-    "rootDir": "./src",
+    "rootDir": "./",
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "strictNullChecks": true,
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
@@ -52,6 +51,5 @@
     "node_modules",
     "jest.config.js",
     "jest.setup.js"
-  ],
-  "include": ["api/**/*"]
+  ]
 }

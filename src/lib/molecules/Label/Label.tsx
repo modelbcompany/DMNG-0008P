@@ -1,3 +1,5 @@
+import { Props } from 'declarations'
+import { useMutatedProps } from 'hooks'
 import {
   Button,
   ButtonProps,
@@ -10,8 +12,6 @@ import {
   TextArea,
   TextAreaProps
 } from 'lib'
-import { Props } from 'definitions'
-import { useMutatedProps } from 'hooks'
 import React, { FC, LabelHTMLAttributes } from 'react'
 import { classNames } from 'utils'
 import './sass/Label.scss'

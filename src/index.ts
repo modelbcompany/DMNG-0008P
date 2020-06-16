@@ -1,4 +1,3 @@
-import * as Definitions from './definitions'
 import * as Hooks from './hooks'
 import * as Components from './lib'
 import * as Utilities from './utils'
@@ -8,9 +7,9 @@ import * as Utilities from './utils'
  * @author Lexus Drumgold <lex@flexdevelopment.llc>
  */
 
-export * from './definitions'
+export * from './declarations'
 export * from './hooks'
 export * from './lib'
 export * from './utils'
+export { Components, Hooks, Utilities }
 
-export { Components, Definitions, Hooks, Utilities }

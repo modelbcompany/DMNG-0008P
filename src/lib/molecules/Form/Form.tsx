@@ -1,6 +1,6 @@
-import { Container, FormField, FormFieldProps } from 'lib'
-import { VoidElementTagProps } from 'definitions'
+import { VoidElementTagProps } from 'declarations'
 import { useArray, useMutatedProps, useWindowSize } from 'hooks'
+import { Container, FormField, FormFieldProps } from 'lib'
 import { merge, pick } from 'lodash'
 import React, { FC, FormHTMLAttributes, useEffect } from 'react'
 import './sass/Form.scss'
@@ -61,7 +61,9 @@ export const Form: FC<FormProps> = ({
 }) => {
   const mutatedProps = useMutatedProps(rest, 'adm-form')
 
-  const { array: containers, setArray: setContainers } = useArray([])
+  const { array: containers, setArray: setContainers } = useArray<
+    MergeFormFieldsConfiguration
+  >([])
 
   const { width } = useWindowSize()
 
@@ -79,22 +81,27 @@ export const Form: FC<FormProps> = ({
       {(() => {
         if ((mutatedProps.children as []).length) return mutatedProps.children
 
-        return containers.map(({ 0: containerClasses, 1: fields }, i) => {
-          if (width <= 768) {
-            containerClasses = containerClasses.replace('row', 'column')
-          }
+        return containers.map(
+          (
+            { 0: containerClasses, 1: fields }: MergeFormFieldsConfiguration,
+            i
+          ) => {
+            if (width <= 768) {
+              containerClasses = containerClasses.replace('row', 'column')
+            }
 
-          return (
-            <Container
-              className={`form-container ${containerClasses || 'column'}`}
-              key={`form-container-${i}`}
-            >
-              {fields.map((field: FormFieldProps, i: number) => (
-                <FormField {...field} key={`form-field-${i}`} />
-              ))}
-            </Container>
-          )
-        })
+            return (
+              <Container
+                className={`form-container ${containerClasses || 'column'}`}
+                key={`form-container-${i}`}
+              >
+                {fields.map((field: FormFieldProps, i: number) => (
+                  <FormField {...field} key={`form-field-${i}`} />
+                ))}
+              </Container>
+            )
+          }
+        )
       })()}
     </form>
   )

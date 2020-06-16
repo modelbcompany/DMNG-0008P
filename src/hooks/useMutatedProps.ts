@@ -1,5 +1,4 @@
-import { IconProps } from 'lib'
-import { Props } from 'definitions'
+import { AnyObject, Props } from 'declarations'
 import _ from 'lodash'
 import { Children } from 'react'
 import { classNames } from 'utils'
@@ -22,26 +21,26 @@ import useIcon from './useIcon'
  *   onClick property (not inlcuding native buttons and links)
  * - keys specified in @param keys will be removed @param props
  *
- * @param {Props} props - Component properties
- * @param {ReactNode} props.children - Component children
- * @param {IconProps} props.icon - {@link Icon} component properties
- * @param {string} injectClass - Classes to inject before @param props.className
- * @param {string[]} keys - Array of keys to remove from @param props
+ * @param props - Component properties
+ * @param props.children - Component children
+ * @param props.icon - {@link Icon} component properties
+ * @param injectClass - Classes to inject before @param props.className
+ * @param keys - Array of keys to remove from @param props
  * @returns {Props}
  */
-export function useMutatedProps<T>(
+export function useMutatedProps<T = AnyObject>(
   props: T,
   injectClass?: string,
   keys?: string[]
-): Props {
+): Partial<Props> {
   const propsAsProps = props as Props
 
   const mutated = Object.assign(
     {
       ...propsAsProps,
-      className: classNames(injectClass, propsAsProps.className)
+      className: classNames(injectClass as string, propsAsProps.className)
     },
-    _.pick(useIcon(props as IconProps), ['children', 'data-icon'])
+    _.pick(useIcon(props), ['children', 'data-icon'])
   )
 
   const mutatedAsProps = mutated as Props
@@ -85,6 +84,7 @@ export function useMutatedProps<T>(
     'icon',
     'isGroup',
     'initialItems',
+    'initialOptions',
     'initialState',
     'initialVisibility'
   )

@@ -1,4 +1,4 @@
-import { Props } from 'definitions'
+import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { AnchorHTMLAttributes, FC } from 'react'
 import './sass/Link.scss'

@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react'
-import { isArray, isNumber } from '../utils'
+import { isArray } from '../utils'
 
 /**
  * @file Execute array related tasks
@@ -13,31 +13,27 @@ import { isArray, isNumber } from '../utils'
  * @param {Array} initial - Initial array value
  * @returns {Object} Current array value and methods to mutate the array
  */
-export const useArray = initial => {
+export function useArray<T = any>(initial: T[]) {
   const [array, setArray] = useState(isArray(initial) || [])
 
   return {
-    add: useCallback(
-      value =>
-        setArray(arr => (isArray(value) ? arr.concat(value) : [...arr, value])),
-      []
-    ),
+    add: useCallback((value: T | T[]) => {
+      const arrValue = isArray(value)
+        ? array.concat(value as never)
+        : [...array, value]
+      setArray(arrValue as never[])
+    }, []),
     addAll: useCallback(value => setArray(arr => arr.concat(value)), []),
     array,
     clear: useCallback(() => setArray(() => []), []),
     empty: array.length === 0,
-    setArray: arr => setArray(isArray(arr) || []),
-    removeByIndex: useCallback(
-      index =>
-        setArray(arr => {
-          arr.splice((isNumber(index) as number) || -1, 1)
-          return arr
-        }),
-      []
-    ),
+    removeByIndex: useCallback((index: number) => {
+      setArray(array.splice(index, 1))
+    }, []),
     removeByKeyValue: useCallback(value => {
-      setArray(arr => arr.filter(arrVal => arrVal?.key !== value))
-    }, [])
+      setArray(arr => arr.filter(arrVal => (arrVal as any)?.key !== value))
+    }, []),
+    setArray: (arr: unknown[]) => setArray(isArray(arr) || [])
   }
 }
 

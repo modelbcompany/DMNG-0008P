@@ -1,3 +1,4 @@
+import { AnyObject } from 'declarations'
 import { MenuItemProps } from 'lib'
 import _ from 'lodash'
 import { useEffect } from 'react'
@@ -62,7 +63,9 @@ export const useMenuItems = (
     top: sanitizeProps(initialConfig.top || [])
   })
 
-  const { array: items, setArray: setItems } = useArray(initialItems)
+  const { array: items, setArray: setItems } = useArray<MenuItemProps>(
+    initialItems
+  )
 
   /**
    * NOTICE - Disabling react-hooks/exhaustive-deps
@@ -81,10 +84,10 @@ export const useMenuItems = (
 
   useEffect(() => {
     if (!noConfig && config.top.length) {
-      const getConfig = (arr, i) => arr[arr.length === 1 ? 0 : i]
+      const getConfig = (arr: any[], i: number) => arr[arr.length === 1 ? 0 : i]
 
       setItems(
-        items.map(function mergeProps(item, i, conf) {
+        items.map(function mergeProps(item: AnyObject, i, conf) {
           item = _.merge(item, isObject(conf) || getConfig(config.top, i))
 
           if (item?.menu?.items) {

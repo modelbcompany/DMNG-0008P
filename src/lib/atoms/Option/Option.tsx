@@ -1,6 +1,6 @@
+import { OptionProps } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, OptionHTMLAttributes } from 'react'
-import { OptionProps } from 'definitions'
 
 /**
  * @module Components/Atoms/Option

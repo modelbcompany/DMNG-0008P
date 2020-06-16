@@ -1,4 +1,4 @@
-import { PropsWithContainer } from 'definitions'
+import { PropsWithContainer } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'
