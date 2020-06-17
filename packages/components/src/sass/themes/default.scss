@@ -349,6 +349,21 @@ $thead-width: $full-width;
 /// Styles
 /// ----------------------------------------------------------------------------
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family-primary;
+}
+a,
+legend,
+p,
+span {
+  font-family: $font-family-secondary;
+}
+
 *[role='button'] {
   @include flex(inline-flex, center, center);
 

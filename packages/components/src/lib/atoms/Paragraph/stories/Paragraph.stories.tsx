@@ -18,7 +18,16 @@ export const Default = (args: ParagraphProps): ReactElement<ParagraphProps> => (
   <Paragraph {...args} />
 )
 
-Default.args = {
+Default.args = {}
+
+/**
+ * {@link FloorplansTemplate} {@link Paragraph} story.
+ */
+export const FloorplansTemplateBlurb = (
+  args: ParagraphProps
+): ReactElement<ParagraphProps> => <Paragraph {...args} />
+
+FloorplansTemplateBlurb.args = {
   children: 'Choose from a variety of spacious and contemporary floor plans available in one-bedroom, one-bedroom with den, two-bedroom, two-bedroom with den, and three-bedroom layouts.',
   className: 'adt-floorplans-blurb'
 }
