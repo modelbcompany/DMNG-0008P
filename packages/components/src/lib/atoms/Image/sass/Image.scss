@@ -9,17 +9,32 @@
 
 // Mixins
 
+/// Component: Image
+/// @require {mixin} event
+%Image {
+  @include event {
+    cursor: pointer;
+  }
+}
+
 // Placeholders
 
 // Styles
 
-// Image
+.ada-image {
+  @extend %Image;
+}
+
 .ada-image {
   &.react-logo-spin {
     @include constrain(50%);
 
     pointer-events: none;
   }
+}
+
+.floorplan-img {
+  @include background-color($component-background);
 }
 
 // Responsive Styles

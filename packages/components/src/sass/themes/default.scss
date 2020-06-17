@@ -25,7 +25,7 @@ $success-color: $color-status-positive;
 $warning-color: $color-status-warning;
 
 $body-background: $white;
-$component-background: $color-brand-silver-rust;
+$component-background: $white;
 $gradient-background: linear-gradient(to right, $color-brand-cape-palliser, $color-brand-tussock);
 
 $disabled-color: $grey-300;
@@ -239,7 +239,7 @@ $textarea-width: $full-width;
 /// Article
 /// ----------------------------------------------------------------------------
 
-$floorplan-bkg: $component-background;
+$floorplan-bkg: $color-brand-silver-rust;
 
 /// ----------------------------------------------------------------------------
 /// Form

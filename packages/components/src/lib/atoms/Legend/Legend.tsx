@@ -26,7 +26,7 @@ export interface LegendProps extends Props {
  * **https://developer.mozilla.org/docs/Web/HTML/Element/legend**
  */
 export const Legend: FC<LegendProps> = (props: LegendProps) => (
-  <legend {...(useMutatedProps(props, 'ada-label') as ReactLegendProps)} />
+  <legend {...(useMutatedProps(props, 'ada-legend') as ReactLegendProps)} />
 )
 
 Legend.defaultProps = {

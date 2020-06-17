@@ -12,12 +12,17 @@
 // Placeholders
 
 /// Component: Paragragh
-/// @require {mixin} color
 /// @require {mixin} font-size
-/// @require {variable} $font-size
-/// @require {variable} $text-color
+/// @require {mixin} text-color
+/// @require {variable} $color-brand-rolling-stone
+/// @require {variable} $font-family-secondary
+/// @require {variable} font-size-lg
 %Paragraph {
-  @include color($text-color) @include font-size($font-size);
+  @include font-size($font-size-lg - 1);
+
+  @include text-color($color-brand-rolling-stone);
+
+  font-family: $font-family-secondary;
 }
 
 // Styles
@@ -27,12 +32,29 @@
   @extend %Paragraph;
 }
 
-.ada-td > .ada-paragraph {
-  @include font-weight(500);
+.floorplan-details {
+  @include is-uppercase;
 
-  @include font-size($font-size);
+  margin: size($spacing-md) 0 size($padding-default-sm * 1.75);
+}
 
-  @include text-color($text-color);
+.floorplan-sqft {
+  @include font-weight(700);
+
+  margin-bottom: size($spacing-sm);
+}
+
+.adt-floorplans-blurb {
+  @include font-size($floorplans-grid-title-size);
+
+  font-family: $font-family-primary;
+  line-height: 2.7rem;
+}
+
+.adt-floorplans-blurb,
+.floorplan-details,
+.floorplan-rent {
+  @include font-weight(300);
 }
 
 // Responsive Styles
