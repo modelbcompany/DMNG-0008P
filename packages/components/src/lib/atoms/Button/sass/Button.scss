@@ -43,9 +43,10 @@
 /// @require {variable} $button-disabled-bkg
 /// @require {variable} $button-default-color
 /// @require {variable} $button-disabled-color
-/// @require {variable} $one-dozen * 2
 /// @require {variable} $button-padding
 /// @require {variable} $button-font-size
+/// @require {variable} $font-family-secondary
+/// @require {variable} $one-dozen
 /// @require {variable} $transparent
 %Button {
   @include color($button-default-color, $button-default-bkg);
@@ -61,6 +62,7 @@
   @include transition(all, 0.25s, ease-in-out);
 
   cursor: pointer;
+  font-family: $font-family-secondary;
   outline: none;
   padding: $button-padding;
 
@@ -96,21 +98,19 @@
   @extend %Button;
 }
 
-.adm-form .ada-button {
-  @include font-size($button-font-size - 2);
-}
-
-.sidebar .ada-button .icon[name='close'] {
-  margin-bottom: size($one-dozen * 2 * 2);
-}
-
-.dropdown-menu-item-btn {
-  @include font-size($bakers-dozen);
-
-  @include width(100%, unset, none);
+.ada-button[type='submit'] {
+  @include font-weight(600);
 
   font-family: $font-family-primary;
-  justify-content: flex-start;
+  letter-spacing: $letter-spacing;
+
+  @include respond-to($breakpoint-1024) {
+    @include font-size($font-size);
+  } 
+}
+
+.adm-form .ada-button {
+  @include font-size($button-font-size - 2);
 }
 
 // Responsive Styles

@@ -18,6 +18,22 @@ export const Default = (args: ButtonProps): ReactElement<ButtonProps> => (
   <Button {...args} />
 )
 
+Default.args = {}
+
+/**
+ * {@link FloorplansSearchForm} {@link Button} story.
+ */
+export const FloorplansSearchFormButton = (
+  args: ButtonProps
+): ReactElement<ButtonProps> => <Button {...args} />
+
+FloorplansSearchFormButton.storyName = 'FloorplansSearchForm'
+FloorplansSearchFormButton.args = {
+  children: 'Search',
+  className: 'gradient-bkg uppercase lg',
+  type: 'submit'
+}
+
 /**
  * {@link Icon} {@link Button} story.
  */

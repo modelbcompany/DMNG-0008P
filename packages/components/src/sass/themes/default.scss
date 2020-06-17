@@ -19,13 +19,14 @@ $color-status-danger: red;
 
 $danger-color: $color-status-danger;
 $default-color: $grey-200;
-$primary-color: $color-elephant;
+$primary-color: $color-brand-tussock;
 $secondary-color: $color-astral;
 $success-color: $color-status-positive;
 $warning-color: $color-status-warning;
 
 $body-background: $white;
-$component-background: $white;
+$component-background: $color-brand-silver-rust;
+$gradient-background: linear-gradient(to right, $color-brand-cape-palliser, $color-brand-tussock);
 
 $disabled-color: $grey-300;
 $disabled-color-dark: fade($white, 35%);
@@ -82,9 +83,8 @@ $letter-spacing: 0.125em;
 /// Borders & Outlines
 /// ----------------------------------------------------------------------------
 
-$border-color: hsv(0, 0, 85%);
+$border-color: $color-alto;
 $border-color-inverse: $white;
-$border-color-split: hsv(0, 0, 94%);
 $border-radius: 2;
 $border-width: 1;
 $border-width-thin: 0.5;
@@ -102,11 +102,10 @@ $outline-width: 2;
 $heading-color: fade($black, 85%);
 $heading-color-dark: fade($white, 100%);
 
-$text-color: $black;
-$text-color-dark: fade($white, 85%);
+$text-color: $color-brand-cod-gray;
+$text-color-dark: $white;
 $text-color-inverse: $white;
-$text-color-secondary: $grey-500;
-$text-color-secondary-dark: fade($white, 65%);
+$text-color-primary: $color-brand-tussock;
 
 /// ----------------------------------------------------------------------------
 /// Animation
@@ -141,7 +140,7 @@ $ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
 
 $button-font-size: $font-size;
 $button-font-weight: 400;
-$button-padding: size($one-dozen / 2) size($one-dozen - 2);
+$button-padding: size($padding-default-xs) size($padding-default-sm);
 
 $button-primary-bkg: $primary-color;
 $button-primary-color: $white;
@@ -193,9 +192,14 @@ $input-width-moz: -moz-available;
 /// Link
 /// ----------------------------------------------------------------------------
 
-$link-color: $secondary-color;
-$link-color-active: $secondary-color;
-$link-color-hover: $secondary-color;
+$link-color: $primary-color;
+$link-color-inverse: $text-color-inverse;
+$link-color-hover: $link-color-inverse;
+
+$link-bkg: $white;
+$link-bkg-dark: $primary-color;
+$link-bkg-hover: $primary-color;
+$link-bkg-hover-dark: $text-color;
 
 $link-decoration: none;
 $link-decoration-focus: none;
@@ -228,6 +232,18 @@ $textarea-width: $full-width;
 /// ----------------------------------------------------------------------------
 /// Molecules
 /// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Article
+/// ----------------------------------------------------------------------------
+
+$floorplan-bkg: $component-background;
+
+/// ----------------------------------------------------------------------------
+/// Form
+/// ----------------------------------------------------------------------------
+
+$floorplans-search-form-height: $font-size-sm * 1.75;
 
 /// ----------------------------------------------------------------------------
 /// Item
@@ -369,16 +385,20 @@ $thead-width: $full-width;
   @include set-bkg-color-and-hover($warning-color);
 }
 
-.green {
-  @include set-bkg-color-and-hover($color-status-positive);
+.gradient-bkg {
+  background: $gradient-background;
 }
 
-.red {
-  @include set-bkg-color-and-hover($color-status-danger);
+.lg {
+  @include font-size($font-size-lg);
 }
 
-.yellow {
-  @include set-bkg-color-and-hover($color-status-warning);
+.sm {
+  @include font-size($font-size-sm);
+}
+
+.xs {
+  @include font-size($font-size-xs);
 }
 
 .danger,
@@ -386,8 +406,6 @@ $thead-width: $full-width;
 .secondary,
 .success,
 .warning,
-.green,
-.red,
-.yellow {
+.gradient-bkg {
   @include text-color($text-color-inverse);
 }
