@@ -1,8 +1,7 @@
-# 🚧 [DMNG-0008P] Woodmont
+# 🚧 DMNG-0008P (Woodmont Landing Page)
 
-[WordPress][8] site, [React][3] component library, and
-[Serverless API](https://vercel.com/docs/v2/serverless-functions/introduction)
-for the Woodmont Landing Page project
+[WordPress][10] site, [React][4] component library, and [Serverless API][9] for
+the Woodmont Landing Page project
 
 [![emoji-log](https://cdn.rawgit.com/ahmadawais/stuff/ca97874/emoji-log/non-flat-round.svg)](https://github.com/ahmadawais/Emoji-Log/)
 [![TypeScript](https://badgen.net/badge/-/typescript?icon=typescript&label)](https://badgen.net/badge/-/typescript?icon=typescript&label)
@@ -31,20 +30,23 @@ TODO: Update documentation
 
 ## Built With
 
-- [Local][1] - Local WordPress development tool
-- [Microbundle][2] - Zero-configuration module bundler
-- [React][3] - JavaScript library for building user interfaces
-- [Sass][4] - UI development environment and documentation tool
-- [Storybook][5] - UI development environment and documentation tool
-- [TypeScript][6] - JavaScript extension
-- [Vercel][7] - Hosting platform for static sites and serverless functions
-- [WordPress][8] - Content Management System
+- [FeathersJS][1] - Web framework for creating real-time apps and REST APIs
+- [Lerna][2] - Package management tool
+- [Local][3] - Local WordPress development tool
+- [React][4] - JavaScript library for building user interfaces
+- [Sass][5] - UI development environment and documentation tool
+- [Storybook][6] - UI development environment and documentation tool
+- [TypeScript][7] - JavaScript extension
+- [Vercel][8] - Hosting platform for static sites and [Serverless Functions][9]
+- [WordPress][10] - Content Management System
 
-[1]: https://localwp.com/
-[2]: https://github.com/developit/microbundle
-[3]: https://reactjs.org/
-[4]: https://sass-lang.com/
-[5]: https://storybook.js.org/
-[6]: https://www.typescriptlang.org/
-[7]: https://vercel.com/
-[8]: https://wordpress.com/
+[1]: https://docs.feathersjs.com/
+[2]: https://lerna.js.org/
+[3]: https://localwp.com/
+[4]: https://reactjs.org/
+[5]: https://sass-lang.com/
+[6]: https://storybook.js.org/
+[7]: https://www.typescriptlang.org/
+[8]: https://vercel.com/
+[9]: https://vercel.com/docs/v2/serverless-functions/introduction
+[10]: https://wordpress.com/

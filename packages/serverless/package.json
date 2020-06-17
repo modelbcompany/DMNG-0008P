@@ -1,0 +1,50 @@
+{
+  "name": "@modelbcompany/woodmontapi",
+  "version": "1.0.0-alpha",
+  "description": "Serverless Functions for the Woodmont Landing Page project.",
+  "keywords": [
+    "feathersjs",
+    "monorepo",
+    "serverless functions",
+    "typescript",
+    "vercel"
+  ],
+  "homepage": "https://github.com/modelbcompany/DMNG-0008P/tree/master/packages/serverless",
+  "bugs": {
+    "url": "https://github.com/modelbcompany/DMNG-0008P/issues",
+    "email": "web@modelb.com"
+  },
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Lexus Drumgold",
+    "email": "lexus.drumgold@modelb.com",
+    "url": "https://github.com/lexusdrumgold"
+  },
+  "repository": "git://github.com/modelbcompany/DMNG-0008P.git",
+  "scripts": {
+    "dev": "vc dev --listen 9000",
+    "stage": "vc",
+    "prod": "yarn stage --prod"
+  },
+  "dependencies": {
+    "@feathersjs/configuration": "^4.5.3",
+    "@feathersjs/errors": "^4.5.3",
+    "@feathersjs/express": "^4.5.4",
+    "@feathersjs/feathers": "^4.5.3",
+    "@vercel/node": "^1.7.0",
+    "axios": "^0.19.2",
+    "cors": "^2.8.5",
+    "lodash": "^4.17.15",
+    "nedb": "^1.8.0",
+    "pino": "^6.3.2",
+    "pino-pretty": "^4.0.0",
+    "tslib": "^2.0.0",
+    "urijs": "^1.19.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.6",
+    "@types/feathersjs__feathers": "^3.1.5",
+    "@types/urijs": "^1.19.9"
+  },
+  "peerDependencies": {}
+}

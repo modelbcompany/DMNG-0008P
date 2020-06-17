@@ -48,7 +48,7 @@ yarn install
 yarn dev
 ```
 
-- The Storybook app will be available at <http://localhost:3000>
+- Check the terminal for the Storybook development URL
 - The API development server will be available at <http://localhost:9000/api>
 
 ### Git Configuration

@@ -1,0 +1,9 @@
+# Directories & Files to Ignore When Deploying
+
+# Tests should be run using GitHub Actions
+__tests__
+jest.config.js
+jest.setup.js
+
+# Force Vercel to use Yarn
+package-lock.json

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "scope": "modelb",
+  "public": true,
+  "redirects": [
+    {
+      "source": "/repo",
+      "destination": "https://github.com/modelbcompany/DMNG-0008P/tree/master/packages/serverless",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/api"
+    }
+  ]
+}

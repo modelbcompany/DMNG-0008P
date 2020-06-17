@@ -1,8 +1,10 @@
 {
+  "compileOnSave": true,
   "compilerOptions": {
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "checkJs": true,
+    "baseUrl": "./src",
     "declaration": true,
     "declarationMap": false,
     "esModuleInterop": true,
@@ -11,21 +13,23 @@
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
     "importHelpers": true,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "lib": ["dom", "esnext"],
     "module": "esnext",
     "moduleResolution": "node",
-    "noLib": false,
     "noEmit": false,
     "noImplicitAny": false,
     "noImplicitReturns": true,
     "noImplicitThis": true,
+    "noLib": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "outDir": "./dist",
     "preserveConstEnums": true,
     "removeComments": false,
+    "rootDir": "./",
     "resolveJsonModule": true,
-    "skipLibCheck": true,
+    "skipLibCheck": false,
     "strictNullChecks": true,
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
@@ -33,11 +37,10 @@
     "target": "esnext"
   },
   "exclude": [
-    "app",
-    "conf",
-    "logs",
+    "__tests__",
+    "dist",
     "node_modules",
-    "packages/**/__tests__",
-    "packages/**/node_modules"
+    "jest.config.js",
+    "jest.setup.ts"
   ]
 }

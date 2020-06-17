@@ -1,0 +1,7 @@
+# ESLint Ignore
+
+build/
+dist/
+
+jest.config.js
+jest.setup.ts

@@ -1,0 +1,11 @@
+{
+  "host": "localhost",
+  "port": 9000,
+  "services": {
+    "apartments": "/apartments",
+    "docs": "/",
+    "floorplans": "/floorplans",
+    "scheduling": "/scheduling"
+  },
+  "ts": true
+}

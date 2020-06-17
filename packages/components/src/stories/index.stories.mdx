@@ -1,0 +1,102 @@
+import { Meta } from '@storybook/addon-docs/blocks'
+
+<Meta title='Getting Started/Welcome' />
+
+# Woodmont Design System
+
+<br />
+
+## Overview
+
+[Introduction](#introduction)  
+[Usage](#usage)  
+[Github Repository](https://github.com/modelbcompany/DMNG-0008P)
+
+## Introduction
+
+> _Modern user interfaces are assembled from hundreds of modular UI components
+> that are rearranged to deliver different user experiences.  
+> Design systems contain reusable UI components that help teams build complex,
+> durable, and accessible user interfaces across projects. Since both designers
+> and developers contribute to the UI components, the design system serves as a
+> bridge between disciplines. It is also the “source of truth” for an
+> organization’s common components._ -
+> [Design Systems for Developers: Introduction](https://www.learnstorybook.com/design-systems-for-developers/react/en/introduction/)
+
+For more information about building design systems with Storybook, visit
+[Design Systems for Developers](https://www.learnstorybook.com/design-systems-for-developers)
+from the [Learn Storybook](https://www.learnstorybook.com) docs.
+
+## Usage
+
+<br />
+
+### Installation
+
+Before installing the component library, you'll need to
+[install React](https://reactjs.org/docs/getting-started.html). Afterwards, run
+the following command from your project root:
+
+```zsh
+yarn add @modelbcompany/woodmontui
+```
+
+### Transpiling Modules
+
+Modules are written using
+[ESNext syntax](https://www.javascripttutorial.net/es-next/) and need to be
+transpiled before using them in a project. Add the following to your
+[Babel configuration](https://babeljs.io/docs/en/configuration):
+
+```json
+{
+  "exclude": "/node_modules/(?![@modelbcompany/woodmontui])/"
+}
+```
+
+**Example `babel.config.json`**:
+
+```json
+{
+  "env": {
+    "test": {
+      "plugins": [
+        [
+          "@babel/plugin-transform-runtime",
+          {
+            "regenerator": true
+          }
+        ]
+      ]
+    }
+  },
+  "exclude": "/node_modules/(?![@modelbcompany/woodmontui])/",
+  "ignore": ["./node_modules/*"],
+  "plugins": [
+    "@babel/plugin-proposal-export-default-from",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-nullish-coalescing-operator",
+    "@babel/plugin-proposal-optional-chaining",
+    "@babel/plugin-proposal-throw-expressions",
+    [
+      "@babel/plugin-transform-typescript",
+      {
+        "allowNamespaces": true
+      }
+    ]
+  ],
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
+      }
+    ],
+    "@babel/preset-react"
+  ]
+}
+```
+
+### 🚧 Importing Stylesheets
+
+TODO: Update documentation.

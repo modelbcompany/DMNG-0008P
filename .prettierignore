@@ -10,5 +10,3 @@ conf/
 dist/
 pkg/
 public/
-
-package-lock.json
