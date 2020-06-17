@@ -196,12 +196,6 @@ $input-width-moz: -moz-available;
 
 $link-color: $primary-color;
 $link-color-inverse: $text-color-inverse;
-$link-color-hover: $link-color-inverse;
-
-$link-bkg: $white;
-$link-bkg-dark: $primary-color;
-$link-bkg-hover: $primary-color;
-$link-bkg-hover-dark: $text-color;
 
 $link-decoration: none;
 $link-decoration-focus: none;
@@ -210,6 +204,8 @@ $link-decoration-hover: none;
 $link-font-size: $font-size;
 
 $link-outline-focus: 0;
+
+$floorplan-link-size: $bakers-dozen;
 
 /// ----------------------------------------------------------------------------
 /// Span

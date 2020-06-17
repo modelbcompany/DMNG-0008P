@@ -19,19 +19,14 @@ export const Default = (args: SpanProps): ReactElement<SpanProps> => (
 )
 
 /**
- * Badge {@link Span} story.
- */
-export const Badge = (args: SpanProps): ReactElement<SpanProps> => (
-  <Span {...args} className='badge' />
-)
-
-Badge.parameters = {}
-
-/**
  * Screen dimmer {@link Span} story.
  */
 export const Dimmer = (args: SpanProps): ReactElement<SpanProps> => (
-  <Span {...args} className='dimmer' />
+  <Span {...args} />
 )
+
+Dimmer.args = {
+  className: 'dimmer'
+}
 
 Dimmer.parameters = {}

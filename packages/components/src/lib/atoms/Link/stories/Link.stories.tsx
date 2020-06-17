@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import { getColorItem } from 'storybook/config'
 import { Link, LinkProps } from '../Link'
 
 /**
@@ -12,23 +13,40 @@ export default {
 }
 
 /**
- * Default {@link Link} story.
+ * {@link Floorplan} "Apply Now" {@link Link} story.
  */
-export const Default = (args: LinkProps): ReactElement<LinkProps> => (
-  <Link {...args} />
-)
+export const ApplyNowLink = (
+  args: LinkProps
+): ReactElement<LinkProps> => <Link {...args} />
+
+ApplyNowLink.storyName = 'Apply Now'
+ApplyNowLink.args = {
+  children: 'Apply Now',
+  className: 'floorplan-link'
+}
+ApplyNowLink.parameters = {
+  backgrounds: {
+    default: 'Silver Rust',
+    values: [getColorItem('brand.$color-brand-silver-rust', false)]
+  }
+}
 
 /**
- * Renders an {@link Icon} component on either side of the link text.
+ * Download {@link Floorplan} {@link Link} story.
  */
-export const IconLink = (args: LinkProps): ReactElement<LinkProps> => (
-  <Link
-    {...args}
-    icon={{
-      children: 'keyboard_arrow_right',
-      'data-position': 'right'
-    }}
-  />
-)
+export const DownloadFloorplanLink = (
+  args: LinkProps
+): ReactElement<LinkProps> => <Link {...args} />
 
-IconLink.storyName = 'With Icon'
+DownloadFloorplanLink.storyName = 'Download'
+DownloadFloorplanLink.args = {
+  children: 'Download Floorplan',
+  className: 'floorplan-link',
+  download: true
+}
+DownloadFloorplanLink.parameters = {
+  backgrounds: {
+    default: 'Silver Rust',
+    values: [getColorItem('brand.$color-brand-silver-rust', false)]
+  }
+}
