@@ -1,5 +1,5 @@
-import { List, ListProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { List, ListProps } from '../List'
 import { DropdownListMock, ListMock } from '../__mocks__/List.mock'
 
 /**

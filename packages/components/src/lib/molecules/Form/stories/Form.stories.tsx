@@ -1,5 +1,5 @@
-import { Form, FormProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Form, FormProps } from '../Form'
 
 /**
  * @file Stories - Form

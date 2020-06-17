@@ -1,5 +1,5 @@
-import { Icon, IconProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Icon, IconProps } from '../Span'
 
 /**
  * @file Stories - Icon

@@ -1,5 +1,5 @@
-import { Section, SectionProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Section, SectionProps } from '../Section'
 
 /**
  * @file Stories - Section

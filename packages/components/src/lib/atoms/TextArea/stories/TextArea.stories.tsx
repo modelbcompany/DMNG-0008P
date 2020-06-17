@@ -1,5 +1,5 @@
-import { TextArea, TextAreaProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { TextArea, TextAreaProps } from '../TextArea'
 
 /**
  * @file Stories - TextArea

@@ -1,5 +1,5 @@
-import { Select, SelectProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Select, SelectProps } from '../Select'
 import { RecordLimitsMock } from '../__mocks__/Options.mock'
 
 /**

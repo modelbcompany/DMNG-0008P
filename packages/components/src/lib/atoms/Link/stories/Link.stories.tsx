@@ -1,5 +1,5 @@
-import { Link, LinkProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Link, LinkProps } from '../Link'
 
 /**
  * @file Stories - Link

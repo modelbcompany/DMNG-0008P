@@ -1,5 +1,5 @@
-import { Menu, MenuProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Menu, MenuProps } from '../List'
 import {
   DropdownMenuMock,
   MenuMock,

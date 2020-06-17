@@ -33,14 +33,14 @@
     "predev": "run-s format",
     "dev": "lerna run dev",
     "dev:api": "lerna run dev --scope @modelbcompany/woodmontapi",
-    "dev:components": "lerna run dev --scope @modelbcompany/woodmontui",
+    "dev:components": "lerna run dev --scope @modelbcompany/woodmont-ui",
     "build": "lerna run build",
-    "build:components": "lerna run build --scope @modelbcompany/woodmontui",
-    "bundle": "lerna run bundle --scope @modelbcompany/woodmontui",
+    "build:components": "lerna run build --scope @modelbcompany/woodmont-ui",
+    "bundle": "lerna run bundle --scope @modelbcompany/woodmont-ui",
     "stage:api": "lerna run stage --scope @modelbcompany/woodmontapi",
-    "stage:components": "lerna run stage --scope @modelbcompany/woodmontui",
+    "stage:components": "lerna run stage --scope @modelbcompany/woodmont-ui",
     "prod:api": "lerna run prod --scope @modelbcompany/woodmontapi",
-    "prod:components": "lerna run prod --scope @modelbcompany/woodmontui"
+    "prod:components": "lerna run prod --scope @modelbcompany/woodmont-ui"
   },
   "dependencies": {},
   "devDependencies": {

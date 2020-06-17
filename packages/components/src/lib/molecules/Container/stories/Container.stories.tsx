@@ -1,5 +1,5 @@
-import { Container, ContainerProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Container, ContainerProps } from '../Container'
 
 /**
  * @file Stories - Container

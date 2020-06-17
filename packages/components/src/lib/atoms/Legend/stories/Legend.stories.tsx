@@ -1,5 +1,5 @@
-import { Legend, LegendProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Legend, LegendProps } from '../Legend'
 
 /**
  * @file Stories - Legend

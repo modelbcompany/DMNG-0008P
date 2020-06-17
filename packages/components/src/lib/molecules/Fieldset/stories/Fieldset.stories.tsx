@@ -1,5 +1,5 @@
-import { Fieldset, FieldsetProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Fieldset, FieldsetProps } from '../Fieldset'
 
 /**
  * @file Stories - Fieldset

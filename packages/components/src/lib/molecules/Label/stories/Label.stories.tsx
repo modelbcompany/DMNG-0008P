@@ -1,5 +1,5 @@
-import { Label, LabelProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Label, LabelProps } from '../Label'
 
 /**
  * @file Stories - Label

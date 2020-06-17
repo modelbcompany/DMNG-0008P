@@ -1,5 +1,5 @@
-import { Paragraph, ParagraphProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Paragraph, ParagraphProps } from '../Paragraph'
 
 /**
  * @file Stories - Paragraph

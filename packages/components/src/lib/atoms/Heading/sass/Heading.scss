@@ -11,7 +11,24 @@
 
 // Placeholders
 
+/// Component: Heading
+/// @require {mixin} font-weight
+/// @require {variable} $font-family-primary
+%Heading {
+  @include font-weight(700);
+
+  font-family: $font-family-primary;
+}
+
 // Styles
+
+.ada-heading {
+  @extend %Heading;
+}
+
+.floorplans-grid-title {
+  @include font-size($floorplans-grid-title-size);
+}
 
 // Responsive Styles
 

@@ -1,5 +1,5 @@
-import { MenuItem, MenuItemProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { MenuItem, MenuItemProps } from '../Item'
 
 /**
  * @file Stories - MenuItem

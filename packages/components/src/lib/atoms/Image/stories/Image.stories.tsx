@@ -1,7 +1,7 @@
 import { text } from '@storybook/addon-knobs'
-import { Image, ImageProps } from 'lib'
 import React, { ReactElement } from 'react'
 import { getColorItem } from 'storybook/config'
+import { Image, ImageProps } from '../Image'
 
 /**
  * @file Stories - Image

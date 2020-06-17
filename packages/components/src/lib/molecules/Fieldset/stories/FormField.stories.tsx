@@ -1,5 +1,5 @@
-import { FormField, FormFieldProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { FormField, FormFieldProps } from '../Fieldset'
 
 /**
  * @file Stories - FormField

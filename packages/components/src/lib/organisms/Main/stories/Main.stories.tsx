@@ -1,5 +1,5 @@
-import { Main, MainProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Main, MainProps } from '../Main'
 
 /**
  * @file Stories - Main

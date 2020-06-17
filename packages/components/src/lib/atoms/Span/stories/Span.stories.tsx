@@ -1,5 +1,5 @@
-import { Span, SpanProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Span, SpanProps } from '../Span'
 
 /**
  * @file Stories - Span

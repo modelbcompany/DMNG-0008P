@@ -1,5 +1,5 @@
-import { Button, ButtonProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Button, ButtonProps } from '../Button'
 
 /**
  * @file Stories - Button
@@ -32,20 +32,4 @@ FloorplansSearchFormButton.args = {
   children: 'Search',
   className: 'gradient-bkg uppercase lg',
   type: 'submit'
-}
-
-/**
- * {@link Icon} {@link Button} story.
- */
-export const IconButton = Default.bind(null)
-
-IconButton['storyName'] = 'Icon'
-
-IconButton['args'] = {
-  ...Default['args'],
-  children: 'Next',
-  icon: {
-    children: 'keyboard_arrow_right',
-    'data-position': 'right'
-  }
 }

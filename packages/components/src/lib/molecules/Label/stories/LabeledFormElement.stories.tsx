@@ -1,5 +1,5 @@
-import { LabeledFormElement, LabeledFormElementProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { LabeledFormElement, LabeledFormElementProps } from '../Label'
 
 /**
  * @file Stories - LabeledFormElement

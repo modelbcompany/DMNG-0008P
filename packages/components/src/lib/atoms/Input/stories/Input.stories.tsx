@@ -1,5 +1,5 @@
-import { Input, InputProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Input, InputProps } from '../Input'
 
 /**
  * @file Stories - Input

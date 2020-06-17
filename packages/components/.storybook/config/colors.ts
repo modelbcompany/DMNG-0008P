@@ -12,23 +12,27 @@ import _ from 'lodash'
 export const BrandPalette = {
   '$color-brand-cape-palliser': {
     name: 'Cape Palliser',
-    value: 'rgba(170, 123, 63, 1)'
+    value: '#aa7b3f'
   },
   '$color-brand-cod-gray': {
     name: 'Cod Gray',
-    value: 'rgba(10, 10, 10, 1)'
+    value: '#0a0a0a'
+  },
+  '$color-brand-marble-brown': {
+    name: 'Marble Brown',
+    value: '#3c312d'
   },
   '$color-brand-rolling-stone': {
     name: 'Rolling Stone',
-    value: 'rgba(111, 118, 123, 1)'
+    value: '#6f767b'
   },
   '$color-brand-silver-rust': {
     name: 'Silver Rust',
-    value: 'rgba(203, 195, 188, 1)'
+    value: '#cbc3bc'
   },
   '$color-brand-tussock': {
     name: 'Tussock',
-    value: 'rgba(191, 141, 74, 1)'
+    value: '#bf8d4a'
   }
 }
 

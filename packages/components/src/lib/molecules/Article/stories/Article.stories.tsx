@@ -1,5 +1,5 @@
-import { Article, ArticleProps } from 'lib'
 import React, { ReactElement } from 'react'
+import { Article, ArticleProps } from '../Article'
 
 /**
  * @file Stories - Article
