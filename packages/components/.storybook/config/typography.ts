@@ -9,8 +9,8 @@
  * @enum {string}
  */
 export const FontFamilies = {
-  Primary: '',
-  Secondary: ''
+  Primary: 'IBM Plex Mono, monospace',
+  Secondary: 'Swiss_721 W01, sans-serif'
 }
 
 /**

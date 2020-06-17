@@ -15,9 +15,9 @@ export const getTypset = family => {
   })
 }
 
-# 🚧 Typography
+# Typography
 
-Families: **TBD**
+Families: **IBM Plex Mono, Swiss_721 W01**
 
 <br />
 
@@ -25,28 +25,39 @@ Families: **TBD**
 
 <br />
 
-### 🚧 HTML
+### HTML
 
 ```html
-<!-- TODO: Insert snippet -->
+<!-- IBM Plex Mono -->
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&display=swap"
+/>
+
+<!-- Swiss 721 -->
+<link
+  type="text/css"
+  rel="stylesheet"
+  href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css"
+/>
 ```
 
-### 🚧 Sass
+### Sass
 
 ```scss
-// TODO: Insert snippet
+$font-family-primary: IBM Plex Mono, monospace;
+$font-family-secondary: Swiss_721 W01, sans-serif;
 ```
 
 ## Families
 
-### Primary Font Family
+### IBM Plex Mono
 
-<!--
 <div>{getTypset(FontFamilies.Primary)}</div>
--->
 
-### Secondary Font Family
+<hr />
 
-<!--
-<div>{getTypset(FontFamilies.Primary)}</div>
--->
+### Swiss_721 W01
+
+<div>{getTypset(FontFamilies.Secondary)}</div>

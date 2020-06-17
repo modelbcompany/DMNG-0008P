@@ -9,7 +9,28 @@ import _ from 'lodash'
 /**
  * Brand colors.
  */
-export const BrandPalette = {}
+export const BrandPalette = {
+  '$color-brand-cape-palliser': {
+    name: 'Cape Palliser',
+    value: 'rgba(170, 123, 63, 1)'
+  },
+  '$color-brand-cod-gray': {
+    name: 'Cod Gray',
+    value: 'rgba(10, 10, 10, 1)'
+  },
+  '$color-brand-rolling-stone': {
+    name: 'Rolling Stone',
+    value: 'rgba(111, 118, 123, 1)'
+  },
+  '$color-brand-silver-rust': {
+    name: 'Silver Rust',
+    value: 'rgba(203, 195, 188, 1)'
+  },
+  '$color-brand-tussock': {
+    name: 'Tussock',
+    value: 'rgba(191, 141, 74, 1)'
+  }
+}
 
 /**
  * React color palette.

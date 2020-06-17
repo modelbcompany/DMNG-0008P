@@ -3,7 +3,7 @@ import { Colors, getColorItem } from 'storybook/config'
 
 <Meta title='Blocks/Colors' />
 
-# 🚧 Color Palettes
+# Color Palettes
 
 <br />
 
@@ -11,9 +11,15 @@ import { Colors, getColorItem } from 'storybook/config'
 
 <br />
 
-### 🚧 Default
+### Default
 
-<ColorPalette>{/* TODO: Add theme palette */}</ColorPalette>
+<ColorPalette>
+  <ColorItem {...getColorItem('brand.$color-brand-silver-rust')} />
+  <ColorItem {...getColorItem('brand.$color-brand-tussock')} />
+  <ColorItem {...getColorItem('brand.$color-brand-cape-palliser')} />
+  <ColorItem {...getColorItem('brand.$color-brand-rolling-stone')} />
+  <ColorItem {...getColorItem('brand.$color-brand-cod-gray')} />
+</ColorPalette>
 
 ## React
 
