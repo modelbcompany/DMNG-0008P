@@ -223,13 +223,13 @@ where `$INITIALS` are your own.
 
 ### 🚧 Serverless Functions
 
-Directory: `api/`
+Directory: `packages/serverless`
 
 TODO: Update documentation.
 
 ### Component Development
 
-Directory: `src/lib`
+Directory: `packages/components/src/lib`
 
 This project uses Storybook, a user interface development environment and
 documentation tool for UI components. Storybook allows developers to create
@@ -245,7 +245,8 @@ components more efficient.
 
 #### Styling Components
 
-Directory: `src/sass`
+Directory: `packages/components/src/lib/**/**/sass`,
+`packages/components/src/sass`
 
 Stylesheets are written in [Sass](https://sass-lang.com/), and follow the
 [Sass Guidelines](https://sass-guidelin.es/) styleguide. Sass is a CSS
