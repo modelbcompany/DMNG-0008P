@@ -36,8 +36,7 @@
 
   @include is-white-text;
 
-  @include width($full-width);
-
+  flex-grow: 1;
   font-family: $font-family-primary;
 
   .__control {
@@ -50,6 +49,7 @@
 
     border: size($border-width) $border-style $input-border-color;
     border-radius: 0;
+    box-shadow: none;
     min-height: unset;
   }
 

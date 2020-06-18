@@ -117,6 +117,14 @@
   @include display-flex;
 }
 
+.form-field.row .fieldset-container > * {
+  flex-grow: 1;
+
+  &:not(:last-child) {
+    margin-right: size($padding-default-xs);
+  }
+}
+
 // Column
 
 .column {

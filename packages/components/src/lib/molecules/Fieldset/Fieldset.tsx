@@ -51,7 +51,7 @@ export interface FieldsetProps extends Props {
   form?: string
 
   /**
-   * If defined, render a {@link Legend} element inside of the {@link Fieldset}.
+   * If defined, render a `Legend` element inside of the `Fieldset`.
    *
    * The caption for the fieldset is given by the first `<legend>` element
    * nested inside it.
@@ -84,7 +84,7 @@ export type FormFieldLayoutConfiguration = (
  */
 export interface FormFieldProps extends Omit<FieldsetProps, 'children'> {
   /**
-   * Array of {@link Form} elements to render.
+   * Array of `Form` elements to render.
    *
    * @default []
    */

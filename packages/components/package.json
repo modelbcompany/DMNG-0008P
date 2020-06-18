@@ -31,7 +31,7 @@
   },
   "scripts": {
     "prebundle": "rm -rf ./dist",
-    "bundle": "tsc --rootDir ./src",
+    "bundle": "tsc --exclude src/lib/**/**/stories --rootDir ./src",
     "postbundle": "cp -R src/sass dist",
     "bundle:dev": "tsc -w --rootDir ./src",
     "dev": "start-storybook -p 3000 -s assets --ci",

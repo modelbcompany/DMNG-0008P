@@ -48,7 +48,6 @@
     "build",
     "dist",
     "node_modules",
-    "src/lib/**/**/stories",
     "src/stories",
     "jest.config.js",
     "jest.setup.ts",
