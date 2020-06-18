@@ -123,6 +123,27 @@
   @extend %Column;
 }
 
+.floorplan {
+  .image-column {
+    padding-bottom: size($padding-default-sm);
+  }
+  
+  .link-column {
+    padding: size($padding-default-xxs) 0 size($padding-default-sm);
+  }
+
+  .text-column {
+    padding: size($padding-default-lg - 4) 0;
+  }
+
+  .link-column,
+  .text-column {
+    @include respond-to($breakpoint-1024) {
+      @include font-size($font-size);
+    }
+  }
+}
+
 // Row
 .row {
   @extend %Row;

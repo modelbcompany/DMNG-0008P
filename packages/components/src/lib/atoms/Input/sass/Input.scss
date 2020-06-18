@@ -95,9 +95,16 @@
 
 // Styles
 
-// Input
 .ada-input {
   @extend %Input;
+}
+
+.adm-select input {
+  @include background-color($transparent);
+
+  @include is-borderless;
+
+  padding: $button-padding;
 }
 
 // Responsive Styles

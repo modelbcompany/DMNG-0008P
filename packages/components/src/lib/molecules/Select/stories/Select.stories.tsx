@@ -1,6 +1,12 @@
 import React, { ReactElement } from 'react'
-import { Select, SelectProps } from '../Select'
-import { RecordLimitsMock } from '../__mocks__/Options.mock'
+import {
+  BathroomOptions,
+  BedroomOptions,
+  MaxPriceOptions,
+  MoveInDateOptions,
+  Select,
+  SelectProps
+} from '../Select'
 
 /**
  * @file Stories - Select
@@ -13,22 +19,63 @@ export default {
 }
 
 /**
- * Default {@link Select} story.
+ * Available date {@link Select} story.
  */
-export const Default = (args: SelectProps): ReactElement<SelectProps> => (
-  <Select {...args} />
-)
+export const AvailableDate = (
+  args: SelectProps
+): ReactElement<SelectProps> => <Select {...args} />
 
-Default.args = {}
+AvailableDate.args = {
+  isClearable: true,
+  initialOptions: MoveInDateOptions,
+  menuIsOpen: true,
+  isSearchable: false,
+  name: 'availableDate',
+  placeholder: 'Move In Date'
+}
 
 /**
- * Story displaying records limit options.
+ * Number of bathrooms {@link Select} story.
  */
-export const RecordsLimit = (args: SelectProps): ReactElement<SelectProps> => (
-  <Select {...args} />
-)
+export const NumberOfBathrooms = (
+  args: SelectProps
+): ReactElement<SelectProps> => <Select {...args} />
 
-RecordsLimit.args = {
-  defaultValue: 25,
-  initialOptions: RecordLimitsMock
+
+NumberOfBathrooms.args = {
+  isClearable: true,
+  initialOptions: BathroomOptions,
+  isSearchable: false,
+  name: 'numberOfBaths',
+  placeholder: 'Bathrooms'
+}
+
+/**
+ * Number of bedrooms {@link Select} story.
+ */
+export const NumberOfBedrooms = (
+  args: SelectProps
+): ReactElement<SelectProps> => <Select {...args} />
+
+NumberOfBedrooms.args = {
+  isClearable: true,
+  initialOptions: BedroomOptions,
+  isSearchable: false,
+  name: 'numberOfBeds',
+  placeholder: 'Bedrooms'
+}
+
+/**
+ * Max price {@link Select} story.
+ */
+export const RentRange = (
+  args: SelectProps
+): ReactElement<SelectProps> => <Select {...args} />
+
+RentRange.args = {
+  isClearable: true,
+  initialOptions: MaxPriceOptions,
+  isSearchable: false,
+  name: 'rentRange',
+  placeholder: 'Max Price'
 }

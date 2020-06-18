@@ -181,7 +181,7 @@ $input-height: $height;
 
 $input-icon-color: $input-default-color;
 
-$input-padding-h: $form-control-padding-h;
+$input-padding-h: $padding-default-xs;
 $input-padding-v: $form-control-padding-v;
 
 $input-outline: none;
@@ -260,6 +260,7 @@ $item-hover-color: #f5f5f5;
 /// Select
 /// ----------------------------------------------------------------------------
 
+$select-background: $color-brand-rolling-stone;
 $select-height: max-content;
 
 /// ----------------------------------------------------------------------------

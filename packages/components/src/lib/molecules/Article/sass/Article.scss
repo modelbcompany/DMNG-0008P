@@ -11,7 +11,22 @@
 
 // Placeholders
 
+/// Component: Floorplan
+/// @require {function} size
+/// @require {mixin} background-color
+/// @require {variable} $floorplan-bkg
+/// @require {variable} $padding-default-lg
+%Floorplan {
+  @include background-color($floorplan-bkg);
+
+  padding: size($padding-default-lg * 1.25);
+}
+
 // Styles
+
+.floorplan {
+  @extend %Floorplan;
+}
 
 // Responsive Styles
 

@@ -13,7 +13,10 @@
 
 /// Component: Select
 /// @require {function} size
+/// @require {mixin} background-color
 /// @require {mixin} height
+/// @require {mixin} is-uppercase
+/// @require {mixin} is-white-text
 /// @require {mixin} text-color
 /// @require {mixin} width
 /// @require {variable} $border-style
@@ -21,13 +24,25 @@
 /// @require {variable} $full-width
 /// @require {variable} $input-border-color
 /// @require {variable} $input-placeholder-color
+/// @require {variable} $select-background
 /// @require {variable} $select-border
+/// @require {variable} $text-color-inverse
 %Select {
+  @include background-color($select-background);
+
   @include height($select-height, unset, none);
+
+  @include is-uppercase;
+
+  @include is-white-text;
 
   @include width($full-width);
 
+  font-family: $font-family-primary;
+
   .__control {
+    @include background-color($transparent);
+
     @include event {
       border-color: $input-border-color !important;
       box-shadow: none !important;
@@ -38,17 +53,47 @@
     min-height: unset;
   }
 
+  .__dropdown-indicator {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
   .__indicators {
     @include text-color($input-placeholder-color, important);
   }
 
-  .__dropdown-indicator {
+  .__menu,
+  .__menu-list {
+    @include background-color($select-background);
+
+    border-radius: 0;
+    margin-bottom: 0;
+    margin-top: 0;
     padding-bottom: 0;
     padding-top: 0;
+  }
 
-    svg {
-      @include size(size($font-size-lg + 2));
+  .__option {
+    @include font-size($font-size-sm);
+
+    @include event {
+      @include background-color($primary-color);
     }
+
+    &.__option--is-focused,
+    &.__option--is-selected {
+      @include background-color($primary-color);
+    }
+  }
+
+  .__single-value {
+    @include font-size($font-size);
+
+    @include font-weight(500);
+
+    @include is-white-text;
+
+    padding-left: size($input-padding-h);
   }
 
   .__value-container {
@@ -57,6 +102,12 @@
     > * {
       @include width($full-width);
     }
+  }
+
+  svg {
+    @include size(size($font-size-lg + 2));
+
+    @include text-color($text-color-inverse);
   }
 }
 

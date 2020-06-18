@@ -18,15 +18,6 @@ export const Default = (args: SpanProps): ReactElement<SpanProps> => (
   <Span {...args} />
 )
 
-/**
- * Screen dimmer {@link Span} story.
- */
-export const Dimmer = (args: SpanProps): ReactElement<SpanProps> => (
-  <Span {...args} />
-)
-
-Dimmer.args = {
-  className: 'dimmer'
+Default.args = {
+  children: 'Span text'
 }
-
-Dimmer.parameters = {}
