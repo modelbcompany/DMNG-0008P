@@ -1,6 +1,12 @@
 {
   "version": 2,
   "scope": "modelb",
+  "env": {
+    "apiToken": "@apiToken",
+    "companyCode": "@companyCode",
+    "marketingAPIKey": "@marketingAPIKey",
+    "propertyId": "@propertyId"
+  },
   "public": true,
   "redirects": [
     {
