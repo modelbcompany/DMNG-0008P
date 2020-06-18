@@ -83,7 +83,7 @@ export const MaxPriceOptions = [
   { label: '$2.5k - $3k', value: '2501-3000' },
   { label: '$3k - $3.5k', value: '3001-3500' },
   { label: '>$3.5k', value: '3501' }
-].map(option => ({ ...option, name: 'rentRange' }))
+]
 
 /**
  * Move-in date filter options.

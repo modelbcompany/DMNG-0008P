@@ -8,7 +8,15 @@ import { Container, ContainerProps } from '../Container'
 
 export default {
   component: Container,
-  title: 'Components/Molecules/Container'
+  title: 'Components/Molecules/Container',
+  parameters: {
+    actions: {
+      disabled: true
+    },
+    controls: {
+      disabled: true
+    }
+  }
 }
 
 /**

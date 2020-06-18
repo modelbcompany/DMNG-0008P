@@ -28,9 +28,9 @@ SelectionGroup.args = {
   className: 'row group select-group',
   layoutConfig: [
     {
-      initialOptions: MoveInDateOptions,
-      name: 'availableDate',
-      placeholder: 'Move In Date'
+      initialOptions: BedroomOptions,
+      name: 'numberOfBeds',
+      placeholder: 'Bedrooms'
     },
     {
       initialOptions: BathroomOptions,
@@ -38,14 +38,14 @@ SelectionGroup.args = {
       placeholder: 'Bathrooms'
     },
     {
-      initialOptions: BedroomOptions,
-      name: 'numberOfBeds',
-      placeholder: 'Bedrooms'
-    },
-    {
       initialOptions: MaxPriceOptions,
       name: 'rentRange',
       placeholder: 'Max Price'
+    },
+    {
+      initialOptions: MoveInDateOptions,
+      name: 'availableDate',
+      placeholder: 'Move In Date'
     }
   ].map(props => ({ ...props, isClearable: true, isSearchable: false })),
   tagName: 'select'

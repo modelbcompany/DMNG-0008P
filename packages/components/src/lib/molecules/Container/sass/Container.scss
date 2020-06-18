@@ -92,9 +92,18 @@
 
 // Styles
 
-// Container
 .adm-container {
   @extend %Container;
+}
+
+.form-container {
+  @include no-margin;
+
+  @include width(auto);
+}
+
+.floorplans-search-form .form-container {
+  @include is-full-height;
 }
 
 .display-flex,

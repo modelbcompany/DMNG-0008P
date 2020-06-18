@@ -53,6 +53,19 @@
   }
 }
 
+.floorplans-search-form .form-field {
+  @include respond-to($breakpoint-960, min) {
+    flex-grow: 0.85;
+    margin-right: size($padding-default-sm);
+  }
+
+  @include respond-to($breakpoint-960) {
+    @include is-full-width;
+
+    margin-bottom: size($height-sm);
+  }
+}
+
 // Responsive Styles
 
 // Desktop

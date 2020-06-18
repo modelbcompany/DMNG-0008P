@@ -21,14 +21,14 @@ export default {
 /**
  * Available date {@link Select} story.
  */
-export const AvailableDate = (
-  args: SelectProps
-): ReactElement<SelectProps> => <Select {...args} />
+export const AvailableDate = (args: SelectProps): ReactElement<SelectProps> => (
+  <Select {...args} />
+)
 
 AvailableDate.args = {
-  isClearable: true,
   initialOptions: MoveInDateOptions,
   menuIsOpen: true,
+  isClearable: true,
   isSearchable: false,
   name: 'availableDate',
   placeholder: 'Move In Date'
@@ -41,10 +41,9 @@ export const NumberOfBathrooms = (
   args: SelectProps
 ): ReactElement<SelectProps> => <Select {...args} />
 
-
 NumberOfBathrooms.args = {
-  isClearable: true,
   initialOptions: BathroomOptions,
+  isClearable: true,
   isSearchable: false,
   name: 'numberOfBaths',
   placeholder: 'Bathrooms'
@@ -58,8 +57,8 @@ export const NumberOfBedrooms = (
 ): ReactElement<SelectProps> => <Select {...args} />
 
 NumberOfBedrooms.args = {
-  isClearable: true,
   initialOptions: BedroomOptions,
+  isClearable: true,
   isSearchable: false,
   name: 'numberOfBeds',
   placeholder: 'Bedrooms'
@@ -68,13 +67,13 @@ NumberOfBedrooms.args = {
 /**
  * Max price {@link Select} story.
  */
-export const RentRange = (
-  args: SelectProps
-): ReactElement<SelectProps> => <Select {...args} />
+export const RentRange = (args: SelectProps): ReactElement<SelectProps> => (
+  <Select {...args} />
+)
 
 RentRange.args = {
-  isClearable: true,
   initialOptions: MaxPriceOptions,
+  isClearable: true,
   isSearchable: false,
   name: 'rentRange',
   placeholder: 'Max Price'

@@ -101,16 +101,20 @@
 .ada-button[type='submit'] {
   @include font-weight(600);
 
-  font-family: $font-family-primary;
-  letter-spacing: $letter-spacing;
+  @include is-flex-centered;
 
   @include respond-to($breakpoint-1024) {
     @include font-size($font-size);
-  } 
+  }
+
+  font-family: $font-family-primary;
+  letter-spacing: $letter-spacing;
 }
 
 .adm-form .ada-button {
   @include font-size($button-font-size - 2);
+
+  @include height(100%);
 }
 
 // Responsive Styles

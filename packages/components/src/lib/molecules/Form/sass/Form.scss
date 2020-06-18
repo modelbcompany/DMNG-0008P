@@ -11,17 +11,28 @@
 
 // Placeholders
 
-/// Form component styles
+/// Component: Form
 /// @require {mixin} width
 %Form {
   @include width(100%);
 }
 
+/// Component: Form
+/// @require {function} size
+/// @require {mixin} height
+/// @require {variable} height-xlg
+%FloorplansSearchForm {
+  @include height(size($height-xlg));
+}
+
 // Styles
 
-// Form
 .adm-form {
   @extend %Form;
+}
+
+.floorplans-search-form {
+  @extend %FloorplansSearchForm;
 }
 
 // Responsive Styles
