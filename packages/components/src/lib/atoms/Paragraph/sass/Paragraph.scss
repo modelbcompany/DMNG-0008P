@@ -47,8 +47,23 @@
 .adt-floorplans-blurb {
   @include font-size($floorplans-grid-title-size);
 
-  font-family: $font-family-primary;
   line-height: 2.7rem;
+}
+
+.adt-floorplans-blurb,
+.floorplan-details {
+  font-family: $font-family-primary;
+}
+
+.floorplan-rent,
+.floorplan-sqft {
+  font-family: $font-family-secondary;
+}
+
+.floorplan-details,
+.floorplan-rent,
+.floorplan-sqft {
+  @include text-color($text-color);
 }
 
 .adt-floorplans-blurb,

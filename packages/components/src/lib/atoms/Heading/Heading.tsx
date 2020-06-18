@@ -24,7 +24,7 @@ export interface HeadingProps extends Props {
    *
    * @default 1
    */
-  size: 1 | 2 | 3 | 4 | 5 | 6
+  size?: 1 | 2 | 3 | 4 | 5 | 6
 }
 
 /**

@@ -11,6 +11,41 @@ import {
   SelectHTMLAttributes
 } from 'react'
 
+export type ApartmentWithPlan = {
+  Amenities: string
+  ApartmentId: string
+  ApartmentName: string
+  ApplyOnlineURL: string
+  AvailabilityURL: string
+  AvailableDate: string
+  AvailableUnitsCount: string
+  Baths: string
+  Beds: string
+  Deposit: string
+  FloorplanHasSpecials: string
+  FloorplanId: string
+  FloorplanImageAltText: ''
+  FloorplanImageName: string
+  FloorplanImageURL: string
+  FloorplanName: string
+  MaximumDeposit: string
+  MaximumRent: string
+  MaximumSQFT: string
+  MinimumDeposit: string
+  MinimumRent: string
+  MinimumSQFT: string
+  PropertyId: string
+  PropertyShowsSpecials: string
+  SQFT: string
+  Specials: string
+  UnitImageAltText: string
+  UnitImageURLs: string[]
+  UnitStatus: string
+  UnitTypeMapping: string
+  VoyagerPropertyCode: string
+  VoyagerPropertyId: string
+}
+
 /**
  * Type capturing an object with strings for key, and where values can be any
  * type.
@@ -260,14 +295,14 @@ export interface GlobalHTMLAttributes {
    * contenteditable mode.
    */
   inputmode?:
-    | 'none'
-    | 'text'
-    | 'decimal'
-    | 'numeric'
-    | 'tel'
-    | 'search'
-    | 'email'
-    | 'url'
+  | 'none'
+  | 'text'
+  | 'decimal'
+  | 'numeric'
+  | 'tel'
+  | 'search'
+  | 'email'
+  | 'url'
 
   /* eslint-enable prettier/prettier */
 

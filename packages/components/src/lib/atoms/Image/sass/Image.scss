@@ -11,10 +11,13 @@
 
 /// Component: Image
 /// @require {mixin} event
+/// @require {mixin} is-full-width
 %Image {
   @include event {
     cursor: pointer;
   }
+
+  @include is-full-width;
 }
 
 // Placeholders

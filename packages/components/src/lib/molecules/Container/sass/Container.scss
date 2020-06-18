@@ -132,6 +132,12 @@
 }
 
 .floorplan {
+  .column {
+    @include no-margin;
+
+    @include width($full-width);
+  }
+
   .image-column {
     padding-bottom: size($padding-default-sm);
   }

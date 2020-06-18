@@ -15,9 +15,9 @@ export default {
 /**
  * {@link Floorplan} "Apply Now" {@link Link} story.
  */
-export const ApplyNowLink = (
-  args: LinkProps
-): ReactElement<LinkProps> => <Link {...args} />
+export const ApplyNowLink = (args: LinkProps): ReactElement<LinkProps> => (
+  <Link {...args} />
+)
 
 ApplyNowLink.storyName = 'Apply Now'
 ApplyNowLink.args = {
