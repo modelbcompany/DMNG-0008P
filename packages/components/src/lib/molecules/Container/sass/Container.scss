@@ -134,6 +134,19 @@
   }
 }
 
+.floorplans-grid-container {
+  @include is-flex-centered;
+
+  @include respond-to($breakpoint-768) {
+    grid-template-columns: repeat(1, 1fr) !important;
+    row-gap: size($padding-default-lg * 2);
+  }
+
+  @include responsive-grid;
+
+  row-gap: size($padding-default-lg * 1.5);
+}
+
 // Column
 
 .column {

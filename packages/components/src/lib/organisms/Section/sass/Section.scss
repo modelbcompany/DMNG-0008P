@@ -11,17 +11,41 @@
 
 // Placeholders
 
-/// Section component styles
+/// Component: Section
 /// @require {mixin} is-full-width
 %Section {
   @include is-full-width;
 }
 
+/// Component: FloorplansGrid
+/// @require {function} size
+/// @require {mixin} is-full-height
+/// @require {mixin} respond-to
+/// @require {mixin} set-bkg-img
+/// @require {variable} $breakpoint-1024
+/// @require {variable} $padding-default-lg
+%FloorplansGrid {
+  $grid-padding: $padding-default-lg * 2.5;
+
+  @include is-full-height;
+
+  @include respond-to($breakpoint-1024) {
+    padding: size($grid-padding) size($grid-padding * 0.5);
+  }
+
+  @include set-bkg-img('woodmont-marble-bg-901x1024.jpg');
+
+  padding: size($grid-padding);
+}
+
 // Styles
 
-// Section
 .ado-section {
   @extend %Section;
+}
+
+.floorplans-grid {
+  @extend %FloorplansGrid;
 }
 
 // Responsive Styles

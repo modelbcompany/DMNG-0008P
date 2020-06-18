@@ -3,7 +3,7 @@ import { Floorplan, FloorplanProps } from '../Article'
 
 /**
  * @file Stories - Floorplan
- * @module Stories/Components/Molecules/Article/Floorplan
+ * @module lib/Molecules/Article/stories/Floorplan
  */
 
 export default {

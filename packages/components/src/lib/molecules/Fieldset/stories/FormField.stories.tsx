@@ -9,7 +9,7 @@ import { FormField, FormFieldProps } from '../Fieldset'
 
 /**
  * @file Stories - FormField
- * @module Stories/Components/Molecules/Fieldset/Components/FormField
+ * @module lib/Molecules/Fieldset/Components/stories/FormField
  */
 
 export default {

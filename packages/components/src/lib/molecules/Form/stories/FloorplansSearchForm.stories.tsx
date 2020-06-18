@@ -3,7 +3,7 @@ import { FloorplansSearchForm, FloorplansSearchFormProps } from '../components'
 
 /**
  * @file Stories - FloorplansSearchForm
- * @module Stories/Components/Molecules/Form/FloorplansSearchForm
+ * @module lib/Molecules/Form/stories/FloorplansSearchForm
  */
 
 export default {

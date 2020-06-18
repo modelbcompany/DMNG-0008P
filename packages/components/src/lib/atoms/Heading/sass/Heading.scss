@@ -30,6 +30,14 @@
   @include font-size($floorplans-grid-title-size);
 }
 
+.floorplans-grid .floorplans-grid-title {
+  @include is-center-aligned-text;
+
+  @include is-white-text;
+
+  margin-bottom: size($padding-default-lg * 2);
+}
+
 // Responsive Styles
 
 // Desktop

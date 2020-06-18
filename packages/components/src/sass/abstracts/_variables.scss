@@ -9,7 +9,7 @@
 
 /// Asset path
 /// @type {String}
-$base-url: '../../../assets/';
+$base-url: '../../../../../assets/';
 
 /// Twelve
 /// @type {Number}
@@ -115,15 +115,15 @@ $color-brand-tussock: #bf8d4a;
 /// @type Map
 $devices: (
   'desktop': (
-    'columns': 12,
+    'columns': 3,
     'max-width': 75%
   ),
   'tablet': (
-    'columns': 8,
+    'columns': 2,
     'max-width': 85%
   ),
   'mobile': (
-    'columns': 4,
+    'columns': 1,
     'max-width': 90%
   )
 );
@@ -142,57 +142,39 @@ $devices: (
 /// @type Map
 $grid-layout: (
   $breakpoint-1920: (
-    'column-width': 98,
-    'gutter-width': 24,
-    'margins': 240,
+    'gutter-width': 36,
     'type': 'desktop'
   ),
   $breakpoint-1440: (
-    'column-width': 78,
-    'gutter-width': 13,
-    'margins': 180,
+    'gutter-width': 36,
     'type': 'desktop'
   ),
   $breakpoint-1366: (
-    'column-width': 66,
-    'gutter-width': 21,
-    'margins': 171,
+    'gutter-width': 36,
     'type': 'desktop'
   ),
   $breakpoint-1024: (
-    'column-width': 92,
-    'gutter-width': 19,
-    'margins': 77,
+    'gutter-width': 24,
     'type': 'tablet'
   ),
   $breakpoint-834: (
-    'column-width': 78,
-    'gutter-width': 12,
-    'margins': 63,
+    'gutter-width': 24,
     'type': 'tablet'
   ),
   $breakpoint-768: (
-    'column-width': 64,
-    'gutter-width': 20,
-    'margins': 58,
+    'gutter-width': 24,
     'type': 'tablet'
   ),
   $breakpoint-414: (
-    'column-width': 87,
-    'gutter-width': 8,
-    'margins': 21,
+    'gutter-width': 12,
     'type': 'mobile'
   ),
   $breakpoint-375: (
-    'column-width': 78,
-    'gutter-width': 8,
-    'margins': 19,
+    'gutter-width': 12,
     'type': 'mobile'
   ),
   $breakpoint-320: (
-    'column-width': 66,
-    'gutter-width': 8,
-    'margins': 16,
+    'gutter-width': 12,
     'type': 'mobile'
   )
 );

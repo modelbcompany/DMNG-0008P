@@ -3,7 +3,7 @@ import { LabeledFormElement, LabeledFormElementProps } from '../Label'
 
 /**
  * @file Stories - LabeledFormElement
- * @module Stories/Components/Molecules/Label/Components/LabeledFormElement
+ * @module lib/Molecules/Label/Components/stories/LabeledFormElement
  */
 
 export default {

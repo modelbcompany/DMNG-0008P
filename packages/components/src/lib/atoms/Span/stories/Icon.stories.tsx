@@ -3,7 +3,7 @@ import { Icon, IconProps } from '../Span'
 
 /**
  * @file Stories - Icon
- * @module Stories/Components/Atoms/Span/Icon
+ * @module lib/Atoms/Span/stories/Icon
  */
 
 export default {

@@ -1,0 +1,25 @@
+0 silly argv {
+0 silly argv   _: [ 'run' ],
+0 silly argv   scope: '@modelbcompany/woodmont-ui',
+0 silly argv   lernaVersion: '3.22.1',
+0 silly argv   '$0': '/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/.bin/lerna',
+0 silly argv   script: 'dev'
+0 silly argv }
+1 notice cli v3.22.1
+2 verbose rootPath /Users/lex/Projects/DMNG/DMNG-0008P
+3 info versioning independent
+4 notice filter including "@modelbcompany/woodmont-ui"
+5 info filter [ '@modelbcompany/woodmont-ui' ]
+6 info Executing command in 1 package: "yarn run dev"
+7 silly npmRunScript.stream [ 'dev', [], '@modelbcompany/woodmont-ui' ]
+8 silly getExecOpts /Users/lex/Projects/DMNG/DMNG-0008P/packages/components undefined
+9 error MaxBufferError: stderr maxBuffer exceeded
+9 error     at PassThrough.<anonymous> (/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/get-stream/index.js:41:19)
+9 error     at PassThrough.emit (events.js:327:22)
+9 error     at addChunk (_stream_readable.js:302:12)
+9 error     at readableAddChunk (_stream_readable.js:274:11)
+9 error     at PassThrough.Readable.push (_stream_readable.js:217:10)
+9 error     at PassThrough.Transform.push (_stream_transform.js:152:32)
+9 error     at PassThrough.afterTransform (_stream_transform.js:96:10)
+9 error     at PassThrough._transform (_stream_passthrough.js:46:3)
+9 error     at PassThrough.Transform._read (_stream_transform.js:191:10)
