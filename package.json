@@ -35,7 +35,7 @@
     "dev": "lerna run dev",
     "build:components": "lerna run build --scope @modelbcompany/woodmont-ui",
     "stage:api": "lerna run stage --scope @modelbcompany/woodmont-api",
-    "stage:components": "yarn vc:components && vc -A vercel.components.json",
+    "stage:components": "yarn vc:components && vc -A woodbook.vercel.json",
     "prod:api": "lerna run prod --scope @modelbcompany/woodmont-api",
     "prod:components": "yarn stage:components --prod"
   },

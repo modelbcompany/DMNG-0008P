@@ -36,7 +36,7 @@
     "test": "jest --detectOpenHandles --passWithNoTests",
     "prebuild": "rm -rf ./build",
     "build": "build-storybook -o build && webpack",
-    "postbuild": "cp -R src/assets build",
+    "postbuild": "cp -R src/assets build && cp -R docs build",
     "stage": "vc",
     "prod": "yarn stage --prod"
   },

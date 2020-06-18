@@ -1,0 +1,18 @@
+# woodbook - ignore
+
+# Force Vercel to use Yarn
+package-lock.json
+
+# Linting checks should be run using GitHub Actions
+.eslintignore
+.eslintrc.json
+.prettierignore
+.prettierrc.json
+
+# GitHub
+.github
+
+# WordPress
+app
+conf
+logs
