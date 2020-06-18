@@ -48,10 +48,7 @@
     "build",
     "dist",
     "node_modules",
-    "src/stories",
     "jest.config.js",
-    "jest.setup.ts",
-    "webpack.config.js"
-  ],
-  "include": ["src/**/*"]
+    "jest.setup.ts"
+  ]
 }

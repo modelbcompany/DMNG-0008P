@@ -1,6 +1,6 @@
 const { merge, omit } = require('lodash')
 const path = require('path')
-const babelOptions = require('../babel.config.json')
+const babelOptions = require('../../../babel.config.json')
 
 /**
  * @file Storybook Configuration

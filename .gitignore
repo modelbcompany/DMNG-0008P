@@ -76,3 +76,4 @@ build/
 dist/
 
 .vercel
+config/*.project.json

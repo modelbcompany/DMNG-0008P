@@ -54,8 +54,6 @@ get_header();
 <script type='text/babel'>
   const { WoodmontComponents: { FloorplansTemplate }, ReactDOM } = WoodmontJS
 
-  // TODO: Call Woodmont API and pass data to template component
-
   ReactDOM.render(
     <FloorplansTemplate auth={JSON.parse('<?= $RENT_CAFE_AUTH ?>')} />, 
     document.getElementById('<?= $FLOORPLANS_TEMPLATE_CONTAINER_ID ?>')

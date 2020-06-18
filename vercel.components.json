@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "scope": "modelb",
+  "public": true,
+  "redirects": [
+    {
+      "source": "/docs/storybook-config",
+      "destination": "https://medium.com/storybookjs/declarative-storybook-configuration-49912f77b78",
+      "permanent": true
+    },
+    {
+      "source": "/repo",
+      "destination": "https://github.com/modelbcompany/DMNG-0008P/tree/master/packages/components",
+      "permanent": true
+    },
+    {
+      "source": "/usage",
+      "destination": "https://woodmontdev.wpengine.com",
+      "permanent": true
+    }
+  ]
+}

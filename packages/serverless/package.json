@@ -1,5 +1,5 @@
 {
-  "name": "@modelbcompany/woodmontapi",
+  "name": "@modelbcompany/woodmont-api",
   "version": "1.0.0-alpha",
   "description": "Serverless Functions for the Woodmont Landing Page project.",
   "keywords": [
@@ -35,7 +35,6 @@
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "lodash": "^4.17.15",
-    "nedb": "^1.8.0",
     "pino": "^6.3.2",
     "pino-pretty": "^4.0.0",
     "tslib": "^2.0.0",
