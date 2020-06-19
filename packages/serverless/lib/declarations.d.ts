@@ -38,12 +38,74 @@ export type ServiceWithMixins<T = Record<string, any>> = Partial<
   }
 >
 
+/**
+ * Feathers `Service` with mixin definition.
+ */
 export type RentCafeAuthentication = {
   apiToken: string
   companyCode: string
   marketingAPIKey: string
   propertyId: string
   requestType: string
+}
+
+/**
+ * RENTCafé apartment schema.
+ */
+export type RentCafeApartment = {
+  Amenities: string
+  ApartmentId: string
+  ApartmentName: string
+  ApplyOnlineURL: string
+  AvailableDate: string
+  Baths: string
+  Beds: string
+  Deposit: string
+  FloorplanId: string
+  FloorplanName: string
+  MaximumRent: string
+  MinimumRent: string
+  Specials: string
+  SQFT: string
+  PropertyId: string
+  PropertyShowsSpecials: string
+  UnitImageURLs: string
+  UnitTypeMapping: string
+  VoyagerPropertyCode: string
+  VoyagerPropertyId: string
+}
+
+/**
+ * RENTCafé appointment schema.
+ */
+export type RentCafeAvailableSlot = {
+  dtEnd: string
+  dtStart: string
+  PropertyId: string
+}
+
+/**
+ * RENTCafé floorplan schema.
+ */
+export type RentCafeFloorplan = {
+  AvailabilityURL: string
+  AvailableUnitsCount: string
+  Baths: string
+  Beds: string
+  FloorplanHasSpecials: string
+  FloorplanImageAltText: string
+  FloorplanImageName: string
+  FloorplanImageURL: string
+  FloorplanId: string
+  FloorplanName: string
+  MaximumDeposit: string
+  MinimumDeposit: string
+  MaximumRent: string
+  MinimumRent: string
+  MaximumSqFt: string
+  MinimumSqFt: string
+  PropertyShowsSpecials: string
+  UnitTypeMapping: string
 }
 
 /**
@@ -69,4 +131,5 @@ export {
   ServiceAddons,
   ServiceMethods
 } from '@feathersjs/feathers'
+export { AxiosResponse } from 'axios'
 

@@ -16,16 +16,16 @@ import {
   Unavailable,
   Unprocessable
 } from '@feathersjs/errors'
-import { NowRequest } from '@vercel/node'
-import { pick } from 'lodash'
-import URI from 'urijs'
+import { isArray, isNumber } from 'lodash'
 import {
   AnyObject,
   Application,
+  AxiosResponse,
   FeathersError,
-  HooksObject,
-  IncomingRequest
+  HooksObject
 } from './declarations'
+import logger from './logger'
+import RentCafeAPIError from './models/RentCafeAPIError'
 
 /**
  * @file Utility Functions
@@ -101,30 +101,35 @@ export const getFeathersError = (
 }
 
 /**
- * Returns relevant properties from the incoming request.
+ * Axios interceptor for RENTCafé responses.
+ * Used to check for an error from a RENTCafé response.
  *
- * <https://nodejs.org/api/http.html#http_class_http_incomingmessage>
- * <https://nodejs.org/api/http.html#http_class_http_serverresponse>
- *
- * @param {NowRequest} req - Incoming request
- * @returns {IncomingRequest} Sanitized incoming request
+ * @param param0 - Axios Response object
+ * @returns Axios response if an error isn't found
+ * @throws {RentCafeAPIError}
  */
-export const pickRequestProperties = (req: NowRequest): IncomingRequest => {
-  const sanitizedReq: AnyObject = pick(req, [
-    'body',
-    'cookies',
-    'query',
-    'method',
-    'url'
-  ])
+export const interceptRentCafeResponse = ({
+  data: res,
+  config,
+  ...rest
+}: AxiosResponse): AxiosResponse => {
+  if (!res) return { ...rest, config, data: null }
 
-  const { path } = URI.parse(sanitizedReq.url)
+  const marketing = isNumber(res.ErrorCode)
+  const web = isArray(res) && res[0]?.Error
 
-  sanitizedReq.body = sanitizedReq.body || null
-  sanitizedReq.path = path
-  sanitizedReq.service = sanitizedReq.path.split('/')[1] || 'docs'
+  if (web) res = res[0]
 
-  return sanitizedReq as IncomingRequest
+  if (marketing || web) {
+    const { method, url, data } = config
+
+    const error = new RentCafeAPIError(res, { config: { method, url, data } })
+
+    logger.error({ interceptRentCafeResponse: error })
+    throw error
+  }
+
+  return res
 }
 
 /**
