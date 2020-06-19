@@ -2,17 +2,15 @@ import { Application as ExpressFeathers } from '@feathersjs/express'
 import { Service } from '@feathersjs/feathers'
 import '@feathersjs/transport-commons'
 
-export type AnyObject = Record<string, any>
-
-export type APIResponse<T = any> = {
-  status: number
-  data: T
-}
-
 /**
  * Feathers application type. Will be throughout the codebase.
  */
 export type Application = ExpressFeathers<ServiceTypes>
+
+/**
+ * Type capturing any pure object.
+ */
+export type AnyObject = Record<string, any>
 
 /**
  * {@link Docs} service data type.
@@ -39,6 +37,14 @@ export type ServiceWithMixins<T = Record<string, any>> = Partial<
     [key: string]: (...arguments: any) => any
   }
 >
+
+export type RentCafeAuthentication = {
+  apiToken: string
+  companyCode: string
+  marketingAPIKey: string
+  propertyId: string
+  requestType: string
+}
 
 /**
  * A mapping of service names to types. Will be extended in service files.

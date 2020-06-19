@@ -51,7 +51,7 @@ export default class Docs implements ServiceWithMixins<Documentation> {
    * @async
    * @returns API documentation
    */
-  async find(): Promise<Documentation> {
+  async find(params): Promise<Documentation> {
     const service = (this.app as Application).service(
       this.path as string
     ) as ServiceWithMixins

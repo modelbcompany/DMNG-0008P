@@ -71,6 +71,6 @@ export default async (
     return res.status(200).json(apiRes)
   } catch (error) {
     logger.error(error)
-    return res.status(500).json(error)
+    return res.status(error.code || 500).json(error)
   }
 }
