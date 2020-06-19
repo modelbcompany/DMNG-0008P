@@ -53,7 +53,6 @@ app.hooks({
        *
        * @param param0 - Service call information
        * @param param0.params - Service method parameters
-       * @param param0.params.query - Query parameters
        * @returns Updated service context
        */
       ({ params, ...rest }): HookContext => {
@@ -230,7 +229,7 @@ app.hooks({
   },
 
   error({ error, ...rest }) {
-    logger.error({ api: error.toJSON ? error.toJSON() : error.message })
+    logger.error({ error: error.toJSON ? error.toJSON() : error.message })
     return { error, ...rest }
   }
 })
