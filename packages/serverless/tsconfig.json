@@ -23,7 +23,7 @@
     "noImplicitThis": true,
     "noLib": false,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "outDir": "./dist",
     "preserveConstEnums": true,
     "removeComments": false,
@@ -34,7 +34,7 @@
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,
     "strict": true,
-    "target": "esnext"
+    "target": "es5"
   },
   "exclude": [
     "__tests__",
