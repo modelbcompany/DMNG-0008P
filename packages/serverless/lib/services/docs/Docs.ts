@@ -6,13 +6,10 @@ import {
 import logger from '../../logger'
 
 /**
- * @file Service Object - Docs
+ * @file Service - Docs
  * @module services/docs/Docs
  */
 
-/**
- * API documentation service.
- */
 export default class Docs implements ServiceWithMixins<Documentation> {
   /**
    * Feathers application instance.
@@ -40,9 +37,7 @@ export default class Docs implements ServiceWithMixins<Documentation> {
     this.app = app
     this.path = path
 
-    logger.debug({
-      service: { initialized: !!this.app, name: 'docs', path: this.path }
-    })
+    logger.debug({ service: { initialized: 'docs', path: this.path } })
   }
 
   /**
@@ -51,7 +46,7 @@ export default class Docs implements ServiceWithMixins<Documentation> {
    * @async
    * @returns API documentation
    */
-  async find(params): Promise<Documentation> {
+  async find(): Promise<Documentation> {
     const service = (this.app as Application).service(
       this.path as string
     ) as ServiceWithMixins

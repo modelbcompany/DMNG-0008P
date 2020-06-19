@@ -1,7 +1,7 @@
-# CoSpark Serverless API
+# Woodmont Serverless API
 
 [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction)
-for CoSpark, a matching service and networking platform for startups
+for the Woodmont Landing Page project
 
 [![TypeScript](https://badgen.net/badge/-/typescript?icon=typescript&label)](https://badgen.net/badge/-/typescript?icon=typescript&label)
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)

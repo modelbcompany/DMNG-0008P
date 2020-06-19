@@ -16,13 +16,16 @@ import {
   Unavailable,
   Unprocessable
 } from '@feathersjs/errors'
-import { isArray, isNumber } from 'lodash'
+import { NowRequest } from '@vercel/node'
+import { isArray, isNumber, pick } from 'lodash'
+import URI from 'urijs'
 import {
   AnyObject,
   Application,
   AxiosResponse,
   FeathersError,
-  HooksObject
+  HooksObject,
+  IncomingRequest
 } from './declarations'
 import logger from './logger'
 import RentCafeAPIError from './models/RentCafeAPIError'
@@ -115,7 +118,7 @@ export const interceptRentCafeResponse = ({
 }: AxiosResponse): AxiosResponse => {
   if (!res) return { ...rest, config, data: null }
 
-  const marketing = isNumber(res.ErrorCode)
+  const marketing = isNumber(res.ErrorCode) && res.ErrorCode !== 0
   const web = isArray(res) && res[0]?.Error
 
   if (web) res = res[0]
@@ -130,6 +133,33 @@ export const interceptRentCafeResponse = ({
   }
 
   return res
+}
+
+/**
+ * Returns relevant properties from the incoming request.
+ *
+ * <https://nodejs.org/api/http.html#http_class_http_incomingmessage>
+ * <https://nodejs.org/api/http.html#http_class_http_serverresponse>
+ *
+ * @param {NowRequest} req - Incoming request
+ * @returns {IncomingRequest} Sanitized incoming request
+ */
+export const pickRequestProperties = (req: NowRequest): IncomingRequest => {
+  const sanitizedReq: AnyObject = pick(req, [
+    'body',
+    'cookies',
+    'query',
+    'method',
+    'url'
+  ])
+
+  const { path } = URI.parse(sanitizedReq.url)
+
+  sanitizedReq.body = sanitizedReq.body || null
+  sanitizedReq.path = path
+  sanitizedReq.service = sanitizedReq.path.split('/')[1] || 'docs'
+
+  return sanitizedReq as IncomingRequest
 }
 
 /**

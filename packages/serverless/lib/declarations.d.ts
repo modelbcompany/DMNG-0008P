@@ -3,56 +3,14 @@ import { Service } from '@feathersjs/feathers'
 import '@feathersjs/transport-commons'
 
 /**
- * Feathers application type. Will be throughout the codebase.
- */
-export type Application = ExpressFeathers<ServiceTypes>
-
-/**
  * Type capturing any pure object.
  */
 export type AnyObject = Record<string, any>
 
 /**
- * {@link Docs} service data type.
- */
-export type Documentation = {
-  repo: string
-  version: string
-}
-
-export type IncomingRequest = {
-  body: AnyObject | null
-  cookies: AnyObject
-  query: AnyObject
-  method: 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS'
-  path: string
-  service: string
-}
-
-/**
- * Feathers `Service` with mixin definition.
- */
-export type ServiceWithMixins<T = Record<string, any>> = Partial<
-  Service<T & any> & {
-    [key: string]: (...arguments: any) => any
-  }
->
-
-/**
- * Feathers `Service` with mixin definition.
- */
-export type RentCafeAuthentication = {
-  apiToken: string
-  companyCode: string
-  marketingAPIKey: string
-  propertyId: string
-  requestType: string
-}
-
-/**
  * RENTCafé apartment schema.
  */
-export type RentCafeApartment = {
+export type Apartment = {
   Amenities: string
   ApartmentId: string
   ApartmentName: string
@@ -76,18 +34,51 @@ export type RentCafeApartment = {
 }
 
 /**
+ * Feathers application type. Will be throughout the codebase.
+ */
+export type Application = ExpressFeathers<ServiceTypes>
+
+/**
+ * RENTCafé created appointment schema.
+ */
+export type AppointmentWithLead = {
+  RentcafeProspectId: number
+  VoyProspectApptId: number
+  VoyProspectCode: string
+  VoyProspectId: string
+}
+
+/**
  * RENTCafé appointment schema.
  */
-export type RentCafeAvailableSlot = {
-  dtEnd: string
-  dtStart: string
+export type AvailableSlot = {
+  dtEnd: [string, string, string]
+  dtStart: [string, string, string]
   PropertyId: string
+}
+
+/**
+ * RENTCafé appointment schema.
+ */
+export type CancelledAppointment = {
+  ErrorCode: 0
+  ErrorMessage: 'Appointment is canceled.'
+  ErrorTrace: null
+  Response: null
+}
+
+/**
+ * {@link Docs} service data type.
+ */
+export type Documentation = {
+  repo: string
+  version: string
 }
 
 /**
  * RENTCafé floorplan schema.
  */
-export type RentCafeFloorplan = {
+export type Floorplan = {
   AvailabilityURL: string
   AvailableUnitsCount: string
   Baths: string
@@ -106,6 +97,43 @@ export type RentCafeFloorplan = {
   MinimumSqFt: string
   PropertyShowsSpecials: string
   UnitTypeMapping: string
+}
+
+export type IncomingRequest = {
+  body: AnyObject | null
+  cookies: AnyObject
+  query: AnyObject
+  method: 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS'
+  path: string
+  service: string
+}
+
+export type NewAppointment = {
+  apptDate: string
+  apptTime: string
+  email: string
+  phone: string
+  source: string
+}
+
+/**
+ * Feathers `Service` with mixin definition.
+ */
+export type ServiceWithMixins<T = Record<string, any>> = Partial<
+  Service<T & any> & {
+    [key: string]: (...arguments: any) => any
+  }
+>
+
+/**
+ * Feathers `Service` with mixin definition.
+ */
+export type RentCafeAuthentication = {
+  apiToken: string
+  companyCode: string
+  marketingAPIKey: string
+  propertyId: string
+  requestType: string
 }
 
 /**
@@ -131,5 +159,5 @@ export {
   ServiceAddons,
   ServiceMethods
 } from '@feathersjs/feathers'
-export { AxiosResponse } from 'axios'
+export { AxiosResponse, AxiosStatic } from 'axios'
 

@@ -5,6 +5,7 @@ import axios from 'axios'
 import cors from 'cors'
 import { merge } from 'lodash'
 import {
+  AnyObject,
   Application,
   HookContext,
   Query,
@@ -31,7 +32,10 @@ app.set('logger', logger)
 // ! RENTCafé APIs only return 200-status responses, so we must check for an
 // ! error before returning the response data
 axios.interceptors.response.use(
-  res => interceptRentCafeResponse(res),
+  res => {
+    res = interceptRentCafeResponse(res)
+    return (res as AnyObject).Response ? (res as AnyObject).Response[0] : res
+  },
   err => {
     const { message, config, status } = err
 
@@ -190,7 +194,23 @@ app.hooks({
           params.query = merge({}, params.query, {
             companyCode,
             marketingAPIKey,
-            propertyId
+            propertyId,
+            requestType: (() => {
+              let type = ''
+
+              switch (rest.method) {
+                case 'create':
+                  type = 'createleadwithappointment'
+                  break
+                case 'remove':
+                  type = 'cancelappointment'
+                  break
+                default:
+                  type = 'AvailableSlots'
+              }
+
+              return type
+            })()
           })
         }
 
