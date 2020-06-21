@@ -1,6 +1,10 @@
 {
+  "awesomeTypescriptLoaderOptions": {
+    "babelCore": "@babel/core",
+    "useBabel": true,
+    "useCache": true
+  },
   "compilerOptions": {
-    "noEmit": true,
     "rootDir": "./src"
   },
   "extends": "./tsconfig.json",

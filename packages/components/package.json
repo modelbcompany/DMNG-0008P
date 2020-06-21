@@ -34,9 +34,9 @@
     "dev:docs": "yarn dev --docs",
     "pretest": "NODE_ENV=test",
     "test": "jest --detectOpenHandles --passWithNoTests",
-    "prebuild": "rm -rf ./build",
+    "prebuild": "rm -rf ./build ./dist",
     "build": "build-storybook -o build && webpack",
-    "postbuild": "cp -R src/assets build",
+    "postbuild": "cp -R src/assets build && rm -rf ./dist",
     "stage": "vc",
     "prod": "yarn stage --prod"
   },

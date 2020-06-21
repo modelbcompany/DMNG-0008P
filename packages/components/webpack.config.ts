@@ -20,7 +20,8 @@ module.exports = {
   output: {
     filename: `woodmont-${pkg.version}.js`,
     library: 'Woodmont',
-    libraryTarget: 'global'
+    libraryTarget: 'global',
+    path: path.resolve(__dirname, 'build')
   },
   target: 'node',
   externals: [
@@ -73,10 +74,7 @@ module.exports = {
           {
             loader: 'awesome-typescript-loader',
             options: {
-              configFileName: './tsconfig.prod.json',
-              babelCore: '@babel/core',
-              babelOptions: { babelrc: false, ...babelOptions },
-              useBabel: true
+              configFileName: './tsconfig.prod.json'
             }
           }
         ]

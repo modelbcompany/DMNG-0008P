@@ -5,6 +5,13 @@
  *
  * This is the template that displays all of the <head> section
  */
+
+global $wp;
+$current_url = home_url(add_query_arg(array(), $wp->request));
+
+$WOODMONT_CDN_URL = strpos($current_url, 'woodmont.local')
+  ? 'https://woodbook-lexusdrumgold.modelb.vercel.app/woodmont-1.0.0-alpha.js'
+  : 'https://woodbook.modelb.now.sh/woodmont-1.0.0-alpha.js'
 ?>
 
 <!doctype html>
@@ -58,8 +65,7 @@
   <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap" />
 
   <!-- WoodmontJS -->
-  <script src="https://woodmontjs.modelb.now.sh/scripts/woodmont.min.js">
-  </script>
+  <script src="<?= $WOODMONT_CDN_URL ?>"></script>
 
   <!-- React -->
   <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js">

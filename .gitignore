@@ -189,7 +189,10 @@ app/public/wp-content/themes/twenty*/
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,node,windows,wordpress
 
+.awcache/
 .vercel/
 _wpeprivate/
 .wpe-devkit/
 .wpengine-conf/
+**/build/
+**/dist/
