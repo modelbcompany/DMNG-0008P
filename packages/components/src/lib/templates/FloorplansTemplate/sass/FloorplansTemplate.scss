@@ -1,0 +1,31 @@
+/// ----------------------------------------------------------------------------
+/// FloorplansTemplate variables, functions, mixins, placeholders, and styles
+/// @group FloorplansTemplate
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: FloorplansTemplate
+%FloorplansTemplate {
+  overflow-y: scroll;
+}
+
+// Styles
+
+.adt-floorplans {
+  @extend %FloorplansTemplate;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

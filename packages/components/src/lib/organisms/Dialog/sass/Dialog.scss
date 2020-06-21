@@ -1,0 +1,31 @@
+/// ----------------------------------------------------------------------------
+/// Dialog variables, functions, mixins, placeholders, and styles
+/// @group Dialog
+/// ----------------------------------------------------------------------------
+
+// Variables
+
+// Functions
+
+// Mixins
+
+// Placeholders
+
+/// Component: Dialog
+%Dialog {
+  @include width(60vw);
+}
+
+// Styles
+
+.ado-dialog {
+  @extend %Dialog;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile
