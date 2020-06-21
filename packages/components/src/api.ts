@@ -12,8 +12,8 @@ import logger from 'logger'
 const api = feathers()
 
 // Connect to API and configure REST client
-api.configure(rest('http://localhost:9000').axios(axios))
+api.configure(rest(process.env.STORYBOOK_API_URL).axios(axios))
 
-logger.debug({ connected: true })
+logger.debug({ connected: process.env.STORYBOOK_API_URL })
 
 export default api
