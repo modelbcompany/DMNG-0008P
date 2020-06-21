@@ -3,6 +3,7 @@
  * @module hooks
  */
 
+export * from './useApartments'
 export * from './useArray'
 export * from './useBoolean'
 export * from './useDisclosure'

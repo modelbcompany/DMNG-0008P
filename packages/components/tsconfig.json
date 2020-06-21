@@ -26,6 +26,7 @@
     "noUnusedParameters": true,
     "outDir": "./dist",
     "paths": {
+      "api/*": ["src/api.ts"],
       "declarations/*": ["src/lib/declarations.ts"],
       "hooks/*": ["src/hooks/*"],
       "lib/*": ["src/lib/*"],
@@ -36,7 +37,7 @@
     "removeComments": false,
     "resolveJsonModule": true,
     "rootDir": "./",
-    "skipLibCheck": false,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "sourceMap": false,
     "suppressImplicitAnyIndexErrors": true,

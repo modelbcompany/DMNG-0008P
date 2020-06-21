@@ -39,9 +39,7 @@
     "prod:api": "lerna run prod --scope @modelbcompany/woodmont-api",
     "prod:components": "yarn stage:components --prod"
   },
-  "dependencies": {
-    "regenerator-runtime": "^0.13.5"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-export-default-from": "^7.10.1",
@@ -82,6 +80,7 @@
     "npm-run-all": "^4.1.5",
     "pino": "^6.3.2",
     "prettier": "^2.0.5",
+    "regenerator-runtime": "^0.13.5",
     "shx": "^0.3.2",
     "ts-jest": "^26.1.0",
     "typescript": "^3.9.3",

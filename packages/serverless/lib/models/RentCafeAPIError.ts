@@ -13,16 +13,16 @@ import { AnyObject } from 'lib/declarations'
  * @namespace RentCafeWebAPIErrorCodes
  * @see {@link https://woodmontapi.modelb.now.sh/docs/rentcafe/web}
  */
-export const RentCafeWebAPIErrorCodes: Readonly<number[]> = Object.freeze([
-  1000,
-  1010,
-  1020,
-  1030,
-  1040,
-  1050,
-  1060,
-  1070,
-  1100
+export const RentCafeWebAPIErrorCodes: Readonly<string[]> = Object.freeze([
+  '1000',
+  '1010',
+  '1020',
+  '1030',
+  '1040',
+  '1050',
+  '1060',
+  '1070',
+  '1100'
 ])
 
 /**
@@ -38,59 +38,50 @@ export class RentCafeAPIError extends FeathersError {
    */
   constructor(error: AnyObject, data: AnyObject = {}) {
     const { Error: webErrCode, ErrorCode: marketingErrCode } = error
-    let { ErrorMessage } = error
 
-    if (webErrCode) {
-      ErrorMessage = (() => {
-        const message = RentCafeWebAPIErrorCodes.find(code => {
-          let msg = ''
+    const code = webErrCode || marketingErrCode
+    let message = ''
 
-          if (code === webErrCode) {
-            switch (webErrCode) {
-              case 1010:
-                msg = 'Invalid Company'
-                break
-              case 1020:
-                msg = 'Invalid Property'
-                break
-              case 1030:
-                msg = 'Invalid Request Type'
-                break
-              case 1040:
-                msg = 'Invalid User'
-                break
-              case 1050:
-                msg = 'No data found for company / property'
-                break
-              case 1060:
-                msg = 'No active property found for the property'
-                break
-              case 1070:
-                msg = 'Property not configured for API'
-                break
-              case 1100:
-                msg = 'Other Error'
-                break
-              default:
-                msg = 'Invalid Credentials'
-            }
-          }
-
-          return msg
-        })
-
-        return message || 'Unknown RENTCafé API error'
-      })()
+    switch (code) {
+      case '1000':
+        message = 'Invalid Credentials'
+        break
+      case '1010':
+        message = 'Invalid Company'
+        break
+      case '1020':
+        message = 'Invalid Property'
+        break
+      case '1030':
+        message = 'Invalid Request Type'
+        break
+      case '1040':
+        message = 'Invalid User'
+        break
+      case '1050':
+        message = 'No data found for company / property'
+        break
+      case '1060':
+        message = 'No active property found for the property'
+        break
+      case '1070':
+        message = 'Property not configured for API'
+        break
+      case '1100':
+        message = 'Other Error'
+        break
+      default:
+        message = 'Unknown RENTCafé API error'
     }
 
-    data.code = webErrCode || marketingErrCode
+    data.code = code
     data.docs = webErrCode
       ? 'https://woodmontapi.modelb.now.sh/docs/rentcafe/web'
       : 'https://woodmontapi.modelb.now.sh/docs/rentcafe/marketing'
 
     // ! Regardless of success, the RENT Café API ALWAYS responds with a 200
     // ! status code.
-    super(ErrorMessage, 'RentCafeAPIError', 200, 'rent-cafe-api-error', data)
+    super(message, 'RentCafeAPIError', 200, 'rent-cafe-api-error', data)
   }
 }
 

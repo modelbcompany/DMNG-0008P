@@ -18,7 +18,9 @@ export const Default = (args: ButtonProps): ReactElement<ButtonProps> => (
   <Button {...args} />
 )
 
-Default.args = {}
+Default.args = {
+  children: 'Button text'
+}
 
 /**
  * {@link FloorplansSearchForm} {@link Button} story.

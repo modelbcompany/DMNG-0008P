@@ -1,9 +1,12 @@
 import axios from 'axios'
+import qs from 'querystring'
 import {
   Apartment,
+  ApartmentWithPlan,
   Application,
   AxiosStatic,
   Params,
+  ServiceTypes,
   ServiceWithMixins
 } from '../../declarations'
 import logger from '../../logger'
@@ -50,7 +53,7 @@ export default class Apartments implements ServiceWithMixins<Apartment> {
   }
 
   /**
-   * Returns apartment data.
+   * Returns apartment and floorplan data merged together.
    *
    * Data can be filtered by unit code, available move-in date, floor plan id,
    * number of bedrooms and bathrooms, as well as rent range.
@@ -58,23 +61,37 @@ export default class Apartments implements ServiceWithMixins<Apartment> {
    * @async
    * @param param0 - Additional information for the service method
    * @param param0.query - Query parameters
-   * @param param0.query.apartmentName - Voyager unit code
-   * @param param0.query.apiToken - Company token from RENTCafé
-   * @param param0.query.floorPlanId - RENTCafé floorplan identifier
+   * @param param0.query.availableDate - Availability date
    * @param param0.query.numberOfBaths - Number of bathrooms
    * @param param0.query.numberOfBeds - Number of bedrooms
    * @param param0.query.rentRange - Monthly rent amount range
-   * @param param0.query.requestType - apartmentAvailability
    * @param param0.url - RENTCafé URL to request
    * @returns RENTCafé apartment data
    */
-  async find({ query, url }: Params): Promise<Apartment[]> {
-    let apartments: Apartment[] = []
+  async find({ query, url }: Params): Promise<ApartmentWithPlan[]> {
+    let apartments: ApartmentWithPlan[] = []
+
+    if (query?.availableDate) {
+      query.availableDate = qs.unescape(query.availableDate)
+    }
 
     try {
       apartments = ((await this.requestRentCafeWebAPI(url, {
         params: query
-      })) as unknown) as Apartment[]
+      })) as unknown) as ApartmentWithPlan[]
+
+      const floorplansService = (this.app as Application).service(
+        'floorplans'
+      ) as ServiceTypes['floorplans']
+
+      const floorplans = await floorplansService.find({})
+
+      apartments = apartments.map(apt => ({
+        ...(floorplans.find(
+          floorplan => floorplan.FloorplanId === apt.FloorplanId
+        ) || {}),
+        ...apt
+      }))
     } catch (err) {
       logger.error({ 'Apartments.find': err })
       throw err

@@ -55,6 +55,10 @@
     @include constrain(map2-get($devices, 'mobile', 'max-width'));
   }
 
+  &.end-j {
+    justify-content: flex-end;
+  }
+
   &.is-full-width {
     @include no-margin;
   }
@@ -127,9 +131,17 @@
 }
 
 .form-field.row .fieldset-container > * {
+  @include respond-to($breakpoint-768) {
+    margin-bottom: size($padding-default-xs);
+  }
+
   flex-grow: 1;
 
   &:not(:last-child) {
+    @include respond-to($breakpoint-768) {
+      margin-right: 0;
+    }
+  
     margin-right: size($padding-default-xs);
   }
 }
@@ -145,6 +157,38 @@
   @include responsive-grid;
 
   row-gap: size($padding-default-lg * 1.5);
+}
+
+.adt-floorplans .floorplans-grid-container {
+  @include is-full-width;
+}
+
+.floorplans-search-form {
+  .fieldset-container,
+  .form-container {
+    @include respond-to($breakpoint-768) {
+      @include flex-column;
+    }
+
+    flex-wrap: nowrap;
+  }
+}
+
+.adt-floorplans > .adm-container {
+  $grid-padding-h: $padding-default-lg * 2.5;
+  $grid-padding-v: $grid-padding-h * 0.5;
+
+  @include respond-to($breakpoint-1024) {
+    padding: size($grid-padding-v);
+  }
+
+  padding: size($grid-padding-v) size($grid-padding-h);
+}
+
+.adt-floorplans > .adm-container,
+.dialog-content,
+.dialog-header {
+  @include is-full-width;
 }
 
 // Column

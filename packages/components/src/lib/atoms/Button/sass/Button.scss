@@ -103,24 +103,48 @@
 
   @include is-flex-centered;
 
-  @include respond-to($breakpoint-1024) {
-    @include font-size($font-size);
-  }
-
   font-family: $font-family-primary;
   letter-spacing: $letter-spacing;
 }
 
 .adm-form .ada-button {
-  @include font-size($button-font-size - 2);
+  @include font-size($button-font-size - 1);
 
   @include height(100%);
+}
+
+.floorplans-search-form .ada-button[type='submit'] {
+  min-width: 13%;
+}
+
+.dialog-header .ada-button[name='close'] {
+  flex-grow: unset;
+  justify-self: flex-end;
 }
 
 // Responsive Styles
 
 // Desktop
 
+@media screen and (min-width: size($breakpoint-1920)) {
+  .floorplans-search-form .ada-button[type='submit'] {
+    max-width: 10%;
+    min-width: 10%;
+  }
+}
+
+@media screen and (max-width: size($breakpoint-1024)) {
+  .ada-button[type='submit'] {
+    @include font-size($font-size, important);
+  }
+}
+
 // Tablet
+
+@media screen and (max-width: size($breakpoint-768)) {
+  .floorplans-search-form .ada-button[type='submit'] {
+    @include is-full-width;
+  }
+}
 
 // Mobile

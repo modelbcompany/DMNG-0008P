@@ -52,16 +52,11 @@ export default class Floorplans implements ServiceWithMixins<Floorplan> {
   /**
    * Returns floor plan data.
    *
-   * Data can be filtered by `id` or `name`, with `id` taking priority.
+   * @todo Document query parameters
    *
    * @async
    * @param param0 - Additional information for the service method
    * @param param0.query - Query parameters
-   * @param param0.query.apiToken - Company token from RENTCafé
-   * @param param0.query.id - Floorplan ID
-   * @param param0.query.name - Floorplan name
-   * @param param0.query.propertyId - RENTCafé property identifier
-   * @param param0.query.requestType - floorPlan
    * @param param0.url - RENTCafé URL to request
    * @returns RENTCafé floor plan data
    */
@@ -69,16 +64,12 @@ export default class Floorplans implements ServiceWithMixins<Floorplan> {
     let floorplans: Floorplan[] = []
 
     try {
-      floorplans = (this.requestRentCafeWebAPI(url) as unknown) as Floorplan[]
+      floorplans = (this.requestRentCafeWebAPI(url, {
+        params: query
+      }) as unknown) as Floorplan[]
     } catch (err) {
       logger.error({ 'Floorplans.find': err })
       throw err
-    }
-
-    if (query?.id) {
-      floorplans = floorplans.filter(plan => plan.FloorplanId === query.id)
-    } else if (query?.name) {
-      floorplans = floorplans.filter(plan => plan.FloorplanName === query.name)
     }
 
     return floorplans

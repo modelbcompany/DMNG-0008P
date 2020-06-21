@@ -137,4 +137,7 @@ export const MoveInDateOptions = [
     label: 'December',
     value: '12'
   }
-]
+].map(option => ({
+  ...option,
+  value: `${option.value}/${new Date().getFullYear()}`
+}))

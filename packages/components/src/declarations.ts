@@ -127,7 +127,7 @@ export type FormSubmissionEvent = ChangeEvent<FormElement> &
 
 export type FormSubmissionEventHandler = (
   form: InitialState,
-  event: FormSubmissionEvent
+  event?: FormSubmissionEvent
 ) => any
 
 export type HTMLElementEvent<T extends HTMLElement> = Event & {

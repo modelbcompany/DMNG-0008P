@@ -19,15 +19,17 @@ export const Default = (
   args: FloorplansGridProps
 ): ReactElement<FloorplansGridProps> => <FloorplansGrid {...args} />
 
-Default.args = {}
+Default.args = {
+  gridData: []
+}
 
 /**
- * {@link FloorplansGrid} with data.
+ * {@link FloorplansGrid} story with API data populating the grid.
  */
-export const WithData = (
+export const WithAPIData = (
   args: FloorplansGridProps
 ): ReactElement<FloorplansGridProps> => <FloorplansGrid {...args} />
 
-WithData.args = {
-  apartments: ApartmentsWithPlansMock
+WithAPIData.args = {
+  gridData: ApartmentsWithPlansMock
 }

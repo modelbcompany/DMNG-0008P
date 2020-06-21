@@ -29,8 +29,8 @@ import '../sass/Form.scss'
  */
 export type FloorplansSearchFormState = {
   availableDate: string | null
-  numberOfBaths: string | null
-  numberOfBeds: string | null
+  numberOfBaths: number | string | null
+  numberOfBeds: number | string | null
   rentRange: string | null
 }
 
@@ -50,19 +50,22 @@ export { INITIAL_STATE as FLOORPLANS_SEARCH_FORM_INITIAL_STATE }
  * {@link FloorplansSearchForm} component properties.
  */
 export type FloorplansSearchFormProps = FormProps & {
-  searchFloorplans?: FormSubmissionEventHandler
+  search?(formState: FloorplansSearchFormState): any
 }
 
 /**
  * Renders a {@link Form} component with the class `floorplans-search-form`.
  */
 export const FloorplansSearchForm: FC<FloorplansSearchFormProps> = ({
-  searchFloorplans,
+  search,
   ...rest
 }) => {
   const mutatedProps = useMutatedProps(rest, 'floorplans-search-form')
 
-  const { form, updateForm } = useForm(INITIAL_STATE, searchFloorplans)
+  const { form, updateForm } = useForm(
+    INITIAL_STATE,
+    (search as unknown) as FormSubmissionEventHandler
+  )
 
   const formFieldLayoutConfig: FormFieldLayoutConfiguration = [
     {
@@ -103,10 +106,10 @@ export const FloorplansSearchForm: FC<FloorplansSearchFormProps> = ({
 
         <Button
           className='gradient-bkg uppercase lg'
-          disabled={!searchFloorplans}
+          disabled={!search}
           onClick={(e: FormSubmissionEvent) => {
             e.preventDefault()
-            return (searchFloorplans as FormSubmissionEventHandler)(form, e)
+            return ((search as unknown) as FormSubmissionEventHandler)(form, e)
           }}
           type='submit'
         >
@@ -118,7 +121,7 @@ export const FloorplansSearchForm: FC<FloorplansSearchFormProps> = ({
 }
 
 FloorplansSearchForm.defaultProps = {
-  searchFloorplans: form => {
-    console.warn({ FloorplansSearchForm: { '@todo searchFloorplans': form } })
+  search: form => {
+    console.warn({ FloorplansSearchForm: { '@todo search': form } })
   }
 }

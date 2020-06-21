@@ -20,9 +20,13 @@
 /// Component: Form
 /// @require {function} size
 /// @require {mixin} height
-/// @require {variable} height-xlg
+/// @require {mixin} respond-to
+/// @require {variable} $breakpoint-768
+/// @require {variable} $height-xlg
 %FloorplansSearchForm {
-  @include height(size($height-xlg));
+  @include respond-to($breakpoint-768 + 1, min) {
+    @include height(size($height-xlg));
+  }
 }
 
 // Styles

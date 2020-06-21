@@ -1,5 +1,5 @@
 import { AnyObject, Props } from 'declarations'
-import _ from 'lodash'
+import { omit, uniq } from 'lodash'
 import { Children } from 'react'
 import { classNames } from 'utils'
 import useIcon from './useIcon'
@@ -33,26 +33,29 @@ export function useMutatedProps<T = AnyObject>(
   injectClass?: string,
   keys?: string[]
 ): Partial<Props> {
-  const propsAsProps = props as Props
+  const mutated = Object.assign({}, props) as Props
+  const { 'data-icon': icon, children: childrenWithIcon } = useIcon(props)
 
-  const mutated = Object.assign(
-    {
-      ...propsAsProps,
-      className: classNames(injectClass as string, propsAsProps.className)
-    },
-    _.pick(useIcon(props), ['children', 'data-icon'])
+  mutated.className = classNames(
+    injectClass as string,
+    (props as Props).className
   )
 
-  const mutatedAsProps = mutated as Props
+  if (icon) mutated['data-icon'] = icon
+
+  if (mutated.children) {
+    if (icon) mutated.chidlren = childrenWithIcon
+    mutated.children = Children.toArray(mutated.children).flat()
+  }
 
   if (
     !mutated.className.includes('ada-button') &&
-    !mutatedAsProps.href &&
+    !mutated.href &&
     mutated.onClick
   ) {
-    mutatedAsProps.role = 'button'
-  } else if (!mutated.className.includes('ada-link') && mutatedAsProps.href) {
-    mutatedAsProps.role = 'link'
+    mutated.role = 'button'
+  } else if (!mutated.className.includes('ada-link') && mutated.href) {
+    mutated.role = 'link'
   }
 
   const voidElementTagClassNames = [
@@ -66,19 +69,11 @@ export function useMutatedProps<T = AnyObject>(
 
   const removeFromVoidElementTags = ['children', 'dangerouslySetInnerHTML']
 
-  mutated.className.split(' ').forEach(className => {
+  mutated.className.split(' ').forEach((className: string) => {
     if (voidElementTagClassNames.includes(className)) {
       keys = (keys as string[]).concat(removeFromVoidElementTags)
     }
   })
-
-  if (mutated.children) {
-    mutated.children = Children.toArray(mutated.children).flat()
-  }
-
-  if (mutatedAsProps.disabled !== undefined) {
-    mutated['aria-disabled'] = mutatedAsProps.disabled
-  }
 
   keys.push(
     'icon',
@@ -89,7 +84,11 @@ export function useMutatedProps<T = AnyObject>(
     'initialVisibility'
   )
 
-  return _.omit(mutated, keys ? _.uniq(keys) : '')
+  if (mutated.disabled !== undefined) {
+    mutated['aria-disabled'] = mutated.disabled
+  }
+
+  return omit(mutated, keys ? uniq(keys) : [])
 }
 
 export default useMutatedProps

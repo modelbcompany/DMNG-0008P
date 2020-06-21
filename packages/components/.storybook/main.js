@@ -69,6 +69,7 @@ module.exports = {
    */
   webpackFinal: async (config, { configType }) => {
     config.resolve.alias = merge({}, config.resolve.alias, {
+      api: path.join(__dirname, '../src/api'),
       declarations: path.join(__dirname, '../src/declarations'),
       hooks: path.join(__dirname, '../src/hooks'),
       lib: path.join(__dirname, '../src/lib'),
@@ -116,6 +117,10 @@ module.exports = {
           }
         }
       ]
+    })
+
+    config.entry = config.entry.filter(singleEntry => {
+      return !singleEntry.includes('/webpack-hot-middleware/')
     })
 
     return config

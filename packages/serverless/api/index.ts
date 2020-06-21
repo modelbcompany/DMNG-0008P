@@ -26,6 +26,8 @@ export default async (
 
   logger.info({ incoming })
 
+  if (incoming.method === 'OPTIONS') return res.status(200)
+
   const { body: data, query, method, path } = incoming
   const { id = null } = query
 

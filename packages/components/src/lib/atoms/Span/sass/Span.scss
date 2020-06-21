@@ -88,7 +88,7 @@
 }
 
 .adm-select .placeholder {
-  @include font-size($font-size);
+  @include font-size($font-size-sm);
 
   @include font-weight(600);
 
@@ -98,6 +98,7 @@
 
   font-family: $font-family-primary;
   padding-left: size($input-padding-h / 2);
+  top: 30%;
 }
 
 .wrapper {
@@ -148,8 +149,22 @@
   }
 }
 
-.floorplans-grid .fa-spin {
-  @include font-size($font-size * 3);
+.floorplans-grid-container > .ada-span.fa-spinner {
+  @include font-size($font-size * 2.25);
+
+  @include is-white-text;
+
+  display: block;
+  grid-column: 1 / span 3;
+  justify-self: center;
+}
+
+.dialog-header .icon {
+  @include text-color($grey-500);
+}
+
+.dialog-header .ada-button[name='close'] .icon {
+  margin-right: 0;
 }
 
 // Responsive Styles

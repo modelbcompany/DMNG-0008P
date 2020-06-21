@@ -33,6 +33,41 @@ export type Apartment = {
   VoyagerPropertyId: string
 }
 
+export type ApartmentWithPlan = Apartment & {
+  Amenities: string
+  ApartmentId: string
+  ApartmentName: string
+  ApplyOnlineURL: string
+  AvailabilityURL: string
+  AvailableDate: string
+  AvailableUnitsCount: string
+  Baths: string
+  Beds: string
+  Deposit: string
+  FloorplanHasSpecials: string
+  FloorplanId: string
+  FloorplanImageAltText: ''
+  FloorplanImageName: string
+  FloorplanImageURL: string
+  FloorplanName: string
+  MaximumDeposit: string
+  MaximumRent: string
+  MaximumSQFT: string
+  MinimumDeposit: string
+  MinimumRent: string
+  MinimumSQFT: string
+  PropertyId: string
+  PropertyShowsSpecials: string
+  SQFT: string
+  Specials: string
+  UnitImageAltText: string
+  UnitImageURLs: string[]
+  UnitStatus: string
+  UnitTypeMapping: string
+  VoyagerPropertyCode: string
+  VoyagerPropertyId: string
+}
+
 /**
  * Feathers application type. Will be throughout the codebase.
  */

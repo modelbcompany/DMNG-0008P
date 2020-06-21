@@ -4,13 +4,15 @@
 
 // Defines the element as a flex container.
 // It enables a flex context for all its direct children.
-.display-flex {
+.display-flex,
+.flex {
   @include display-flex;
 }
 
 // Defines the element as an inline flex container.
 // It enables a flex context for all its direct children.
-.display-inline-flex {
+.display-inline-flex,
+.inline-flex {
   @include display-flex(inline-flex);
 }
 

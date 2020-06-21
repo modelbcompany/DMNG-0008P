@@ -1,8 +1,9 @@
-import { AnyObject, ApartmentWithPlan, PropsWithContainer } from 'declarations'
+import { FeathersErrorJSON } from '@feathersjs/errors'
+import { ApartmentWithPlan, PropsWithContainer } from 'declarations'
 import { useMutatedProps } from 'hooks'
-import { Container, Floorplan, Heading, Icon } from 'lib'
+import { Container, Floorplan, Heading } from 'lib'
 import _ from 'lodash'
-import React, { FC, HTMLAttributes } from 'react'
+import React, { FC, HTMLAttributes, useEffect, useState } from 'react'
 import './sass/Section.scss'
 
 /**
@@ -20,25 +21,23 @@ export type SectionProps = PropsWithContainer<HTMLAttributes<HTMLElement>>
  */
 export interface FloorplansGridProps extends SectionProps {
   /**
+   * Error from API call.
+   */
+  apiError?: FeathersErrorJSON
+
+  /**
    * Merged `RentCafeApartment` and `RentCafeFloorplan` data.
    *
    * @default []
    */
-  apartments?: ApartmentWithPlan[]
-
-  /**
-   * Error from API call.
-   *
-   * @default null
-   */
-  error?: AnyObject | null
+  gridData?: ApartmentWithPlan[]
 
   /**
    * `Section` `Heading` text.
    *
-   * @default 'One Bedroom'
+   * @default 'Floorplans'
    */
-  title?: string
+  gridTitle?: string
 }
 
 /**
@@ -66,32 +65,27 @@ export const Section: FC<SectionProps> = ({ container, ...rest }) => {
  * @param props - Component data
  */
 export const FloorplansGrid: FC<FloorplansGridProps> = ({
-  apartments: apts = [],
-  error,
+  gridData = [],
+  gridTitle,
   ...rest
 }) => {
-  const { title } = rest
-  const mutatedProps = useMutatedProps(rest, 'floorplans-grid')
+  const [plans, setPlans] = useState([] as JSX.Element[])
 
-  const container_style = `${apts.length === 0 ? 'display-flex' : ''}`
+  useEffect(() => {
+    const renderedFloorplans = gridData.map((apt: ApartmentWithPlan) => (
+      <Floorplan aptWithPlan={apt} key={`apt_${apt.ApartmentName}`} />
+    ))
 
-  if (error) return null
+    setPlans([...renderedFloorplans])
+  }, [gridData])
 
   return (
-    <Section {...mutatedProps}>
+    <Section {...useMutatedProps(rest, 'floorplans-grid')}>
       <Heading className='uppercase floorplans-grid-title' size={2}>
-        {title}
+        {gridTitle}
       </Heading>
 
-      <Container className={`floorplans-grid-container ${container_style}`}>
-        {(() => {
-          if (apts.length === 0) return <Icon className='fa-spinner fa-spin' />
-
-          return apts.map((apt: ApartmentWithPlan) => (
-            <Floorplan aptWithPlan={apt} key={`apt_${apt.ApartmentName}`} />
-          ))
-        })()}
-      </Container>
+      <Container className='floorplans-grid-container'>{plans}</Container>
     </Section>
   )
 }
@@ -101,7 +95,7 @@ Section.defaultProps = {
 }
 
 FloorplansGrid.defaultProps = {
-  apartments: [],
-  error: null,
-  title: 'One Bedroom'
+  apiError: {} as FeathersErrorJSON,
+  gridData: [],
+  gridTitle: 'Floorplans'
 }
