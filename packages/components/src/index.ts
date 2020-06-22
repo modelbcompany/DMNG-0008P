@@ -1,4 +1,3 @@
-import '!style-loader!css-loader!sass-loader!../src/sass/global.scss'
 import 'regenerator-runtime/runtime'
 import * as Hooks from './hooks'
 import * as Components from './lib'

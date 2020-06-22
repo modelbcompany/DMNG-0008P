@@ -89,14 +89,19 @@ module.exports = {
         {
           loader: 'sass-loader',
           options: {
-            data: "@import '../../../../sass/themes/default.scss';",
+            prependData: loaderContext => {
+              const { resourcePath, rootContext } = loaderContext
+              const relativePath = path.relative(rootContext, resourcePath)
+
+              if (relativePath === 'src/sass/global.scss') return ''
+
+              return "@import '../../../../sass/themes/default.scss';"
+            },
             implementation: require('node-sass'),
             sassOptions: {
-              sassOptions: {
-                includePaths: "./src/lib/**/**/sass/*.scss",
-                indentedSyntax: false,
-                outputStyle: "expanded"
-              }
+              includePaths: ['./src/lib/**/**/sass/*.scss'],
+              indentedSyntax: false,
+              outputStyle: 'expanded'
             }
           }
         }
