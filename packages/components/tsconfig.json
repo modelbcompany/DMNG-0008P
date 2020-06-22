@@ -44,12 +44,5 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": [
-    "__tests__",
-    "build",
-    "dist",
-    "node_modules",
-    "jest.config.js",
-    "jest.setup.ts"
-  ]
+  "exclude": ["__tests__", "build", "dist", "node_modules"]
 }

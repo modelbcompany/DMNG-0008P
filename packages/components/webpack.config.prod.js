@@ -1,5 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const path = require('path')
+const { DefinePlugin } = require('webpack')
 const webpackDevConfig = require('./webpack.config.dev')
 const mergeWebpack = require('webpack-merge')
 

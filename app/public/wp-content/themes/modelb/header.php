@@ -76,13 +76,17 @@ $WOODMONT_CDN_URL = $DEV_ENV
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
 
   <!-- React -->
-  <?php if ($DEV_ENV) : ?>
+  <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+  <!-- <?php if ($DEV_ENV) : ?>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
   <?php else : ?>
     <script src="https://unpkg.com/react@16/umd/react.production.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.js" crossorigin></script>
-  <?php endif ?>
+  <?php endif ?> -->
+
 
   <!-- WoodmontJS -->
   <script src="<?= $WOODMONT_CDN_URL ?>" type='text/babel'></script>

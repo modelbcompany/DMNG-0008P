@@ -31,14 +31,14 @@
   },
   "scripts": {
     "dev": "start-storybook -p 3000 -s src/assets --ci",
-    "dev:bundle": "webpack --config webpack.config.dev.ts",
+    "dev:bundle": "webpack --config webpack.config.dev.js",
     "dev:docs": "yarn dev --docs",
     "postdev:bundle": "rm -rf ./dist",
     "pretest": "NODE_ENV=test",
     "test": "jest --detectOpenHandles --passWithNoTests",
     "prebuild": "rm -rf ./build ./dist",
-    "build": "build-storybook -o build && webpack --config webpack.config.prod.ts",
-    "postbuild": "cp -R src/assets build && rm -rf ./dist",
+    "build": "build-storybook -o build && cp -R src/assets build",
+    "postbuild": "webpack --config webpack.config.prod.js && rm -rf ./dist",
     "stage": "vc",
     "prod": "yarn stage --prod"
   },

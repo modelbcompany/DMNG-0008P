@@ -2,7 +2,3 @@
 
 build/
 dist/
-webpack/
-
-jest.config.js
-jest.setup.ts

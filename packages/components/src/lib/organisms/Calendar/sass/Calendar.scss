@@ -14,15 +14,37 @@
 // Placeholders
 
 /// Component: Calendar
+/// @require {function} size
+/// @require {mixin} background-color
+/// @require {mixin} height
 /// @require {mixin} is-centered
+/// @require {mixin} width
+/// @require {mixin} text-color
+/// @require {variable} $border-style
+/// @require {variable} $border-width
+/// @require {variable} $calendar-height
+/// @require {variable} $calendar-padding-h
+/// @require {variable} $calendar-padding-v
+/// @require {variable} $calendar-width
+/// @require {variable} $component-background
+/// @require {variable} $text-color
+/// @require {variable} $text-color-dark-alt
 %Calendar {
-  @include background-color(lighten($floorplan-bkg, 13%));
-  
-  @include is-borderless;
+  @include background-color(lighten($component-background, 13%));
+
+  @include display-flex;
+
+  @include flex-column;
 
   @include is-centered;
 
+  @include width(size($calendar-width), size($calendar-width));
+
   @include text-color($text-color-dark-alt);
+
+  border: size($border-width) $border-style $text-color;
+
+  padding: size($calendar-padding-v) size($calendar-padding-v);
 }
 
 // Styles
@@ -31,28 +53,86 @@
   @extend %Calendar;
 }
 
+.react-calendar__viewContainer {
+  flex-grow: 1;
+}
+
+
+.react-calendar__month-view > div {
+  @include flex-align(flex-start, false, important);
+
+  @include height(100%);
+
+  > div {
+    @include height(100%);
+  }
+}
+
 .react-calendar__navigation button {
-  @include font-size($font-size);
+  @include font-size($font-size-lg);
+
+
+  &.react-calendar__navigation__label {
+    @include font-size($heading-size-2);
+
+    @include text-color($primary-color);
+  }
+}
+
+.react-calendar__month-view__days {
+  @include flex-spread;
+
+  @include height(62.5%);
+
+  margin-top: 1.75%;
 }
 
 .react-calendar__tile {
-  @include font-size($font-size-lg);
+  @include font-size($font-size-sm);
+
+  border: size($border-width) $border-style $text-color !important;
+  padding: size($padding-default-sm) size($padding-default-xxs);
+  margin-bottom: size($calendar-tile-spacing) !important;
+  max-width: 13% !important;
 }
 
 .react-calendar__navigation__label__labelText {
-  @include font-weight(600);
-
   @include is-uppercase;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  @include font-size($font-size-sm, important);
+
+  @include is-white-text;
+
+  background: $gradient-background;
+  padding: size($padding-default-xxs) !important;
+
+  &:not(:last-of-type) {
+    margin-right: size($calendar-tile-spacing);
+  }
+
+  abbr {
+    text-decoration: none;
+  }
 }
 
 .react-calendar__month-view__days__day--weekend {
   @include text-color($color-brand-rolling-stone);
 }
 
-.react-calendar__tile,
-.react-calendar__navigation__label__labelText,
-.react-calendar__month-view__weekdays__weekday abbr {
+.react-calendar__tile {
+  font-family: $font-family-secondary;
+}
+
+.react-calendar__month-view__weekdays__weekday,
+.react-calendar__navigation__label__labelText {
   font-family: $font-family-primary;
+}
+
+.react-calendar__month-view,
+.react-calendar__month-view > div {
+  @include height(100%);
 }
 
 .react-calendar__tile--active,
