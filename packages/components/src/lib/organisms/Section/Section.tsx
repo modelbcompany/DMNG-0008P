@@ -80,7 +80,7 @@ export const FloorplansGrid: FC<FloorplansGridProps> = ({
   }, [gridData])
 
   return (
-    <Section {...useMutatedProps(rest, 'floorplans-grid')}>
+    <Section {...useMutatedProps(rest, 'floorplans-grid', ['apiError'])}>
       <Heading className='uppercase floorplans-grid-title' size={2}>
         {gridTitle}
       </Heading>

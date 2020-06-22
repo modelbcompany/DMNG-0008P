@@ -28,6 +28,7 @@ export const FloorplansTemplateBlurb = (
 ): ReactElement<ParagraphProps> => <Paragraph {...args} />
 
 FloorplansTemplateBlurb.args = {
-  children: 'Choose from a variety of spacious and contemporary floor plans available in one-bedroom, one-bedroom with den, two-bedroom, two-bedroom with den, and three-bedroom layouts.',
+  children:
+    'Choose from a variety of spacious and contemporary floor plans available in one-bedroom, one-bedroom with den, two-bedroom, two-bedroom with den, and three-bedroom layouts.',
   className: 'adt-floorplans-blurb'
 }

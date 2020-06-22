@@ -21,7 +21,8 @@ export const Default = (args: ImageProps): ReactElement<ImageProps> => (
 
 Default.args = {
   alt: 'Storybook badge',
-  src: 'https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg'
+  src:
+    'https://cdn.jsdelivr.net/gh/storybookjs/brand@master/badge/badge-storybook.svg'
 }
 
 /**

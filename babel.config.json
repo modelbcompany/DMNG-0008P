@@ -1,16 +1,4 @@
 {
-  "env": {
-    "test": {
-      "plugins": [
-        [
-          "@babel/plugin-transform-runtime",
-          {
-            "regenerator": true
-          }
-        ]
-      ]
-    }
-  },
   "ignore": [
     "./node_modules/*"
   ],
@@ -21,6 +9,12 @@
     "@babel/plugin-proposal-optional-chaining",
     "@babel/plugin-proposal-throw-expressions",
     [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    [
       "@babel/plugin-transform-typescript",
       {
         "allowNamespaces": true
@@ -28,15 +22,6 @@
     ]
   ],
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "modules": false,
-        "targets": {
-          "esmodules": true
-        }
-      }
-    ],
-    "@babel/preset-react"
+    "@babel/preset-env"
   ]
 }

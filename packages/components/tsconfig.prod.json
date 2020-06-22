@@ -1,10 +1,14 @@
 {
-  "awesomeTypescriptLoaderOptions": {
-    "babelCore": "@babel/core",
-    "useBabel": true,
-    "useCache": true
-  },
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "api/*": ["api.ts"],
+      "declarations/*": ["lib/declarations.ts"],
+      "hooks/*": ["hooks/*"],
+      "lib/*": ["lib/*"],
+      "logger/*": ["logger.ts"],
+      "utils/*": ["utils.ts"]
+    },
     "rootDir": "./src"
   },
   "extends": "./tsconfig.json",

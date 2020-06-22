@@ -1,6 +1,17 @@
 {
   "compilerOptions": {
-    "noEmit": true
+    "baseUrl": "../src",
+    "paths": {
+      "api/*": ["api.ts"],
+      "declarations/*": ["lib/declarations.ts"],
+      "hooks/*": ["hooks/*"],
+      "lib/*": ["lib/*"],
+      "logger/*": ["logger.ts"],
+      "utils/*": ["utils.ts"]
+    },
+
+    "noEmit": true,
+    "rootDir": "../src"
   },
   "extends": "../tsconfig.json",
   "include": ["../src"]

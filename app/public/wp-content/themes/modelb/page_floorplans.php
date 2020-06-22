@@ -52,10 +52,10 @@ get_header();
 <div id="<?= $FLOORPLANS_TEMPLATE_CONTAINER_ID ?>"></div>
 
 <script type='text/babel'>
-  const { WoodmontComponents: { FloorplansTemplate }, ReactDOM } = WoodmontJS
+  const { FloorplansTemplate } = Woodmont
 
   ReactDOM.render(
-    <FloorplansTemplate auth={JSON.parse('<?= $RENT_CAFE_AUTH ?>')} />, 
+    <FloorplansTemplate />, 
     document.getElementById('<?= $FLOORPLANS_TEMPLATE_CONTAINER_ID ?>')
   )
 </script>

@@ -15,4 +15,3 @@ export * from './useOptions'
 export * from './useVisibility'
 export * from './useWindowScroll'
 export * from './useWindowSize'
-

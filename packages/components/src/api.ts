@@ -1,7 +1,7 @@
 import feathers from '@feathersjs/client'
 import rest from '@feathersjs/rest-client'
 import axios from 'axios'
-import logger from 'logger'
+import logger from './logger'
 
 /**
  * @file API Connection Configuration

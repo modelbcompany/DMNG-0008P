@@ -8,9 +8,10 @@
 
 global $wp;
 $current_url = home_url(add_query_arg(array(), $wp->request));
+$DEV_ENV = strpos($current_url, 'woodmont.local');
 
-$WOODMONT_CDN_URL = strpos($current_url, 'woodmont.local')
-  ? 'https://woodbook-lexusdrumgold.modelb.vercel.app/woodmont-1.0.0-alpha.js'
+$WOODMONT_CDN_URL = $DEV_ENV
+  ? '/wp-content/themes/modelb/assets/js/lib/woodmont-1.0.0-alpha.js'
   : 'https://woodbook.modelb.now.sh/woodmont-1.0.0-alpha.js'
 ?>
 
@@ -64,15 +65,27 @@ $WOODMONT_CDN_URL = strpos($current_url, 'woodmont.local')
   <!-- IBM Plex Mono -->
   <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap" />
 
-  <!-- WoodmontJS -->
-  <script src="<?= $WOODMONT_CDN_URL ?>"></script>
-
-  <!-- React -->
-  <script crossorigin src="https://unpkg.com/react/umd/react.production.min.js">
-  </script>
+  <!-- Woodmont Theme Styles -->
+  <?php if ($DEV_ENV) : ?>
+    <link type="text/css" rel="stylesheet" href="/wp-content/themes/modelb/assets/styles/woodmont.dev.css" />
+  <?php else : ?>
+    <link type="text/css" rel="stylesheet" href="https://woodbook.modelb.now.sh/assets/css/woodmont.css" />
+  <?php endif ?>
 
   <!-- Babel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+  <!-- React -->
+  <?php if ($DEV_ENV) : ?>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+  <?php else : ?>
+    <script src="https://unpkg.com/react@16/umd/react.production.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.js" crossorigin></script>
+  <?php endif ?>
+
+  <!-- WoodmontJS -->
+  <script src="<?= $WOODMONT_CDN_URL ?>" type='text/babel'></script>
 </head>
 
 <body <?php body_class(); ?>>

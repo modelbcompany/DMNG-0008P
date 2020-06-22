@@ -31,6 +31,12 @@
     "@feathersjs/errors": "^4.5.3",
     "@feathersjs/express": "^4.5.4",
     "@feathersjs/feathers": "^4.5.3",
+    "@types/cors": "^2.8.6",
+    "@types/feathersjs__feathers": "^3.1.5",
+    "@types/lodash": "^4.14.155",
+    "@types/pino": "^6.0.1",
+    "@types/node": "^14.0.9",
+    "@types/urijs": "^1.19.9",
     "@vercel/node": "^1.7.0",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
@@ -40,10 +46,6 @@
     "tslib": "^2.0.0",
     "urijs": "^1.19.2"
   },
-  "devDependencies": {
-    "@types/cors": "^2.8.6",
-    "@types/feathersjs__feathers": "^3.1.5",
-    "@types/urijs": "^1.19.9"
-  },
+  "devDependencies": {},
   "peerDependencies": {}
 }

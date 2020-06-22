@@ -32,7 +32,8 @@ FloorplansGridTitle.storyName = 'FloorplansGrid'
 
 FloorplansGridTitle.args = {
   children: 'One Bedroom',
-  className: 'is-uppercase is-white-text is-center-aligned-text floorplans-grid-title',
+  className:
+    'is-uppercase is-white-text is-center-aligned-text floorplans-grid-title',
   size: 3
 }
 

@@ -47,9 +47,7 @@ export const FloorplansTemplate: FC<FloorplansTemplateProps> = (
   const [query, setQuery] = useState<ApartmentsQuery>({})
 
   useEffect(() => {
-    /* eslint-disable prettier/prettier */
-
-    (async () => {
+    async function getApartments() {
       let aptsWithPlans = [] as ApartmentsAPIResponse
 
       try {
@@ -58,7 +56,6 @@ export const FloorplansTemplate: FC<FloorplansTemplateProps> = (
         if ((aptsWithPlans as FeathersErrorJSON).code) throw aptsWithPlans
       } catch (err) {
         logger.error({ FloorplansTemplate: err })
-
 
         if (err?.data?.code !== '1050') {
           setApartments([])
@@ -71,9 +68,9 @@ export const FloorplansTemplate: FC<FloorplansTemplateProps> = (
       }
 
       setApartments([...(aptsWithPlans as ApartmentWithPlan[])])
-    })()
+    }
 
-    /* eslint-disable prettier/prettier */
+    getApartments()
   }, [
     query.availableDate,
     query.numberOfBaths,

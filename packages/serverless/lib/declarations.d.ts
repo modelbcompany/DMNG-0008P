@@ -195,4 +195,3 @@ export {
   ServiceMethods
 } from '@feathersjs/feathers'
 export { AxiosResponse, AxiosStatic } from 'axios'
-

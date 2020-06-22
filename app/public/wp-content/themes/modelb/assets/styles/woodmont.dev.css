@@ -1,0 +1,205 @@
+html {
+  box-sizing: border-box;
+  overflow: hidden; }
+
+* {
+  transition: all 0.125s ease 0s;
+  box-sizing: inherit; }
+  *[disabled] {
+    cursor: not-allowed; }
+  *::before, *::after {
+    box-sizing: inherit; }
+  *::-webkit-scrollbar {
+    display: none; }
+
+body {
+  margin: 0 !important;
+  overflow-x: hidden;
+  overflow-y: scroll; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+p span {
+  font-weight: 600; }
+
+a:hover, a:active, a:focus,
+button:hover,
+button:active,
+button:focus,
+*[role='button']:hover,
+*[role='button']:active,
+*[role='button']:focus,
+*[role='link']:hover,
+*[role='link']:active,
+*[role='link']:focus {
+  cursor: pointer;
+  cursor: pointer; }
+  a:hover *:not(.adm-select) > *, a:active *:not(.adm-select) > *, a:focus *:not(.adm-select) > *,
+  button:hover *:not(.adm-select) > *,
+  button:active *:not(.adm-select) > *,
+  button:focus *:not(.adm-select) > *,
+  *[role='button']:hover *:not(.adm-select) > *,
+  *[role='button']:active *:not(.adm-select) > *,
+  *[role='button']:focus *:not(.adm-select) > *,
+  *[role='link']:hover *:not(.adm-select) > *,
+  *[role='link']:active *:not(.adm-select) > *,
+  *[role='link']:focus *:not(.adm-select) > * {
+    pointer-events: none; }
+
+@keyframes react-logo-spin {
+  from {
+    transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg); } }
+
+.is-circle {
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  min-height: 1.5rem;
+  min-width: 1.5rem; }
+
+.no-content::after {
+  content: none; }
+
+.is-centered {
+  margin: 0 auto; }
+
+.is-borderless {
+  border: none; }
+
+.is-collapsed {
+  visibility: collapse; }
+
+.is-full-height {
+  height: 100%;
+  max-height: none;
+  min-height: unset; }
+
+.is-full-width {
+  max-width: none;
+  min-width: unset;
+  width: 100%; }
+
+.is-fullscreen {
+  max-width: 100vw;
+  width: 100vw; }
+  @supports (-webkit-overflow-scrolling: touch) {
+    .is-fullscreen {
+      height: stretch;
+      max-height: stretch;
+      min-height: -webkit-fill-available; } }
+  @supports not (-webkit-overflow-scrolling: touch) {
+    .is-fullscreen {
+      height: 100vh;
+      max-height: 100vh;
+      min-height: 100vh; } }
+
+.is-hidden {
+  display: none; }
+
+.is-stretched {
+  height: 100%;
+  max-height: none;
+  min-height: unset;
+  max-width: none;
+  min-width: unset;
+  width: 100%; }
+
+.no-margin {
+  margin: 0; }
+
+.no-padding {
+  padding: 0; }
+
+.display-flex,
+.flex {
+  display: flex;
+  flex-wrap: wrap; }
+
+.display-inline-flex,
+.inline-flex {
+  display: inline-flex;
+  flex-wrap: wrap; }
+
+.flex-around-items {
+  justify-content: space-around; }
+
+.flex-between-items {
+  justify-content: space-between; }
+
+.flex-centered-columns {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center; }
+
+.flex-centered-rows {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center; }
+
+.flex-column {
+  flex-direction: column; }
+
+.flex-end-items {
+  align-items: flex-end; }
+
+.flex-row {
+  flex-direction: row; }
+
+.spread {
+  align-items: center;
+  justify-content: space-between; }
+
+.flex-start-items {
+  align-items: flex-start; }
+
+.is-flex-centered {
+  align-items: center;
+  justify-content: center; }
+
+.has-black-text,
+.is-black-text {
+  color: #000000; }
+
+.has-center-aligned-text,
+.is-center-aligned-text {
+  text-align: center; }
+
+.is-uppercase,
+.uppercase {
+  text-transform: uppercase; }
+
+.has-white-text,
+.is-white-text {
+  color: #ffffff; }
+
+.has-white-text,
+.is-white-text {
+  color: #ffffff; }
+
+.no-breaking {
+  white-space: nowrap; }
+
+.capitalize,
+.is-capitalized {
+  text-transform: capitalize; }
+
+/* Animate elements with the class 'react-logo-spin' */
+@media (prefers-reduced-motion: no-preference) {
+  .react-logo-spin {
+    animation: react-logo-spin infinite 15s linear; } }
+
