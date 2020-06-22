@@ -25,5 +25,4 @@ jQuery(document).ready(function () {
   })
 
   // ! Insert Custom JS Below
-
 })

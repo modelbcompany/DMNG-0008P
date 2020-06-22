@@ -5,7 +5,8 @@ html {
 * {
   transition: all 0.125s ease 0s;
   box-sizing: inherit; }
-  *[disabled] {
+  *[disabled]:hover, *[disabled]:active, *[disabled]:focus {
+    cursor: pointer;
     cursor: not-allowed; }
   *::before, *::after {
     box-sizing: inherit; }

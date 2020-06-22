@@ -95,6 +95,8 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
     getAvailableAppointments()
   }, [])
 
+  logger.error(apiError)
+
   return (
     <Form {...mutatedProps}>
       {(() => {
@@ -106,8 +108,9 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
                 <Select
                   name='apptTime'
                   initialOptions={
-                    availableAppts.find(appt => appt.date === form.apptDate)
-                      .times
+                    availableAppts.find(appt => {
+                      return appt.date === form.apptDate
+                    })?.times
                   }
                   onChange={(apptTime: string) =>
                     updateForm('apptTime', apptTime)
@@ -162,9 +165,9 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
         }
 
         return (
-          <React.Fragment>
+          <Container className='form-container'>
             <Calendar
-              onChange={(date: Date) =>
+              onChange={date =>
                 updateForm('apptDate', date.toLocaleDateString('en-US'))
               }
               tileDisabled={(tileData: AnyObject) => {
@@ -186,7 +189,7 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
                 Next
               </Button>
             </FormField>
-          </React.Fragment>
+          </Container>
         )
       })()}
     </Form>
