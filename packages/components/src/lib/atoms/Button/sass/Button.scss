@@ -117,6 +117,18 @@
   min-width: 13%;
 }
 
+.scheduling-form .form-field .ada-button {
+  flex-grow: 0;
+
+  &[name='next'] {
+    @include background-color($text-color);
+
+    @include font-weight(500);
+
+    @include text-color($primary-color);
+  }
+}
+
 .dialog-header .ada-button[name='close'] {
   flex-grow: unset;
   justify-self: flex-end;

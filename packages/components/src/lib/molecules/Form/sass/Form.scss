@@ -17,7 +17,7 @@
   @include width(100%);
 }
 
-/// Component: Form
+/// Component: FloorplansSearchForm
 /// @require {function} size
 /// @require {mixin} height
 /// @require {mixin} respond-to
@@ -29,6 +29,21 @@
   }
 }
 
+/// Component: SchedulingForm
+/// @require {function} size
+/// @require {mixin} width
+/// @require {variable} $border-style
+/// @require {variable} $border-width
+/// @require {variable} $scheduling-form-padding-h
+/// @require {variable} $scheduling-form-padding-v
+/// @require {variable} $text-color
+%SchedulingForm {
+  @include width(max-content);
+
+  border: size($border-width) $border-style $text-color;
+  padding: size($scheduling-form-padding-v) size($scheduling-form-padding-v);
+}
+
 // Styles
 
 .adm-form {
@@ -37,6 +52,10 @@
 
 .floorplans-search-form {
   @extend %FloorplansSearchForm;
+}
+
+.scheduling-form {
+  @extend %SchedulingForm;
 }
 
 // Responsive Styles

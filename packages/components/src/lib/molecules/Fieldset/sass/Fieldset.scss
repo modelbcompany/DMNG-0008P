@@ -60,15 +60,10 @@
   }
 
   margin-right: size($padding-default-sm);
+}
 
-  // @include respond-to($breakpoint-960, min) {
-  //   flex-grow: 0.85;
-  // }
-
-  // @include respond-to($breakpoint-960) {
-  //   @include is-full-width;
-  //   margin-bottom: size($height-sm);
-  // }
+.scheduling-form .form-field .fieldset-container {
+  @include is-flex-centered;
 }
 
 // Responsive Styles

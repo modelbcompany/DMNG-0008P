@@ -82,7 +82,7 @@ export type FormFieldLayoutConfiguration = (
 /**
  * {@link FormField} component properties.
  */
-export interface FormFieldProps extends Omit<FieldsetProps, 'children'> {
+export interface FormFieldProps extends FieldsetProps {
   /**
    * Array of `Form` elements to render.
    *
@@ -120,6 +120,7 @@ export const Fieldset: FC<FieldsetProps> = ({ children, legend, ...rest }) => (
  * rendered inside the component.
  */
 export const FormField: FC<FormFieldProps> = ({
+  children,
   layoutConfig = [],
   tagName = 'label',
   ...rest
@@ -128,30 +129,34 @@ export const FormField: FC<FormFieldProps> = ({
 
   return (
     <Fieldset {...mutatedProps}>
-      {layoutConfig.map((props, i) => {
-        const tag = mutatedProps.formElementProps ? 'label' : tagName
-        const key = `fieldset-element-${i}-${tagName}`
+      {(() => {
+        if (children) return children
 
-        let component: ReactNode = null
+        return layoutConfig.map((props, i) => {
+          const tag = mutatedProps.formElementProps ? 'label' : tagName
+          const key = `fieldset-element-${i}-${tagName}`
 
-        switch (tag) {
-          case 'button':
-            component = <Button {...(props as ButtonProps)} key={key} />
-            break
-          case 'input':
-            component = <Input {...(props as InputProps)} key={key} />
-            break
-          case 'select':
-            component = <Select {...(props as SelectProps)} key={key} />
-            break
-          case 'textarea':
-            component = <TextArea {...(props as TextAreaProps)} key={key} />
-            break
-          default:
-            component = <LabeledFormElement {...props} key={key} />
-        }
-        return component
-      })}
+          let component: ReactNode = null
+
+          switch (tag) {
+            case 'button':
+              component = <Button {...(props as ButtonProps)} key={key} />
+              break
+            case 'input':
+              component = <Input {...(props as InputProps)} key={key} />
+              break
+            case 'select':
+              component = <Select {...(props as SelectProps)} key={key} />
+              break
+            case 'textarea':
+              component = <TextArea {...(props as TextAreaProps)} key={key} />
+              break
+            default:
+              component = <LabeledFormElement {...props} key={key} />
+          }
+          return component
+        })
+      })()}
     </Fieldset>
   )
 }

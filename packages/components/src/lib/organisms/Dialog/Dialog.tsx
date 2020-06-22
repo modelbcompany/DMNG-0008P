@@ -1,5 +1,5 @@
 import { useMutatedProps, useVisibility } from 'hooks'
-import { Button, Container, Heading, HeadingProps } from 'lib'
+import { Button, Container, Heading, HeadingProps, Icon } from 'lib'
 import React, { DialogHTMLAttributes, FC } from 'react'
 import { classNames } from 'utils'
 import './sass/Dialog.scss'
@@ -67,13 +67,15 @@ export const Dialog: FC<DialogProps> = ({
 
         <Button
           aria-controls={mutatedProps.id || true}
-          icon={{ 'aria-hidden': false, children: 'close' }}
+          data-icon={true}
           name='close'
           onClick={(event: React.MouseEvent) => {
             hide()
             if (onClose) return onClose(event)
           }}
-        />
+        >
+          <Icon aria-hidden={false}>close</Icon>
+        </Button>
       </Container>
 
       <Container className='dialog-content'>{children}</Container>

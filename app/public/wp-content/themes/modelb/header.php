@@ -111,10 +111,9 @@ $WOODMONT_CDN_URL = $DEV_ENV
               <ul id="menu-main" class="menu">
                 <li id="menu-item-464" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-464"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/onlineleasing/1221-van/oleapplication.aspx?stepname=RentalOptions&amp;myOlePropertyId=568854&amp;FloorPlanID=2275959&amp;UnitID=10944781&amp;header=1">APPLY NOW</a></li>
                 <li id="menu-item-465" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-465"><a target="_blank" rel="noopener noreferrer" href="https://jbg-reslisting.securecafe.com/residentservices/1221-van/userlogin.aspx">RESIDENT LOGIN</a></li>
-                <li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584 "><?php echo do_shortcode(' [sg_popup id="638" event="click"]Schedule a Tour[/sg_popup]'); ?> </li>
-
-
-
+                <li id="menu-item-584" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-584">
+                  <a href="#">SCHEDULE A TOUR</a>
+                </li>
               </ul>
             </div>
           </div>

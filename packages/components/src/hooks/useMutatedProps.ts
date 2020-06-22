@@ -2,7 +2,6 @@ import { AnyObject, Props } from 'declarations'
 import { omit, uniq } from 'lodash'
 import { Children } from 'react'
 import { classNames } from 'utils'
-import useIcon from './useIcon'
 
 /**
  * @file Add global mutations to incoming props
@@ -34,17 +33,13 @@ export function useMutatedProps<T = AnyObject>(
   keys?: string[]
 ): Partial<Props> {
   const mutated = Object.assign({}, props) as Props
-  const { 'data-icon': icon, children: childrenWithIcon } = useIcon(props)
 
   mutated.className = classNames(
     injectClass as string,
     (props as Props).className
   )
 
-  if (icon) mutated['data-icon'] = icon
-
   if (mutated.children) {
-    if (icon) mutated.chidlren = childrenWithIcon
     mutated.children = Children.toArray(mutated.children).flat()
   }
 

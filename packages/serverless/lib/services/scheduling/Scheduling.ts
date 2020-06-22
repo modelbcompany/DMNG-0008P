@@ -1,9 +1,10 @@
 import axios from 'axios'
-import { omit } from 'lodash'
+import { omit, pick } from 'lodash'
 import {
   AnyObject,
   Application,
   AppointmentWithLead,
+  AvailableAppointment,
   AvailableSlot,
   AxiosStatic,
   CancelledAppointment,
@@ -25,7 +26,10 @@ import logger from '../../logger'
  * Types of data assocated with the `Scheduling` service.
  */
 export type SchedulingData = (
-  AppointmentWithLead & AvailableSlot & CancelledAppointment
+  AppointmentWithLead
+  & AvailableAppointment
+  & AvailableSlot
+  & CancelledAppointment
 )
 
 /* eslint-enable prettier/prettier */
@@ -104,7 +108,7 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
    * @param param0.url - RENTCafé URL to request
    * @returns Available appointments
    */
-  async find({ url }: Params): Promise<AvailableSlot[]> {
+  async find({ url }: Params): Promise<AvailableAppointment[]> {
     let response = {} as AnyObject
 
     try {
@@ -114,15 +118,37 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
       throw err
     }
 
-    return response.AvailableSlots.map((slot: AnyObject) =>
-      omit(
-        {
-          ...slot,
-          dtEnd: slot.dtEnd.split(' '),
-          dtStart: slot.dtStart.split(' ')
-        },
-        ['TypeofSlot']
-      )
+    return response.AvailableSlots.map(
+      (slot: AvailableSlot, index: number, availableSlots: AvailableSlot[]) => {
+        const parseSlot = (slotData: AnyObject) =>
+          omit(
+            {
+              ...slotData,
+              dtEnd: Object.assign({}, slotData).dtEnd.split(' '),
+              dtStart: Object.assign({}, slotData).dtStart.split(' ')
+            },
+            ['TypeofSlot']
+          )
+
+        const parsed = availableSlots.map((avs: AnyObject) => parseSlot(avs))
+
+        const slotCopy: AnyObject = parseSlot(slot)
+
+        slotCopy.date = slotCopy.dtStart[0]
+        slotCopy.property = slotCopy.PropertyId
+        slotCopy.times = []
+
+        parsed.forEach((s: AnyObject) => {
+          if (s.dtStart[0] === slotCopy.date) {
+            let time = `${s.dtStart[1]}${s.dtStart[2]}`
+            time = time.replace(':00AM', 'AM').replace(':00PM', 'PM')
+
+            slotCopy.times.push(time)
+          }
+        })
+
+        return pick(slotCopy, ['property', 'date', 'times'])
+      }
     )
   }
 

@@ -245,6 +245,9 @@ $floorplan-bkg: $color-brand-silver-rust;
 
 $floorplans-search-form-height: $font-size-sm * 1.75;
 
+$scheduling-form-padding-h: $padding-default-lg;
+$scheduling-form-padding-v: $padding-default-md;
+
 /// ----------------------------------------------------------------------------
 /// Item
 /// ----------------------------------------------------------------------------
@@ -281,9 +284,6 @@ $thead-width: $full-width;
 $calendar-height: 530;
 
 $calendar-tile-spacing: $spacing-md;
-
-$calendar-padding-h: $padding-default-lg;
-$calendar-padding-v: $padding-default-md;
 
 $calendar-width: 500;
 

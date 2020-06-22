@@ -87,9 +87,18 @@ export type AppointmentWithLead = {
  * RENTCafé appointment schema.
  */
 export type AvailableSlot = {
-  dtEnd: [string, string, string]
-  dtStart: [string, string, string]
-  PropertyId: string
+  dtEnd: string
+  dtStart: string
+  PropertyId: number
+}
+
+/**
+ * RENTCafé appointment schema.
+ */
+export type AvailableAppointment = {
+  date: string
+  times: string[]
+  property: number
 }
 
 /**
@@ -195,3 +204,4 @@ export {
   ServiceMethods
 } from '@feathersjs/feathers'
 export { AxiosResponse, AxiosStatic } from 'axios'
+

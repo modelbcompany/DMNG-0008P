@@ -22,7 +22,9 @@ html {
   box-sizing: $box-sizing;
 
   &[disabled] {
-    cursor: not-allowed;
+    @include event {
+      cursor: not-allowed;
+    }
   }
 
   &::before,

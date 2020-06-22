@@ -17,17 +17,13 @@
 /// @require {function} size
 /// @require {mixin} background-color
 /// @require {mixin} height
+/// @require {mixin} is-borderless
 /// @require {mixin} is-centered
 /// @require {mixin} width
 /// @require {mixin} text-color
-/// @require {variable} $border-style
-/// @require {variable} $border-width
 /// @require {variable} $calendar-height
-/// @require {variable} $calendar-padding-h
-/// @require {variable} $calendar-padding-v
 /// @require {variable} $calendar-width
 /// @require {variable} $component-background
-/// @require {variable} $text-color
 /// @require {variable} $text-color-dark-alt
 %Calendar {
   @include background-color(lighten($component-background, 13%));
@@ -36,15 +32,13 @@
 
   @include flex-column;
 
+  @include is-borderless;
+
   @include is-centered;
 
   @include width(size($calendar-width), size($calendar-width));
 
   @include text-color($text-color-dark-alt);
-
-  border: size($border-width) $border-style $text-color;
-
-  padding: size($calendar-padding-v) size($calendar-padding-v);
 }
 
 // Styles
@@ -53,10 +47,14 @@
   @extend %Calendar;
 }
 
+.scheduling-form .ado-calendar {
+  margin: auto;
+  padding-bottom: size($scheduling-form-padding-v);
+}
+
 .react-calendar__viewContainer {
   flex-grow: 1;
 }
-
 
 .react-calendar__month-view > div {
   @include flex-align(flex-start, false, important);
