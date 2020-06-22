@@ -1,7 +1,18 @@
-import { FormSubmissionEventHandler } from 'declarations'
+import { FeathersErrorJSON } from '@feathersjs/errors'
+import api from 'api'
+import { AnyObject, FormSubmissionEventHandler } from 'declarations'
 import { useForm, useMutatedProps } from 'hooks'
-import { Button, Calendar, Container, FormField, FormProps } from 'lib'
-import React, { FC, useState } from 'react'
+import {
+  Button,
+  Calendar,
+  Container,
+  FormField,
+  FormProps,
+  Input,
+  Select
+} from 'lib'
+import logger from 'logger'
+import React, { FC, useEffect, useState } from 'react'
 import { Form } from '../Form'
 import '../sass/Form.scss'
 
@@ -42,6 +53,11 @@ export type SchedulingFormProps = FormProps & {
 }
 
 /**
+ * API responses from the `Scheduling` service.
+ */
+export type SchedulingAPIResponse = AnyObject[] | FeathersErrorJSON
+
+/**
  * Renders a {@link Form} component with the class `scheduling-form`.
  */
 export const SchedulingForm: FC<SchedulingFormProps> = ({
@@ -54,57 +70,125 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
     INITIAL_STATE,
     (scheduleTour as unknown) as FormSubmissionEventHandler
   )
-  const [formViewID, setFormViewID] = useState(0)
 
-  // const [apiResponseMessage, setAPIResponseMessage] = useState('')
+  const [apiError, setAPIError] = useState<FeathersErrorJSON>()
+  const [availableAppts, setAvailableAppts] = useState<AnyObject[]>([])
+  const [formViewID, setFormViewID] = useState<number>(0)
+
+  useEffect(() => {
+    async function getAvailableAppointments() {
+      let appointments = [] as SchedulingAPIResponse
+
+      try {
+        appointments = await api.service('scheduling').find()
+        if ((appointments as FeathersErrorJSON).code) throw appointments
+      } catch (err) {
+        logger.error({ SchedulingForm: err })
+
+        setAPIError(err)
+        throw err
+      }
+
+      setAvailableAppts([...(appointments as AnyObject[])])
+    }
+
+    getAvailableAppointments()
+  }, [])
 
   return (
     <Form {...mutatedProps}>
-      <Container className='form-container'>
-        {(() => {
-          if (formViewID) {
-            return (
-              <React.Fragment>
-                <FormField>
-                  <Button
-                    className='uppercase'
-                    name='schedule'
-                    onClick={(event: React.MouseEvent) => {
-                      if (event.preventDefault) event.preventDefault()
-                      return (scheduleTour as FormSubmissionEventHandler)(form)
-                    }}
-                    type='submit'
-                  >
-                    Schedule
-                  </Button>
-                </FormField>
-              </React.Fragment>
-            )
-          }
-
+      {(() => {
+        if (formViewID) {
           return (
-            <React.Fragment>
-              <Calendar
-                onChange={(date: Date) =>
-                  updateForm('apptDate', date.toLocaleDateString('en-US'))
-                }
-              />
+            <Container className='form-container column'>
+              <Container className='column'>
+                <Input name='apptDate' value={form.apptDate} readOnly />
+                <Select
+                  name='apptTime'
+                  initialOptions={
+                    availableAppts.find(appt => appt.date === form.apptDate)
+                      .times
+                  }
+                  onChange={(apptTime: string) =>
+                    updateForm('apptTime', apptTime)
+                  }
+                />
+                <Input
+                  name='firstName'
+                  onChange={(firstName: string) =>
+                    updateForm('firstName', firstName)
+                  }
+                  value={form.firstName}
+                />
+                <Input
+                  name='lastName'
+                  onChange={(lastName: string) =>
+                    updateForm('lastName', lastName)
+                  }
+                  value={form.lastName}
+                />
+
+                <Input
+                  name='email'
+                  onChange={(email: string) => updateForm('email', email)}
+                  type='email'
+                  value={form.email}
+                />
+              </Container>
 
               <FormField>
                 <Button
                   className='uppercase'
-                  name='next'
-                  onClick={() => {
-                    if (form.apptDate?.length) setFormViewID(1)
-                  }}
+                  name='back'
+                  onClick={() => setFormViewID(0)}
                 >
-                  Next
+                  Back
+                </Button>
+
+                <Button
+                  className='uppercase'
+                  name='schedule'
+                  onClick={(event: React.MouseEvent) => {
+                    if (event.preventDefault) event.preventDefault()
+                    return (scheduleTour as FormSubmissionEventHandler)(form)
+                  }}
+                  type='submit'
+                >
+                  Schedule
                 </Button>
               </FormField>
-            </React.Fragment>
+            </Container>
           )
-        })()}
-      </Container>
+        }
+
+        return (
+          <React.Fragment>
+            <Calendar
+              onChange={(date: Date) =>
+                updateForm('apptDate', date.toLocaleDateString('en-US'))
+              }
+              tileDisabled={(tileData: AnyObject) => {
+                const date = tileData.date.toLocaleDateString('en-US')
+                const availableDates = availableAppts.map(appt => appt.date)
+
+                return !availableDates.includes(date)
+              }}
+            />
+
+            <FormField>
+              <Button
+                className='uppercase'
+                name='next'
+                onClick={() => {
+                  if (form.apptDate?.length) setFormViewID(1)
+                }}
+              >
+                Next
+              </Button>
+            </FormField>
+          </React.Fragment>
+        )
+      })()}
     </Form>
   )
 }

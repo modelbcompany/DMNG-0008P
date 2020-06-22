@@ -118,15 +118,14 @@
 }
 
 .scheduling-form .form-field .ada-button {
-  flex-grow: 0;
+  @include background-color($text-color);
 
-  &[name='next'] {
-    @include background-color($text-color);
+  @include font-weight(500);
 
-    @include font-weight(500);
+  @include text-color($primary-color);
 
-    @include text-color($primary-color);
-  }
+  font-family: $font-family-primary;
+  letter-spacing: $letter-spacing;
 }
 
 .dialog-header .ada-button[name='close'] {
