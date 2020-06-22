@@ -308,12 +308,18 @@ ul.sfm-menu-level-0.sfm-menu {
   bottom: 30px !important;
   background: #3d312e !important;
   color: #fff;
-  width: 100%;
   z-index: 8;
-  padding: 5px 10px;
   opacity: 1 !important;
   overflow: hidden;
   display: none;
   -moz-opacity: 1 !important;
   filter: alpha(opacity=1) !important;
+}
+
+.page-template-page_floorplans .adm-select input {
+  padding: 0.25rem 0.75rem !important;
+}
+
+.page-template-page_floorplans .form-field.row {
+  max-width: none;
 }

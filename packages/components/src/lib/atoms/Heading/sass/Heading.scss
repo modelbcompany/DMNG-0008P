@@ -38,6 +38,10 @@
   margin-bottom: size($padding-default-lg * 2);
 }
 
+.floorplan-heading {
+  @include text-color($text-color);
+}
+
 // Responsive Styles
 
 // Desktop

@@ -159,9 +159,6 @@
   row-gap: size($padding-default-lg * 1.5);
 }
 
-.adt-floorplans .floorplans-grid-container {
-  @include is-full-width;
-}
 
 .floorplans-search-form {
   .fieldset-container,
@@ -185,11 +182,17 @@
   padding: size($grid-padding-v) size($grid-padding-h);
 }
 
-.adt-floorplans > .adm-container,
+
 .dialog-content,
 .dialog-header {
   @include is-full-width;
 }
+
+.adt-floorplans > .adm-container,
+.adt-floorplans .floorplans-grid-container {
+  @include width(95%)
+}
+
 
 // Column
 

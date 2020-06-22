@@ -99,7 +99,7 @@
   @extend %Input;
 }
 
-.adm-select input {
+.adm-select .placeholder + input {
   @include background-color($transparent);
 
   @include is-borderless;
