@@ -37,7 +37,7 @@
     "pretest": "NODE_ENV=test",
     "test": "jest --detectOpenHandles --passWithNoTests",
     "prebuild": "rm -rf ./build ./dist",
-    "build": "build-storybook -o build && webpack --config webpack.prod.ts",
+    "build": "build-storybook -o build && webpack --config webpack.config.prod.ts",
     "postbuild": "cp -R src/assets build && rm -rf ./dist",
     "stage": "vc",
     "prod": "yarn stage --prod"
