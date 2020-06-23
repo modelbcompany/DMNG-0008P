@@ -102,9 +102,10 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
       {(() => {
         if (formViewID) {
           return (
-            <Container className='form-container column'>
-              <Container className='column'>
+            <Container className='form-container column fields-view'>
+              <FormField name='apptDate_apptTime'>
                 <Input name='apptDate' value={form.apptDate} readOnly />
+
                 <Select
                   name='apptTime'
                   initialOptions={
@@ -112,34 +113,47 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
                       return appt.date === form.apptDate
                     })?.times
                   }
+                  isSearchable={false}
                   onChange={(apptTime: string) =>
                     updateForm('apptTime', apptTime)
                   }
+                  placeholder={null}
                 />
+              </FormField>
+
+              <FormField name='firstName'>
                 <Input
                   name='firstName'
                   onChange={(firstName: string) =>
                     updateForm('firstName', firstName)
                   }
+                  placeholder='First Name*'
                   value={form.firstName}
                 />
+              </FormField>
+
+              <FormField name='lastName'>
                 <Input
                   name='lastName'
                   onChange={(lastName: string) =>
                     updateForm('lastName', lastName)
                   }
+                  placeholder='Last Name*'
                   value={form.lastName}
                 />
+              </FormField>
 
+              <FormField name='lastName'>
                 <Input
                   name='email'
                   onChange={(email: string) => updateForm('email', email)}
                   type='email'
+                  placeholder='Email Address*'
                   value={form.email}
                 />
-              </Container>
+              </FormField>
 
-              <FormField>
+              <FormField className='form-footer'>
                 <Button
                   className='uppercase'
                   name='back'
@@ -165,7 +179,7 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
         }
 
         return (
-          <Container className='form-container'>
+          <Container className='form-container calendar-view'>
             <Calendar
               onChange={date =>
                 updateForm('apptDate', date.toLocaleDateString('en-US'))
@@ -178,7 +192,7 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
               }}
             />
 
-            <FormField>
+            <FormField className='form-footer'>
               <Button
                 className='uppercase'
                 name='next'

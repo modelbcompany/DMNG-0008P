@@ -107,6 +107,28 @@
   padding: $button-padding;
 }
 
+.scheduling-form .ada-input {
+  flex-grow: 1;
+
+  &:read-only {
+    @include font-weight(500);
+  }
+
+  &[name='apptDate'] {
+    @include respond-to($breakpoint-768) {
+      margin-bottom: size($padding-default-xs) !important;
+    }
+
+    margin-bottom: 0 !important;
+  }
+
+  &::placeholder {
+    @include font-size($font-size-sm);
+
+    text-transform: uppercase;
+  }
+}
+
 // Responsive Styles
 
 // Desktop

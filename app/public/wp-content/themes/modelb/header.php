@@ -7,12 +7,23 @@
  */
 
 global $wp;
-$current_url = home_url(add_query_arg(array(), $wp->request));
-$DEV_ENV = strpos($current_url, 'woodmont.local');
+$CURRENT_URL = home_url(add_query_arg(array(), $wp->request));
 
-$WOODMONT_CDN_URL = $DEV_ENV
-  ? '/wp-content/themes/modelb/assets/js/lib/woodmont-1.0.0-alpha.js'
-  : 'https://woodbook.modelb.now.sh/woodmont-1.0.0-alpha.js'
+$DEV_ENV = strpos($CURRENT_URL, 'woodmont.local');
+$WPE_DEV_ENV = strpos($CURRENT_URL, 'woodmontdev');
+$WPE_STAGE_ENV = strpos($CURRENT_URL, 'woodmontstage');
+
+$WOODMONT_CDN_HOST = $DEV_ENV
+  ? '/wp-content/themes/modelb/assets/js/lib'
+  : ($WPE_DEV_ENV || $WPE_STAGE_ENV
+    ? 'https://woodbook-lexusdrumgold.modelb.vercel.app'
+    : 'https://woodbook.modelb.now.sh');
+
+$WOODMONT_JS_CDN = $WOODMONT_CDN_HOST . '/woodmont-1.0.0-alpha.js';
+
+$WOODMONT_GLOBAL_CSS = $DEV_ENV
+  ? '/wp-content/themes/modelb/assets/styles/woodmont.dev.css'
+  : $WOODMONT_CDN_HOST . '/assets/css/woodmont.css';
 ?>
 
 <!doctype html>
@@ -59,18 +70,14 @@ $WOODMONT_CDN_URL = $DEV_ENV
   <!-- Font Awesome Free -->
   <script src="https://kit.fontawesome.com/51f4b7d93a.js" crossorigin="anonymous"></script>
 
-  <!-- Swiss 721 -->
-  <link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" />
-
   <!-- IBM Plex Mono -->
-  <link type="text/css" rel="stylesheet" href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap" />
+  <link href="//fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200;300;400;500;600;700&display=swap" type="text/css" rel="stylesheet" />
+
+  <!-- Swiss 721 -->
+  <link href="//fast.fonts.net/cssapi/ea5e2124-bbdb-4e91-8a98-9b549b432fdb.css" type="text/css" rel="stylesheet" />
 
   <!-- Woodmont Theme Styles -->
-  <?php if ($DEV_ENV) : ?>
-    <link type="text/css" rel="stylesheet" href="/wp-content/themes/modelb/assets/styles/woodmont.dev.css" />
-  <?php else : ?>
-    <link type="text/css" rel="stylesheet" href="https://woodbook.modelb.now.sh/assets/css/woodmont.css" />
-  <?php endif ?>
+  <link href="<?= $WOODMONT_GLOBAL_CSS ?>" type="text/css" rel="stylesheet" />
 
   <!-- Babel -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
@@ -89,7 +96,7 @@ $WOODMONT_CDN_URL = $DEV_ENV
 
 
   <!-- WoodmontJS -->
-  <script src="<?= $WOODMONT_CDN_URL ?>" type='text/babel'></script>
+  <script src="<?= $WOODMONT_JS_CDN ?>" type='text/babel'></script>
 </head>
 
 <body <?php body_class(); ?>>

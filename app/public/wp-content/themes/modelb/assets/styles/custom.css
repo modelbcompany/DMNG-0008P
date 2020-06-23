@@ -40,7 +40,6 @@ div#gform_wrapper_3 {
 li#field_3_7 p {
   color: #fff;
   font-weight: 500;
-  font-size: 18px;
   font-size: 1.1rem;
 }
 
@@ -112,7 +111,6 @@ a.mpfy-tl-item {
   margin-top: -8px !important;
 }
 div#mpfy-canvas-0 {
-  margin-top: 45px !important;
   float: left;
   margin-left: 480px;
   margin-bottom: 20px;
@@ -178,11 +176,11 @@ a.mpfy-tl-item {
   text-decoration: none;
   border: 1px solid black;
   font-size: 14px;
-  width: 12.85%;
   text-align: center;
   font-weight: 900;
   width: 100%;
 }
+
 span.vc_tta-title-text {
   text-transform: uppercase;
   font-weight: 600;
@@ -245,15 +243,14 @@ li.vc_grid-filter-item {
 .mpfy-tags-list a.mpfy-tl-item em {
   border: 0 !important;
   color: #fff !important;
-  margin-left: 15px !important;
-  color: #fff !important;
   font-family: 'IBM Plex Mono', monospace !important;
-  font-weight: 100 !important;
   font-size: 18px !important;
   font-weight: 600 !important;
   letter-spacing: 0.08rem;
+  margin-left: 15px !important;
   text-align: left;
 }
+
 .mpfy-tags-list a.mpfy-tl-item:focus {
   background: #c4924d !important;
 }
@@ -274,17 +271,12 @@ ul.sfm-menu-level-0.sfm-menu {
 #sfm-sidebar .sfm-menu li a,
 #sfm-sidebar .sfm-menu .sfm-chapter,
 #sfm-sidebar .sfm-back-parent {
-  font-weight: 500 !important;
-
-  text-align: center;
-
-  letter-spacing: 0.09rem !important;
-
-  text-transform: uppercase !important;
-
-  font-size: 20px !important;
-
   font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 20px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.09rem !important;
+  text-align: center;
+  text-transform: uppercase !important;
 }
 
 #text-us,
@@ -322,4 +314,12 @@ ul.sfm-menu-level-0.sfm-menu {
 
 .page-template-page_floorplans .form-field.row {
   max-width: none;
+}
+
+.sg-popup-content .scheduling-form .form-field .ada-button {
+  font-weight: 700;
+}
+
+.sgpb-main-html-content-wrapper {
+  overflow-x: hidden;
 }

@@ -146,6 +146,30 @@
   }
 }
 
+.scheduling-form .form-container:not(.calendar-view) {
+  .form-field:not(.form-footer) .fieldset-container {
+    justify-content: flex-start !important;
+  }
+}
+
+.scheduling-form .form-field .fieldset-container {
+  @include is-flex-centered;
+}
+
+.form-field[name='apptDate_apptTime'] .fieldset-container {
+  @include respond-to($breakpoint-768) {
+    flex-wrap: !important;
+  }
+
+  flex-wrap: nowrap !important;
+}
+
+.scheduling-form .fields-view .form-footer .fieldset-container {
+  @include display-flex;
+
+  @include flex-spread;
+}
+
 .floorplans-grid-container {
   @include is-flex-centered;
 

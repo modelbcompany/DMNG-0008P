@@ -30,8 +30,10 @@
     "directory": "dist"
   },
   "scripts": {
-    "dev": "start-storybook -p 3000 -s src/assets --ci",
     "dev:bundle": "webpack --config webpack.config.dev.js",
+    "dev:bundle:watch": "yarn dev:bundle -w",
+    "dev:canvas": "start-storybook -p 3000 -s src/assets --ci",
+    "dev": "run-p dev:bundle:watch dev:canvas",
     "dev:docs": "yarn dev --docs",
     "postdev:bundle": "rm -rf ./dist",
     "pretest": "NODE_ENV=test",

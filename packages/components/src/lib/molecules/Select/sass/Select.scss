@@ -117,6 +117,19 @@
   @extend %Select;
 }
 
+.scheduling-form .adm-select {
+  @include background-color($floorplan-bkg);
+
+  .__menu,
+  .__menu-list {
+    @include background-color($floorplan-bkg);
+  }
+
+  .__single-value {
+    @include text-color($text-color, important);
+  }
+}
+
 // Responsive Styles
 
 // Desktop

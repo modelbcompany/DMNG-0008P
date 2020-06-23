@@ -124,9 +124,10 @@ module.exports = {
       ]
     })
 
-    config.entry = config.entry.filter(singleEntry => {
-      return !singleEntry.includes('/webpack-hot-middleware/')
-    })
+    // Disbale HMR
+    // config.entry = config.entry.filter(singleEntry => {
+    //   return !singleEntry.includes('/webpack-hot-middleware/')
+    // })
 
     return config
   }

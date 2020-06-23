@@ -39,6 +39,12 @@
   @include width(size($calendar-width), size($calendar-width));
 
   @include text-color($text-color-dark-alt);
+
+  abbr,
+  abbr[title] {
+    border-bottom: none;
+    text-decoration: none;
+  }
 }
 
 // Styles
@@ -109,10 +115,6 @@
   &:not(:last-of-type) {
     margin-right: size($calendar-tile-spacing);
   }
-
-  abbr {
-    text-decoration: none;
-  }
 }
 
 .react-calendar__month-view__days__day--weekend {
@@ -121,6 +123,13 @@
 
 .react-calendar__tile {
   font-family: $font-family-secondary;
+}
+
+.react-calendar__tile,
+.react-calendar__month-view__weekdays__weekday {
+  > * {
+    pointer-events: none;
+  }
 }
 
 .react-calendar__month-view__weekdays__weekday,
