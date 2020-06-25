@@ -33,7 +33,12 @@
 </body>
 
 <script type='text/babel'>
-  const { SchedulingForm } = Woodmont
+  const { ContactForm, SchedulingForm } = Woodmont
+
+  ReactDOM.render(
+    <ContactForm />, 
+    document.getElementById('contact-form-root')
+  )
 
   ReactDOM.render(
     <SchedulingForm />, 

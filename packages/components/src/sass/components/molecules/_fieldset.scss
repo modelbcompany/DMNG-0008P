@@ -57,6 +57,10 @@
   @include is-full-width;
 }
 
+.mb-form--contact .form-field {
+  margin-bottom: size($sp-lg);
+}
+
 // Responsive Styles
 
 // Desktop

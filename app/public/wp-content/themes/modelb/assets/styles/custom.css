@@ -316,6 +316,10 @@ ul.sfm-menu-level-0.sfm-menu {
   max-width: none;
 }
 
+.mb-form--contact {
+  padding: 20px 40px;
+}
+
 .sg-popup-content .scheduling-form .form-field .ada-button {
   font-weight: 700;
 }

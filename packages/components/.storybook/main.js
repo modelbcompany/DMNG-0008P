@@ -41,8 +41,7 @@ module.exports = {
   stories: [
     '../src/stories/index.stories.mdx',
     '../src/stories/blocks/*.stories.mdx',
-    '../src/stories/components/**/**/*.stories.tsx',
-    '../src/stories/views/**/*.stories.tsx'
+    '../src/stories/components/**/**/*.stories.tsx'
   ],
 
   typescript: {

@@ -45,6 +45,8 @@
 
     &::placeholder {
       @include is-uppercase;
+
+      font-weight: 600;
     }
 
     &::placeholder,

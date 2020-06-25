@@ -20,16 +20,13 @@
 /// UI Patterns
 /// ----------------------------------------------------------------------------
 
-@mixin mb-form-tour {
-  %mb-form--tour {
-    @include fill-available(width);
-
-    border: size($border-width) $border-style $color-theme--text;
-    padding: size($sp-padding-md) size($sp-padding-md);
+@mixin mb-form-contact {
+  %mb-form--contact {
+    @empty;
   }
 
-  .mb-adm-form.mb-form--tour {
-    @extend %mb-form--tour;
+  .mb-adm-form.mb-form--contact {
+    @extend %mb-form--contact;
   }
 }
 
@@ -45,12 +42,26 @@
   }
 }
 
+@mixin mb-form-tour {
+  %mb-form--tour {
+    @include fill-available(width);
+
+    border: size($border-width) $border-style $color-theme--text;
+    padding: size($sp-padding-md) size($sp-padding-md);
+  }
+
+  .mb-adm-form.mb-form--tour {
+    @extend %mb-form--tour;
+  }
+}
+
 /// ----------------------------------------------------------------------------
 /// Exports
 /// ----------------------------------------------------------------------------
 
 @mixin mb-forms {
   @include mb-form;
+  @include mb-form-contact;
   @include mb-form-floorplan-search;
   @include mb-form-tour;
 }
