@@ -245,8 +245,7 @@ components more efficient.
 
 #### Styling Components
 
-Directory: `packages/components/src/lib/**/**/sass`,
-`packages/components/src/sass`
+Directory: `packages/components/src/sass`
 
 Stylesheets are written in [Sass](https://sass-lang.com/), and follow the
 [Sass Guidelines](https://sass-guidelin.es/) styleguide. Sass is a CSS

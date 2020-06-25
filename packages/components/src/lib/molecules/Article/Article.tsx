@@ -3,7 +3,6 @@ import { useMutatedProps, useObject } from 'hooks'
 import { Container, Heading, Image, Link, Paragraph, Span } from 'lib'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'
-import './sass/Article.scss'
 
 /**
  * @module Components/Molecules/Article
@@ -31,7 +30,7 @@ export interface FloorplanProps extends ArticleProps {
 }
 
 /**
- * Renders an `<article>` element with the class `adm-article`.
+ * Renders an `<article>` element with the class `mb-adm-article`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/article**
  */
@@ -39,7 +38,7 @@ export const Article: FC<ArticleProps> = ({
   container,
   ...rest
 }: ArticleProps) => {
-  const mutatedProps = useMutatedProps(rest, 'adm-article')
+  const mutatedProps = useMutatedProps(rest, 'mb-adm-article')
 
   if (!container) return <article {...(mutatedProps as ReactArticleProps)} />
 

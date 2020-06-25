@@ -2,7 +2,6 @@ import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC } from 'react'
 import ReactCalendar, { CalendarProps as RCProps } from 'react-calendar'
-import './sass/Calendar.scss'
 
 /**
  * @module Components/Organisms/Calendar
@@ -17,10 +16,13 @@ export interface CalendarProps extends Props<RCProps> {
 }
 
 /**
- * Renders a <div> element with the class `ado-calendar`.
+ * Renders a <div> element with the class `mb-ado-calendar`.
  */
 export const Calendar: FC<CalendarProps> = props => {
-  const mutatedProps = useMutatedProps(props, 'ado-calendar') as CalendarProps
+  const mutatedProps = useMutatedProps(
+    props,
+    'mb-ado-calendar'
+  ) as CalendarProps
 
   mutatedProps.calendarType = 'US'
 

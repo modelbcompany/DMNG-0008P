@@ -3,6 +3,6 @@
  * @module components/molecules/Form/components
  */
 
-export * from './FloorplansSearchForm'
+export * from './FloorplanSearchForm'
 export * from './SchedulingForm'
 

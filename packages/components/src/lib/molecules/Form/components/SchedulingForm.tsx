@@ -14,7 +14,6 @@ import {
 import logger from 'logger'
 import React, { FC, useEffect, useState } from 'react'
 import { Form } from '../Form'
-import '../sass/Form.scss'
 
 /**
  * @module Components/Molecules/Form/SchedulingForm
@@ -58,13 +57,13 @@ export type SchedulingFormProps = FormProps & {
 export type SchedulingAPIResponse = AnyObject[] | FeathersErrorJSON
 
 /**
- * Renders a {@link Form} component with the class `scheduling-form`.
+ * Renders a {@link Form} component with the class `mb-form--tour`.
  */
 export const SchedulingForm: FC<SchedulingFormProps> = ({
   scheduleTour,
   ...rest
 }) => {
-  const mutatedProps = useMutatedProps(rest, 'scheduling-form')
+  const mutatedProps = useMutatedProps(rest, 'mb-form--tour')
 
   const { form, updateForm } = useForm(
     INITIAL_STATE,
@@ -95,7 +94,9 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
     getAvailableAppointments()
   }, [])
 
-  logger.error(apiError)
+  if (apiError) {
+    //
+  }
 
   return (
     <Form {...mutatedProps}>
@@ -104,9 +105,15 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
           return (
             <Container className='form-container column fields-view'>
               <FormField name='apptDate_apptTime'>
-                <Input name='apptDate' value={form.apptDate} readOnly />
+                <Input
+                  className='mb-input--light'
+                  name='apptDate'
+                  value={form.apptDate}
+                  readOnly
+                />
 
                 <Select
+                  className='mb-select--light'
                   name='apptTime'
                   initialOptions={
                     availableAppts.find(appt => {
@@ -114,48 +121,51 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
                     })?.times
                   }
                   isSearchable={false}
-                  onChange={(apptTime: string) =>
-                    updateForm('apptTime', apptTime)
-                  }
+                  onChange={option => updateForm('apptTime', option.value)}
                   placeholder={null}
                 />
               </FormField>
 
               <FormField name='firstName'>
                 <Input
+                  className='mb-input--light'
                   name='firstName'
-                  onChange={(firstName: string) =>
-                    updateForm('firstName', firstName)
-                  }
+                  onChange={event => {
+                    event.persist()
+                    updateForm('firstName', event.target.value)
+                  }}
                   placeholder='First Name*'
-                  value={form.firstName}
                 />
               </FormField>
 
               <FormField name='lastName'>
                 <Input
+                  className='mb-input--light'
                   name='lastName'
-                  onChange={(lastName: string) =>
-                    updateForm('lastName', lastName)
-                  }
+                  onChange={event => {
+                    event.persist()
+                    updateForm('lastName', event.target.value)
+                  }}
                   placeholder='Last Name*'
-                  value={form.lastName}
                 />
               </FormField>
 
-              <FormField name='lastName'>
+              <FormField name='email'>
                 <Input
+                  className='mb-input--light'
                   name='email'
-                  onChange={(email: string) => updateForm('email', email)}
-                  type='email'
+                  onChange={event => {
+                    event.persist()
+                    updateForm('email', event.target.value)
+                  }}
                   placeholder='Email Address*'
-                  value={form.email}
+                  type='email'
                 />
               </FormField>
 
               <FormField className='form-footer'>
                 <Button
-                  className='uppercase'
+                  className='mb-button--form uppercase'
                   name='back'
                   onClick={() => setFormViewID(0)}
                 >
@@ -163,7 +173,7 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
                 </Button>
 
                 <Button
-                  className='uppercase'
+                  className='mb-button--form uppercase'
                   name='schedule'
                   onClick={(event: React.MouseEvent) => {
                     if (event.preventDefault) event.preventDefault()
@@ -194,7 +204,7 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
 
             <FormField className='form-footer'>
               <Button
-                className='uppercase'
+                className='mb-button--form uppercase'
                 name='next'
                 onClick={() => {
                   if (form.apptDate?.length) setFormViewID(1)

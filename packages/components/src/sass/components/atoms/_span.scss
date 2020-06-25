@@ -1,0 +1,48 @@
+/// ----------------------------------------------------------------------------
+/// @group Span
+/// ----------------------------------------------------------------------------
+
+%Span {
+  display: inline-block;
+  font-family: $font-family-secondary;
+
+  &[data-icon] {
+    @include display-flex(inline-flex);
+
+    @include is-flex-centered;
+  }
+
+  &.placeholder {
+    @include absolute(50, null, null, size($sp-padding-xs));
+
+    @include font-size($font-size-sm);
+
+    color: $color-grey-500;
+  }
+}
+
+.mb-ada-span {
+  @extend %Span;
+}
+
+.mb-adm-select .placeholder {
+  @include font-size($font-size-sm);
+
+  @include font-weight(600);
+
+  @include is-uppercase;
+
+  font-family: $font-family-primary;
+}
+
+.floorplan-name {
+  @include font-weight(600);
+
+  font-family: $font-family-secondary;
+}
+
+.floorplan-details .mb-ada-span:not(.floorplan-name) {
+  @include font-weight(300);
+
+  font-family: $font-family-primary;
+}

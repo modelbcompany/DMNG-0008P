@@ -1,0 +1,63 @@
+/// ----------------------------------------------------------------------------
+/// Breakpoint Utilities
+/// @group utils-breakpoints
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Dependencies
+/// ----------------------------------------------------------------------------
+
+@import 'size.utils';
+
+/// ----------------------------------------------------------------------------
+/// Mixins
+/// ----------------------------------------------------------------------------
+
+/// Handles device height.
+/// @param {Number} $breakpoint - Breakpoint value
+/// @param {String} $bound [max] - Target max or min height
+@mixin respond-to-height($breakpoint, $bound: max) {
+  @if $bound == min {
+    @media screen and (min-height: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-height: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+/// Handles device width.
+/// @param {Number} $breakpoint - Breakpoint value
+/// @param {String} $bound [max] - Target max or min width
+/// @param {String} $dimension [width] - Target width or height
+@mixin respond-to-width($breakpoint, $bound: max) {
+  @if $bound == min {
+    @media screen and (min-width: $breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (max-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+/// Handles device height and width.
+/// @require {mixin} respond-to-height
+/// @require {mixin} respond-to-width
+/// @param {Number} $breakpoint - Breakpoint value
+/// @param {String} $bound [max] - Target max or min width/height
+/// @param {String} $dimension [width] - Target width or height
+@mixin respond-to($breakpoint, $bound: max, $dimension: width) {
+  @if $dimension == width {
+    @include respond-to-width(size($breakpoint), $bound) {
+      @content;
+    }
+  } @else {
+    @include respond-to-height(size($breakpoint), $bound) {
+      @content;
+    }
+  }
+}

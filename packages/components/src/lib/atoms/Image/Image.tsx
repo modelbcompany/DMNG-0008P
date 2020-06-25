@@ -1,7 +1,7 @@
 import { VoidElementTagProps } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, ImgHTMLAttributes } from 'react'
-import './sass/Image.scss'
+
 
 /**
  * @module Components/Atoms/Image
@@ -91,11 +91,11 @@ export interface ImageProps extends VoidElementTagProps {
 }
 
 /**
- * Renders an `<img>` element with the class `ada-image`.
+ * Renders an `<img>` element with the class `mb-ada-image`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/img**
  */
 export const Image: FC<ImageProps> = (props: ImageProps) => {
-  const mutatedProps = useMutatedProps(props, 'ada-image')
+  const mutatedProps = useMutatedProps(props, 'mb-ada-image')
   return <img {...(mutatedProps as ReactImageProps)} alt={mutatedProps.alt} />
 }

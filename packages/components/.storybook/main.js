@@ -4,7 +4,7 @@ const babelOptions = require('../../../babel.config.json')
 
 /**
  * @file Storybook Configuration
- * @see {@link https://flexbook.modelb.now.sh/docs/storybook-config}
+ * @see {@link https://woodbook.modelb.now.sh/docs/storybook-config}
  */
 
 const include = [path.resolve(__dirname, '../src')]
@@ -41,7 +41,7 @@ module.exports = {
   stories: [
     '../src/stories/index.stories.mdx',
     '../src/stories/blocks/*.stories.mdx',
-    '../src/lib/**/**/stories/*.stories.tsx',
+    '../src/stories/components/**/**/*.stories.tsx',
     '../src/stories/views/**/*.stories.tsx'
   ],
 
@@ -93,13 +93,13 @@ module.exports = {
               const { resourcePath, rootContext } = loaderContext
               const relativePath = path.relative(rootContext, resourcePath)
 
-              if (relativePath === 'src/sass/global.scss') return ''
+              if (relativePath === 'src/sass/build.scss') return ''
 
-              return "@import '../../../../sass/themes/default.scss';"
+              return "@import '../../config';"
             },
             implementation: require('node-sass'),
             sassOptions: {
-              includePaths: ['./src/lib/**/**/sass/*.scss'],
+              includePaths: ['./src/sass/components/**/*.scss'],
               indentedSyntax: false,
               outputStyle: 'expanded'
             }

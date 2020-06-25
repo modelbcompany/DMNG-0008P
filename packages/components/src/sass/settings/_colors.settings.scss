@@ -1,0 +1,97 @@
+/// ----------------------------------------------------------------------------
+/// Global Color Settings
+/// @group settings-colors
+/// ----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// Material
+// -----------------------------------------------------------------------------
+
+$color-grey-50: rgba(250, 250, 250, 1);
+$color-grey-100: rgba(245, 245, 245, 1);
+$color-grey-200: rgba(238, 238, 238, 1);
+$color-grey-300: rgba(224, 224, 224, 1);
+$color-grey-400: rgba(189, 189, 189, 1);
+$color-grey-500: rgba(158, 158, 158, 1);
+$color-grey-600: rgba(117, 117, 117, 1);
+$color-grey-700: rgba(97, 97, 97, 1);
+$color-grey-800: rgba(66, 66, 66, 1);
+$color-grey-900: rgba(33, 33, 33, 1);
+
+$color-full-black: rgba(0, 0, 0, 1);
+$color-dark-black: rgba(0, 0, 0, 0.7);
+$color-light-black: rgba(0, 0, 0, 0.4);
+$color-min-black: rgba(0, 0, 0, 0.6);
+$color-faint-black: rgba(0, 0, 0, 0.2);
+$color-full-white: rgba(255, 255, 255, 1);
+$color-dark-white: rgba(255, 255, 255, 0.7);
+$color-light-white: rgba(255, 255, 255, 0.4);
+
+$color-black: $color-full-black;
+$color-white: $color-full-white;
+$color-transparent: transparent;
+
+// -----------------------------------------------------------------------------
+// React
+// -----------------------------------------------------------------------------
+
+$color-react-blue: #61dafb;
+$color-react-gray: #282c34;
+
+// -----------------------------------------------------------------------------
+// Brand
+// -----------------------------------------------------------------------------
+
+$color-brand-cape-palliser: #aa7b3f;
+$color-brand-cod-gray: #0a0a0a;
+$color-brand-dusty-gray: #a49b9b;
+$color-brand-marble-brown: #3c312d;
+$color-brand-rolling-stone: #6f767b;
+$color-brand-silver-rust: #cbc3bc;
+$color-brand-tussock: #bf8d4a;
+
+// -----------------------------------------------------------------------------
+// States
+// -----------------------------------------------------------------------------
+
+$color-state-disabled: $color-grey-300 !default;
+
+// -----------------------------------------------------------------------------
+// Semantic
+// -----------------------------------------------------------------------------
+
+$color-semantic-caution: rgba(249, 155, 17, 1) !default;
+$color-semantic-information: rgba(36, 89, 143, 1) !default;
+$color-semantic-negative: rgba(199, 22, 43, 1) !default;
+$color-semantic-positive: rgba(14, 134, 32, 1) !default;
+
+// -----------------------------------------------------------------------------
+// Theme Colors
+// -----------------------------------------------------------------------------
+
+$color-theme--input-placeholder: $color-grey-500 !default;
+
+$color-theme--link: $color-brand-tussock !default;
+$color-theme--link-alt: $color-white !default;
+$color-theme--link-visited: $color-theme--link !default;
+$color-theme--link-visited-alt: $color-theme--link-alt !default;
+$color-theme--link-hover: $color-theme--link-alt !default;
+
+$color-theme--text: $color-brand-cod-gray !default;
+$color-theme--text-alt: $color-brand-rolling-stone !default;
+$color-theme--text-alt-2: $color-brand-marble-brown !default;
+$color-theme--text-disabled: $color-state-disabled !default;
+
+$color-theme--text-inverse: $color-white !default;
+$color-theme--text-inverse-alt: $color-brand-silver-rust !default;
+
+$color-theme--background: $color-white !default;
+$color-theme--background-accent: $color-brand-tussock !default;
+$color-theme--background-dark: $color-brand-rolling-stone !default;
+$color-theme--background-dark-alt: $color-brand-marble-brown !default;
+$color-theme--background-gradient: linear-gradient(
+  to right, $color-brand-cape-palliser, $color-brand-tussock
+) !default;
+
+$color-theme--border: $color-grey-400 !default;
+$color-theme--border-inverse: $color-white !default;

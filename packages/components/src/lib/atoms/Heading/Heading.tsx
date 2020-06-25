@@ -1,7 +1,6 @@
 import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, HTMLAttributes } from 'react'
-import './sass/Heading.scss'
 
 /**
  * @module Components/Atoms/Heading
@@ -29,12 +28,12 @@ export interface HeadingProps extends Props {
 
 /**
  * Renders a `<h1>`, `<h2>`, `<h3>`, `<h4>`, `<h5>`, or `<h6>` element with the
- * base class `ada-heading`.
+ * base class `mb-ada-heading`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/Heading_Elements**
  */
 export const Heading: FC<HeadingProps> = ({ size, ...rest }: HeadingProps) => {
-  const mutatedProps = useMutatedProps(rest, 'ada-heading')
+  const mutatedProps = useMutatedProps(rest, 'mb-ada-heading')
   mutatedProps['data-size'] = size
 
   const mutatedPropsAsReactHeadingProps = mutatedProps as ReactHeadingProps

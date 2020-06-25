@@ -1,0 +1,56 @@
+/// ----------------------------------------------------------------------------
+/// @group Link
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
+
+@mixin mb-link {
+  .mb-ada-link {
+    @extend %mb-link-base;
+    @include mb-link-pattern;
+  }
+
+  %mb-link-base {
+    cursor: pointer;
+
+    &[data-icon] {
+      @include flex(inline-flex, center, space-between);
+    }
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-link-pattern(
+  $link-background-color: none,
+  $link-background-color-event: $link-background-color,
+  $link-color: $color-theme--link,
+  $link-color-event: $link-color,
+  $link-font-size: $font-size,
+  $link-padding: 0,
+  $link-display: inline-flex
+) {
+  @include event {
+    background-color: $link-background-color-event;
+    color: $link-color-event;
+  }
+
+  @include font-size($link-font-size);
+
+  background-color: $link-background-color;
+  color: $link-color;
+  display: $link-display;
+  padding: $link-padding;
+}
+
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
+
+@mixin mb-links {
+  @include mb-link;
+}

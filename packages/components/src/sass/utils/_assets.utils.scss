@@ -1,0 +1,73 @@
+/// ----------------------------------------------------------------------------
+/// Asset Utilities
+/// @group utils-assets
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Dependencies
+/// ----------------------------------------------------------------------------
+
+@import '../settings/assets.settings';
+
+/// ----------------------------------------------------------------------------
+/// Functions
+/// ----------------------------------------------------------------------------
+
+/// Native `url(..)` function wrapper
+/// @param {String} $base - base URL for the asset
+/// @param {String} $type - asset type folder (e.g. `fonts/`)
+/// @param {String} $path - asset path
+@function asset($base, $type, $path) {
+  @return url($base + $type + $path);
+}
+
+/// Returns URL to a font based on its path
+/// @require {function} asset
+/// @require {variable} $assets-path-local
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$assets-path-local] - Base asset url
+@function font($filename, $ext, $base: $assets-path-local) {
+  @return asset($base, 'fonts/', $filename);
+}
+
+/// Returns URL to an icon based on its path
+/// @require {function} asset
+/// @require {variable} $assets-path-local
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$assets-path-local] - Base asset url
+@function icon($filename, $base: $assets-path-local) {
+  @return asset($base, 'icons/', $filename);
+}
+
+/// Returns URL to an image based on its path
+/// @require {function} asset
+/// @require {variable} $assets-path-local
+/// @param {String} $filename - Filename (including extension)
+/// @param {String} $base [$assets-path-local] - Base asset url
+@function image($path, $base: $assets-path-local) {
+  @return asset($base, 'images/', $path);
+}
+
+/// ----------------------------------------------------------------------------
+/// Mixins
+/// ----------------------------------------------------------------------------
+
+/// Background image helper
+/// @require {function} image
+/// @param {String} $filename - Filename (including extension)
+/// @param {List} $pos [center center] - background-position
+/// @param {String} $repeat [no-repeat] - background-repeat
+/// @param {String} $size [cover] - background-size
+@mixin set-bkg-img(
+  $filename,
+  $pos: center center,
+  $repeat: no-repeat,
+  $size: cover
+) {
+  background-image: image('#{$filename}');
+  background-position: $pos;
+  background-repeat: $repeat;
+  background-size: $size;
+
+  @content;
+}

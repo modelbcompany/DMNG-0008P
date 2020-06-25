@@ -4,7 +4,6 @@ import { useMutatedProps } from 'hooks'
 import { Container, Floorplan, Heading } from 'lib'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes, useEffect, useState } from 'react'
-import './sass/Section.scss'
 
 /**
  * @module Components/Organisms/Section
@@ -41,12 +40,12 @@ export interface FloorplansGridProps extends SectionProps {
 }
 
 /**
- * Renders an `<section>` element with the class `ado-section`.
+ * Renders an `<section>` element with the class `mb-ado-section`.
  *
  * @param props - Component data
  */
 export const Section: FC<SectionProps> = ({ container, ...rest }) => {
-  const mutatedProps = useMutatedProps(rest, 'ado-section')
+  const mutatedProps = useMutatedProps(rest, 'mb-ado-section')
 
   if (!container) return <section {...mutatedProps} />
 
@@ -81,7 +80,7 @@ export const FloorplansGrid: FC<FloorplansGridProps> = ({
 
   return (
     <Section {...useMutatedProps(rest, 'floorplans-grid', ['apiError'])}>
-      <Heading className='uppercase floorplans-grid-title' size={2}>
+      <Heading className='uppercase floorplans-grid-title' size={3}>
         {gridTitle}
       </Heading>
 

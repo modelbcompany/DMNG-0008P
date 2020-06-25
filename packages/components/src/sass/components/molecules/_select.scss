@@ -1,0 +1,202 @@
+/// ----------------------------------------------------------------------------
+/// @group Select
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
+
+@mixin mb-select {
+  .mb-adm-select {
+    @extend %mb-select-base;
+    @include mb-select-pattern;
+  }
+
+  %mb-select-base {
+    @include fill-available(width);
+
+    @include is-uppercase;
+
+    flex-grow: 1;
+    font-family: $font-family-secondary;
+    height: size($input-height);
+
+    .__control {
+      @include background-color($color-transparent);
+
+      @include event {
+        box-shadow: none !important;
+      }
+
+      @include height($sp-fill);
+
+      border-style: $border-style;
+      border-radius: 0;
+      border-width: size($border-width);
+      box-shadow: none;
+    }
+
+    .__dropdown-indicator {
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .__menu,
+    .__menu-list {
+      border-radius: 0;
+      left: 0;
+      margin-bottom: 0;
+      margin-top: 0;
+      padding-bottom: 0;
+      padding-top: 0;
+    }
+
+    .__option {
+      @include font-size($font-size-sm);
+    }
+
+    .__single-value {
+      @include absolute(50, null, null, size($sp-padding-xs));
+    
+      @include font-size($font-size-sm);
+
+      @include font-weight(600);
+
+      @include remove-margin;
+      
+      color: $color-grey-500;
+    }
+
+    .__value-container {
+      @include height($sp-fill);
+
+      @include remove-padding;
+
+      > * {
+        @include width($sp-fill);
+      }
+    }
+
+    svg {
+      @include size(size($font-size-lg + 2));
+    }
+  }
+
+  .mb-ada-input + .mb-adm-select {
+    @include respond-to($breakpoint-768 + 1, min) {
+      margin-left: size($sp-md);
+    }
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-select-pattern(
+  $select-background-color: $color-theme--background,
+  $select-color: $color-theme--text,
+  $select-border-color: $color-theme--border,
+  $select-border-color-hover: $color-theme--border,
+  $select-option-background-color: $color-theme--background,
+  $select-option-background-event-color: $color-theme--background-dark,
+  $select-option-text-color: $color-theme--text,
+  $select-value-text-color: $color-theme--text,
+  $select-icon-color: $color-theme--text,
+  $select-indicators-color: $color-theme--text
+) {
+  background-color: $select-background-color;
+  color: $select-color;
+
+  .__control {
+    @include event {
+      border-color: $select-border-color !important;
+    }
+
+    border-color: $select-border-color;
+  }
+
+  .__indicators {
+    @include text-color($select-indicators-color, important);
+  }
+
+  .__menu,
+  .__menu-list {
+    background-color: $select-background-color;
+  }
+
+  .__option {
+    @include font-size($font-size-sm);
+
+    @include event {
+      background-color: $select-option-background-event-color;
+    }
+
+    background-color: $select-option-background-color;
+    color: $select-option-text-color;
+  
+    &.__option--is-focused,
+    &.__option--is-selected {
+      background-color: $select-option-background-event-color;
+    }
+  }
+
+  .placeholder {
+    color: $select-option-text-color;
+  }
+
+  .__single-value {
+    color: $select-value-text-color;
+  }
+
+  svg {
+    color: $select-icon-color;
+  }
+}
+
+@mixin mb-select-dark {
+  %mb-select--dark {
+    @include mb-select-pattern(
+      $color-theme--background-dark,
+      $color-theme--text-inverse,
+      $color-transparent,
+      $color-transparent,
+      $color-theme--background-dark,
+      $color-theme--link,
+      $color-theme--text-inverse,
+      $color-theme--text-inverse,
+      $color-theme--text-inverse
+    )
+  }
+
+  .mb-adm-select.mb-select--dark {
+    @extend %mb-select--dark;
+  }
+}
+
+@mixin mb-select-light {
+  %mb-select--light {
+    @include mb-select-pattern(
+      $color-theme--text-inverse-alt,
+      $color-theme--text-inverse,
+      $color-transparent,
+      $color-transparent,
+      $color-theme--text-inverse-alt,
+      $color-theme--background
+    )
+  }
+
+  .mb-adm-select.mb-select--light {
+    @extend %mb-select--light;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
+
+@mixin mb-selects {
+  @include mb-select;
+  @include mb-select-dark;
+  @include mb-select-light;
+}

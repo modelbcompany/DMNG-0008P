@@ -1,15 +1,6 @@
 /// ----------------------------------------------------------------------------
-/// FloorplansTemplate variables, functions, mixins, placeholders, and styles
 /// @group FloorplansTemplate
 /// ----------------------------------------------------------------------------
-
-// Variables
-
-// Functions
-
-// Mixins
-
-// Placeholders
 
 /// Component: FloorplansTemplate
 %FloorplansTemplate {
@@ -18,7 +9,7 @@
 
 // Styles
 
-.adt-floorplans {
+.mb-adt-floorplans {
   @extend %FloorplansTemplate;
 }
 

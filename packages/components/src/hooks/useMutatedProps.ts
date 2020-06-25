@@ -44,20 +44,20 @@ export function useMutatedProps<T = AnyObject>(
   }
 
   if (
-    !mutated.className.includes('ada-button') &&
+    !mutated.className.includes('mb-ada-button') &&
     !mutated.href &&
     mutated.onClick
   ) {
     mutated.role = 'button'
-  } else if (!mutated.className.includes('ada-link') && mutated.href) {
+  } else if (!mutated.className.includes('mb-ada-link') && mutated.href) {
     mutated.role = 'link'
   }
 
   const voidElementTagClassNames = [
-    'ada-divider',
-    'ada-image',
-    'ada-input',
-    'ada-textarea'
+    'mb-ada-divider',
+    'mb-ada-image',
+    'mb-ada-input',
+    'mb-ada-textarea'
   ]
 
   if (!keys) keys = []

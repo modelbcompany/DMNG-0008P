@@ -1,6 +1,6 @@
 $base-color: #e5e5e5;
 $icon-color: #999;
-$text-color: #333;
+$color-theme--text: #333;
 $highlight-color: #04a4cc;
 $notification-color: #d64e07;
 
@@ -28,7 +28,7 @@ $menu-collapse-focus-icon: #555;
 #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus,
 #wpadminbar.nojs .ab-top-menu > li.menupop:hover > .ab-item,
 #wpadminbar .ab-top-menu > li.menupop.hover > .ab-item {
-	color: $text-color;
+	color: $color-theme--text;
 }
 
 /* Override the theme filter highlight color for this scheme */

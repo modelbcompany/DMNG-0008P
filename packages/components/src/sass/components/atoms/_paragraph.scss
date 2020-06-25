@@ -1,0 +1,112 @@
+/// ----------------------------------------------------------------------------
+/// @group Paragraph
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
+
+@mixin mb-paragraph {
+  .mb-ada-paragraph {
+    @extend %mb-paragraph-base;
+    @include mb-paragraph-pattern;
+  }
+
+  %mb-paragraph-base {
+    font-family: $font-family-secondary;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-paragraph-pattern(
+  $paragraph-pattern-color: $color-theme--text-alt,
+  $paragraph-pattern-font-size: 1.1rem,
+  $paragraph-pattern-font-weight: 100,
+  $paragraph-pattern-margin: 0 0 size(20) 0,
+  $paragraph-pattern-line-height: 1.45rem,
+  $paragraph-pattern-letter-spacing: normal,
+  $paragraph-pattern-text-transform: normal,
+  $paragraph-pattern-background-color: $color-transparent,
+  $paragraph-pattern-background-color-hover: $color-transparent,
+  
+) {
+  @include set-bkg-color-and-hover(
+    $paragraph-pattern-background-color, 
+    $paragraph-pattern-background-color-hover
+  );
+
+  color: $paragraph-pattern-color;
+  font-size: $paragraph-pattern-font-size;
+  letter-spacing: $paragraph-pattern-letter-spacing;
+  line-height: $paragraph-pattern-line-height;
+  margin: $paragraph-pattern-margin;
+  text-transform: $paragraph-pattern-text-transform;
+}
+
+@mixin floorplans-blurb {
+  %floorplans-blurb {
+    @include font-size($font-size-lg * 2);
+
+    font-family: $font-family-primary;
+    line-height: 2.7rem;
+  }
+
+  .mb-ada-paragraph.floorplans-blurb {
+    @extend %floorplans-blurb;
+  }
+}
+
+@mixin floorplan-details {
+  %floorplan-details {
+    color: $color-theme--text;
+    font-weight: 300;
+    margin: size($sp-md) 0 size($sp-padding-sm * 1.75);
+  }
+
+  .mb-ada-paragraph.floorplan-details {
+    @extend %floorplan-details;
+  }
+}
+
+@mixin floorplan-rent {
+  %floorplan-rent {
+    @include font-size($font-size-lg * 2);
+
+    color: $color-theme--text;
+    font-family: $font-family-primary;
+    font-weight: 300;
+    line-height: 2.7rem;
+  }
+
+  .mb-ada-paragraph.floorplan-rent {
+    @extend %floorplan-rent;
+  }
+}
+
+@mixin floorplan-sqft {
+  %floorplan-sqft {
+    color: $color-theme--text;
+    font-family: $font-family-secondary;
+    font-weight: 700;
+    margin-bottom: size($sp-sm);
+  }
+
+  .mb-ada-paragraph.floorplan-sqft {
+    @extend %floorplan-sqft;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
+
+@mixin mb-paragraphs {
+  @include mb-paragraph;
+  @include floorplans-blurb;
+  @include floorplan-details;
+  @include floorplan-rent;
+  @include floorplan-sqft;
+}

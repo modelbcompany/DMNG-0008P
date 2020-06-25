@@ -1,7 +1,6 @@
 import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { FC, HTMLAttributes } from 'react'
-import './sass/Paragraph.scss'
 
 /**
  * @module Components/Atoms/Paragraph
@@ -21,12 +20,12 @@ export interface ParagraphProps extends Props {
 }
 
 /**
- * Renders a `<p>` element with the class `ada-paragraph`.
+ * Renders a `<p>` element with the class `mb-ada-paragraph`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/p**
  */
 export const Paragraph: FC<ParagraphProps> = (props: ParagraphProps) => (
-  <p {...(useMutatedProps(props, 'ada-paragraph') as ReactParagraphProps)} />
+  <p {...(useMutatedProps(props, 'mb-ada-paragraph') as ReactParagraphProps)} />
 )
 
 Paragraph.defaultProps = {

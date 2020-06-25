@@ -1,0 +1,132 @@
+/// ----------------------------------------------------------------------------
+/// @group Heading
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
+
+@mixin mb-heading {
+  .mb-ada-heading {
+    @extend %mb-heading-base;
+  }
+
+  %mb-heading-base {
+    font-family: $font-family-primary;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-heading-pattern(
+  $heading-pattern-color: $color-theme--text-alt-2,
+  $heading-pattern-font-size: 3.5rem,
+  $heading-pattern-margin: 0,
+  $heading-pattern-line-height: 1.25rem,
+  $heading-pattern-letter-spacing: 1.25rem,
+  $heading-pattern-text-transform: uppercase,
+  $heading-pattern-font-weight: 400,
+  $heading-pattern-background-color: $color-transparent,
+  $heading-pattern-background-color-hover: $color-transparent,
+  
+) {
+  @include set-bkg-color-and-hover(
+    $heading-pattern-background-color, 
+    $heading-pattern-background-color-hover
+  );
+
+  color: $heading-pattern-color;
+  font-size: $heading-pattern-font-size;
+  letter-spacing: $heading-pattern-letter-spacing;
+  line-height: $heading-pattern-line-height;
+  margin: $heading-pattern-margin;
+  text-transform: $heading-pattern-text-transform;
+}
+
+@mixin mb-heading-1 {
+  %mb-heading--1 {
+    @include mb-heading-pattern($color-theme--text-alt, 3, 0);
+  }
+
+  .mb-ada-heading.mb-heading--1 {
+    @extend %mb-heading--1;
+  }
+}
+
+@mixin mb-heading-2 {
+  %mb-heading--2 {
+    @include mb-heading-pattern(
+      $color-theme--text-alt-2, 
+      3, 
+      0, 
+      2.75rem, 
+      .07rem,
+      uppercase,
+      500
+    );
+  }
+
+  .mb-ada-heading.mb-heading--2 {
+    @extend %mb-heading--2;
+  }
+}
+
+@mixin mb-heading-3 {
+  %mb-heading--3 {
+    @include mb-heading-pattern(
+      $color-theme--text-inverse, 
+      1.75rem, 
+      0, 
+      2rem, 
+      normal,
+      uppercase,
+      700
+    );
+  }
+
+  .mb-ada-heading.mb-heading--3 {
+    @extend %mb-heading--3;
+
+    &.floorplan-heading {
+      color: $color-theme--text;
+    }
+  }
+
+  .mb-ado-do-section .mb-heading--3 {
+    @include is-center-aligned-text;
+
+    margin-bottom: size($sp-padding-lg * 2);
+  }
+}
+
+@mixin mb-heading-4 {
+  %mb-heading--4 {
+    @include mb-heading-pattern(
+      $color-theme--text-alt-2, 
+      1.25rem, 
+      0, 
+      2rem, 
+      .08rem,
+      uppercase,
+      900
+    );
+  }
+
+  .mb-ada-heading.mb-heading--4 {
+    @extend %mb-heading--4;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
+
+@mixin mb-headings {
+  @include mb-heading;
+  @include mb-heading-1;
+  @include mb-heading-2;
+  @include mb-heading-3;
+  @include mb-heading-4;
+}

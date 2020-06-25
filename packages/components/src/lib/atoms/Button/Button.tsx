@@ -1,7 +1,6 @@
 import { FormElementProps, Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { ButtonHTMLAttributes, FC } from 'react'
-import './sass/Button.scss'
 
 /**
  * @module Components/Atoms/Button
@@ -184,12 +183,12 @@ export interface ButtonProps extends FormElementProps, Props {
 }
 
 /**
- * Renders a `<button>` element with the class `ada-button`.
+ * Renders a `<button>` element with the class `mb-ada-button`.
  *
  * https://developer.mozilla.org/docs/Web/HTML/Element/button
  */
 export const Button: FC<ButtonProps> = (props: ButtonProps) => {
-  const mutatedProps = useMutatedProps(props, 'ada-button')
+  const mutatedProps = useMutatedProps(props, 'mb-ada-button')
 
   if (mutatedProps.name === 'smooth_scroll') {
     mutatedProps.value = JSON.stringify(mutatedProps.value)

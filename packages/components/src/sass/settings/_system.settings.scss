@@ -1,0 +1,11 @@
+/// ----------------------------------------------------------------------------
+/// Global Design System Settings
+/// @group settings-system
+/// ----------------------------------------------------------------------------
+
+@if function-exists(framework-version) {
+  $app-version: framework-version();
+} @else {
+  // update the fallback with major releases
+  $app-version: '1.0.0-alpha' !default;
+}

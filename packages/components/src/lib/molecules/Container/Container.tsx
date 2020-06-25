@@ -2,7 +2,7 @@ import { Props, PropsWithContainer } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'
-import './sass/Container.scss'
+
 /**
  * @module Components/Molecules/Container
  * @see {@link https://developer.mozilla.org/docs/Web/HTML/Element/div}
@@ -35,12 +35,12 @@ export interface RowProps extends PropsWithContainer {
 }
 
 /**
- * Renders a `<div>` element with the class `adm-container`.
+ * Renders a `<div>` element with the class `mb-adm-container`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/div**
  */
 export const Container: FC<ContainerProps> = (props: ContainerProps) => (
-  <div {...(useMutatedProps(props, 'adm-container') as ReactDivProps)} />
+  <div {...(useMutatedProps(props, 'mb-adm-container') as ReactDivProps)} />
 )
 
 /**

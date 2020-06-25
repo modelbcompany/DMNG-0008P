@@ -8,5 +8,5 @@ export * from './Article'
 export * from './Container'
 export * from './Fieldset'
 export * from './Form'
-export * from './Label'
 export * from './Select'
+

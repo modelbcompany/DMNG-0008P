@@ -532,13 +532,6 @@ export type PropsWithItems<T = AnyObject> = Omit<Props<T>, 'children'> & {
  */
 export type PropsWithOpts<T = AnyObject> = Omit<Props<T>, 'children'> & {
   /**
-   * If true, treat `initialOptions` as an array of {@link OptGroup} data.
-   *
-   * @default false
-   */
-  groupOptions?: boolean
-
-  /**
    * Initial options data.
    *
    * @default []

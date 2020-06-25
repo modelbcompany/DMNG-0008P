@@ -1,0 +1,59 @@
+/// ----------------------------------------------------------------------------
+/// Animation Utilities
+/// @group utils-animations
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Mixins
+/// ----------------------------------------------------------------------------
+
+/// Wrapper for animation property
+/// @param {String} $name - animation-name
+/// @param {Number} $duration [$animation-duration-sleepy] - animation-duration
+/// @param {String} $timing [ease] - animation-timing-function
+/// @param {Number} $delay [0s] - animation-delay
+@mixin animation(
+  $name, 
+  $duration: $animation-duration-sleepy, 
+  $timing: ease, 
+  $delay: 0s
+) {
+  animation: $name $duration $timing $delay;
+}
+
+/// Event wrapper for &:hover, &:active, &:focus
+/// @param {Bool} $self [false] - Whether or not to include current selector
+@mixin event($self: false) {
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+
+      @content;
+    }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      cursor: pointer;
+
+      @content;
+    }
+  }
+}
+
+/// Wrapper for transition property
+/// @param {String} $property [all] - transition-property
+/// @param {Number} $duration [$animation-duration-slow] - transition-duration
+/// @param {String} $timing [ease] - transition-timing
+/// @param {Number} $delay [0s] - transition-delay
+@mixin transition(
+  $property: all, 
+  $duration: $animation-duration-slow, 
+  $timing: ease, 
+  $delay: 0s
+) {
+  transition: $property $duration $timing $delay;
+}

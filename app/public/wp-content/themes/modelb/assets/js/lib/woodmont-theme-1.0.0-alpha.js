@@ -82,19 +82,19 @@ window["Woodmont"] =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/sass/global.scss");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/sass/build.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/sass/global.scss":
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** /Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js??ref--5-2!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js!./src/sass/global.scss ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/sass/build.scss":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** /Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js??ref--5-2!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js!./src/sass/build.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"../../node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://Woodmont/./src/sass/global.scss?/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js??ref--5-2!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js");
+eval("// Imports\nvar ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ \"../../node_modules/css-loader/dist/runtime/api.js\");\nexports = ___CSS_LOADER_API_IMPORT___(false);\n// Module\nexports.push([module.i, \"\", \"\"]);\n// Exports\nmodule.exports = exports;\n\n\n//# sourceURL=webpack://Woodmont/./src/sass/build.scss?/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js??ref--5-2!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/mini-css-extract-plugin/dist/loader.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/css-loader/dist/cjs.js!/Users/lex/Projects/DMNG/DMNG-0008P/node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -122,14 +122,14 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/sass/global.scss":
-/*!******************************!*\
-  !*** ./src/sass/global.scss ***!
-  \******************************/
+/***/ "./src/sass/build.scss":
+/*!*****************************!*\
+  !*** ./src/sass/build.scss ***!
+  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./global.scss */ \"../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/sass/global.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack://Woodmont/./src/sass/global.scss?");
+eval("var api = __webpack_require__(/*! ../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ \"../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js\");\n            var content = __webpack_require__(/*! !../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js??ref--5-2!../../../../node_modules/mini-css-extract-plugin/dist/loader.js!../../../../node_modules/css-loader/dist/cjs.js!../../../../node_modules/sass-loader/dist/cjs.js!./build.scss */ \"../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js?!../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/dist/cjs.js!./src/sass/build.scss\");\n\n            content = content.__esModule ? content.default : content;\n\n            if (typeof content === 'string') {\n              content = [[module.i, content, '']];\n            }\n\nvar options = {};\n\noptions.insert = \"head\";\noptions.singleton = false;\n\nvar update = api(content, options);\n\n\n\nmodule.exports = content.locals || {};\n\n//# sourceURL=webpack://Woodmont/./src/sass/build.scss?");
 
 /***/ })
 

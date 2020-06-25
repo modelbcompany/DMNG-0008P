@@ -5,7 +5,6 @@
  */
 
 export * from './Calendar'
-export * from './Dialog'
 export * from './Main'
 export * from './Section'
 

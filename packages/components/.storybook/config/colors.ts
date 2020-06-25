@@ -18,6 +18,10 @@ export const BrandPalette = {
     name: 'Cod Gray',
     value: '#0a0a0a'
   },
+  '$color-brand-dusty-gray': {
+    name: 'Dusty Gray',
+    value: '#a49b9b'
+  },
   '$color-brand-marble-brown': {
     name: 'Marble Brown',
     value: '#3c312d'

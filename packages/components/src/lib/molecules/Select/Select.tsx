@@ -3,7 +3,6 @@ import { useMutatedProps, useOptions } from 'hooks'
 import { Input, Placeholder } from 'lib'
 import React, { FC } from 'react'
 import ReactSelect, { Props as ReactSelectProps } from 'react-select'
-import './sass/Select.scss'
 
 /**
  * @module Components/Molecules/Select
@@ -18,10 +17,10 @@ export interface SelectProps extends PropsWithOpts<ReactSelectProps> {
 }
 
 /**
- * Renders a <div> element with the class `adm-select`.
+ * Renders a <div> element with the class `mb-adm-select`.
  */
 export const Select: FC<SelectProps> = ({ initialOptions, ...rest }) => {
-  const mutatedProps = useMutatedProps(rest, 'adm-select') as SelectProps
+  const mutatedProps = useMutatedProps(rest, 'mb-adm-select') as SelectProps
   const { options } = useOptions(initialOptions)
 
   /**

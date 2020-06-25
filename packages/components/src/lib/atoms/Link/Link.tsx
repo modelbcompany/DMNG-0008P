@@ -1,7 +1,7 @@
 import { Props } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import React, { AnchorHTMLAttributes, FC } from 'react'
-import './sass/Link.scss'
+
 
 /**
  * @module Components/Atoms/Link
@@ -53,12 +53,12 @@ export interface LinkProps extends Props {
 }
 
 /**
- * Renders an `<a>` element with the class `ada-link`.
+ * Renders an `<a>` element with the class `mb-ada-link`.
  *
  * **https://developer.mozilla.org/docs/Web/HTML/Element/a**
  */
 export const Link: FC<LinkProps> = (props: LinkProps) => (
   /* eslint-disable jsx-a11y/anchor-has-content */
-  <a {...(useMutatedProps(props, 'ada-link') as ReactLinkProps)} />
+  <a {...(useMutatedProps(props, 'mb-ada-link') as ReactLinkProps)} />
   /* eslint-enable jsx-a11y/anchor-has-content */
 )

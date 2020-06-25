@@ -3,7 +3,7 @@ import { useMutatedProps } from 'hooks'
 import { Container } from 'lib'
 import _ from 'lodash'
 import React, { FC, HTMLAttributes } from 'react'
-import './sass/Main.scss'
+
 
 /**
  * @module Components/Organisms/Main
@@ -16,12 +16,12 @@ import './sass/Main.scss'
 export type MainProps = PropsWithContainer<HTMLAttributes<HTMLElement>>
 
 /**
- * Renders an `<main>` element with the class `ado-main`.
+ * Renders an `<main>` element with the class `mb-ado-main`.
  *
  * @param props - Component data
  */
 export const Main: FC<MainProps> = ({ container, ...rest }) => {
-  const mutatedProps = useMutatedProps(rest, 'ado-main')
+  const mutatedProps = useMutatedProps(rest, 'mb-ado-main')
 
   if (!container) return <main {...mutatedProps} />
 

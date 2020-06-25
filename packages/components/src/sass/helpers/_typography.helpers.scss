@@ -1,0 +1,38 @@
+/// ----------------------------------------------------------------------------
+/// Typography Helpers
+/// @group helpers-typography
+/// ----------------------------------------------------------------------------
+
+@import '../utils/typography.utils';
+
+.black-text,
+.has-black-text,
+.is-black-text {
+  @include is-black-text;
+}
+
+.center-text,
+.has-center-aligned-text,
+.is-center-aligned-text {
+  @include is-center-aligned-text;
+}
+
+.is-uppercase,
+.uppercase {
+  @include is-uppercase;
+}
+
+.white-text,
+.has-white-text,
+.is-white-text {
+  @include is-white-text;
+}
+
+.no-breaking {
+  @include no-breaking;
+}
+
+.capitalize,
+.is-capitalized {
+  @include is-capitalized;
+}

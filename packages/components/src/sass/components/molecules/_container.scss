@@ -1,0 +1,224 @@
+/// ----------------------------------------------------------------------------
+/// @group Container
+/// ----------------------------------------------------------------------------
+
+@mixin has-image {
+  @include is-flex-centered;
+
+  position: relative;
+}
+
+%Container {
+  @include constrain($grid-column-max-width-lg);
+
+  @include is-centered;
+
+  @include respond-to($breakpoint-1024) {
+    @include constrain($grid-column-max-width-md);
+  }
+
+  @include respond-to($breakpoint-414) {
+    @include constrain($grid-column-max-width-sm);
+  }
+
+
+  &.end-j {
+    justify-content: flex-end;
+  }
+
+  &.is-full-width {
+    @include remove-margin;
+  }
+}
+
+%Column {
+  @include display-flex;
+
+  @include flex-column;
+
+  &.has-image {
+    @include has-image;
+  }
+}
+
+%Row {
+  @include display-flex;
+
+  > * {
+    flex-grow: 1;
+
+    &:not(:last-of-type) {
+      padding-right: size($sp-sm) !important;
+    }
+  }
+}
+
+// Styles
+
+.mb-adm-container {
+  @extend %Container;
+}
+
+.form-container {
+  @include remove-margin;
+
+  @include width(auto);
+}
+
+.mb-form--floorplan-search .form-container {
+  @include is-full-height;
+}
+
+.display-flex,
+.flex-column,
+.flex-spread {
+  > .mb-adm-container {
+    @include display-flex;
+  }
+}
+
+.fieldset-container {
+  @include is-full-width;
+}
+
+.layout-container {
+  @include is-stretched;
+}
+
+.form-field .fieldset-container {
+  @include display-flex;
+}
+
+.form-field.row .fieldset-container > * {
+  @include respond-to($breakpoint-768) {
+    margin-bottom: size($sp-padding-xs);
+  }
+
+  flex-grow: 1;
+
+  &:not(:last-child) {
+    @include respond-to($breakpoint-768) {
+      margin-right: 0;
+    }
+  
+    margin-right: size($sp-padding-xs);
+  }
+}
+
+.mb-form--tour .form-container:not(.calendar-view) {
+  .form-field:not(.form-footer) .fieldset-container {
+    // justify-content: flex-start !important;
+  }
+}
+
+.mb-form--tour .form-field .fieldset-container {
+  @include is-flex-centered;
+}
+
+.form-field[name='apptDate_apptTime'] .fieldset-container {
+  @include respond-to($breakpoint-768) {
+    flex-wrap: !important;
+  }
+
+  flex-wrap: nowrap !important;
+}
+
+.mb-form--tour .fields-view .form-footer .fieldset-container {
+  @include display-flex;
+
+  @include flex-spread;
+}
+
+.mb-form--tour .form-container {
+  @include flex(flex, center, center);
+
+  @include flex-direction(column);
+}
+
+.floorplans-grid-container {
+  @include is-flex-centered;
+
+  @include respond-to($breakpoint-768) {
+    grid-template-columns: repeat(1, 1fr) !important;
+    row-gap: size($sp-padding-lg * 2);
+  }
+
+  @include responsive-grid;
+
+  row-gap: size($sp-padding-lg * 1.5);
+}
+
+
+.mb-form--floorplan-search,
+.mb-form--tour {
+  .form-container {
+    @include respond-to($breakpoint-768) {
+      @include flex-column;
+    }
+
+    flex-wrap: nowrap;
+  }
+}
+
+.form-field:not(.form-footer) .fieldset-container {
+  @include respond-to($breakpoint-768) {
+    @include flex-column;
+  }
+
+  flex-wrap: nowrap;
+}
+
+.mb-adt-floorplans > .mb-adm-container {
+  $grid-padding-h: $sp-padding-lg * 2.5;
+  $grid-padding-v: $grid-padding-h * 0.5;
+
+  @include respond-to($breakpoint-1024) {
+    padding: size($grid-padding-v);
+  }
+
+  padding: size($grid-padding-v) size($grid-padding-h);
+}
+
+.mb-adt-floorplans > .mb-adm-container,
+.mb-adt-floorplans .floorplans-grid-container {
+  @include width(95%)
+}
+
+
+// Column
+
+.column {
+  @extend %Column;
+}
+
+.floorplan {
+  .column {
+    @include remove-margin;
+
+    @include width($sp-fill);
+  }
+
+  .image-column {
+    padding-bottom: size($sp-padding-sm);
+  }
+  
+  .link-column {
+    padding: size($sp-padding-xxs) 0 size($sp-padding-sm);
+  }
+
+  .text-column {
+    padding: size($sp-padding-lg - 4) 0;
+  }
+
+  .link-column,
+  .text-column {
+    @include respond-to($breakpoint-1024) {
+      @include font-size($font-size);
+    }
+  }
+}
+
+// Row
+.row {
+  @extend %Row;
+}

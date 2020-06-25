@@ -6,17 +6,10 @@ import {
   Container,
   Input,
   InputProps,
-  LabeledFormElementProps,
-  Legend,
-  LegendProps,
   Select,
-  SelectProps,
-  TextArea,
-  TextAreaProps
+  SelectProps
 } from 'lib'
 import React, { FC, FieldsetHTMLAttributes, ReactNode } from 'react'
-import { LabeledFormElement } from '../Label'
-import './sass/Fieldset.scss'
 
 /**
  * @module Components/Molecules/Fieldset
@@ -51,14 +44,6 @@ export interface FieldsetProps extends Props {
   form?: string
 
   /**
-   * If defined, render a `Legend` element inside of the `Fieldset`.
-   *
-   * The caption for the fieldset is given by the first `<legend>` element
-   * nested inside it.
-   */
-  legend?: LegendProps
-
-  /**
    * The name associated with the group.
    */
   name?: string
@@ -70,11 +55,9 @@ export interface FieldsetProps extends Props {
  * {@link FormField} layout configuration.
  */
 export type FormFieldLayoutConfiguration = (
-  | LabeledFormElementProps
   | ButtonProps
   | InputProps
   | SelectProps
-  | TextAreaProps
 )[]
 
 /* eslint-enable prettier/prettier */
@@ -93,21 +76,20 @@ export interface FormFieldProps extends FieldsetProps {
   /**
    * Tag name of the `Form` elements to render.
    */
-  tagName?: LabeledFormElementProps['formElementTagName']
+  tagName?: 'button' | 'input' | 'select'
 }
 
 /**
- * Renders a `<fieldset>` element with the class `adm-fieldset`.
+ * Renders a `<fieldset>` element with the class `mb-adm-fieldset`.
  *
  * Because `<fieldset>` elements ignore Flexbox properties, a `Container`
  * component with the class `fieldset-container` will wrap the child elements.
  *
  * See: https://khrome.dev/blog/html-elements-with-flex-box-quirks/
  */
-export const Fieldset: FC<FieldsetProps> = ({ children, legend, ...rest }) => (
-  <fieldset {...useMutatedProps(rest, 'adm-fieldset')}>
+export const Fieldset: FC<FieldsetProps> = ({ children, ...rest }) => (
+  <fieldset {...useMutatedProps(rest, 'mb-adm-fieldset')}>
     <Container className='fieldset-container is-full-width'>
-      {legend ? <Legend {...legend}></Legend> : null}
       {children}
     </Container>
   </fieldset>
@@ -122,7 +104,7 @@ export const Fieldset: FC<FieldsetProps> = ({ children, legend, ...rest }) => (
 export const FormField: FC<FormFieldProps> = ({
   children,
   layoutConfig = [],
-  tagName = 'label',
+  tagName = 'input',
   ...rest
 }) => {
   const mutatedProps = useMutatedProps(rest, 'form-field')
@@ -133,26 +115,19 @@ export const FormField: FC<FormFieldProps> = ({
         if (children) return children
 
         return layoutConfig.map((props, i) => {
-          const tag = mutatedProps.formElementProps ? 'label' : tagName
           const key = `fieldset-element-${i}-${tagName}`
 
           let component: ReactNode = null
 
-          switch (tag) {
+          switch (tagName) {
             case 'button':
               component = <Button {...(props as ButtonProps)} key={key} />
-              break
-            case 'input':
-              component = <Input {...(props as InputProps)} key={key} />
               break
             case 'select':
               component = <Select {...(props as SelectProps)} key={key} />
               break
-            case 'textarea':
-              component = <TextArea {...(props as TextAreaProps)} key={key} />
-              break
             default:
-              component = <LabeledFormElement {...props} key={key} />
+              component = <Input {...(props as InputProps)} key={key} />
           }
           return component
         })

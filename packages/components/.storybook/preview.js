@@ -1,4 +1,4 @@
-import '!style-loader!css-loader!sass-loader!../src/sass/global.scss'
+import '!style-loader!css-loader!sass-loader!../src/sass/build.scss'
 import { withConsole } from '@storybook/addon-console'
 import { DocsContainer, DocsPage } from '@storybook/addon-docs/blocks'
 import { withKnobs } from '@storybook/addon-knobs'

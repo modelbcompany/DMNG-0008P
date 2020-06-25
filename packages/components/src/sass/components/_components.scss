@@ -1,0 +1,15 @@
+/// ----------------------------------------------------------------------------
+/// Component Styles
+/// @group components
+/// ----------------------------------------------------------------------------
+
+@import '../config';
+
+@import 'atoms/atoms';
+@import 'molecules/molecules';
+@import 'organisms/organisms';
+
+@mixin components {
+  @include atoms;
+  @include molecules;
+}

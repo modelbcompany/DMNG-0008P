@@ -1,0 +1,23 @@
+/// ----------------------------------------------------------------------------
+/// @group atoms
+/// @link https://atomicdesign.bradfrost.com/chapter-2/
+/// ----------------------------------------------------------------------------
+
+@import 'button';
+@import 'heading';
+@import 'image';
+@import 'input';
+@import 'legend';
+@import 'link';
+@import 'paragraph';
+@import 'span';
+
+@mixin atoms {
+  @include mb-buttons;
+  @include mb-headings;
+  @include mb-images;
+  @include mb-inputs;
+  @include mb-legends;
+  @include mb-links;
+  @include mb-paragraphs;
+}

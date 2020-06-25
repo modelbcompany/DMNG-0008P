@@ -1,0 +1,181 @@
+/// ----------------------------------------------------------------------------
+/// @group Input
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
+
+@mixin mb-input {
+  .mb-ada-input {
+    @extend %mb-input-base;
+    @include mb-input-pattern;
+  }
+
+  %mb-input-base {
+    @include fill-available(width);
+  
+    @include font-size($font-size-sm);
+
+    cursor: pointer;
+    display: inline-block;
+    font-family: $font-family-secondary;
+    height: size($input-height);
+    outline: none;
+    padding: 0 $input-padding-h;
+
+    &[type='checkbox'],
+    &[type='radio'] {
+      @include size(auto);
+    }
+
+    &:active,
+    &:focus,
+    &:hover {
+      border-color: $color-theme--border;
+    }
+
+    &:read-only {
+      font-weight: 500;
+    }
+
+    &[type='button'] {
+      text-align: left;
+    }
+
+    &::placeholder {
+      @include is-uppercase;
+    }
+
+    &::placeholder,
+    &[type='button'] {
+      color: $color-theme--input-placeholder;
+    }
+
+
+    &[disabled],
+    .is-disabled {
+      cursor: not-allowed;
+    }
+
+    &[type='number'],
+    &[type='password'],
+    &[type='text'] {
+      @include appearance(none);
+    }
+
+    &[type='date'],
+    &[type='datetime-local'],
+    &[type='month'],
+    &[type='week'] {
+      @include font-size($font-size-sm);
+
+      @include is-uppercase;
+
+      &[readonly] {
+        &::-webkit-inner-spin-button,
+        &::-webkit-calendar-picker-indicator {
+          @include is-hidden;
+        }
+      }
+    }
+  }
+
+  .mb-adm-select .placeholder + input {
+    @include remove-border;
+
+    background-color: $color-transparent;
+  }
+
+  .fieldset-container > .mb-ada-input {
+    // padding: 0.7rem 0.75rem;
+  }
+
+  .mb-form--tour .mb-ada-input {
+    flex-grow: 1;
+
+    &:read-only {
+      @include font-weight(700);
+    }
+
+    &[name='apptDate'] {
+      @include respond-to($breakpoint-768) {
+        margin-bottom: size($sp-padding-xs) !important;
+      }
+
+      margin-bottom: 0 !important;
+    }
+
+    &::placeholder {
+      @include font-size($font-size-sm);
+
+      text-transform: uppercase;
+    }
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-input-pattern(
+  $input-background-color: $color-grey-200,
+  $input-color: $color-theme--text,
+  $input-color-placeholder: $color-state-disabled,
+  $input-border-color: $color-theme--border,
+  $input-border-width: size($border-width),
+  $input-border-radius: size($border-radius),
+  $input-border-style: $border-style,
+) {
+  background-color: $input-background-color;
+  border: $input-border-width $input-border-style $input-border-color;
+  border-radius: $input-border-radius;
+  color: $input-color;
+
+  &::placeholder {
+    color: $input-color-placeholder;
+  }
+}
+
+@mixin mb-input-light {
+  %mb-input--light {
+    @include mb-input-pattern(
+      $color-theme--text-inverse-alt,
+      $color-theme--text-alt-2,
+      $color-theme--text-alt-2,
+      $color-transparent
+    );
+  }
+
+  .mb-ada-input.mb-input--light {
+    @extend %mb-input--light;
+  }
+}
+
+@mixin mb-input-checkbox {
+  %mb-input--checkbox {
+    @include appearance(none);
+    
+    @include remove-padding;
+
+    @include size(size(20));
+  
+    &:checked {
+      background-color: $color-theme--link;
+    }
+  }
+
+  .mb-ada-input[type='checkbox'] {
+    @extend %mb-input--checkbox;
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
+
+@mixin mb-inputs {
+  @include mb-input;
+  @include mb-input-checkbox;
+  @include mb-input-light;
+}

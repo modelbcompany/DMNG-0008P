@@ -1,0 +1,43 @@
+/// ----------------------------------------------------------------------------
+/// Global Browser Compatibility Settings
+/// @group settings-compatibility
+/// ----------------------------------------------------------------------------
+
+@mixin appearance($appearance: revert) {
+  -o-appearance: $appearance;
+  -ms-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -webkit-appearance: $appearance;
+  
+  appearance: $appearance;
+
+  @content;
+}
+
+@mixin fill-available($dimension: width) {
+  @if ($dimension == 'height') {
+    height: stretch;
+    height: -webkit-fill-available;
+    height: -moz-available;
+  }
+
+  @if ($dimension == 'min-height') {
+    min-height: stretch;
+    min-height: -webkit-fill-available;
+    min-height: -moz-available;
+  }
+
+  @if ($dimension == 'min-width') {
+    min-width: stretch;
+    min-width: -webkit-fill-available;
+    min-width: -moz-available;
+  }
+
+  @if ($dimension == 'width') {
+    width: stretch;
+    width: -webkit-fill-available;
+    width: -moz-available;
+  }
+
+  @content;
+}

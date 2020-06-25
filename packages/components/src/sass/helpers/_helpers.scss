@@ -1,9 +1,14 @@
 /// ----------------------------------------------------------------------------
-/// Helper classes
+/// Helpers - Helper classes & mixins that define helper classes
+/// @group helpers
 /// ----------------------------------------------------------------------------
 
-@import 'base';
-@import 'layout/layout';
-@import 'typography';
-@import 'responsive';
-@import 'animations';
+@import '../config';
+
+@import 'common.helpers';
+@import 'animations.helpers';
+@import 'flexbox.helpers';
+@import 'size.helpers';
+@import 'spacing.helpers';
+@import 'typography.helpers';
+@import 'visibility.helpers';

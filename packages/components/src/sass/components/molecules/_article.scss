@@ -1,0 +1,23 @@
+/// ----------------------------------------------------------------------------
+/// @group Article
+/// ----------------------------------------------------------------------------
+
+%Floorplan {
+  @include background-color($color-theme--text-alt);
+
+  padding: size($sp-padding-lg * 1.25);
+}
+
+// Styles
+
+.floorplan {
+  @extend %Floorplan;
+}
+
+// Responsive Styles
+
+// Desktop
+
+// Tablet
+
+// Mobile

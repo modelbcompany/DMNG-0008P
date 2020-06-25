@@ -1,0 +1,18 @@
+/// ----------------------------------------------------------------------------
+/// Global Component Settings
+/// @group settings-components
+/// ----------------------------------------------------------------------------
+
+@import 'spacing.settings';
+
+$calendar-height: 500;
+$calendar-width: 500;
+
+$container-max-width-lg: 75% !default;
+$container-max-width-md: 85% !default;
+$container-max-width-sm: 95% !default;
+
+$input-height: $sp-xxl + 6;
+
+$input-padding-h: size($sp-padding-xs);
+$input-padding-v: size($sp-padding-md);

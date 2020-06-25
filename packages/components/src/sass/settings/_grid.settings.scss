@@ -1,0 +1,48 @@
+/// ----------------------------------------------------------------------------
+/// Global Grid Settings
+/// @group settings-grid
+/// ----------------------------------------------------------------------------
+
+@import 'breakpoints.settings';
+@import 'component.settings';
+
+$grid-column-prefix: 'col-' !default;
+$grid-column-prefix-sm: '#{$grid-column-prefix}sm-' !default;
+$grid-column-prefix-md: '#{$grid-column-prefix}md-' !default;
+$grid-column-prefix-lg: #{$grid-column-prefix} !default;
+
+$grid-columns-lg: 3 !default;
+$grid-columns-md: 2 !default;
+$grid-columns-sm: 1 !default;
+
+$grid-column-gutter-width-lg: 36 !default;
+$grid-column-gutter-width-md: 24 !default;
+$grid-column-gutter-width-sm: 12 !default;
+
+$grid-column-max-width-lg: $container-max-width-lg !default;
+$grid-column-max-width-md: $container-max-width-md !default;
+$grid-column-max-width-sm: $container-max-width-sm !default;
+
+$grid-column-width: 98 !default;
+
+/// Layout sizes mapped to the max number of columns.
+/// @require {variable} $grid-columns-lg
+/// @require {variable} $grid-columns-md
+/// @require {variable} $grid-columns-sm
+/// @type Map
+$grid-columns: (
+  sm: $grid-columns-sm,
+  md: $grid-columns-md,
+  lg: $grid-columns-lg
+) !default;
+
+/// Layout sizes mapped to column gutter width values.
+/// @require {variable} $grid-column-gutter-width-lg
+/// @require {variable} $grid-column-gutter-width-md
+/// @require {variable} $grid-column-gutter-width-sm
+/// @type Map
+$grid-gutter-widths: (
+  sm: $grid-column-gutter-width-sm,
+  md: $grid-column-gutter-width-md,
+  lg: $grid-column-gutter-width-lg
+) !default;

@@ -4,9 +4,11 @@ import { ApartmentWithPlan } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import {
   Container,
-  FloorplansGrid,
-  FloorplansSearchForm,
-  FloorplansSearchFormState as FloorplanSearch,
+
+  FloorplanSearchForm,
+  FloorplanSearchFormState as FloorplanSearch, FloorplansGrid,
+
+
   Main,
   MainProps
 } from 'lib'
@@ -34,7 +36,7 @@ export type ApartmentsAPIResponse = ApartmentWithPlan[] | FeathersErrorJSON
 export type ApartmentsQuery = FloorplanSearch | Partial<FloorplanSearch>
 
 /**
- * Renders a `Main` component with the class `adt-floorplans`.
+ * Renders a `Main` component with the class `mb-adt-floorplans`.
  *
  * @param props - Component data
  */
@@ -98,9 +100,9 @@ export const FloorplansTemplate: FC<FloorplansTemplateProps> = (
   ])
 
   return (
-    <Main {...useMutatedProps(props, 'adt-floorplans')}>
+    <Main {...useMutatedProps(props, 'mb-adt-floorplans')}>
       <Container>
-        <FloorplansSearchForm search={formState => setQuery(formState)} />
+        <FloorplanSearchForm search={formState => setQuery(formState)} />
       </Container>
 
       <FloorplansGrid

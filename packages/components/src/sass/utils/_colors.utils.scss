@@ -1,0 +1,67 @@
+/// ----------------------------------------------------------------------------
+/// Color Utilities
+/// @group utils-colors
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Dependencies
+/// ----------------------------------------------------------------------------
+
+@import '../settings/colors.settings';
+
+/// ----------------------------------------------------------------------------
+/// Mixins
+/// ----------------------------------------------------------------------------
+
+/// Set background-color
+/// @require {variable} none
+/// @param {Color} $bkg-color [none] - Color to make background
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin background-color($bkg-color: none, $important: false) {
+  background-color: if($important, $bkg-color !important, $bkg-color);
+}
+
+/// Set background and text color
+/// @require {mixin} background-color
+/// @require {mixin} text-color
+/// @require {variable} $color-grey-600
+/// @require {variable} $color-transparent
+/// @param {Color} $text [$color-grey-600] - Text color
+/// @param {Color} $bkg [$color-transparent] - Background color
+/// @param {Boolean} $ci [false] - If true, add !important to color
+/// @param {Boolean} $bi [false] - If true, add !important to background-color
+@mixin color(
+  $text: $color-grey-600, 
+  $bkg: $color-transparent, 
+  $ci: false, 
+  $bi: false
+) {
+  @include background-color($bkg, $bi);
+
+  @include text-color($text, $ci);
+}
+
+/// Sets the initial background color of an element and the element's
+/// background color when it is hovered over.
+/// @param {Color} $color - Initial background color
+/// @param {Color} $hoverColor [darken($color, 3%)] - Background color on hover
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin set-bkg-color-and-hover(
+  $color,
+  $important: false,
+  $hover: darken($color, 3%)
+) {
+  @include background-color($color, $important);
+
+  &:hover {
+    @include background-color($color, $important);
+  }
+}
+
+/// Set text color
+/// @require {variable} $color-grey-600
+/// @param {Color} $color [$color-grey-600] - Color to make text
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin text-color($color: $color-grey-600, $important: false) {
+  color: if($important, $color !important, $color);
+}

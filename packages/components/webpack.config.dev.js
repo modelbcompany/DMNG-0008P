@@ -18,7 +18,7 @@ const pkg = require('./package.json')
 module.exports = {
   entry: {
     main: './src/index.ts',
-    theme: './src/sass/global.scss'
+    theme: './src/sass/build.scss'
   },
   mode: 'development',
   output: {
@@ -64,13 +64,13 @@ module.exports = {
                 const { resourcePath, rootContext } = loaderContext
                 const relativePath = path.relative(rootContext, resourcePath)
 
-                if (relativePath === 'src/sass/global.scss') return ''
+                if (relativePath === 'src/sass/build.scss') return ''
 
-                return "@import '../../../../sass/themes/default.scss';"
+                return "@import '../../config';"
               },
               implementation: require('node-sass'),
               sassOptions: {
-                includePaths: ['./src/lib/**/**/sass/*.scss'],
+                includePaths: ['./src/sass/components/**/*.scss'],
                 indentedSyntax: false,
                 outputStyle: 'expanded'
               }

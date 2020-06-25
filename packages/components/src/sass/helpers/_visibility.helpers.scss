@@ -1,0 +1,21 @@
+/// ----------------------------------------------------------------------------
+/// Visibility Helpers
+/// @group helpers-visibility
+/// ----------------------------------------------------------------------------
+
+@import '../utils/visibility.utils';
+
+// Removes the border from an element
+.is-borderless {
+  @include remove-border;
+}
+
+// Hides an element without removing it from the document layout
+.is-collapsed {
+  @include is-hidden(collapse);
+}
+
+// Hides an element by removing it from the document layout
+.is-hidden {
+  @include is-hidden;
+}

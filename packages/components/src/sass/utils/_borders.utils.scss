@@ -1,0 +1,10 @@
+/// ----------------------------------------------------------------------------
+/// Border Utilities
+/// @group utils-borders
+/// ----------------------------------------------------------------------------
+
+/// Removes the border from an element
+/// @param {Boolean} $important [false] - If true, add !important
+@mixin remove-border($important: false) {
+  border: if($important, none !important, none);
+}

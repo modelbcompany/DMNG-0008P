@@ -1,0 +1,13 @@
+/// ----------------------------------------------------------------------------
+/// Global Asset Settings
+/// @group settings-assets
+/// ----------------------------------------------------------------------------
+
+/// Path to local assets.
+/// @type String
+$assets-path-local: '../assets/' !default;
+
+/// URL of the cdn used to store project assets.
+/// @type String
+$assets-path-cdn: '' !default;
+

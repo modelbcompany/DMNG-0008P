@@ -3,7 +3,6 @@ import { useArray, useMutatedProps, useWindowSize } from 'hooks'
 import { Container, FormField, FormFieldProps } from 'lib'
 import { merge, pick } from 'lodash'
 import React, { FC, FormHTMLAttributes, useEffect } from 'react'
-import './sass/Form.scss'
 
 /**
  * @module Components/Molecules/Form
@@ -52,14 +51,14 @@ export type MergeFormFieldsConfiguration = Record<string, FormFieldProps>
 export type FormContainerConfiguration = [string, MergeFormFieldsConfiguration]
 
 /**
- * Renders a `<form>` element with the class `adm-form`.
+ * Renders a `<form>` element with the class `mb-adm-form`.
  */
 export const Form: FC<FormProps> = ({
   baseConfig = [],
   mergeFields = {},
   ...rest
 }) => {
-  const mutatedProps = useMutatedProps(rest, 'adm-form')
+  const mutatedProps = useMutatedProps(rest, 'mb-adm-form')
 
   const { array: containers, setArray: setContainers } = useArray<
     MergeFormFieldsConfiguration

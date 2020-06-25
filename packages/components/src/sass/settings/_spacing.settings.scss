@@ -1,0 +1,35 @@
+/// ----------------------------------------------------------------------------
+/// Global Spacing Settings
+/// @group settings-spacing
+/// ----------------------------------------------------------------------------
+
+/// ----------------------------------------------------------------------------
+/// Variables
+/// ----------------------------------------------------------------------------
+
+$sp-base: 1rem !default;
+
+
+$sp: 12 !default;
+$sp-xxs: 0 !default;
+$sp-xs: 4 !default;
+$sp-sm: 6 !default;
+$sp-md: 8 !default;
+$sp-lg: 16 !default;
+$sp-xl: 18 !default;
+$sp-xxl: $sp * 2 !default;
+
+$sp-padding-lg: $sp * 2 !default;
+$sp-padding-md: $sp-lg !default;
+$sp-padding-sm: $sp !default;
+$sp-padding-xs: $sp-md !default;
+$sp-padding-xxs: $sp-xs !default;
+
+$sp-button-padding-list: size($sp-padding-xs) size($sp-padding-sm);
+
+$sp-form-control-padding-h: $sp-md !default;
+$sp-form-control-padding-h-sm: $sp-xs !default;
+
+$sp-form-control-padding-v: 0 !default;
+
+$sp-fill: 100% !default;

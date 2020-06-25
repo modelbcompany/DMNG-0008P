@@ -25,12 +25,12 @@ export const useWindowScroll = (hero: boolean): boolean => {
   // If the page has a hero, don't apply the 'is-scrolling' class until
   // we've passed the height of the hero
   const has_hero =
-    hero && $WINDOW.scrollTop() >= ($('.ado-hero') as any).height()
+    hero && $WINDOW.scrollTop() >= ($('.mb-ado-hero') as any).height()
 
   // If the page doesn't have a hero, don't apply the 'is-scrolling' class
   // until we've passed the height of the header
   const no_hero =
-    !hero && $WINDOW.scrollTop() >= ($('.ado-header') as any).height()
+    !hero && $WINDOW.scrollTop() >= ($('.mb-ado-header') as any).height()
 
   // True if we've passed hero height or header height
   const scrolling = has_hero || no_hero
