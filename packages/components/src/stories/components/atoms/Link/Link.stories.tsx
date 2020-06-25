@@ -13,18 +13,18 @@ export default {
 }
 
 /**
- * {@link Floorplan} "Apply Now" {@link Link} story.
+ * Button-like {@link Link} story.
  */
-export const ApplyNowLink = (args: LinkProps): ReactElement<LinkProps> => (
+export const ButtonLike = (args: LinkProps): ReactElement<LinkProps> => (
   <Link {...args} />
 )
 
-ApplyNowLink.storyName = 'Apply Now'
-ApplyNowLink.args = {
+ButtonLike.storyName = 'Apply Now'
+ButtonLike.args = {
   children: 'Apply Now',
-  className: 'floorplan-link'
+  className: 'mb-link--button-like is-centered-text is-uppercase'
 }
-ApplyNowLink.parameters = {
+ButtonLike.parameters = {
   backgrounds: {
     default: 'Silver Rust',
     values: [getColorItem('brand.$color-brand-silver-rust', false)]
@@ -32,19 +32,37 @@ ApplyNowLink.parameters = {
 }
 
 /**
- * Download {@link Floorplan} {@link Link} story.
+ * Button-like {@link Link} story.
  */
-export const DownloadFloorplanLink = (
+export const ButtonLikeDark = (args: LinkProps): ReactElement<LinkProps> => (
+  <Link {...args} />
+)
+
+ButtonLikeDark.storyName = 'Download Floorplan'
+ButtonLikeDark.args = {
+  children: 'Download Floorplan',
+  className: 'mb-link--button-like--dark is-centered-text is-uppercase'
+}
+ButtonLikeDark.parameters = {
+  backgrounds: {
+    default: 'Silver Rust',
+    values: [getColorItem('brand.$color-brand-silver-rust', false)]
+  }
+}
+
+/**
+ * Button-like {@link Link} story.
+ */
+export const ButtonLikeAccented = (
   args: LinkProps
 ): ReactElement<LinkProps> => <Link {...args} />
 
-DownloadFloorplanLink.storyName = 'Download'
-DownloadFloorplanLink.args = {
-  children: 'Download Floorplan',
-  className: 'floorplan-link',
-  download: true
+ButtonLikeAccented.storyName = 'View Floorplans'
+ButtonLikeAccented.args = {
+  children: 'View Floorplans',
+  className: 'mb-link--button-like--accented is-centered-text is-uppercase'
 }
-DownloadFloorplanLink.parameters = {
+ButtonLikeAccented.parameters = {
   backgrounds: {
     default: 'Silver Rust',
     values: [getColorItem('brand.$color-brand-silver-rust', false)]

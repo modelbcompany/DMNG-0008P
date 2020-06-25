@@ -8,6 +8,7 @@ import * as Utilities from './utils'
  * @author Lexus Drumgold <lexus.drumgold@modelb.com>
  */
 
+export { default as WoodmontAPI } from './api'
 export * from './declarations'
 export * from './hooks'
 export * from './lib'

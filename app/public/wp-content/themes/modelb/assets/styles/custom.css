@@ -18,8 +18,8 @@
   color: #fff !important;
 }
 
-.wpb-js-composer .vc_tta.vc_general .vc_tta-tab > a:focus,
-.wpb-js-composer .vc_tta.vc_general .vc_tta-tab > a:hover {
+.wpb-js-composer .vc_tta.vc_general .vc_tta-tab > a:not(.mb-ada-link):focus,
+.wpb-js-composer .vc_tta.vc_general .vc_tta-tab > a:not(.mb-ada-link):hover {
   background-color: #6f767b !important;
   color: #fff !important;
 }
@@ -308,7 +308,7 @@ ul.sfm-menu-level-0.sfm-menu {
   filter: alpha(opacity=1) !important;
 }
 
-.page-template-page_floorplans .adm-select input {
+.page-template-page_floorplans .mb-adm-select input {
   padding: 0.25rem 0.75rem !important;
 }
 
@@ -320,7 +320,7 @@ ul.sfm-menu-level-0.sfm-menu {
   padding: 20px 40px;
 }
 
-.sg-popup-content .scheduling-form .form-field .ada-button {
+.sg-popup-content .mb-form--tour .mb-button--form {
   font-weight: 700;
 }
 

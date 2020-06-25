@@ -26,7 +26,9 @@ export default async (
 
   logger.info({ incoming })
 
-  if (incoming.method === 'OPTIONS') return res.status(200)
+  if (incoming.method === 'OPTIONS') {
+    return (res.status(200).end() as unknown) as NowResponse
+  }
 
   const { body: data, query, method, path } = incoming
   const { id = null } = query

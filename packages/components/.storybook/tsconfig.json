@@ -7,11 +7,12 @@
       "hooks/*": ["hooks/*"],
       "lib/*": ["lib/*"],
       "logger/*": ["logger.ts"],
+      "storybook/*": ["../.storybook/*"],
       "utils/*": ["utils.ts"]
     },
 
     "noEmit": true,
-    "rootDir": "../src"
+    "rootDir": "../"
   },
   "extends": "../tsconfig.json",
   "include": ["../src"]

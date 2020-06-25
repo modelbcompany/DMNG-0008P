@@ -2,22 +2,51 @@
 /// @group Article
 /// ----------------------------------------------------------------------------
 
-%Floorplan {
-  @include background-color($color-theme--text-alt);
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
 
-  padding: size($sp-padding-lg * 1.25);
+@mixin mb-article {
+  .mb-adm-article {
+    @extend %mb-article-base;
+    
+  }
+
+  %mb-article-base {
+    @include mb-article-pattern;
+  }
 }
 
-// Styles
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
 
-.floorplan {
-  @extend %Floorplan;
+@mixin mb-article-pattern(
+  $color-article-background: $color-transparent,
+  $sp-article-padding: auto
+) {
+  background-color: $color-article-background;
+  padding: $sp-article-padding;
 }
 
-// Responsive Styles
+@mixin mb-article-floorplan {
+  %mb-article--floorplan {
+    @include mb-article-pattern(
+      $color-theme--text-inverse-alt,
+      size($sp-padding-lg * 1.25)
+    )
+  }
+  
+  .mb-adm-article.mb-article--floorplan {
+    @extend %mb-article--floorplan;
+  }
+}
 
-// Desktop
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
 
-// Tablet
-
-// Mobile
+@mixin mb-articles {
+  @include mb-article;
+  @include mb-article-floorplan;
+}

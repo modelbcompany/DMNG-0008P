@@ -95,7 +95,7 @@
 
 /// Center align text
 /// @param {Boolean} $important [false] - If true, add !important
-@mixin is-center-aligned-text($important: false) {
+@mixin is-centered-text($important: false) {
   @include align-text(center, $important);
 }
 

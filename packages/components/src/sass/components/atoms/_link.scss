@@ -14,10 +14,15 @@
 
   %mb-link-base {
     cursor: pointer;
+    font-family: $font-family-secondary;
 
     &[data-icon] {
       @include flex(inline-flex, center, space-between);
     }
+  }
+
+  .mb-article--floorplan .mb-ada-link:first-of-type {
+    margin-bottom: size($sp-padding-md);
   }
 }
 
@@ -26,13 +31,14 @@
 /// ----------------------------------------------------------------------------
 
 @mixin mb-link-pattern(
-  $link-background-color: none,
+  $link-background-color: $color-transparent,
   $link-background-color-event: $link-background-color,
   $link-color: $color-theme--link,
   $link-color-event: $link-color,
-  $link-font-size: $font-size,
+  $link-width: auto,
   $link-padding: 0,
-  $link-display: inline-flex
+  $link-font-size: $font-size,
+  $link-display: inline-block
 ) {
   @include event {
     background-color: $link-background-color-event;
@@ -45,6 +51,52 @@
   color: $link-color;
   display: $link-display;
   padding: $link-padding;
+  width: $link-width;
+}
+
+@mixin mb-link-button-like {
+  %mb-link--button-like {
+    @include mb-link-pattern(
+      $color-theme--background,
+      $color-theme--link,
+      $color-theme--link,
+      $color-theme--text-inverse,
+      $sp-fill,
+      size($sp-padding-md),
+      $font-size-sm
+    );
+
+    @include fill-available(width);
+
+    font-weight: 600;
+    text-align: center;
+  }
+
+
+  .mb-ada-link.mb-link--button-like {
+    @extend %mb-link--button-like;
+
+    &--accented {
+      @extend %mb-link--button-like;
+  
+      @include event {
+        background-color: $color-theme--background-dark-alt;
+      }
+
+      background-color: $color-theme--link;
+      color: $color-theme--text-inverse;
+    }
+
+    &--dark {
+      @extend %mb-link--button-like;
+  
+      @include event {
+        background-color: $color-theme--link;
+      }
+
+      background-color: $color-theme--background-dark-alt;
+    }
+  }
 }
 
 /// ----------------------------------------------------------------------------
@@ -53,4 +105,5 @@
 
 @mixin mb-links {
   @include mb-link;
+  @include mb-link-button-like;
 }

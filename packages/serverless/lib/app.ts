@@ -186,32 +186,34 @@ app.hooks({
         if (path === 'apartments' || path === 'floorplans') {
           params.query = merge({}, params.query, {
             apiToken,
-            propertyId,
-            requestType:
-              path === 'apartments' ? 'apartmentAvailability' : 'floorPlan'
+            propertyId
           })
+
+          params.requestType =
+            path === 'apartments' ? 'apartmentAvailability' : 'floorPlan'
         } else if (path === 'scheduling') {
           params.query = merge({}, params.query, {
             companyCode,
             marketingAPIKey,
-            propertyId,
-            requestType: (() => {
-              let type = ''
-
-              switch (rest.method) {
-                case 'create':
-                  type = 'createleadwithappointment'
-                  break
-                case 'remove':
-                  type = 'cancelappointment'
-                  break
-                default:
-                  type = 'AvailableSlots'
-              }
-
-              return type
-            })()
+            propertyId
           })
+
+          params.requestType = (() => {
+            let type = ''
+
+            switch (rest.method) {
+              case 'create':
+                type = 'createleadwithappointment'
+                break
+              case 'remove':
+                type = 'cancelappointment'
+                break
+              default:
+                type = 'AvailableSlots'
+            }
+
+            return type
+          })()
         }
 
         return { params, path, ...rest }
@@ -236,24 +238,25 @@ app.hooks({
        * @returns Updated @param context
        */
       ({ path, params, ...rest }: HookContext): HookContext => {
+        const { query, requestType } = params
+
         const {
           apiToken,
           companyCode,
           marketingAPIKey,
           propertyId,
-          requestType,
-          ...query
-        } = params.query as Query & RentCafeAuthentication
-
-        let url = ''
+          ...restOfQuery
+        } = query as Query & RentCafeAuthentication
 
         if (path !== 'scheduling') {
-          url = `https://api.rentcafe.com/rentcafeapi.aspx?requestType=${requestType}&apiToken=${apiToken}&propertyId=${propertyId}`
+          params.url = `https://api.rentcafe.com/rentcafeapi.aspx?requestType=${requestType}&apiToken=${apiToken}&propertyId=${propertyId}`
         } else {
-          url = `https://marketingapi.rentcafe.com/marketingapi/api/appointments/${requestType}?companyCode=${companyCode}&marketingAPIKey=${marketingAPIKey}&propertyId=${propertyId}`
+          params.url = `https://marketingapi.rentcafe.com/marketingapi/api/appointments/${requestType}?companyCode=${companyCode}&marketingAPIKey=${marketingAPIKey}&propertyId=${propertyId}`
         }
 
-        return { ...rest, params: { ...params, query, url }, path }
+        params.query = restOfQuery
+
+        return { ...rest, params, path }
       }
     ]
   },

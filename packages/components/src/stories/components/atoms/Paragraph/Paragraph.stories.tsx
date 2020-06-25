@@ -21,14 +21,14 @@ export const Default = (args: ParagraphProps): ReactElement<ParagraphProps> => (
 Default.args = {}
 
 /**
- * {@link FloorplansTemplate} {@link Paragraph} story.
+ * Subheading {@link Paragraph} story.
  */
-export const FloorplansTemplateBlurb = (
+export const Subheading = (
   args: ParagraphProps
 ): ReactElement<ParagraphProps> => <Paragraph {...args} />
 
-FloorplansTemplateBlurb.args = {
+Subheading.args = {
   children:
     'Choose from a variety of spacious and contemporary floor plans available in one-bedroom, one-bedroom with den, two-bedroom, two-bedroom with den, and three-bedroom layouts.',
-  className: 'floorplans-blurb'
+  className: 'mb-paragraph--subheading is-centered-text'
 }

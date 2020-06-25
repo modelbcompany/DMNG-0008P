@@ -1,0 +1,26 @@
+<script type='text/babel'>
+  const { WoodmontAPI, SchedulingForm } = Woodmont
+
+  const scheduleTour = async form => {
+    console.warn({ 'scheduleTour': form })
+
+    let appt = null
+
+    try {
+      appt = await WoodmontAPI.service('scheduling').create(form)
+    } catch (err) {
+      console.error({ scheduleTour: err })
+      appt = null
+    }
+
+    if (appt) {
+      console.log({ scheduleTour: appt })
+      window.alert('Appointment created.')
+    }
+  }
+
+  ReactDOM.render(
+    <SchedulingForm scheduleTour={scheduleTour} />,
+    document.getElementById('scheduling-form-root')
+  )
+</script>

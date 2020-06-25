@@ -59,7 +59,7 @@ export const Section: FC<SectionProps> = ({ container, ...rest }) => {
 }
 
 /**
- * Renders a `Section` component with the class `floorplans-grid`.
+ * Renders a `Section` component with the class `mb-section--floorplans-grid`.
  *
  * @param props - Component data
  */
@@ -79,12 +79,14 @@ export const FloorplansGrid: FC<FloorplansGridProps> = ({
   }, [gridData])
 
   return (
-    <Section {...useMutatedProps(rest, 'floorplans-grid', ['apiError'])}>
-      <Heading className='uppercase floorplans-grid-title' size={3}>
+    <Section
+      {...useMutatedProps(rest, 'mb-section--floorplans-grid', ['apiError'])}
+    >
+      <Heading className='mb-heading--3 center-text uppercase' size={3}>
         {gridTitle}
       </Heading>
 
-      <Container className='floorplans-grid-container'>{plans}</Container>
+      <Container className='mb-container--grid'>{plans}</Container>
     </Section>
   )
 }

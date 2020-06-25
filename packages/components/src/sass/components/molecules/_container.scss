@@ -135,7 +135,7 @@
   @include flex-direction(column);
 }
 
-.floorplans-grid-container {
+.mb-container--grid {
   @include is-flex-centered;
 
   @include respond-to($breakpoint-768) {
@@ -180,8 +180,12 @@
 }
 
 .mb-adt-floorplans > .mb-adm-container,
-.mb-adt-floorplans .floorplans-grid-container {
-  @include width(95%)
+.mb-section--floorplans-grid .mb-container--grid {
+  @include width(85%);
+}
+
+.mb-section--floorplans-grid .mb-container--grid {
+  margin: size($sp-xxl * 2) 0;
 }
 
 
@@ -191,7 +195,7 @@
   @extend %Column;
 }
 
-.floorplan {
+.mb-article--floorplan {
   .column {
     @include remove-margin;
 

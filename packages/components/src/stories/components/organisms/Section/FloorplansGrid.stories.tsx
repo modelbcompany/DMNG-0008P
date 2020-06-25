@@ -1,5 +1,6 @@
-import ApartmentsWithPlansMock, { FloorplansGrid, FloorplansGridProps } from 'lib'
+import { FloorplansGrid, FloorplansGridProps } from 'lib'
 import React, { ReactElement } from 'react'
+import ApartmentsWithPlansMock from './__mocks__/ApartmentsWithPlans.mock'
 
 /**
  * @file Stories - FloorplansGrid

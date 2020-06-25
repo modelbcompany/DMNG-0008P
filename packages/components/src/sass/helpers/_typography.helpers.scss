@@ -13,8 +13,8 @@
 
 .center-text,
 .has-center-aligned-text,
-.is-center-aligned-text {
-  @include is-center-aligned-text;
+.is-centered-text {
+  @include is-centered-text;
 }
 
 .is-uppercase,

@@ -4,11 +4,9 @@ import { ApartmentWithPlan } from 'declarations'
 import { useMutatedProps } from 'hooks'
 import {
   Container,
-
   FloorplanSearchForm,
-  FloorplanSearchFormState as FloorplanSearch, FloorplansGrid,
-
-
+  FloorplanSearchFormState as FloorplanSearch,
+  FloorplansGrid,
   Main,
   MainProps
 } from 'lib'

@@ -32,18 +32,4 @@
 
 </body>
 
-<script type='text/babel'>
-  const { ContactForm, SchedulingForm } = Woodmont
-
-  ReactDOM.render(
-    <ContactForm />, 
-    document.getElementById('contact-form-root')
-  )
-
-  ReactDOM.render(
-    <SchedulingForm />, 
-    document.getElementById('scheduling-form-root')
-  )
-</script>
-
 </html> <!-- end page -->

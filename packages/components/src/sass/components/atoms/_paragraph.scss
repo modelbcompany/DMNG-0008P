@@ -46,16 +46,16 @@
   text-transform: $paragraph-pattern-text-transform;
 }
 
-@mixin floorplans-blurb {
-  %floorplans-blurb {
+@mixin mb-paragraph-subheading {
+  %mb-paragraph--subheading {
     @include font-size($font-size-lg * 2);
 
     font-family: $font-family-primary;
     line-height: 2.7rem;
   }
 
-  .mb-ada-paragraph.floorplans-blurb {
-    @extend %floorplans-blurb;
+  .mb-ada-paragraph.mb-paragraph--subheading {
+    @extend %mb-paragraph--subheading;
   }
 }
 
@@ -105,7 +105,7 @@
 
 @mixin mb-paragraphs {
   @include mb-paragraph;
-  @include floorplans-blurb;
+  @include mb-paragraph-subheading;
   @include floorplan-details;
   @include floorplan-rent;
   @include floorplan-sqft;

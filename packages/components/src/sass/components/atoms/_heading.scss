@@ -95,7 +95,7 @@
   }
 
   .mb-ado-do-section .mb-heading--3 {
-    @include is-center-aligned-text;
+    @include is-centered-text;
 
     margin-bottom: size($sp-padding-lg * 2);
   }

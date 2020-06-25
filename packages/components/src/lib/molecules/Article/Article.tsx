@@ -52,12 +52,12 @@ export const Article: FC<ArticleProps> = ({
 }
 
 /**
- * Renders an @link Article component with the class `floorplan`.
+ * Renders an @link Article component with the class `mb-article--floorplan`.
  *
  * @param props - Component data
  */
 export const Floorplan: FC<FloorplanProps> = ({ aptWithPlan, ...rest }) => {
-  const mutatedProps = useMutatedProps(rest, 'floorplan')
+  const mutatedProps = useMutatedProps(rest, 'mb-article--floorplan')
 
   aptWithPlan = aptWithPlan as ApartmentWithPlan
 
@@ -101,14 +101,14 @@ export const Floorplan: FC<FloorplanProps> = ({ aptWithPlan, ...rest }) => {
         <Container className='column image-column'>
           <Image
             alt={FloorplanImageAltText}
-            className='floorplan-img'
+            className='mb-image--floorplan'
             src={FloorplanImageURL}
             title={FloorplanImageName}
           />
         </Container>
 
         <Container className='column text-column'>
-          <Heading className='floorplan-heading' size={3}>
+          <Heading className='mb-heading--3 floorplan-heading' size={3}>
             {`#${ApartmentName || FloorplanId}`}
           </Heading>
           <Paragraph className='floorplan-details'>
@@ -126,7 +126,7 @@ export const Floorplan: FC<FloorplanProps> = ({ aptWithPlan, ...rest }) => {
 
         <Container className='column link-column'>
           <Link
-            className='floorplan-link'
+            className='mb-link--button-like is-centered-text is-uppercase'
             href={ApplyOnlineURL || AvailabilityURL}
             target='_blank'
             title={
@@ -139,7 +139,7 @@ export const Floorplan: FC<FloorplanProps> = ({ aptWithPlan, ...rest }) => {
           </Link>
 
           <Link
-            className='floorplan-link'
+            className='mb-link--button-like--dark is-centered-text is-uppercase'
             href={FloorplanImageURL}
             download
             target='_blank'

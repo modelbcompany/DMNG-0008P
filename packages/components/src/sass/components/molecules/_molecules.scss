@@ -10,6 +10,7 @@
 @import 'select';
 
 @mixin molecules {
+  @include mb-articles;
   @include mb-forms;
   @include mb-selects;
 }

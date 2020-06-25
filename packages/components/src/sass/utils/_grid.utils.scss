@@ -24,7 +24,7 @@
 /// @require {variable} $grid-columns
 /// @param {String} $layout-size ['lg'] - Layout size. 'sm' | 'md' | 'lg'
 @function grid-template-columns($layout-size: 'lg') {
-  @return #{repeat(map-get($grid-columns, $layout-size)), 1fr)};
+  @return #{repeat(map-get($grid-columns, $layout-size), 1fr)};
 }
 
 /// ----------------------------------------------------------------------------
