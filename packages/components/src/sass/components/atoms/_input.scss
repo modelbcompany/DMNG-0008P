@@ -83,7 +83,7 @@
     }
   }
 
-  .mb-adm-select .placeholder + input {
+  .mb-adm-select .mb-span--placeholder + input {
     @include remove-border;
 
     background-color: $color-transparent;

@@ -180,11 +180,13 @@
 }
 
 .mb-adt-floorplans > .mb-adm-container,
-.mb-section--floorplans-grid .mb-container--grid {
-  @include width(85%);
+.mb-adt-floorplans > .mb-section--floorplans-grid {
+  @include width(90%);
 }
 
 .mb-section--floorplans-grid .mb-container--grid {
+  @include width(100%);
+
   margin: size($sp-xxl * 2) 0;
 }
 

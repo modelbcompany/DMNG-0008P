@@ -108,20 +108,29 @@ export const Floorplan: FC<FloorplanProps> = ({ aptWithPlan, ...rest }) => {
         </Container>
 
         <Container className='column text-column'>
-          <Heading className='mb-heading--3 floorplan-heading' size={3}>
+          <Heading className='mb-heading--3' size={3}>
             {`#${ApartmentName || FloorplanId}`}
           </Heading>
-          <Paragraph className='floorplan-details'>
-            <Span className='floorplan-name'>{FloorplanName}&nbsp;</Span>
-            <Span className='floorplan-beds'>
+
+          <Paragraph className='mb-paragraph--floorplan--details'>
+            <Span className='mb-span--floorplan--name'>
+              {FloorplanName}&nbsp;
+            </Span>
+            <Span className='mb-span--floorplan--beds'>
               {`| ${Beds} Bedroom${Beds === 1 ? '' : 's'}`}&nbsp;
             </Span>
-            <Span className='floorplan-baths'>
+            <Span className='mb-span--floorplan--baths'>
               {`| ${Baths} Bathroom${Baths === 1 ? '' : 's'}`}
             </Span>
           </Paragraph>
-          <Paragraph className='floorplan-sqft'>{`${SQFT} SQ. FT.`}</Paragraph>
-          <Paragraph className='floorplan-rent'>{MinimumRent}</Paragraph>
+
+          <Paragraph className='mb-paragraph--floorplan--sqft'>
+            {`${SQFT} SQ. FT.`}
+          </Paragraph>
+
+          <Paragraph className='mb-paragraph--floorplan--rent'>
+            {MinimumRent}
+          </Paragraph>
         </Container>
 
         <Container className='column link-column'>

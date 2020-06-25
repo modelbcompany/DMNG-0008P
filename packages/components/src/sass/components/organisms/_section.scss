@@ -13,6 +13,8 @@
 
   @include display-flex;
 
+  @include fill-available;
+
   @include is-flex-centered;
 
   @include is-full-height;
@@ -27,8 +29,6 @@
   padding: size($grid-padding);
 }
 
-// Styles
-
 .mb-ado-section {
   @extend %Section;
 }
@@ -37,10 +37,6 @@
   @extend %FloorplansGrid;
 }
 
-// Responsive Styles
-
-// Desktop
-
-// Tablet
-
-// Mobile
+.mb-adt-floorplans .mb-section--floorplans-grid {
+  @include fill-available;
+}

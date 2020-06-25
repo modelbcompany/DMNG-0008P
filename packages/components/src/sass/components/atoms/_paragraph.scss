@@ -46,6 +46,43 @@
   text-transform: $paragraph-pattern-text-transform;
 }
 
+@mixin mb-paragraph-floorplan {
+  %mb-paragraph--floorplan {
+    color: $color-theme--text;
+  }
+
+  .mb-ada-paragraph.mb-paragraph--floorplan {
+    @extend %mb-paragraph--floorplan;
+
+    &--details {
+      margin: size($sp-md) 0 size($sp-padding-sm * 1.75);
+    }
+
+    &--rent {
+      @include font-size($font-size-lg * 2);
+
+      font-family: $font-family-primary;
+      line-height: 2.7rem;
+    }
+
+    &--sqft {
+      font-weight: 700;
+      margin-bottom: size($sp-sm);
+    }
+
+    &--details,
+    &--rent {
+      font-weight: 300;
+    }
+
+    &--details,
+    &--rent,
+    &--sqft {
+      @extend %mb-paragraph--floorplan;
+    }
+  }
+}
+
 @mixin mb-paragraph-subheading {
   %mb-paragraph--subheading {
     @include font-size($font-size-lg * 2);
@@ -59,54 +96,12 @@
   }
 }
 
-@mixin floorplan-details {
-  %floorplan-details {
-    color: $color-theme--text;
-    font-weight: 300;
-    margin: size($sp-md) 0 size($sp-padding-sm * 1.75);
-  }
-
-  .mb-ada-paragraph.floorplan-details {
-    @extend %floorplan-details;
-  }
-}
-
-@mixin floorplan-rent {
-  %floorplan-rent {
-    @include font-size($font-size-lg * 2);
-
-    color: $color-theme--text;
-    font-family: $font-family-primary;
-    font-weight: 300;
-    line-height: 2.7rem;
-  }
-
-  .mb-ada-paragraph.floorplan-rent {
-    @extend %floorplan-rent;
-  }
-}
-
-@mixin floorplan-sqft {
-  %floorplan-sqft {
-    color: $color-theme--text;
-    font-family: $font-family-secondary;
-    font-weight: 700;
-    margin-bottom: size($sp-sm);
-  }
-
-  .mb-ada-paragraph.floorplan-sqft {
-    @extend %floorplan-sqft;
-  }
-}
-
 /// ----------------------------------------------------------------------------
 /// Export
 /// ----------------------------------------------------------------------------
 
 @mixin mb-paragraphs {
   @include mb-paragraph;
+  @include mb-paragraph-floorplan;
   @include mb-paragraph-subheading;
-  @include floorplan-details;
-  @include floorplan-rent;
-  @include floorplan-sqft;
 }

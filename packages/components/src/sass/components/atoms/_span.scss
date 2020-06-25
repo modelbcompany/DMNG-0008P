@@ -2,52 +2,88 @@
 /// @group Span
 /// ----------------------------------------------------------------------------
 
-%Span {
-  display: inline-block;
-  font-family: $font-family-secondary;
+/// ----------------------------------------------------------------------------
+/// Base
+/// ----------------------------------------------------------------------------
 
-  &[data-icon] {
-    @include display-flex(inline-flex);
-
-    @include is-flex-centered;
+@mixin mb-span {
+  .mb-ada-span {
+    @extend %mb-span-base;
   }
 
-  &.placeholder {
+  %mb-span-base {
+    display: inline-block;
+    font-family: $font-family-secondary;  
+  }
+
+  .mb-paragraph--floorplan--details {
+    .mb-ada-span:not(.mb-span--floorplan--name) {
+      @include font-weight(300);
+
+      font-family: $font-family-primary;
+    }
+  }
+}
+
+/// ----------------------------------------------------------------------------
+/// UI Patterns
+/// ----------------------------------------------------------------------------
+
+@mixin mb-span-floorplan {
+  %mb-span--floorplan {
+    color: $color-theme--text;
+  }
+
+  .mb-span--floorplan {
+    @extend %mb-span--floorplan;
+
+    &--name {
+      @include font-weight(600);
+    }
+
+    &--baths,
+    &--beds,
+    &--name {
+      @extend %mb-span--floorplan;
+    }
+  }
+}
+
+@mixin mb-span-placeholder {
+  %mb-span--placeholder {
     @include absolute(50, null, null, size($sp-padding-xs));
 
     @include font-size($font-size-sm);
 
     color: $color-grey-500;
   }
+
+  .mb-span--placeholder {
+    @extend %mb-span--placeholder;
+  }
+
+  .mb-adm-select .mb-span--placeholder {
+    @include font-weight(600);
+
+    @include is-uppercase;
+
+    font-family: $font-family-primary;
+  }
+
+  .mb-form--contact .mb-adm-select .mb-span--placeholder {
+    color: $color-brand-marble-brown;
+    font-family: $font-family-secondary;
+  }
 }
 
-.mb-ada-span {
-  @extend %Span;
-}
 
-.mb-adm-select .placeholder {
-  @include font-size($font-size-sm);
 
-  @include font-weight(600);
+/// ----------------------------------------------------------------------------
+/// Export
+/// ----------------------------------------------------------------------------
 
-  @include is-uppercase;
-
-  font-family: $font-family-primary;
-}
-
-.floorplan-name {
-  @include font-weight(600);
-
-  font-family: $font-family-secondary;
-}
-
-.floorplan-details .mb-ada-span:not(.floorplan-name) {
-  @include font-weight(300);
-
-  font-family: $font-family-primary;
-}
-
-.mb-form--contact .placeholder {
-  color: $color-brand-marble-brown;
-  font-family: $font-family-secondary;
+@mixin mb-spans {
+  @include mb-span;
+  @include mb-span-floorplan;
+  @include mb-span-placeholder;
 }

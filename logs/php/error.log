@@ -355,3 +355,5 @@
 [25-Jun-2020 18:27:38 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Atomic Blocks - Gutenberg Blocks Collection","slug":"atomic-blocks/atomicblocks.php","ver":"2.8.3","sig":"v1:nohash"}
 [25-Jun-2020 18:27:38 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"MapifyLite","slug":"mapifylite-master/mapify_lite.php","ver":"2.0.4","sig":"v1:nohash"}
 [25-Jun-2020 18:27:38 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"installed-plugin","name":"Smart Slider 3 Pro","slug":"nextend-smart-slider3-pro/nextend-smart-slider3-pro.php","ver":"3.4.1","sig":"v1:nohash"}
+[25-Jun-2020 23:34:03 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-includes","slug":"wp-includes","ver":"5.4.1","sig":"v1:nohash"}
+[25-Jun-2020 23:34:03 UTC] auditor:scan=fingerprint {"blog_id":1,"kind":"wp-core","name":"wp-admin","slug":"wp-admin","ver":"5.4.1","sig":"v1:nohash"}

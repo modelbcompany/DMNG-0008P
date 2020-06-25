@@ -38,7 +38,7 @@ export const Placeholder: FC<SpanProps> = ({
 }) => {
   const mutatedProps = useMutatedProps(
     omit(merge(rest, innerProps), ['options', 'selectProps', 'theme']),
-    'mb-ada-span placeholder'
+    'mb-ada-span mb-span--placeholder'
   )
 
   return <span {...mutatedProps} ref={innerRef} />

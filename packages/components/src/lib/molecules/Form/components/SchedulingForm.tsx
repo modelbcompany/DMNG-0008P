@@ -8,7 +8,9 @@ import {
   Container,
   FormField,
   FormProps,
+  Heading,
   Input,
+  Paragraph,
   Select
 } from 'lib'
 import logger from 'logger'
@@ -94,127 +96,156 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
     getAvailableAppointments()
   }, [])
 
-  if (apiError) {
-    //
+  const CalendarView = () => (
+    <Container className='form-container calendar-view'>
+      <Calendar
+        onChange={date =>
+          updateForm('apptDate', date.toLocaleDateString('en-US'))
+        }
+        tileDisabled={(tileData: AnyObject) => {
+          const date = tileData.date.toLocaleDateString('en-US')
+          const availableDates = availableAppts.map(appt => appt.date)
+
+          return !availableDates.includes(date)
+        }}
+      />
+
+      <FormField className='form-footer'>
+        <Button
+          className='mb-button--form uppercase'
+          name='next'
+          onClick={() => {
+            if (form.apptDate?.length) setFormViewID(1)
+          }}
+        >
+          Next
+        </Button>
+      </FormField>
+    </Container>
+  )
+
+  const FieldsView = () => (
+    <Container className='form-container column fields-view'>
+      <FormField name='apptDate_apptTime'>
+        <Input
+          className='mb-input--light'
+          name='apptDate'
+          value={form.apptDate}
+          readOnly
+        />
+
+        <Select
+          className='mb-select--light'
+          name='apptTime'
+          initialOptions={
+            availableAppts.find(appt => {
+              return appt.date === form.apptDate
+            })?.times
+          }
+          isSearchable={false}
+          onChange={option => updateForm('apptTime', option.value)}
+          placeholder={null}
+        />
+      </FormField>
+
+      <FormField name='firstName'>
+        <Input
+          className='mb-input--light'
+          name='firstName'
+          onChange={event => {
+            event.persist()
+            updateForm('firstName', event.target.value)
+          }}
+          placeholder='First Name*'
+        />
+      </FormField>
+
+      <FormField name='lastName'>
+        <Input
+          className='mb-input--light'
+          name='lastName'
+          onChange={event => {
+            event.persist()
+            updateForm('lastName', event.target.value)
+          }}
+          placeholder='Last Name*'
+        />
+      </FormField>
+
+      <FormField name='email'>
+        <Input
+          className='mb-input--light'
+          name='email'
+          onChange={event => {
+            event.persist()
+            updateForm('email', event.target.value)
+          }}
+          placeholder='Email Address*'
+          type='email'
+        />
+      </FormField>
+
+      <FormField className='form-footer'>
+        <Button
+          className='mb-button--form uppercase'
+          name='back'
+          onClick={() => setFormViewID(0)}
+        >
+          Back
+        </Button>
+
+        <Button
+          className='mb-button--form uppercase'
+          name='schedule'
+          onClick={async (event: React.MouseEvent) => {
+            if (event.preventDefault) event.preventDefault()
+
+            try {
+              await (scheduleTour as FormSubmissionEventHandler)(form)
+            } catch (err) {
+              setAPIError(err)
+            }
+
+            setFormViewID(2)
+          }}
+          type='submit'
+        >
+          Schedule
+        </Button>
+      </FormField>
+    </Container>
+  )
+
+  const FormResponseView = ({ apiError }) => {
+    if (apiError) {
+      return (
+        <Container className='form-container center-text'>
+          <Paragraph>There was an error submitting the form.</Paragraph>
+          <Paragraph>{apiError.message}</Paragraph>
+        </Container>
+      )
+    }
+
+    return (
+      <Container className='form-container center-text'>
+        <Heading className='mb-heading--4' size={4}>
+          Thank you for scheduling a tour at Woodmont.
+        </Heading>
+      </Container>
+    )
   }
 
   return (
     <Form {...mutatedProps}>
       {(() => {
-        if (formViewID) {
-          return (
-            <Container className='form-container column fields-view'>
-              <FormField name='apptDate_apptTime'>
-                <Input
-                  className='mb-input--light'
-                  name='apptDate'
-                  value={form.apptDate}
-                  readOnly
-                />
-
-                <Select
-                  className='mb-select--light'
-                  name='apptTime'
-                  initialOptions={
-                    availableAppts.find(appt => {
-                      return appt.date === form.apptDate
-                    })?.times
-                  }
-                  isSearchable={false}
-                  onChange={option => updateForm('apptTime', option.value)}
-                  placeholder={null}
-                />
-              </FormField>
-
-              <FormField name='firstName'>
-                <Input
-                  className='mb-input--light'
-                  name='firstName'
-                  onChange={event => {
-                    event.persist()
-                    updateForm('firstName', event.target.value)
-                  }}
-                  placeholder='First Name*'
-                />
-              </FormField>
-
-              <FormField name='lastName'>
-                <Input
-                  className='mb-input--light'
-                  name='lastName'
-                  onChange={event => {
-                    event.persist()
-                    updateForm('lastName', event.target.value)
-                  }}
-                  placeholder='Last Name*'
-                />
-              </FormField>
-
-              <FormField name='email'>
-                <Input
-                  className='mb-input--light'
-                  name='email'
-                  onChange={event => {
-                    event.persist()
-                    updateForm('email', event.target.value)
-                  }}
-                  placeholder='Email Address*'
-                  type='email'
-                />
-              </FormField>
-
-              <FormField className='form-footer'>
-                <Button
-                  className='mb-button--form uppercase'
-                  name='back'
-                  onClick={() => setFormViewID(0)}
-                >
-                  Back
-                </Button>
-
-                <Button
-                  className='mb-button--form uppercase'
-                  name='schedule'
-                  onClick={(event: React.MouseEvent) => {
-                    if (event.preventDefault) event.preventDefault()
-                    return (scheduleTour as FormSubmissionEventHandler)(form)
-                  }}
-                  type='submit'
-                >
-                  Schedule
-                </Button>
-              </FormField>
-            </Container>
-          )
+        switch (formViewID) {
+          case 1:
+            return <FieldsView />
+          case 2:
+            return <FormResponseView apiError={apiError} />
+          default:
+            return <CalendarView />
         }
-
-        return (
-          <Container className='form-container calendar-view'>
-            <Calendar
-              onChange={date =>
-                updateForm('apptDate', date.toLocaleDateString('en-US'))
-              }
-              tileDisabled={(tileData: AnyObject) => {
-                const date = tileData.date.toLocaleDateString('en-US')
-                const availableDates = availableAppts.map(appt => appt.date)
-
-                return !availableDates.includes(date)
-              }}
-            />
-
-            <FormField className='form-footer'>
-              <Button
-                className='mb-button--form uppercase'
-                name='next'
-                onClick={() => {
-                  if (form.apptDate?.length) setFormViewID(1)
-                }}
-              >
-                Next
-              </Button>
-            </FormField>
-          </Container>
-        )
       })()}
     </Form>
   )

@@ -88,10 +88,10 @@
 
   .mb-ada-heading.mb-heading--3 {
     @extend %mb-heading--3;
+  }
 
-    &.floorplan-heading {
-      color: $color-theme--text;
-    }
+  .mb-article--floorplan .mb-heading--3 {
+    color: $color-theme--text;
   }
 
   .mb-ado-do-section .mb-heading--3 {
