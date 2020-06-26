@@ -185,6 +185,18 @@ export const SchedulingForm: FC<SchedulingFormProps> = ({
         />
       </FormField>
 
+      <FormField name='message'>
+        <textarea
+          className='mb-ada-input mb-input--light'
+          name='message'
+          placeholder='Add a message'
+          onChange={event => {
+            event.persist()
+            updateForm('message', event.target.value)
+          }}
+        />
+      </FormField>
+
       <FormField className='form-footer'>
         <Button
           className='mb-button--form uppercase'

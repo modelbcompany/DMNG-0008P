@@ -89,8 +89,8 @@
     background-color: $color-transparent;
   }
 
-  .fieldset-container > .mb-ada-input {
-    // padding: 0.7rem 0.75rem;
+  .fieldset-container > textarea.mb-ada-input {
+    padding-top: size($sp-padding-xs * 1.25);
   }
 
   .mb-form--tour .mb-ada-input {

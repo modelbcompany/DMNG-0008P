@@ -892,6 +892,9 @@ button:focus,
   border: none;
   background-color: transparent; }
 
+.fieldset-container > textarea.mb-ada-input {
+  padding-top: 0.625rem; }
+
 .mb-form--tour .mb-ada-input {
   flex-grow: 1; }
   .mb-form--tour .mb-ada-input:read-only {
