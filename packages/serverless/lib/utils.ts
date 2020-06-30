@@ -126,7 +126,13 @@ export const interceptRentCafeResponse = ({
   if (marketing || web) {
     const { method, url, data } = config
 
-    const error = new RentCafeAPIError(res, { config: { method, url, data } })
+    const error = new RentCafeAPIError(res, {
+      config: {
+        method,
+        url: (url as string).split('?')[0],
+        data: JSON.parse(JSON.stringify(data))
+      }
+    })
 
     logger.error({ interceptRentCafeResponse: error })
     throw error
@@ -149,15 +155,20 @@ export const pickRequestProperties = (req: NowRequest): IncomingRequest => {
     'body',
     'cookies',
     'query',
-    'method',
-    'url'
+    'method'
   ])
 
-  const { path } = URI.parse(sanitizedReq.url)
+  const { path } = URI.parse(req.url as string)
 
   sanitizedReq.body = sanitizedReq.body || null
   sanitizedReq.path = path
   sanitizedReq.service = sanitizedReq.path.split('/')[1] || 'docs'
+
+  if (['DELETE', 'GET'].includes(sanitizedReq.method)) {
+    sanitizedReq.id = sanitizedReq.path.split('/')[2]
+  } else {
+    sanitizedReq.id = null
+  }
 
   return sanitizedReq as IncomingRequest
 }

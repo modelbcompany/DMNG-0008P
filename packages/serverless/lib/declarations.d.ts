@@ -146,6 +146,7 @@ export type Floorplan = {
 export type IncomingRequest = {
   body: AnyObject | null
   cookies: AnyObject
+  id: string | null
   query: AnyObject
   method: 'DELETE' | 'GET' | 'PATCH' | 'POST' | 'PUT' | 'OPTIONS'
   path: string

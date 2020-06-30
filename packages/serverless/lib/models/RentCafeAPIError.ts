@@ -37,14 +37,20 @@ export class RentCafeAPIError extends FeathersError {
    * @param data - Additional data to include with the error
    */
   constructor(error: AnyObject, data: AnyObject = {}) {
-    const { Error: webErrCode, ErrorCode: marketingErrCode } = error
+    const {
+      Error: webErrCode,
+      ErrorCode: marketingErrCode,
+      ErrorMessage
+    } = error
 
     const code = webErrCode || marketingErrCode
     let message = ''
+    let status = 400
 
     switch (code) {
       case '1000':
         message = 'Invalid Credentials'
+        status = 401
         break
       case '1010':
         message = 'Invalid Company'
@@ -66,12 +72,14 @@ export class RentCafeAPIError extends FeathersError {
         break
       case '1070':
         message = 'Property not configured for API'
+        status = 401
         break
       case '1100':
         message = 'Other Error'
+        status = 500
         break
       default:
-        message = 'Unknown RENTCafé API error'
+        message = ErrorMessage
     }
 
     data.code = code
@@ -79,9 +87,7 @@ export class RentCafeAPIError extends FeathersError {
       ? 'https://woodmontapi.modelb.now.sh/docs/rentcafe/web'
       : 'https://woodmontapi.modelb.now.sh/docs/rentcafe/marketing'
 
-    // ! Regardless of success, the RENT Café API ALWAYS responds with a 200
-    // ! status code.
-    super(message, 'RentCafeAPIError', 200, 'rent-cafe-api-error', data)
+    super(message, 'RentCafeAPIError', status, 'rent-cafe-api-error', data)
   }
 }
 

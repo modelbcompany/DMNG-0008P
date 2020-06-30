@@ -156,24 +156,20 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
    * Cancels a scheduled appointment.
    *
    * @async
-   * @param id
+   * @param id - Voyager Appt ID
    * @param param1 - Additional information for the service method
-   * @param param1.data - Request data
-   * @param param1.data.apptDate - Appointment date
-   * @param param1.data.apptTime - Appointment time
-   * @param param1.data.voyApptId - Voyager Appt ID
-   * @param param1.data.voyProspectId - Voyager prospect ID
-   * @param param1.query - Query parameters
-   * @param param1.query.companyCode - Company token from RENTCafé
-   * @param param1.query.marketingAPIKey - Yardi API Key
-   * @param param1.query.propertyId - RENTCafé property identifier
-   * @param param1.query.requestType - Marketing API endpoint to request (w/o
-   * trailing slashes)
+   * @param param1.query - Request data
+   * @param param1.query.apptDate - Appointment date
+   * @param param1.query.apptTime - Appointment time
+   * @param param1.query.voyProspectId - Voyager prospect ID
    * @param param2.url - RENTCafé URL to request
    * @returns Cancelled appointment
    */
-  async remove(id: NullableId, { data, url }: Params): Promise<any> {
-    let response = {}
+  async remove(id: NullableId, { query: data, url }: Params): Promise<any> {
+    let response = {} as AnyObject
+
+    data = data as AnyObject
+    data.voyApptId = id
 
     try {
       response = await this.requestRentCafeWebAPI({ method: 'post', url, data })
@@ -182,6 +178,6 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
       throw err
     }
 
-    return response as CancelledAppointment
+    return response.ErrorMessage as CancelledAppointment['ErrorMessage']
   }
 }
