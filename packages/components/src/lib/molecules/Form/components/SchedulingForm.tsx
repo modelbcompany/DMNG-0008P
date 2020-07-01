@@ -59,7 +59,7 @@ export type SchedulingFormProps = FormProps & {
 export type SchedulingAPIResponse = AnyObject[] | FeathersErrorJSON
 
 /**
- * Renders a {@link Form} component with the class `mb-form--tour`.
+ * Renders a `Form` component with the class `mb-form--tour`.
  */
 export const SchedulingForm: FC<SchedulingFormProps> = ({
   scheduleTour,

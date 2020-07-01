@@ -1,6 +1,6 @@
 import { FormSubmissionEventHandler } from 'declarations'
 import { useForm, useMutatedProps } from 'hooks'
-import { Button, FormField, FormProps, Input, Select } from 'lib'
+import { Button, FormField, FormProps, Input } from 'lib'
 import React, { FC } from 'react'
 import { Form } from '../Form'
 
@@ -16,9 +16,7 @@ export type ContactFormState = {
   email: string
   firstName: string
   lastName: string
-  numberOfBeds: number | string | null
   phone: string
-  retailInformationRequest: boolean
 }
 
 /**
@@ -28,9 +26,7 @@ const INITIAL_STATE: ContactFormState = {
   email: '',
   firstName: '',
   lastName: '',
-  numberOfBeds: null,
-  phone: '',
-  retailInformationRequest: false
+  phone: ''
 }
 
 export { INITIAL_STATE as CONTACT_FORM_INITIAL_STATE }
@@ -43,7 +39,7 @@ export type ContactFormProps = FormProps & {
 }
 
 /**
- * Renders a {@link Form} component with the class `mb-form--contact`.
+ * Renders a `Form` component with the class `mb-form--contact`.
  */
 export const ContactForm: FC<ContactFormProps> = ({ contact, ...rest }) => {
   const mutatedProps = useMutatedProps(rest, 'mb-form--contact')
@@ -105,21 +101,6 @@ export const ContactForm: FC<ContactFormProps> = ({ contact, ...rest }) => {
           }}
           placeholder='Phone Number'
           type='tel'
-        />
-      </FormField>
-
-      <FormField name='numberOfBeds'>
-        <Select
-          className='mb-select--light'
-          name='apptTime'
-          initialOptions={[
-            { label: '1BR', value: 1 },
-            { label: '2BR', value: 2 },
-            { label: '3BR', value: 3 }
-          ]}
-          isSearchable={false}
-          onChange={option => updateForm('numberOfBeds', option.value)}
-          placeholder={'Bedrooms'}
         />
       </FormField>
 

@@ -53,7 +53,7 @@ export type FloorplanSearchFormProps = FormProps & {
 }
 
 /**
- * Renders a {@link Form} component with the class `mb-form--floorplan-search`.
+ * Renders a `Form` component with the class `mb-form--floorplan-search`.
  */
 export const FloorplanSearchForm: FC<FloorplanSearchFormProps> = ({
   search,
