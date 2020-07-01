@@ -183,14 +183,22 @@ app.hooks({
           propertyId
         } = params.authentication
 
-        if (path === 'apartments' || path === 'floorplans') {
+        if (path !== 'scheduling') {
           params.query = merge({}, params.query, {
             apiToken,
             propertyId
           })
 
+          /* eslint-disable prettier/prettier */
+
           params.requestType =
-            path === 'apartments' ? 'apartmentAvailability' : 'floorPlan'
+            path === 'apartments'
+              ? 'apartmentAvailability'
+              : path === 'floorplans'
+                ? 'floorPlan'
+                : 'lead'
+
+          /* eslint-enable prettier/prettier */
         } else if (path === 'scheduling') {
           params.query = merge({}, params.query, {
             companyCode,
