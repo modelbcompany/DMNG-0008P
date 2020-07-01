@@ -63,6 +63,7 @@ export class RentCafeAPIError extends FeathersError {
         break
       case '1040':
         message = 'Invalid User'
+        status = 401
         break
       case '1050':
         message = 'No data found for company / property'

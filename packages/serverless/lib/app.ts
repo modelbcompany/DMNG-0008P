@@ -118,7 +118,9 @@ app.hooks({
           apiToken: 'Missing RENTCafé API token',
           companyCode: 'Missing company code',
           marketingAPIKey: 'Missing RENTCafé Marketing API key',
+          // password: 'Missing RENTCafé password',
           propertyId: 'Missing property ID'
+          // username: 'Missing RENTCafé username'
         }
 
         if (!authentication) {
@@ -245,7 +247,7 @@ app.hooks({
        * @param context.params.query - Query parameters
        * @returns Updated @param context
        */
-      ({ data, path, params, ...rest }: HookContext): HookContext => {
+      ({ path, params, ...rest }: HookContext): HookContext => {
         const { query, requestType } = params
 
         const {
@@ -264,21 +266,7 @@ app.hooks({
 
         params.query = restOfQuery
 
-        if (path === 'leads') {
-          const { message, source } = data
-
-          data.message =
-            message && message.length
-              ? `New%20Prospect:%20${message.replace(' ', '%20')}`
-              : 'New%20Prospect'
-
-          data.source = source && source.length ? source : 'WoodmontAPI'
-          data.addr1 = '8001 Woodmont Ave'
-          data.state = 'Maryland'
-          data.zipCode = 20814
-        }
-
-        return { ...rest, data, params, path }
+        return { ...rest, params, path }
       },
 
       /**
@@ -296,8 +284,8 @@ app.hooks({
 
           data.message =
             message && message.length
-              ? `New%20Prospect:%20${message.replace(' ', '%20')}`
-              : 'New%20Prospect'
+              ? `New Prospect: ${message}`
+              : 'New Prospect'
 
           data.source = source && source.length ? source : 'WoodmontAPI'
 
@@ -312,7 +300,10 @@ app.hooks({
   },
 
   error({ error, ...rest }) {
-    logger.error({ error: error.toJSON ? error.toJSON() : error.message })
+    logger.error({
+      level: 'error',
+      error: error.toJSON ? error.toJSON() : error.message
+    })
     return { error, ...rest }
   }
 })

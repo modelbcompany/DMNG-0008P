@@ -49,7 +49,10 @@ export default class Apartments implements ServiceWithMixins<Apartment> {
     this.path = path
     this.requestRentCafeWebAPI = this.app.get('axios')
 
-    logger.debug({ service: { initialized: 'apartments', path: this.path } })
+    logger.debug({
+      level: 'debug',
+      service: { initialized: 'apartments', path: this.path }
+    })
   }
 
   /**
@@ -93,7 +96,7 @@ export default class Apartments implements ServiceWithMixins<Apartment> {
         ...apt
       }))
     } catch (err) {
-      logger.error({ 'Apartments.find': err })
+      logger.error({ level: 'error', 'Apartments.find': err })
       throw err
     }
 

@@ -2,6 +2,7 @@ import { Application } from '../declarations'
 import Apartments from './apartments'
 import Docs from './docs'
 import Floorplans from './floorplans'
+import Leads from './leads'
 import Scheduling from './scheduling'
 
 /**
@@ -12,7 +13,7 @@ import Scheduling from './scheduling'
 /**
  * Array of services to configure.
  */
-export const services = [Apartments, Docs, Floorplans, Scheduling]
+export const services = [Apartments, Docs, Floorplans, Leads, Scheduling]
 
 /**
  * Configures the library services.

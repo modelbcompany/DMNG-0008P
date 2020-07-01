@@ -18,6 +18,6 @@ export const logger = pino({
   }
 })
 
-logger.debug({ pino: true })
+logger.debug({ level: 'debug', pino: true })
 
 export default logger

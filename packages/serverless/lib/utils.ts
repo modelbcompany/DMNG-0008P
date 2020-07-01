@@ -130,11 +130,14 @@ export const interceptRentCafeResponse = ({
       config: {
         method,
         url: (url as string).split('?')[0],
-        data: JSON.parse(JSON.stringify(data))
+        data: JSON.parse(data)
       }
     })
 
-    logger.error({ interceptRentCafeResponse: error })
+    logger.error({
+      level: 'error',
+      interceptRentCafeResponse: error
+    })
     throw error
   }
 
@@ -161,12 +164,17 @@ export const pickRequestProperties = (req: NowRequest): IncomingRequest => {
   const uri = new URI(req.url as string)
   const { path } = URI.parse(req.url as string)
 
+  const dir = uri.directory()
+
   sanitizedReq.body = sanitizedReq.body || null
   sanitizedReq.path = path
-  sanitizedReq.service = uri.directory()
+
+  const splitPath = sanitizedReq.path.split('/')
+
+  sanitizedReq.service = dir.length ? dir : splitPath[1]
 
   if (['DELETE', 'GET'].includes(sanitizedReq.method)) {
-    sanitizedReq.id = sanitizedReq.path.split('/')[2] || null
+    sanitizedReq.id = splitPath[2] || null
   } else {
     sanitizedReq.id = null
   }

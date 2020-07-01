@@ -27,9 +27,10 @@ import logger from '../../logger'
  */
 export type SchedulingData = (
   AppointmentWithLead
-  & AvailableAppointment
-  & AvailableSlot
-  & CancelledAppointment
+  | AvailableAppointment
+  | AvailableSlot
+  | CancelledAppointment
+  | NewAppointment
 )
 
 /* eslint-enable prettier/prettier */
@@ -67,7 +68,10 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
     this.path = path
     this.requestRentCafeWebAPI = this.app.get('axios')
 
-    logger.debug({ service: { initialized: 'scheduling', path: this.path } })
+    logger.debug({
+      level: 'debug',
+      service: { initialized: 'scheduling', path: this.path }
+    })
   }
 
   /**
@@ -80,7 +84,7 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
    * @param data.apptTime - Appointment time
    * @param data.email - Lead email
    * @param data.phone - Lead phone number
-   * @param data.source - Primary marketing source
+   * @param data.source - Marketing source to credit on the prospect’s record
    * @param param1 - Additional information for the service method
    * @param param1.url - RENTCafé URL to request
    * @returns Appt and lead data
@@ -88,12 +92,10 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
   async create(data: any, { url }: Params): Promise<any> {
     let response = {} as AnyObject
 
-    data = data as NewAppointment
-
     try {
       response = await this.requestRentCafeWebAPI({ method: 'post', url, data })
     } catch (err) {
-      logger.error({ 'Scheduling.create': err })
+      logger.error({ level: 'error', 'Scheduling.create': err })
       throw err
     }
 
@@ -114,7 +116,7 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
     try {
       response = await this.requestRentCafeWebAPI({ method: 'post', url })
     } catch (err) {
-      logger.error({ 'Scheduling.find': err })
+      logger.error({ level: 'error', 'Scheduling.find': err })
       throw err
     }
 
@@ -174,7 +176,7 @@ export default class Scheduling implements ServiceWithMixins<SchedulingData> {
     try {
       response = await this.requestRentCafeWebAPI({ method: 'post', url, data })
     } catch (err) {
-      logger.error({ 'Scheduling.remove': err })
+      logger.error({ level: 'error', 'Scheduling.remove': err })
       throw err
     }
 

@@ -153,12 +153,17 @@ export type IncomingRequest = {
   service: string
 }
 
-export type NewAppointment = {
-  apptDate: string
-  apptTime: string
+export interface Lead {
   email: string
+  firstName: string
+  lastName: string
   phone: string
   source: string
+}
+
+export interface NewAppointment extends Lead {
+  apptDate: string
+  apptTime: string
 }
 
 /**

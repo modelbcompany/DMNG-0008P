@@ -37,7 +37,10 @@ export default class Docs implements ServiceWithMixins<Documentation> {
     this.app = app
     this.path = path
 
-    logger.debug({ service: { initialized: 'docs', path: this.path } })
+    logger.debug({
+      level: 'debug',
+      service: { initialized: 'docs', path: this.path }
+    })
   }
 
   /**

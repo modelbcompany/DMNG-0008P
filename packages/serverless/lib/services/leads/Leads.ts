@@ -2,18 +2,18 @@ import axios from 'axios'
 import {
   Application,
   AxiosStatic,
-  Floorplan,
+  Lead,
   Params,
   ServiceWithMixins
 } from '../../declarations'
 import logger from '../../logger'
 
 /**
- * @file Service - Floorplans
- * @module services/floorplans/Floorplans
+ * @file Service - Leads
+ * @module services/scheduling/Leads
  */
 
-export default class Floorplans implements ServiceWithMixins<Floorplan> {
+export default class Leads implements ServiceWithMixins<Lead> {
   /**
    * Feathers application instance.
    */
@@ -48,33 +48,34 @@ export default class Floorplans implements ServiceWithMixins<Floorplan> {
 
     logger.debug({
       level: 'debug',
-      service: { initialized: 'floorplans', path: this.path }
+      service: { initialized: 'scheduling', path: this.path }
     })
   }
 
   /**
-   * Returns floor plan data.
-   *
-   * @todo Document query parameters
+   * Inserts guest card information from third-party providers.
    *
    * @async
-   * @param param0 - Additional information for the service method
-   * @param param0.query - Query parameters
-   * @param param0.url - RENTCafé URL to request
-   * @returns RENTCafé floor plan data
+   * @param data - Request data
+   * @param data.email - Email address of prospect
+   * @param data.firstName - First name of prospect
+   * @param data.lastName - Last name of prospect
+   * @param data.phone - Phone number of prospect
+   * @param data.source - Marketing source to credit on the prospect’s record
+   * @param param1 - Additional information for the service method
+   * @param param1.url - RENTCafé URL to request
+   * @returns Appt and lead data
    */
-  async find({ query, url }: Params): Promise<Floorplan[]> {
-    let floorplans: Floorplan[] = []
+  async create<Lead>(data: Lead, { url }: Params): Promise<Lead> {
+    let response = {}
 
     try {
-      floorplans = (this.requestRentCafeWebAPI(url, {
-        params: query
-      }) as unknown) as Floorplan[]
+      response = await this.requestRentCafeWebAPI({ method: 'post', url, data })
     } catch (err) {
-      logger.error({ level: 'error', 'Floorplans.find': err })
+      logger.error({ level: 'error', 'Leads.create': err })
       throw err
     }
 
-    return floorplans
+    return response as Lead
   }
 }

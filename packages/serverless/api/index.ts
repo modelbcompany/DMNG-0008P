@@ -23,7 +23,7 @@ export default async (
 ): Promise<NowResponse> => {
   const incoming = pickRequestProperties(req)
 
-  logger.info({ incoming })
+  logger.info({ level: 'info', incoming })
 
   if (incoming.method === 'OPTIONS') {
     return (res.status(200).end() as unknown) as NowResponse
