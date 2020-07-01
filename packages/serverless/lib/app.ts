@@ -237,7 +237,7 @@ app.hooks({
        * @param context.params.query - Query parameters
        * @returns Updated @param context
        */
-      ({ path, params, ...rest }: HookContext): HookContext => {
+      ({ data, path, params, ...rest }: HookContext): HookContext => {
         const { query, requestType } = params
 
         const {
@@ -256,7 +256,49 @@ app.hooks({
 
         params.query = restOfQuery
 
-        return { ...rest, params, path }
+        if (path === 'leads') {
+          const { message, source } = data
+
+          data.message =
+            message && message.length
+              ? `New%20Prospect:%20${message.replace(' ', '%20')}`
+              : 'New%20Prospect'
+
+          data.source = source && source.length ? source : 'WoodmontAPI'
+          data.addr1 = '8001 Woodmont Ave'
+          data.state = 'Maryland'
+          data.zipCode = 20814
+        }
+
+        return { ...rest, data, params, path }
+      },
+
+      /**
+       * Updates the message, source, and property address when requesting the
+       * `Leads` service.
+       *
+       * @param context - Service call information
+       * @param context.data - Data sent with API request
+       * @param context.path - Current service path (without leading "/")
+       * @returns Updated @param context
+       */
+      ({ data, ...rest }: HookContext): HookContext => {
+        if (rest.path === 'leads') {
+          const { message, source } = data
+
+          data.message =
+            message && message.length
+              ? `New%20Prospect:%20${message.replace(' ', '%20')}`
+              : 'New%20Prospect'
+
+          data.source = source && source.length ? source : 'WoodmontAPI'
+
+          data.addr1 = '8001 Woodmont Ave'
+          data.state = 'Maryland'
+          data.zipCode = 20814
+        }
+
+        return { ...rest, data }
       }
     ]
   },

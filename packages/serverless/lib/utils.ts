@@ -158,14 +158,15 @@ export const pickRequestProperties = (req: NowRequest): IncomingRequest => {
     'method'
   ])
 
+  const uri = new URI(req.url as string)
   const { path } = URI.parse(req.url as string)
 
   sanitizedReq.body = sanitizedReq.body || null
   sanitizedReq.path = path
-  sanitizedReq.service = sanitizedReq.path.split('/')[1] || 'docs'
+  sanitizedReq.service = uri.directory()
 
   if (['DELETE', 'GET'].includes(sanitizedReq.method)) {
-    sanitizedReq.id = sanitizedReq.path.split('/')[2]
+    sanitizedReq.id = sanitizedReq.path.split('/')[2] || null
   } else {
     sanitizedReq.id = null
   }

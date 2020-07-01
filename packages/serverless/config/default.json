@@ -5,6 +5,7 @@
     "apartments": "/apartments",
     "docs": "/",
     "floorplans": "/floorplans",
+    "leads": "/leads",
     "scheduling": "/scheduling"
   },
   "ts": true
