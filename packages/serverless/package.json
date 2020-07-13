@@ -22,7 +22,8 @@
   },
   "repository": "git://github.com/modelbcompany/DMNG-0008P.git",
   "scripts": {
-    "dev": "vc env pull && vc dev --listen 9000",
+    "predev": "rm -rf .env && vc env pull --yes",
+    "dev": "vc dev --listen 9000",
     "stage": "vc",
     "prod": "yarn stage --prod"
   },

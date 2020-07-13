@@ -129,7 +129,10 @@ export const interceptRentCafeResponse = ({
     const error = new RentCafeAPIError(res, {
       config: {
         method,
-        url: (url as string).split('?')[0],
+        url:
+          process.env.NODE_ENV === 'development'
+            ? url
+            : (url as string).split('?')[0],
         data: JSON.parse(data)
       }
     })

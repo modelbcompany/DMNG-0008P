@@ -50,6 +50,9 @@ app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
+// Configure plugins and providers
+app.configure(express.rest())
+
 // ! Mixins have to be added before registering any services
 app.mixins.push(service => {
   for (const key in mixins) service[key] = mixins[key]
@@ -74,7 +77,9 @@ app.hooks({
           apiToken,
           companyCode,
           marketingAPIKey,
-          propertyId
+          password,
+          propertyId,
+          username
         } = process.env
 
         return {
@@ -85,7 +90,9 @@ app.hooks({
               apiToken,
               companyCode,
               marketingAPIKey,
-              propertyId
+              password,
+              propertyId,
+              username
             }
           }
         }
@@ -118,9 +125,9 @@ app.hooks({
           apiToken: 'Missing RENTCafé API token',
           companyCode: 'Missing company code',
           marketingAPIKey: 'Missing RENTCafé Marketing API key',
-          // password: 'Missing RENTCafé password',
-          propertyId: 'Missing property ID'
-          // username: 'Missing RENTCafé username'
+          password: 'Missing RENTCafé password',
+          propertyId: 'Missing property ID',
+          username: 'Missing RENTCafé username'
         }
 
         if (!authentication) {
@@ -173,7 +180,9 @@ app.hooks({
        * @param param0.params.authentication.apiToken
        * @param param0.params.authentication.companyCode
        * @param param0.params.authentication.marketingAPIKey
+       * @param param0.params.authentication.password
        * @param param0.params.authentication.propertyId
+       * @param param0.params.authentication.username
        * @param param0.params.query - Query parameters
        * @returns Updated context
        */
@@ -182,14 +191,25 @@ app.hooks({
           apiToken,
           companyCode,
           marketingAPIKey,
-          propertyId
+          password,
+          propertyId,
+          username
         } = params.authentication
 
         if (path !== 'scheduling') {
-          params.query = merge({}, params.query, {
-            apiToken,
-            propertyId
-          })
+          if (path === 'leads') {
+            params.query = merge({}, params.query, {
+              apiToken,
+              password,
+              propertyId,
+              username
+            })
+          } else {
+            params.query = merge({}, params.query, {
+              apiToken,
+              propertyId
+            })
+          }
 
           /* eslint-disable prettier/prettier */
 
@@ -254,12 +274,18 @@ app.hooks({
           apiToken,
           companyCode,
           marketingAPIKey,
+          password,
           propertyId,
+          username,
           ...restOfQuery
         } = query as Query & RentCafeAuthentication
 
         if (path !== 'scheduling') {
           params.url = `https://api.rentcafe.com/rentcafeapi.aspx?requestType=${requestType}&apiToken=${apiToken}&propertyId=${propertyId}`
+
+          if (path === 'leads') {
+            params.url = `${params.url}&password=${password}&username=${username}`
+          }
         } else {
           params.url = `https://marketingapi.rentcafe.com/marketingapi/api/appointments/${requestType}?companyCode=${companyCode}&marketingAPIKey=${marketingAPIKey}&propertyId=${propertyId}`
         }
