@@ -16,6 +16,7 @@ export type ContactFormState = {
   email: string
   firstName: string
   lastName: string
+  message: string | null
   phone: string
 }
 
@@ -26,6 +27,7 @@ const INITIAL_STATE: ContactFormState = {
   email: '',
   firstName: '',
   lastName: '',
+  message: null,
   phone: ''
 }
 
@@ -101,6 +103,18 @@ export const ContactForm: FC<ContactFormProps> = ({ contact, ...rest }) => {
           }}
           placeholder='Phone Number'
           type='tel'
+        />
+      </FormField>
+
+      <FormField name='message'>
+        <textarea
+          className='mb-ada-input mb-input--light'
+          name='message'
+          placeholder='Add a message'
+          onChange={event => {
+            event.persist()
+            updateForm('message', event.target.value)
+          }}
         />
       </FormField>
 
