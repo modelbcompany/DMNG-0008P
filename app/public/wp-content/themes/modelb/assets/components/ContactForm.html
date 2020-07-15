@@ -1,0 +1,24 @@
+<script type='text/babel'>
+  const { WoodmontAPI, ContactForm } = Woodmont
+
+  const contact = async form => {
+    console.warn({ 'contact': form })
+
+    let appt = null
+
+    try {
+      // appt = await WoodmontAPI.service('contact').create(form)
+      appt = form
+    } catch (err) {
+      console.error({ contact: err })
+      appt = null
+    }
+
+    if (appt) window.location.pathname = '/thank-you'
+  }
+
+  ReactDOM.render(
+    <ContactForm contact={contact} />,
+    document.getElementById('contact-form-root')
+  )
+</script>
