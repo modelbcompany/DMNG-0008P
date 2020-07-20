@@ -316,7 +316,7 @@ app.hooks({
           data.source = source && source.length ? source : 'WoodmontAPI'
 
           data.addr1 = '8001 Woodmont Ave'
-          data.state = 'Maryland'
+          data.state = 'MD'
           data.zipCode = 20814
         }
 
@@ -326,10 +326,7 @@ app.hooks({
   },
 
   error({ error, ...rest }) {
-    logger.error({
-      level: 'error',
-      error: error.toJSON ? error.toJSON() : error.message
-    })
+    logger.error({ error: error.toJSON ? error.toJSON() : error.message })
     return { error, ...rest }
   }
 })

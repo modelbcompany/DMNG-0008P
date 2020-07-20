@@ -1,4 +1,5 @@
 import axios from 'axios'
+import qs, { ParsedUrlQueryInput } from 'querystring'
 import {
   Application,
   AxiosStatic,
@@ -62,17 +63,24 @@ export default class Leads implements ServiceWithMixins<Lead> {
    * @param data.lastName - Last name of prospect
    * @param data.phone - Phone number of prospect
    * @param data.source - Marketing source to credit on the prospect’s record
-   * @param param1 - Additional information for the service method
-   * @param param1.url - RENTCafé URL to request
+   * @param params - Additional information for the service method
+   * @param params.url - RENTCafé URL to request
    * @returns Appt and lead data
    */
-  async create<Lead>(data: Lead, { url }: Params): Promise<Lead> {
+  async create<Lead>(data: Lead, params: Params): Promise<Lead> {
     let response = {}
 
+    params.url = `${params.url}&${qs.stringify(
+      (data as unknown) as ParsedUrlQueryInput
+    )}`
+
     try {
-      response = await this.requestRentCafeWebAPI({ method: 'post', url, data })
+      response = await this.requestRentCafeWebAPI({
+        method: 'get',
+        url: params.url
+      })
     } catch (err) {
-      logger.error({ level: 'error', 'Leads.create': err })
+      logger.error({ 'Leads.create': err })
       throw err
     }
 
