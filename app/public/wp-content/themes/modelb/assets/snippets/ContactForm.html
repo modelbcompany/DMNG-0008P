@@ -7,8 +7,7 @@
     let appt = null
 
     try {
-      // appt = await WoodmontAPI.service('contact').create(form)
-      appt = form
+      appt = await WoodmontAPI.service('leads').create(form)
     } catch (err) {
       console.error({ contact: err })
       appt = null
